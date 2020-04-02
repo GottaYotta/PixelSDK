@@ -28,6 +28,19 @@ class ShareCameraRoll: ShareProtocol {
     var assetLocalIdentifierResult: String?
     
     func share() {
+        PHPhotoLibrary.authorize { (status) in
+            if status != .authorized {
+                print("Unable to share to Camera Roll since Photo Library access was denied")
+                self.completion?(false)
+                self.completion = nil
+                return
+            }
+            
+            self.shareToCameraRoll()
+        }
+    }
+    
+    func shareToCameraRoll() {
         PHPhotoLibrary.shared().performChanges({
             let request:PHAssetChangeRequest
             

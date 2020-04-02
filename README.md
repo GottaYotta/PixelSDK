@@ -130,7 +130,7 @@ extension ViewController: EditControllerDelegate {
     }
 }
 ```
-**Note:** More extensive examples can be found in the [Getting Started](#getting-started) section and in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK).
+**Note:** More extensive examples can be found in the [Getting Started](#getting-started) section and in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 When you are ready to move your app out of testing and into production, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
 
@@ -150,7 +150,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Getting Started
 
-**Note:** More extensive examples can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK).
+**Note:** More extensive examples can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 <getting-started-supplement>
 ### Changing Filters
 
@@ -164,8 +164,6 @@ The below example changes the primary filters:
 ```swift
 PixelSDK.shared.availablePrimaryFilters = {
     [
-        SessionFilterPixellate(),
-        SessionFilterBulge(),
         SessionFilterWilshire(),
         SessionFilterMontana(),
         SessionFilterSanVicente(),
@@ -403,7 +401,7 @@ VideoExporter.shared.export(video: session.video!, progress: { progress in
 ```
 After your export has completed, you may move, copy or delete the file found at the `session.video!.exportedVideoURL`.
 
-Keep in mind you can change properties like `session.video!.frameDuration` ([frame rate](http://localhost:3000/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
+Keep in mind you can change properties like `session.video!.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
 You can also change  `session.video!.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling. If you do decide to change the `session.video!.renderSize` we recommend you still set the aspectRatio variables.
 
@@ -464,11 +462,11 @@ You can easily create your own filters using Photoshop, Lightroom presets, [3D L
 
 **Step 2:** Apply filters and changes to the test image until you are satisfied with the end result.
 
-**Step 3:** Download the original [lookup.png](https://github.com/GottaYotta/PixelSDK) image from the repository and open it in your photo editor.
+**Step 3:** Download the original [lookup.png](https://github.com/GottaYotta/PixelSDK/blob/master/lookup.png) image from the repository and open it in your photo editor.
 
 **Step 4:** Apply the same changes you made on your test image to the lookup.png image and save the result to a new image lookup_example.png. Do not downsize the image or reduce its quality. In some photo editors you can simply copy your adjustment layers from your test image to the lookup image.
 
-**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Vibrance. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK).
+**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Vibrance. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 **Step 5:** Use the below code to create your own SessionFilter subclass that utilizes a LookupFilter operation and your newly created lookup_example.png image. Be sure to add your lookup_example.png image to your Xcode project.
 
@@ -574,7 +572,7 @@ The color assets you add can have any of the following names:
 <tr><td><img src="https://www.cdn.pixelsdk.com/assets/img/docs/colors/white_color.svg" /></td><td>Pixel SDK White Color</td></tr>
 </table>
 
-The [Xcode sample project](https://github.com/GottaYotta/PixelSDK) includes all available color assets with their default colors. If you do not provide color assets, the default colors will be used.
+The [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip) includes all available color assets with their default colors. If you do not provide color assets, the default colors will be used.
 
 ## License
 
