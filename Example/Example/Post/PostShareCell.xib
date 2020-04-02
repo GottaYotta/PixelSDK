@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostShareCellIdentifier" rowHeight="44" id="KGk-i7-Jjw" customClass="PostShareCell" customModule="SDK_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E7D-Io-7fP">
+                        <rect key="frame" x="11" y="5.5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="bGK-GG-h5G"/>
+                            <constraint firstAttribute="height" constant="34" id="q9f-ak-21t"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e38-bJ-Dux">
+                        <rect key="frame" x="55" y="14" width="91.5" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KXS-hL-bYy">
+                        <rect key="frame" x="342" y="12.5" width="20" height="20"/>
+                        <color key="color" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </activityIndicatorView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swk-Eg-WJk">
+                        <rect key="frame" x="341" y="11.5" width="22" height="22"/>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.6705882352941176" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Ey9-vL-hpa"/>
+                            <constraint firstAttribute="width" constant="22" id="K0c-6T-buS"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cam_upload_check" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-qu-qEz">
+                        <rect key="frame" x="335" y="5.5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="W2Z-TJ-q5N"/>
+                            <constraint firstAttribute="height" constant="34" id="uDT-zd-F6k"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Swk-Eg-WJk" secondAttribute="trailing" constant="12" id="3nE-K5-Ex1"/>
+                    <constraint firstItem="e38-bJ-Dux" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4KE-0J-tUX"/>
+                    <constraint firstItem="KXS-hL-bYy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="92f-rX-dHQ"/>
+                    <constraint firstItem="oyf-qu-qEz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CII-Gg-qQO"/>
+                    <constraint firstItem="E7D-Io-7fP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="KCD-Qp-bbI"/>
+                    <constraint firstAttribute="trailing" secondItem="KXS-hL-bYy" secondAttribute="trailing" constant="13" id="LpZ-Io-v7w"/>
+                    <constraint firstItem="e38-bJ-Dux" firstAttribute="leading" secondItem="E7D-Io-7fP" secondAttribute="trailing" constant="10" id="T0N-6w-A5O"/>
+                    <constraint firstAttribute="trailing" secondItem="oyf-qu-qEz" secondAttribute="trailing" constant="6" id="i72-WV-bqw"/>
+                    <constraint firstItem="E7D-Io-7fP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iRW-PT-8V7"/>
+                    <constraint firstItem="Swk-Eg-WJk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pQY-Pc-gY2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <connections>
+                <outlet property="activityIndicatorView" destination="KXS-hL-bYy" id="k9a-u1-XBM"/>
+                <outlet property="checkBackgroundView" destination="Swk-Eg-WJk" id="5WF-bM-uDs"/>
+                <outlet property="checkImageView" destination="oyf-qu-qEz" id="ZZ0-u0-0bi"/>
+                <outlet property="logoImageView" destination="E7D-Io-7fP" id="U9Z-uZ-faJ"/>
+                <outlet property="nameLabel" destination="e38-bJ-Dux" id="emR-27-AG4"/>
+            </connections>
+            <point key="canvasLocation" x="-124" y="37.331334332833585"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cam_upload_check" width="34" height="34"/>
+    </resources>
+</document>
