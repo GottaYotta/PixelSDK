@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F161F222436995D008F0E73 /* PHPhotoLibrary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */; };
 		1FCA590123B6BE530087B542 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58D423B6BE530087B542 /* ViewController.swift */; };
 		1FCA590223B6BE530087B542 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA58D523B6BE530087B542 /* Colors.xcassets */; };
 		1FCA590323B6BE530087B542 /* PostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA58D723B6BE530087B542 /* PostController.xib */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0D210D24085027C9CE622875 /* Pods_PixelSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Additions.swift"; sourceTree = "<group>"; };
 		1FCA58BB23B6BDEB0087B542 /* Pixel SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCA58D423B6BE530087B542 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FCA58D523B6BE530087B542 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1FCA58F823B6BE530087B542 /* TouchDetectionView.swift */,
 				1FCA58F923B6BE530087B542 /* LocationManager.swift */,
 				1FCA58FA23B6BE530087B542 /* MKPlacemark+Additions.swift */,
+				1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				1FCA591E23B6BE530087B542 /* PHAsset+Additions.swift in Sources */,
 				1FCA590123B6BE530087B542 /* ViewController.swift in Sources */,
+				1F161F222436995D008F0E73 /* PHPhotoLibrary+Additions.swift in Sources */,
 				1FCA590B23B6BE530087B542 /* SearchController.swift in Sources */,
 				1FCA591323B6BE530087B542 /* ShareManager.swift in Sources */,
 				1FCA592023B6BE530087B542 /* TouchDetectionView.swift in Sources */,
@@ -495,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = FQ7WDPMYNA;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = FQ7WDPMYNA;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
