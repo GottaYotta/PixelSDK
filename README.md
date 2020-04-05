@@ -42,7 +42,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Cropping, Rotation, and Horizontal/Vertical Perspective Correction
 
-✅ Adjust Individual Video Segments or Whole Video
+✅ Adjust Individual Video Segments and Whole Video
 
 ✅ Press and Hold Photo/Video to See Original While Editing
 
@@ -102,6 +102,7 @@ Include the following lines in your application Info.plist:
 <key>NSCameraUsageDescription</key>
 <string>Camera access is needed so you can take photos.</string>
 ```
+**Note:** More extensive examples can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 Import PixelSDK into the file you are working on.
 
@@ -109,7 +110,7 @@ Import PixelSDK into the file you are working on.
 import PixelSDK
 ```
 
-Next, present the full editor at your own convenience. The default primary filters and adjustment filters will be used. The editor will support both photo and video of any dimension with access to both the camera and library.
+Present the full editor in response to a user action, for example, clicking a button. The default primary filters and adjustment filters will be used. The editor will support both photo and video of any dimension with access to both the camera and library.
 ```swift
 let container = ContainerController()
 container.editControllerDelegate = self
@@ -119,7 +120,8 @@ nav.modalPresentationStyle = .fullScreen
 
 self.present(nav, animated: true, completion: nil)
 ```
-Lastly, implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on.
+
+Also implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on. You can then use the  `session` parameter to [export your photo or video](#exporting-media) at your own convenience.
 ```swift
 extension ViewController: EditControllerDelegate {
 
@@ -130,7 +132,6 @@ extension ViewController: EditControllerDelegate {
     }
 }
 ```
-**Note:** More extensive examples can be found in the [Getting Started](#getting-started) section and in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 When you are ready to move your app out of testing and into production, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
 
@@ -373,37 +374,41 @@ If you make programmatic changes to a session that is currently displayed by an 
 
 The below example demonstrates exporting an image:
 ```swift
-ImageExporter.shared.export(image: session.image!, completion: { (error, image) in
-    if let error = error {
-        print("Unable to export image: \(error)")
-        return
-    }
+if let image = session.image {
+    ImageExporter.shared.export(image: image, completion: { (error, uiImage) in
+        if let error = error {
+            print("Unable to export image: \(error)")
+            return
+        }
 
-    print("Finished image export with UIImage: \(image!)")
-})
+        print("Finished image export with UIImage: \(uiImage!)")
+    })
+}
 ```
-In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `session.image!.exportedImageURL` variable. After your export has completed, you may move, copy or delete this file.
+In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After your export has completed, you may move, copy or delete this file.
 
 #### Video Exports
 
 The below example demonstrates exporting a video. Characteristics such as frame rate can be set directly on the video.
 ```swift
-VideoExporter.shared.export(video: session.video!, progress: { progress in
-    print("Export progress: \(progress)")
-}, completion: { error in
-    if let error = error {
-        print("Unable to export video: \(error)")
-        return
-    }
+if let video = session.video {
+    VideoExporter.shared.export(video: video, progress: { progress in
+        print("Export progress: \(progress)")
+    }, completion: { error in
+        if let error = error {
+            print("Unable to export video: \(error)")
+            return
+        }
 
-    print("Finished video export at URL: \(session.video!.exportedVideoURL)")
-})
+        print("Finished video export at URL: \(video.exportedVideoURL)")
+    })
+}
 ```
-After your export has completed, you may move, copy or delete the file found at the `session.video!.exportedVideoURL`.
+After your export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.
 
-Keep in mind you can change properties like `session.video!.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
+Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
-You can also change  `session.video!.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling. If you do decide to change the `session.video!.renderSize` we recommend you still set the aspectRatio variables.
+You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling. If you do decide to change the `video.renderSize` we recommend you still set the aspectRatio variables.
 
 #### Encoding Settings
 
