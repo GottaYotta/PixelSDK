@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.author   = { 'Pixel SDK' => 'support@pixelsdk.com' }
 
     s.platform = :ios
-    s.source            = { :http => 'file:' + __dir__ + '/PixelSDK.framework.zip' }
+    s.source   = { :git => 'https://github.com/GottaYotta/PixelSDK.git', :tag => s.version }
 
     s.vendored_frameworks = 'PixelSDK.framework'
     s.ios.deployment_target = '11.0'
