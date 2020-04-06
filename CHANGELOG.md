@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.0.3 - 4/6/20
+&bull; Fix PixelSDK.setup() issue
+
 ### 4.0.2 - 4/5/20
 &bull; Fix bug in Simulator which could result in a temporary main thread block while cropping media
 
