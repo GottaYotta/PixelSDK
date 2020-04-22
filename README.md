@@ -19,7 +19,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
         + [Camera Only](#camera-only)
     * [Setting Maximum Video Duration](#setting-maximum-video-duration)
     * [Presenting the EditController](#presenting-the-editcontroller)
-    * [Modifying a Session](#modifying-a-session)
+    * [Programmatic Editing](#programmatic-editing)
 - [Exporting Media](#exporting-media)
     * [Image Exports](#image-exports)
     * [Video Exports](#video-exports)
@@ -341,7 +341,7 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, success) in
 })
 ```
 
-### Modifying a Session
+### Programmatic Editing
 If you choose to do so, you may make changes to a session programmatically. This is usually not necessary since changes can just be made visually with the EditController.
 
 For example, setting the primaryFilter of an image session:
@@ -354,6 +354,12 @@ let segment = session.video!.videoSegments.first!
 let brightnessFilter = SessionFilterBrightness()
 brightnessFilter.normalizedIntensity = 0.2
 segment.filters = [brightnessFilter]
+```
+Applying a vibrance filter to a whole video:
+```swift
+let vibranceFilter = SessionFilterVibrance()
+vibranceFilter.normalizedIntensity = 0.3
+session.video!.filters = [vibranceFilter]
 ```
 Trimming a segment so it starts at one second in, with a duration of two seconds:
 ```swift
