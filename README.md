@@ -317,7 +317,7 @@ self.present(nav, animated: true, completion: nil)
 #### Videos
 You may also present the EditController with AVAssets. The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to SessionFilterWilshire. These two assets will become segments of the video in their respective order.
 
-The session video will automatically inherit its renderSize from the actualSize of the first segment, unless you manually pass a renderSize into the Session initializer. For more information see [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
+The session video will automatically inherit its renderSize from the actualSize of the first segment, unless you manually pass a renderSize into the Session initializer. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
 ```swift
 let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
@@ -344,9 +344,21 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, success) in
 ### Programmatic Editing
 If you choose to do so, you may make changes to a session programmatically. This is usually not necessary since changes can just be made visually with the EditController.
 
-For example, setting the primaryFilter of an image session:
+For example, setting the primaryFilter of an image:
 ```swift
 session.image!.primaryFilter = SessionFilterWilshire()
+```
+Applying a brightness filter to an image:
+```swift
+let brightnessFilter = SessionFilterBrightness()
+brightnessFilter.normalizedIntensity = 0.2
+session.image!.filters = [brightnessFilter]
+```
+Applying a vibrance filter to a whole video:
+```swift
+let vibranceFilter = SessionFilterVibrance()
+vibranceFilter.normalizedIntensity = 0.3
+session.video!.filters = [vibranceFilter]
 ```
 Applying a brightness filter to the first segment of a video:
 ```swift
@@ -354,12 +366,6 @@ let segment = session.video!.videoSegments.first!
 let brightnessFilter = SessionFilterBrightness()
 brightnessFilter.normalizedIntensity = 0.2
 segment.filters = [brightnessFilter]
-```
-Applying a vibrance filter to a whole video:
-```swift
-let vibranceFilter = SessionFilterVibrance()
-vibranceFilter.normalizedIntensity = 0.3
-session.video!.filters = [vibranceFilter]
 ```
 Trimming a segment so it starts at one second in, with a duration of two seconds:
 ```swift
