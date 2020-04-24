@@ -24,6 +24,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
     * [Image Exports](#image-exports)
     * [Video Exports](#video-exports)
     * [Encoding Settings](#encoding-settings)
+    * [Pricing](#pricing)
 - [Writing Custom Filters](#writing-custom-filters)
 - [Customizing Colors](#customizing-colors)
 - [License](#license)
@@ -419,7 +420,7 @@ After your export has completed, you may move, copy or delete the file found at 
 
 Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
-You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling. If you do decide to change the `video.renderSize` we recommend you still set the aspectRatio variables.
+You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
 
 #### Encoding Settings
 
@@ -469,6 +470,11 @@ let videoEncodingSettings: [String: Any] = [
     AVVideoCodecKey: AVVideoCodecType.hevc
 ]
 ```
+
+#### Pricing
+Export functions are subject to the following [pricing](https://www.pixelsdk.com/#pricing).
+
+You can generate an API key [here](https://www.pixelsdk.com/dashboard/api-keys/). If you do not provide an API key or it is invalid, exported images and videos will include a watermark.
 
 ## Writing Custom Filters
 
