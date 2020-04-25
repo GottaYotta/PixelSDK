@@ -24,7 +24,6 @@ Pixel SDK is a photo and video editing framework written in Swift.
     * [Image Exports](#image-exports)
     * [Video Exports](#video-exports)
     * [Encoding Settings](#encoding-settings)
-    * [Pricing](#pricing)
 - [Writing Custom Filters](#writing-custom-filters)
 - [Customizing Colors](#customizing-colors)
 - [License](#license)
@@ -133,7 +132,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-When you are ready to move your app out of testing and into production, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
+When you are ready to move your app out of testing and into production, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
 
 ```swift
 import PixelSDK
@@ -422,6 +421,8 @@ Keep in mind you can change properties like `video.frameDuration` ([frame rate](
 
 You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
 
+Export functions are subject to the following [pricing](https://www.pixelsdk.com/#pricing). If you do not provide an API key or it is invalid, exported images and videos will include a watermark. You can generate an API key [here](https://www.pixelsdk.com/dashboard/api-keys/).
+
 #### Encoding Settings
 
 If you do not customize the video and audio encoding settings, the default settings will be an mp4 file with H.264 video encoding and stereo AAC audio encoding:
@@ -470,11 +471,6 @@ let videoEncodingSettings: [String: Any] = [
     AVVideoCodecKey: AVVideoCodecType.hevc
 ]
 ```
-
-#### Pricing
-Export functions are subject to the following [pricing](https://www.pixelsdk.com/#pricing).
-
-You can generate an API key [here](https://www.pixelsdk.com/dashboard/api-keys/). If you do not provide an API key or it is invalid, exported images and videos will include a watermark.
 
 ## Writing Custom Filters
 
