@@ -12,7 +12,8 @@ import PhotosUI
 
 class ViewController: UITableViewController {
     
-    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorView1: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorView2: UIActivityIndicatorView!
     
     var alertShown = false
     
@@ -132,47 +133,53 @@ class ViewController: UITableViewController {
         
         let session = Session(image: image)
         
+        // Initialize the EditController
         let editController = EditController(session: session)
         editController.delegate = self
         
+        // Present the EditController
         let nav = UINavigationController(rootViewController: editController)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true, completion: nil)
     }
     
     @IBAction func editControllerWithCustomVideoSession() {
-        self.activityIndicatorView.startAnimating()
-        self.activityIndicatorView.isHidden = false
-        
         // NOTE: The session video will automatically inherit its renderSize from the actualSize of the first segment (asset) unless you pass a renderSize parameter to the session initializer.
         let asset1 = AVAsset(url: Bundle.main.url(forResource: "test_1", withExtension: "mov")!)
         let asset2 = AVAsset(url: Bundle.main.url(forResource: "test_2", withExtension: "mp4")!)
         let asset3 = AVAsset(url: Bundle.main.url(forResource: "test_3", withExtension: "mp4")!)
         
-        let _ = Session(assets: [asset1, asset2, asset3], sessionReady: { (session, success) in
-            if success {
-                // Set the initial primary filter to Sepulveda
-                session.video!.primaryFilter = SessionFilterSepulveda()
-                
-                // Set the brightness of the first segment
-                let brightnessFilter = SessionFilterBrightness()
-                brightnessFilter.normalizedIntensity = 0.2
-                session.video!.videoSegments.first!.filters = [brightnessFilter]
-                
-                let editController = EditController(session: session)
-                editController.delegate = self
-                
-                let nav = UINavigationController(rootViewController: editController)
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true, completion: nil)
+        let _ = Session(assets: [asset1, asset2, asset3], sessionReady: { (session, error) in
+            self.activityIndicatorView1.stopAnimating()
+            self.activityIndicatorView1.isHidden = true
+            
+            guard let session = session else {
+                print("Unable to create session: \(error!)")
+                return
             }
-            else {
-                print("ERROR: Unable to create session")
-            }
-
-            self.activityIndicatorView.stopAnimating()
-            self.activityIndicatorView.isHidden = true
+            
+            // Set the initial primary filter to Sepulveda
+            session.video!.primaryFilter = SessionFilterSepulveda()
+            
+            let segment = session.video!.videoSegments.first!
+            
+            // Set the brightness of the first segment
+            let brightnessFilter = SessionFilterBrightness()
+            brightnessFilter.normalizedIntensity = 0.2
+            segment.filters = [brightnessFilter]
+            
+            // Initialize the EditController
+            let editController = EditController(session: session)
+            editController.delegate = self
+            
+            // Present the EditController
+            let nav = UINavigationController(rootViewController: editController)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
         })
+        
+        self.activityIndicatorView1.startAnimating()
+        self.activityIndicatorView1.isHidden = false
     }
 
     @IBAction func imageContentOnly() {
@@ -216,6 +223,84 @@ class ViewController: UITableViewController {
         let nav = UINavigationController(rootViewController: container)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func transcodeVideoWithFilters() {
+        // NOTE: The session video will automatically inherit its renderSize from the actualSize of the first segment (asset) unless you pass a renderSize parameter to the session initializer.
+        let asset1 = AVAsset(url: Bundle.main.url(forResource: "test_1", withExtension: "mov")!)
+        let asset2 = AVAsset(url: Bundle.main.url(forResource: "test_2", withExtension: "mp4")!)
+        let asset3 = AVAsset(url: Bundle.main.url(forResource: "test_3", withExtension: "mp4")!)
+        
+        let _ = Session(assets: [asset1, asset2, asset3], sessionReady: { (session, error) in
+            guard let session = session else {
+                print("Unable to create session: \(error!)")
+                return
+            }
+            
+            // Mark the session as transient so it does not appear in the users drafts and persist on disk
+            session.isTransient = true
+            
+            let video = session.video!
+            
+            // Set the primary filter to Melrose
+            video.primaryFilter = SessionFilterMelrose()
+            
+            // Set the video frame rate to 60 fps
+            video.frameDuration = CMTime(value: 1, timescale: 60)
+            
+            let segment = video.videoSegments.first!
+            
+            // Set the saturation of the first segment
+            let saturationFilter = SessionFilterSaturation()
+            saturationFilter.normalizedIntensity = 0.2
+            segment.filters = [saturationFilter]
+            
+            // Trim the first segment to start at one second in with a duration of 3 seconds
+            segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
+            segment.trimDuration = CMTime(seconds: 3, preferredTimescale: segment.duration.timescale)
+            
+            // Write to an MP4 file with H.264 video encoding and stereo AAC audio encoding
+            
+            var acl = AudioChannelLayout()
+            memset(&acl, 0, MemoryLayout<AudioChannelLayout>.size)
+            acl.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo
+            
+            let audioEncodingSettings: [String: Any] = [
+                AVFormatIDKey: kAudioFormatMPEG4AAC,
+                AVNumberOfChannelsKey: 2,
+                AVSampleRateKey: AVAudioSession.sharedInstance().sampleRate,
+                AVChannelLayoutKey: NSData(bytes:&acl, length:MemoryLayout<AudioChannelLayout>.size),
+                AVEncoderBitRateKey: 96000
+            ]
+            
+            let videoEncodingSettings: [String: Any] = [
+                AVVideoCompressionPropertiesKey: [
+                    AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
+                    AVVideoH264EntropyModeKey: AVVideoH264EntropyModeCABAC],
+                AVVideoCodecKey: AVVideoCodecType.h264
+            ]
+            
+            VideoExporter.shared.export(video: video,
+                                        fileType: .mp4,
+                                        videoEncodingSettings: videoEncodingSettings,
+                                        audioEncodingSettings: audioEncodingSettings,
+                                        progress: { (progress) in
+                print("Transcode progress: \(progress)")
+            }, completion: { (error) in
+                self.activityIndicatorView2.stopAnimating()
+                self.activityIndicatorView2.isHidden = true
+                
+                if let error = error {
+                    print("Unable to transcode video: \(error)")
+                    return
+                }
+                
+                print("Finished video transcode at URL: \(video.exportedVideoURL)")
+            })
+        })
+        
+        self.activityIndicatorView2.startAnimating()
+        self.activityIndicatorView2.isHidden = false
     }
 }
 

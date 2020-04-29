@@ -1,8 +1,11 @@
 # Changelog
 
-### 4.0.5 - 4/23/20
-&bull; Fix bug which prevented image rotation
+### 5.0.0 - 4/28/20
+&bull; Added transcoder examples  
+&bull; Improved Session initializer error reporting
 
+### 4.0.5 - 4/23/20
+&bull; Fix bug which prevented image rotation  
 &bull; Fix issue where init was not exposed for some adjustment filters
 
 ### 4.0.3 - 4/6/20
