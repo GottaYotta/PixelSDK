@@ -400,13 +400,10 @@ if let image = session.image {
         }
 
         print("Finished image export with UIImage: \(uiImage!)")
-        
-        // Delete the session and remove it from the users drafts
-        session.destroy()
     })
 }
 ```
-In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After your export has completed, you may move, copy or delete this file.
+In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After your export has completed, you may move, copy or delete this file. When you are finished, you should call `session.destroy()` in order to remove the image from the users drafts.
 
 #### Video Exports
 
@@ -422,13 +419,10 @@ if let video = session.video {
         }
 
         print("Finished video export at URL: \(video.exportedVideoURL)")
-        
-        // Delete the session and remove it from the users drafts
-        session.destroy()
     })
 }
 ```
-After your export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.
+After your export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.  When you are finished, you should call `session.destroy()` in order to remove the video from the users drafts.
 
 Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
