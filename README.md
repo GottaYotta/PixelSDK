@@ -483,7 +483,7 @@ let videoEncodingSettings: [String: Any] = [
 
 ## Transcoding Media
 
-If you do not need any UI, media files can also be directly transcoded.
+Media files can also be transcoded without using UI.
 
 This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding.
 
