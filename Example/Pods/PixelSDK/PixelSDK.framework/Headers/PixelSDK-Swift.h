@@ -377,7 +377,7 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, closed) {
   ContentModeContentFill = 0,
 /// Media scaled to fit the space while maintaining the media’s original aspect ratio.
   ContentModeContentAspectFit = 1,
-/// Media scaled to fill the space while maintaining the media’s original aspect ratio. A portion of the media may be clipped.
+/// Media scaled to fill the space while maintaining the media’s original aspect ratio. A portion of the media may be clipped or spill out of the space.
   ContentModeContentAspectFill = 2,
 };
 
@@ -878,12 +878,12 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// vibranceFilter.normalizedIntensity = 0.3
 /// session.video!.filters = [vibranceFilter]
 ///
-/// \endcodeApplying a brightness filter to the first segment of a video:
+/// \endcodeApplying a contrast filter to the first segment of a video:
 /// \code
 /// let segment = session.video!.videoSegments.first!
-/// let brightnessFilter = SessionFilterBrightness()
-/// brightnessFilter.normalizedIntensity = 0.2
-/// segment.filters = [brightnessFilter]
+/// let contrastFilter = SessionFilterContrast()
+/// contrastFilter.normalizedIntensity = 0.2
+/// segment.filters = [contrastFilter]
 ///
 /// \endcodeTrimming a segment so it starts at one second in, with a duration of two seconds:
 /// \code
@@ -903,22 +903,6 @@ SWIFT_CLASS("_TtC8PixelSDK7Session")
 /// \param image The image to create the session with.
 ///
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image;
-/// Creates a <code>Session</code> with the provided local asset. The asset will correspond with a single segment in the session video.
-/// The sessionReady closure will be called when the session is ready and can be used. After sessionReady is called, you may delete or move the file you used to create your asset.
-/// \param asset The local asset to create the session with. Asset isExportable variable must be true.
-///
-/// \param sessionReady Called when the session is ready and can be used. The boolean passed to this closure will indicate if the session was created successfully.
-///
-- (nonnull instancetype)initWithAsset:(AVAsset * _Nonnull)asset sessionReady:(void (^ _Nonnull)(Session * _Nonnull, BOOL))sessionReady;
-/// Creates a <code>Session</code> with the provided local assets. Each asset you provide will correspond with a segment in the session video. The <code>SessionVideoSegment.suggestedCropRect()</code> will be used for the crop rect of each segment.
-/// The sessionReady closure will be called when the session is ready and can be used. After sessionReady is called, you may delete or move the files you used to create your assets.
-/// precondition:
-/// You must provide at least one asset.
-/// \param assets The local assets to create the session with. Each asset isExportable variable must be true.
-///
-/// \param sessionReady Called when the session is ready and can be used. The boolean passed to this closure will indicate if the session was created successfully.
-///
-- (nonnull instancetype)initWithAssets:(NSArray<AVAsset *> * _Nonnull)assets sessionReady:(void (^ _Nonnull)(Session * _Nonnull, BOOL))sessionReady;
 /// An image associated with the session, if any.
 /// A session will have either a video or image associated with it, but never both.
 @property (nonatomic, readonly, strong) SessionImage * _Nullable image;

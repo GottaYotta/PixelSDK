@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Thh-ge-t8E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Thh-ge-t8E">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="2VF-E7-Y4v">
             <objects>
-                <tableViewController id="Thh-ge-t8E" customClass="ViewController" customModule="SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Thh-ge-t8E" customClass="ViewController" customModule="Pixel_SDK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lBT-fx-iVU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,6 +324,37 @@
                                             <outletCollection property="gestureRecognizers" destination="PK2-M7-VZQ" appends="YES" id="Lad-er-1xn"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="55" id="Nnc-1J-P2h">
+                                        <rect key="frame" x="0.0" y="688" width="414" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nnc-1J-P2h" id="0e2-M8-U4p">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcode Video w/ Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk2-Ni-R1O">
+                                                    <rect key="frame" x="20" y="17" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Utf-KV-1UU">
+                                                    <rect key="frame" x="363" y="17.5" width="20" height="20"/>
+                                                    <color key="color" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Utf-KV-1UU" firstAttribute="leading" secondItem="Pk2-Ni-R1O" secondAttribute="trailing" id="2l8-lw-AEe"/>
+                                                <constraint firstItem="Utf-KV-1UU" firstAttribute="centerY" secondItem="0e2-M8-U4p" secondAttribute="centerY" id="7TG-1v-nUa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Utf-KV-1UU" secondAttribute="trailing" id="CMQ-Pb-Zad"/>
+                                                <constraint firstItem="Pk2-Ni-R1O" firstAttribute="centerY" secondItem="0e2-M8-U4p" secondAttribute="centerY" id="Gu0-xx-G9a"/>
+                                                <constraint firstItem="Pk2-Ni-R1O" firstAttribute="leading" secondItem="0e2-M8-U4p" secondAttribute="leading" constant="20" id="vNj-XX-gA2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Rfd-TI-Tnf" appends="YES" id="ZZY-yV-asn"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -333,7 +364,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="kKx-t3-Rkh" id="9tv-mZ-fc9"/>
+                        <outlet property="activityIndicatorView1" destination="kKx-t3-Rkh" id="fqJ-2a-D8s"/>
+                        <outlet property="activityIndicatorView2" destination="Utf-KV-1UU" id="kEG-mn-uNb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myu-kz-s0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,6 +427,11 @@
                 <tapGestureRecognizer id="PK2-M7-VZQ">
                     <connections>
                         <action selector="customViewControllerInTabBar" destination="Thh-ge-t8E" id="Dfb-dJ-yUk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Rfd-TI-Tnf">
+                    <connections>
+                        <action selector="transcodeVideoWithFilters" destination="Thh-ge-t8E" id="OYT-lN-Yfb"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

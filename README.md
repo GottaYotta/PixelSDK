@@ -24,6 +24,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
     * [Image Exports](#image-exports)
     * [Video Exports](#video-exports)
     * [Encoding Settings](#encoding-settings)
+- [Transcoding Media](#transcoding-media)
 - [Writing Custom Filters](#writing-custom-filters)
 - [Customizing Colors](#customizing-colors)
 - [License](#license)
@@ -323,21 +324,21 @@ The session video will automatically inherit its renderSize from the actualSize 
 let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
 let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
 
-let _ = Session(assets: [asset1, asset2], sessionReady: { (session, success) in
-    if success {
-        // Set the initial primary filter to Wilshire
-        session.video!.primaryFilter = SessionFilterWilshire()
-
-        let editController = EditController(session: session)
-        editController.delegate = self
-
-        let nav = UINavigationController(rootViewController: editController)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true, completion: nil)
+let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
+    guard let session = session else {
+        print("Unable to create session: \(error!)")
+        return
     }
-    else {
-        print("ERROR: Unable to create session")
-    }
+
+    // Set the initial primary filter to Wilshire
+    session.video!.primaryFilter = SessionFilterWilshire()
+
+    let editController = EditController(session: session)
+    editController.delegate = self
+
+    let nav = UINavigationController(rootViewController: editController)
+    nav.modalPresentationStyle = .fullScreen
+    self.present(nav, animated: true, completion: nil)
 })
 ```
 
@@ -354,24 +355,30 @@ let brightnessFilter = SessionFilterBrightness()
 brightnessFilter.normalizedIntensity = 0.2
 session.image!.filters = [brightnessFilter]
 ```
-Applying a vibrance filter to a whole video:
+Applying a saturation filter to a whole video:
 ```swift
-let vibranceFilter = SessionFilterVibrance()
-vibranceFilter.normalizedIntensity = 0.3
-session.video!.filters = [vibranceFilter]
+let saturationFilter = SessionFilterSaturation()
+saturationFilter.normalizedIntensity = 0.3
+session.video!.filters = [saturationFilter]
 ```
-Applying a brightness filter to the first segment of a video:
+Applying a contrast filter to the first segment of a video:
 ```swift
 let segment = session.video!.videoSegments.first!
-let brightnessFilter = SessionFilterBrightness()
-brightnessFilter.normalizedIntensity = 0.2
-segment.filters = [brightnessFilter]
+let contrastFilter = SessionFilterContrast()
+contrastFilter.normalizedIntensity = 0.2
+segment.filters = [contrastFilter]
 ```
 Trimming a segment so it starts at one second in, with a duration of two seconds:
 ```swift
 let segment = session.video!.videoSegments.first!
 segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
 segment.trimDuration = CMTime(seconds: 2, preferredTimescale: segment.duration.timescale)
+```
+Changing the orientation of a segment:
+```swift
+let segment = session.video!.videoSegments.first!
+segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
+segment.cropRect = segment.suggestedCropRect()
 ```
 
 After making programmatic changes to a session, you should manually call `session.save()`.
@@ -393,6 +400,9 @@ if let image = session.image {
         }
 
         print("Finished image export with UIImage: \(uiImage!)")
+        
+        // Delete the session and remove it from the users drafts
+        session.destroy()
     })
 }
 ```
@@ -412,6 +422,9 @@ if let video = session.video {
         }
 
         print("Finished video export at URL: \(video.exportedVideoURL)")
+        
+        // Delete the session and remove it from the users drafts
+        session.destroy()
     })
 }
 ```
@@ -427,6 +440,7 @@ Export functions are subject to the following [pricing](https://www.pixelsdk.com
 
 If you do not customize the video and audio encoding settings, the default settings will be an mp4 file with H.264 video encoding and stereo AAC audio encoding:
 ```swift
+import PixelSDK
 import AVFoundation
 ```
 ```swift
@@ -461,6 +475,7 @@ There are many combinations of encoding settings you can provide. They must conf
 
 Below is an example of HEVC video encoding settings:
 ```swift
+import PixelSDK
 import AVFoundation
 import VideoToolbox
 ```
@@ -472,9 +487,95 @@ let videoEncodingSettings: [String: Any] = [
 ]
 ```
 
+## Transcoding Media
+
+If you do not need any UI, media files can also be directly transcoded.
+
+This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding.
+
+Additionally, a Melrose filter is applied to the whole video, a saturation filter is applied to the first segment (asset), and the duration of the first segment is trimmed to 3 seconds.
+
+```swift
+import PixelSDK
+import AVFoundation
+```
+```swift
+let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
+let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
+
+let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
+    guard let session = session else {
+        print("Unable to create session: \(error!)")
+        return
+    }
+
+    // Mark the session as transient so it does not appear in the users drafts and persist on disk
+    session.isTransient = true
+    
+    let video = session.video!
+    
+    // Set the primary filter to Melrose
+    video.primaryFilter = SessionFilterMelrose()
+    
+    // Set the video frame rate to 60 fps
+    video.frameDuration = CMTime(value: 1, timescale: 60)
+    
+    let segment = video.videoSegments.first!
+    
+    // Set the saturation of the first segment
+    let saturationFilter = SessionFilterSaturation()
+    saturationFilter.normalizedIntensity = 0.2
+    segment.filters = [saturationFilter]
+    
+    // Trim the first segment to start at one second in with a duration of 3 seconds
+    segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
+    segment.trimDuration = CMTime(seconds: 3, preferredTimescale: segment.duration.timescale)
+    
+    // Write to an MP4 file with H.264 video encoding and stereo AAC audio encoding
+    
+    var acl = AudioChannelLayout()
+    memset(&acl, 0, MemoryLayout<AudioChannelLayout>.size)
+    acl.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo
+    
+    let audioEncodingSettings: [String: Any] = [
+        AVFormatIDKey: kAudioFormatMPEG4AAC,
+        AVNumberOfChannelsKey: 2,
+        AVSampleRateKey: AVAudioSession.sharedInstance().sampleRate,
+        AVChannelLayoutKey: NSData(bytes:&acl, length:MemoryLayout<AudioChannelLayout>.size),
+        AVEncoderBitRateKey: 96000
+    ]
+    
+    let videoEncodingSettings: [String: Any] = [
+        AVVideoCompressionPropertiesKey: [
+            AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
+            AVVideoH264EntropyModeKey: AVVideoH264EntropyModeCABAC],
+        AVVideoCodecKey: AVVideoCodecType.h264
+    ]
+    
+    VideoExporter.shared.export(video: video,
+                                fileType: .mp4,
+                                videoEncodingSettings: videoEncodingSettings,
+                                audioEncodingSettings: audioEncodingSettings,
+                                progress: { (progress) in
+        print("Transcode progress: \(progress)")
+    }, completion: { (error) in
+        if let error = error {
+            print("Unable to transcode video: \(error)")
+            return
+        }
+        
+        print("Finished video transcode at URL: \(video.exportedVideoURL)")
+    })
+})
+```
+
+After your transcode has completed, you may move, copy or delete the file found at the video.exportedVideoURL.
+
+There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in the [AVAssetWriterInput](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/1385912-init). There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype) and [settings](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/video_settings_dictionaries). Keep in mind each codec may have different requirements for the settings you provide.
+
 ## Writing Custom Filters
 
-You can easily create your own filters using Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Vibrance --> Sharpen.
+You can easily create your own filters using Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Saturation --> Sharpen.
 
 **Step 1:** Open any test image of your choosing in your photo editor.
 
@@ -484,7 +585,7 @@ You can easily create your own filters using Photoshop, Lightroom presets, [3D L
 
 **Step 4:** Apply the same changes you made on your test image to the lookup.png image and save the result to a new image lookup_example.png. Do not downsize the image or reduce its quality. In some photo editors you can simply copy your adjustment layers from your test image to the lookup image.
 
-**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Vibrance. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
+**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Saturation. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 **Step 5:** Use the below code to create your own SessionFilter subclass that utilizes a LookupFilter operation and your newly created lookup_example.png image. Be sure to add your lookup_example.png image to your Xcode project.
 
