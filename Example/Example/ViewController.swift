@@ -153,20 +153,19 @@ class ViewController: UITableViewController {
             self.activityIndicatorView1.stopAnimating()
             self.activityIndicatorView1.isHidden = true
             
-            guard let session = session else {
+            guard let session = session,
+                let video = session.video else {
                 print("Unable to create session: \(error!)")
                 return
             }
             
             // Set the initial primary filter to Sepulveda
-            session.video!.primaryFilter = SessionFilterSepulveda()
+            video.primaryFilter = SessionFilterSepulveda()
             
-            let segment = session.video!.videoSegments.first!
-            
-            // Set the brightness of the first segment
+            // Apply a brightness filter to the first segment
             let brightnessFilter = SessionFilterBrightness()
             brightnessFilter.normalizedIntensity = 0.2
-            segment.filters = [brightnessFilter]
+            video.videoSegments.first!.filters = [brightnessFilter]
             
             // Initialize the EditController
             let editController = EditController(session: session)
@@ -232,7 +231,8 @@ class ViewController: UITableViewController {
         let asset3 = AVAsset(url: Bundle.main.url(forResource: "test_3", withExtension: "mp4")!)
         
         let _ = Session(assets: [asset1, asset2, asset3], sessionReady: { (session, error) in
-            guard let session = session else {
+            guard let session = session,
+                let video = session.video else {
                 print("Unable to create session: \(error!)")
                 return
             }
@@ -240,24 +240,17 @@ class ViewController: UITableViewController {
             // Mark the session as transient so it does not appear in the users drafts and persist on disk
             session.isTransient = true
             
-            let video = session.video!
-            
-            // Set the primary filter to Melrose
-            video.primaryFilter = SessionFilterMelrose()
-            
             // Set the video frame rate to 60 fps
             video.frameDuration = CMTime(value: 1, timescale: 60)
             
-            let segment = video.videoSegments.first!
-            
-            // Set the saturation of the first segment
+            // Apply a saturation filter to the first segment
             let saturationFilter = SessionFilterSaturation()
             saturationFilter.normalizedIntensity = 0.2
-            segment.filters = [saturationFilter]
+            video.videoSegments[0].filters = [saturationFilter]
             
-            // Trim the first segment to start at one second in with a duration of 3 seconds
-            segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
-            segment.trimDuration = CMTime(seconds: 3, preferredTimescale: segment.duration.timescale)
+            // Apply a pixellate filter to the second segment
+            let pixellateFilter = SessionFilterPixellate()
+            video.videoSegments[1].filters = [pixellateFilter]
             
             // Write to an MP4 file with H.264 video encoding and stereo AAC audio encoding
             
@@ -296,6 +289,10 @@ class ViewController: UITableViewController {
                 }
                 
                 print("Finished video transcode at URL: \(video.exportedVideoURL)")
+                
+                let controller = UIAlertController(title: "Success", message: "Your video has been transcoded", preferredStyle: .alert)
+                controller.addAction(.init(title: "Ok", style: .cancel, handler: nil))
+                self.present(controller, animated: true, completion: nil)
             })
         })
         
