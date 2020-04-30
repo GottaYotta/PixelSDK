@@ -325,13 +325,14 @@ let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "m
 let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
 
 let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
-    guard let session = session else {
+    guard let session = session,
+        let video = session.video else {
         print("Unable to create session: \(error!)")
         return
     }
-
-    // Set the initial primary filter to Wilshire
-    session.video!.primaryFilter = SessionFilterWilshire()
+    
+    // Set the initial primary filter to Sepulveda
+    video.primaryFilter = SessionFilterSepulveda()
 
     let editController = EditController(session: session)
     editController.delegate = self
@@ -357,9 +358,10 @@ session.image!.filters = [brightnessFilter]
 ```
 Applying a saturation filter to a whole video:
 ```swift
+let video = session.video!
 let saturationFilter = SessionFilterSaturation()
 saturationFilter.normalizedIntensity = 0.3
-session.video!.filters = [saturationFilter]
+video.filters = [saturationFilter]
 ```
 Applying a contrast filter to the first segment of a video:
 ```swift
@@ -485,9 +487,9 @@ let videoEncodingSettings: [String: Any] = [
 
 Media files can also be transcoded without using UI.
 
-This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding.
+This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding. 
 
-Additionally, a Melrose filter is applied to the whole video, a saturation filter is applied to the first segment (asset), and the duration of the first segment is trimmed to 3 seconds.
+Additionally, a saturation filter is applied to the first segment (asset), and a pixellate filter is applied to the second segment.
 
 ```swift
 import PixelSDK
@@ -498,32 +500,26 @@ let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "m
 let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
 
 let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
-    guard let session = session else {
+    guard let session = session,
+        let video = session.video else {
         print("Unable to create session: \(error!)")
         return
     }
-
+    
     // Mark the session as transient so it does not appear in the users drafts and persist on disk
     session.isTransient = true
-    
-    let video = session.video!
-    
-    // Set the primary filter to Melrose
-    video.primaryFilter = SessionFilterMelrose()
     
     // Set the video frame rate to 60 fps
     video.frameDuration = CMTime(value: 1, timescale: 60)
     
-    let segment = video.videoSegments.first!
-    
-    // Set the saturation of the first segment
+    // Apply a saturation filter to the first segment
     let saturationFilter = SessionFilterSaturation()
     saturationFilter.normalizedIntensity = 0.2
-    segment.filters = [saturationFilter]
+    video.videoSegments[0].filters = [saturationFilter]
     
-    // Trim the first segment to start at one second in with a duration of 3 seconds
-    segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
-    segment.trimDuration = CMTime(seconds: 3, preferredTimescale: segment.duration.timescale)
+    // Apply a pixellate filter to the second segment
+    let pixellateFilter = SessionFilterPixellate()
+    video.videoSegments[1].filters = [pixellateFilter]
     
     // Write to an MP4 file with H.264 video encoding and stereo AAC audio encoding
     
