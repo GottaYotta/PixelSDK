@@ -133,7 +133,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-When you are ready to move your app out of testing and into production, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
+Lastly, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
 
 ```swift
 import PixelSDK
@@ -573,7 +573,7 @@ You can easily create your own filters using Photoshop, Lightroom presets, [3D L
 
 **Step 3:** Download the original [lookup.png](https://github.com/GottaYotta/PixelSDK/blob/master/lookup.png) image from the repository and open it in your photo editor.
 
-**Step 4:** Apply the same changes you made on your test image to the lookup.png image and save the result to a new image lookup_example.png. Do not downsize the image or reduce its quality. In some photo editors you can simply copy your adjustment layers from your test image to the lookup image.
+**Step 4:** Apply the same changes you made on your test image to the lookup.png image and save the result to a new image lookup_example.png. Do not downsize the lookup image, reduce its quality or change its format. In some photo editors you can simply copy your adjustment layers from your test image to the lookup image.
 
 **Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Saturation. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
@@ -634,7 +634,7 @@ class SessionFilterExample: SessionFilter {
 
 ```
 
-**Step 6:** Include your custom filter in the list of available filters. Do this before your present the ContainerController or EditController.
+**Step 6:** Include your custom filter in the list of available filters. Do this before you present the ContainerController or EditController.
 
 ```swift
 PixelSDK.shared.availablePrimaryFilters = {
