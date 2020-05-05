@@ -29,11 +29,11 @@ enum ShareOption: String {
             case .facebook:
                 return "Facebook"
             case .cameraRoll:
-                return "Camera Roll"
+                return NSLocalizedString("Camera Roll", comment: "Users photo library")
             case .message:
-                return "Message"
+                return NSLocalizedString("Message", comment: "Text messages app name")
             case .mail:
-                return "Mail"
+                return NSLocalizedString("Mail", comment: "Email app name")
             }
         }
     }

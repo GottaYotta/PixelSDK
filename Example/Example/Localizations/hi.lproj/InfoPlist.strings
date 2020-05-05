@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "कैमरा एक्सेस की आवश्यकता है ताकि आप फोटो ले सकें।";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "आस-पास के स्थानों को खोजने के लिए, मानचित्रखोज को चलाते समय आपके स्थान को ऐक्‍सेस करने की आवश्यकता है।";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "माइक्रोफोन एक्सेस की आवश्यकता है ताकि आप ध्वनि के साथ वीडियो रिकॉर्ड कर सकें।";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "फोटो ऐक्‍सेस की आवश्यक है, ताकि आप अपनी लाइब्रेरी से तस्वीरें चुन सकें।";

@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Fotoğraflar çekebilmeniz için kamera erişimi gerekiyor.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Yakındaki konumları aramak için MapSearch'ün çalışırken konumunuza erişmesi gerekiyor.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Sesli videolar kaydedebilmeniz için mikrofon erişimi gerekiyor.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Kütüphaneden fotoğraflar seçebilmeniz için fotoğraf erişimi gerekiyor.";

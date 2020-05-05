@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "写真を撮影するには、カメラへのアクセスを許可していただく必要があります。";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "近くの場所を検索するには、アプリを使用中MapSearchによる現在地へのアクセスを許可していただく必要があります。";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "音声付きの動画を録画するには、マイクへのアクセスを許可していただく必要があります。";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "ライブラリから写真を選択するには、写真へのアクセスを許可していただく必要があります。";

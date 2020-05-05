@@ -1,5 +1,10 @@
 # Changelog
 
+### 5.1.0 - 4/28/20
+&bull; Added localizations
+&bull; Preload albums to eliminate loading delay on LibraryController
+&bull; Fix bug where navigation bar would briefly appear when adding a segment
+
 ### 5.0.0 - 4/28/20
 &bull; Added transcoder examples  
 &bull; Improved Session initializer error reporting

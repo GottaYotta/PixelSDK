@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "נדרשת גישה למצלמה לצילום תמונות.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "כדי לחפש במיקומים הקרובים, MapSearch צריך לגשת למיקומך בעת הפעלתו.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "נדרשת גישה למצלמה להקלטת וידאו עם צליל.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "נדרשת גישה לתמונות לבחירת תמונות מהספרייה.";

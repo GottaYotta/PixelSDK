@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Za snimanje fotografija potreban je pristup fotoaparatu.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Za traženje mjesta u blizini MapSearch tijekom rada treba pristup vašoj lokaciji.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Za snimanje zvučnog videozapisa potreban je pristup mikrofonu.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Za odabir fotografija iz galerije potreban je pristup fotografijama.";

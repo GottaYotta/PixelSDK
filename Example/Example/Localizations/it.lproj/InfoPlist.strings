@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Devi concedere l'accesso alla fotocamera per poter scattare foto.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Per cercare località vicine, MapSearch deve accedere alla tua posizione quando è in funzione.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Devi concedere l'accesso al microfono per poter registrare video con audio.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Devi concedere l'accesso a Foto per poter selezionare le foto dalla libreria.";

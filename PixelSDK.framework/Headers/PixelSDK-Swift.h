@@ -872,11 +872,12 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// brightnessFilter.normalizedIntensity = 0.2
 /// session.image!.filters = [brightnessFilter]
 ///
-/// \endcodeApplying a vibrance filter to a whole video:
+/// \endcodeApplying a saturation filter to a whole video:
 /// \code
-/// let vibranceFilter = SessionFilterVibrance()
-/// vibranceFilter.normalizedIntensity = 0.3
-/// session.video!.filters = [vibranceFilter]
+/// let video = session.video!
+/// let saturationFilter = SessionFilterSaturation()
+/// saturationFilter.normalizedIntensity = 0.3
+/// video.filters = [saturationFilter]
 ///
 /// \endcodeApplying a contrast filter to the first segment of a video:
 /// \code

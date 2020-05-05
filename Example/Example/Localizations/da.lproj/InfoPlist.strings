@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Kameraadgang er nødvendig, så du kan tage fotos.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "For at søge efter steder i nærheden skal MapSearch have adgang til din placering, når du kører.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Mikrofonadgang er nødvendig, så du kan optage video med lyd.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Fotoadgang er nødvendig, så du kan vælge fotos fra dit bibliotek.";

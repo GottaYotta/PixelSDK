@@ -1,0 +1,39 @@
+/* Leave the word "Controller" in English. Pressing this button displays only the Photo Camera. */
+"IZf-Ly-I7R.text" = "Solo Controller de cámara de fotos";
+
+/* Pressing this button displays the photo/video editing app, but only square photos and videos can be made. */
+"Fw1-22-PyF.text" = "Solo contenido cuadrado";
+
+
+/* Leave the words "View Controller" in English. Pressing this button displays the app with a custom page (view controller) of the users choosing. */
+"AGa-2P-QRZ.text" = "View Controller personalizado barra pestañas";
+
+/* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom video. "w/" means "with". */
+"Nnc-SY-1Ea.text" = "Editar Controller con Session de vídeo perso.";
+
+/* Pressing this button converts one video to a new video. "w/" means "with". Here is the wikipedia article for "transcoding" which may help (the article is available in multiple languages): https://en.wikipedia.org/wiki/Transcoding */
+"Pk2-Ni-R1O.text" = "Transcodificar vídeo con filtros";
+
+/* Pressing this button displays the app with photo/video filters that have visual effects. Like face filters or funny distortion filters. */
+"WB5-2L-DZi.text" = "Editor completo con filtros de efecto visual";
+
+/* Leave the word "Controller" in English. Pressing this button displays only the users library so they can select photos or videos. */
+"WEw-Vd-cOv.text" = "Solo Controller de biblioteca";
+
+/* Pressing this button displays the app with only access to videos, and not any images. */
+"hh8-hJ-zGp.text" = "Solo contenido de vídeo";
+
+/* Pressing this button displays the app with only access to images, and not any videos. */
+"l5d-Xh-mEz.text" = "Solo contenido de imagen";
+
+/* Pressing this button displays the app with photo/video filters that have been customized. */
+"pC5-25-Msg.text" = "Editor completo con filtros personalizados";
+
+/* Leave the word "Controller" in English. Pressing this button displays only the Video Camera. */
+"r5S-2b-my1.text" = "Solo Controller de cámara de vídeo";
+
+/* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom image. "w/" means "with". */
+"ta1-D0-g0P.text" = "Editar Controller con Session de imagen pers.";
+
+/* Leave the word "Insta" in English. Pressing this button displays the app with photo/video filters that are like Instagram filters. */
+"z19-hF-Xnu.text" = "Editor completo con filtros de Insta";

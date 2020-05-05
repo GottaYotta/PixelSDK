@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Přístup k fotoaparátu je nutný, abyste mohli pořizovat fotografie.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Chcete-li vyhledávat místa v okolí, musí mít MapSearch přístup k vaší poloze.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Přístup k mikrofonu je nutný k tomu, abyste mohli nahrávat video se zvukem.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Přístup k fotografiím je nutný k tomu, abyste si mohli vybírat fotografie z knihovny.";

@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Er is toegang tot de camera nodig zodat je foto's kan nemen.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Om te zoeken naar locaties in de buurt heeft MapSearch toegang tot je locatie nodig als je hardloopt.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Er is toegang tot de microfoon nodig zodat je video's met geluid kunt opnemen.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Er is toegang tot de fotobibliotheek nodig zodat je foto's uit je bibliotheek kunt selecteren.";

@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Der Kamerazugriff ist erforderlich, damit Sie Fotos aufnehmen können.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Um nach Orten in der Nähe suchen zu können, muss MapSearch beim Ausführen auf Ihre Standortdaten  zugreifen.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Der Mikrofonzugriff ist erforderlich, damit Sie Videos mit Ton aufnehmen können.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Der Fotozugriff ist erforderlich, damit Sie Fotos aus Ihren Aufnahmen auswählen können.";

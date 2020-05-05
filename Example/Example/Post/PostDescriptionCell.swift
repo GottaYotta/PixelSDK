@@ -36,6 +36,8 @@ class PostDescriptionCell: ExpandingTextViewCell {
         super.awakeFromNib()
         
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(ges:))))
+        
+        self.descriptionPlaceholderLabel.text = NSLocalizedString("Add a description", comment: "Text field to enter a description")
     }
     
     @objc func tapped(ges: UIGestureRecognizer) {

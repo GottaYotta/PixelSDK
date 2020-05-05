@@ -56,7 +56,9 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Share Directly to Facebook, Instagram or Twitter.
 
-✅ Custom Colors, Dark Mode, and Dynamic Type Accessibility Support.
+✅ Custom Colors and Dark Mode Support.
+
+✅ Localized in 40+ [Languages](https://github.com/GottaYotta/PixelSDK/blob/master/LANGUAGES.md) and Dynamic Type Accessibility Support.
 
 ✅ Import Photos and Videos from DSLR Camera. Lightning to USB Cable Required.
 
@@ -376,7 +378,7 @@ let segment = session.video!.videoSegments.first!
 segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
 segment.trimDuration = CMTime(seconds: 2, preferredTimescale: segment.duration.timescale)
 ```
-Changing the orientation of a segment:
+Changing the orientation of the first segment of a video:
 ```swift
 let segment = session.video!.videoSegments.first!
 segment.preferredTransform = .rotated180Degrees(segment.naturalSize)

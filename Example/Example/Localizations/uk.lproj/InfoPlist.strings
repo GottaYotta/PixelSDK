@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Щоб знімати фото, потрібен доступ до камери.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Щоб шукати розташування поблизу, MapSearch потрібен доступ до вашого розташування під час роботи.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Щоб записувати відео зі звуком, потрібен доступ до мікрофона.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Щоб вибирати фото зі своєї бібліотеки, потрібен доступ до фото.";

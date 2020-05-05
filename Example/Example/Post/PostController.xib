@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
                 <outlet property="navBarHeightConstraint" destination="D1f-Ck-1vW" id="Eyr-lu-L5n"/>
                 <outlet property="navBarView" destination="oAM-4v-F4p" id="qJ3-cr-yiK"/>
                 <outlet property="tableView" destination="pVU-ge-HNI" id="DkQ-Z6-BzM"/>
+                <outlet property="titleLabel" destination="Eaz-Og-kIb" id="2cH-es-dHQ"/>
                 <outlet property="uploadPostButton" destination="1PZ-6O-POk" id="bV8-Vb-S2z"/>
                 <outlet property="uploadPostButtonContainer" destination="uXW-mn-iht" id="jRx-uz-7pM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sym-u9-JXV"/>
@@ -60,10 +61,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5p-b1-n79">
-                            <rect key="frame" x="-5" y="13" width="105" height="64"/>
+                            <rect key="frame" x="0.0" y="13" width="100" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="64" id="BfZ-Lz-X6E"/>
-                                <constraint firstAttribute="width" constant="105" id="z21-5n-2nT"/>
+                                <constraint firstAttribute="width" constant="100" id="z21-5n-2nT"/>
                             </constraints>
                             <state key="normal">
                                 <color key="titleColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -77,7 +78,7 @@
                     <constraints>
                         <constraint firstItem="Eaz-Og-kIb" firstAttribute="top" secondItem="oAM-4v-F4p" secondAttribute="topMargin" constant="26.5" id="269-ic-lht"/>
                         <constraint firstItem="u5p-b1-n79" firstAttribute="top" secondItem="oAM-4v-F4p" secondAttribute="topMargin" constant="5" id="6FB-2p-UeQ"/>
-                        <constraint firstItem="u5p-b1-n79" firstAttribute="leading" secondItem="oAM-4v-F4p" secondAttribute="leading" constant="-5" id="BQI-wk-Jq3"/>
+                        <constraint firstItem="u5p-b1-n79" firstAttribute="leading" secondItem="oAM-4v-F4p" secondAttribute="leading" id="BQI-wk-Jq3"/>
                         <constraint firstAttribute="height" constant="275" id="D1f-Ck-1vW"/>
                         <constraint firstItem="1FF-ll-XKH" firstAttribute="leading" secondItem="oAM-4v-F4p" secondAttribute="leading" constant="8" id="LVh-xK-Y70"/>
                         <constraint firstItem="mm0-lE-BMn" firstAttribute="leading" secondItem="oAM-4v-F4p" secondAttribute="leading" id="iZE-8s-awK"/>
