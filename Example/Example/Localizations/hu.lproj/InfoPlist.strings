@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Fotók készítéséhez hozzáférésre van szükségünk a kamerához.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "A közeli helyek kereséséhez a MapSearch-nek működés közben hozzáférésre van szüksége az Ön tartózkodási helyéhez.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Hangos videók rögzítéséhez hozzáférésre van szükségünk a mikrofonhoz.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Fotók mappából való kiválasztásához hozzáférésre van szükségünk a fotóihoz.";

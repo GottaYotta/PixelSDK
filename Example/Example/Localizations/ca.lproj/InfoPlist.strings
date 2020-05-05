@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Cal que permetis l'accés a la càmera per poder fer fotos.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Per cercar ubicacions properes, MapSearch necessita tenir accés a la ubicació mentre s'estigui executant.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Cal que permetis l'accés al micròfon per poder enregistrar vídeos amb so.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Cal que permetis l'accés a les fotos per poder seleccionar fotos de la biblioteca.";

@@ -50,7 +50,7 @@ class PostTagLocationCell: UITableViewCell, SearchControllerDelegate {
             self.pinImageView.image = UIImage(named: "cam_upload_cross")
         }
         else {
-            self.locationLabel.text = "Tag a location"
+            self.locationLabel.text = NSLocalizedString("Tag a location", comment: "Select a location button")
             if #available(iOS 13, *) {
                 self.locationLabel.textColor = .placeholderText
                 self.pinImageView.tintColor = .placeholderText

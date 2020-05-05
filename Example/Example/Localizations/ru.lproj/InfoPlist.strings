@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Доступ к камере необходим для фотосъёмки.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Для поиска мест рядом MapSearch необходим доступ к вашему местоположению.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Доступ к микрофону необходим для записи видео со звуком.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Доступ к фотографиям необходим для выбора фотографий из библиотеки.";

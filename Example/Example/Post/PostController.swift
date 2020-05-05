@@ -24,6 +24,7 @@ class PostController: UIViewController {
     
     @IBOutlet private var navBarView: UIView!
     @IBOutlet private var navBarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var titleLabel: UILabel!
     
     @IBOutlet private var uploadPostButtonContainer: UIView!
     @IBOutlet private var uploadPostButton: UIButton!
@@ -101,6 +102,9 @@ class PostController: UIViewController {
         if let view = self.view as? TouchDetectionView {
             view.delegate = self
         }
+        
+        self.uploadPostButton.setTitle(NSLocalizedString("Share post", comment: "Share photo or video button"), for: .normal)
+        self.titleLabel.text = NSLocalizedString("Share", comment: "Share Title")
     }
     
     override func viewWillAppear(_ animated: Bool) {

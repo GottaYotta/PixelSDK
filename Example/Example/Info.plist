@@ -29,7 +29,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access is needed so you can take photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To search for nearby locations, MapSearch needs access to the user's location when running.</string>
+	<string>To search for nearby locations, MapSearch needs to access your location when running.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone access is needed so you can record video with sound.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

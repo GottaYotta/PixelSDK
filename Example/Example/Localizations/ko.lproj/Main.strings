@@ -1,0 +1,39 @@
+/* Leave the word "Controller" in English. Pressing this button displays only the Photo Camera. */
+"IZf-Ly-I7R.text" = "사진 카메라 Controller만";
+
+/* Pressing this button displays the photo/video editing app, but only square photos and videos can be made. */
+"Fw1-22-PyF.text" = "정사각형 콘텐츠만";
+
+
+/* Leave the words "View Controller" in English. Pressing this button displays the app with a custom page (view controller) of the users choosing. */
+"AGa-2P-QRZ.text" = "탭 표시줄의 사용자 지정 View Controller";
+
+/* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom video. "w/" means "with". */
+"Nnc-SY-1Ea.text" = "사용자 지정 동영상 Session을 사용한 편집 Controller";
+
+/* Pressing this button converts one video to a new video. "w/" means "with". Here is the wikipedia article for "transcoding" which may help (the article is available in multiple languages): https://en.wikipedia.org/wiki/Transcoding */
+"Pk2-Ni-R1O.text" = "필터를 사용한 동영상 트랜스코드";
+
+/* Pressing this button displays the app with photo/video filters that have visual effects. Like face filters or funny distortion filters. */
+"WB5-2L-DZi.text" = "시각적 효과 필터를 사용한 전체 편집기";
+
+/* Leave the word "Controller" in English. Pressing this button displays only the users library so they can select photos or videos. */
+"WEw-Vd-cOv.text" = "보관함 Controller만";
+
+/* Pressing this button displays the app with only access to videos, and not any images. */
+"hh8-hJ-zGp.text" = "동영상 콘텐츠만";
+
+/* Pressing this button displays the app with only access to images, and not any videos. */
+"l5d-Xh-mEz.text" = "이미지 콘텐츠만";
+
+/* Pressing this button displays the app with photo/video filters that have been customized. */
+"pC5-25-Msg.text" = "사용자 지정 필터를 사용한 전체 편집기";
+
+/* Leave the word "Controller" in English. Pressing this button displays only the Video Camera. */
+"r5S-2b-my1.text" = "동영상 카메라 Controller만";
+
+/* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom image. "w/" means "with". */
+"ta1-D0-g0P.text" = "사용자 지정 이미지 Session을 사용한 편집 Controller";
+
+/* Leave the word "Insta" in English. Pressing this button displays the app with photo/video filters that are like Instagram filters. */
+"z19-hF-Xnu.text" = "Insta 필터를 사용한 전체 편집기";

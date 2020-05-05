@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Valokuvien ottamiseen tarvitaan kameran käyttöoikeus.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Karttahaku tarvitsee sijaintitietojen käyttöoikeuden, jotta voit hakea lähellä olevia sijainteja.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Ääntä sisältävien videoiden tallentamiseen tarvitaan mikrofonin käyttöoikeus.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Valokuvien valitsemiseen kirjastosta tarvitaan valokuvien käyttöoikeus.";

@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "사진을 촬영하려면 카메라 접근 권한이 필요합니다.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "근처의 위치를 검색하려면 실행 시 MapSearch가 사용자의 위치에 접근해야 합니다.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "소리가 포함된 동영상을 녹화하려면 마이크 접근 권한이 필요합니다.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "보관함에서 사진을 선택하려면 사진 접근 권한이 필요합니다.";

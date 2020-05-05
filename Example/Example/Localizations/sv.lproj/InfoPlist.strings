@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Åtkomst till kameran behövs för att ta foton.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "MapSearch behöver platsåtkomst när den körs för att kunna söka närliggande platser.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Åtkomst till mikrofonen behövs för att spela in videor med ljud.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Åtkomst till bilder behövs för att välja foton från dit galleri.";

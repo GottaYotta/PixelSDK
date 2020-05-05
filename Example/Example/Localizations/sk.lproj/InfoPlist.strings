@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Na fotografovanie musíte povoliť prístup k fotoaparátu.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Ak chcete hľadať miesta v okolí, počas práce s aplikáciou potrebuje MapSearch prístup k vašej polohe.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Na nahrávanie videa so zvukom musíte povoliť prístup k mikrofónu.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Na výber fotografií z knižnice musíte povoliť prístup k fotografiám.";

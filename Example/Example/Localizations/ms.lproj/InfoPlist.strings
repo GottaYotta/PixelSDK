@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Akses kamera diperlukan supaya anda boleh mengambil foto.";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "Untuk mencari lokasi berdekatan, MapSearch perlu mengakses lokasi anda semasa sedang berfungsi.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "Akses mikrofon diperlukan supaya anda boleh merakam video dengan bunyi.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Akses foto diperlukan supaya anda boleh memilih foto daripada pustaka anda.";

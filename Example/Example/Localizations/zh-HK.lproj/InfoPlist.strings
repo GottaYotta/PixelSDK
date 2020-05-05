@@ -1,0 +1,8 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "必須允許使用相機，方可拍照。";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "MapSearch 需要在運作時取得你的位置，方可搜尋附近地點。";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "必須允許使用咪高風，方可在錄影時收音。";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "必須允許存取相片，方可從媒體庫選取相片。";
