@@ -6,31 +6,27 @@ Pixel SDK is a photo and video editing framework written in Swift.
 </p>
 
 - [Features](#features)
-- [Installation](#installation)
-    * [CocoaPods](#cocoapods)
-- [Setup](#setup)
 - [Getting Started](#getting-started)
-    * [Changing Filters](#changing-filters)
-    * [Restricting the Editor](#restricting-the-editor)
-        + [Images Only](#images-only)
-        + [Videos Only](#videos-only)
-        + [Square Content Only](#square-content-only)
-        + [Library Only](#library-only)
-        + [Camera Only](#camera-only)
-    * [Setting Maximum Video Duration](#setting-maximum-video-duration)
-    * [Presenting the EditController](#presenting-the-editcontroller)
-    * [Programmatic Editing](#programmatic-editing)
-- [Exporting Media](#exporting-media)
+    * [CocoaPods](#cocoapods)
+- [Restrict the SDK](#restrict-the-sdk)
+    * [Images Only](#images-only)
+    * [Videos Only](#videos-only)
+    * [Square Content Only](#square-content-only)
+    * [Library Only](#library-only)
+    * [Camera Only](#camera-only)
+- [Present the Editor](#present-the-editor)
+- [Programmatic Editing](#programmatic-editing)
+- [Export Media](#export-media)
     * [Image Exports](#image-exports)
     * [Video Exports](#video-exports)
     * [Encoding Settings](#encoding-settings)
-- [Transcoding Media](#transcoding-media)
-- [Writing Custom Filters](#writing-custom-filters)
-- [Customizing Colors](#customizing-colors)
+- [Transcode Media](#transcode-media)
+- [Write Custom Filters](#write-custom-filters)
+- [Customize Colors](#customize-colors)
 - [License](#license)
 
 ## Features
-✅ Fully Customizable Filters w/ 20+ Included Filters and Visual Effects
+✅ Fully Customizable Filters with 40+ Included Filters and Visual Effects
 
 ✅ Vine Style Video Camera
 
@@ -76,7 +72,10 @@ Pixel SDK is a photo and video editing framework written in Swift.
 - iPhone and iOS 11+
 - Xcode 10.2+
 
-## Installation
+## Getting Started
+
+**Note:** Extensive sample code can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
+<getting-started-supplement>
 
 ### CocoaPods
 
@@ -104,7 +103,6 @@ Include the following lines in your application Info.plist:
 <key>NSCameraUsageDescription</key>
 <string>Camera access is needed so you can take photos.</string>
 ```
-**Note:** More extensive examples can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 Import PixelSDK into the file you are working on.
 
@@ -112,7 +110,7 @@ Import PixelSDK into the file you are working on.
 import PixelSDK
 ```
 
-Present the full editor in response to a user action, for example, clicking a button. The default primary filters and adjustment filters will be used. The editor will support both photo and video of any dimension with access to both the camera and library.
+Present the SDK in response to a user action, for example, clicking a button. The default primary filters and adjustment filters will be used. The SDK will support both photo and video of any dimension with access to both the camera and library.
 ```swift
 let container = ContainerController()
 container.editControllerDelegate = self
@@ -123,7 +121,7 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-Also implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on. You can then use the  `session` parameter to [export your photo or video](#exporting-media) at your own convenience.
+Also implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on. You can then use the  `session` parameter to [export your photo or video](#export-media) at your own convenience.
 ```swift
 extension ViewController: EditControllerDelegate {
 
@@ -135,7 +133,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-Lastly, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate.
+Lastly, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. Keep your API key private.
 
 ```swift
 import PixelSDK
@@ -148,62 +146,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
- Keep your API key private. If you do not provide an API key or it is invalid, the VideoExporter and ImageExporter will export with a watermark.
+Optionally, you can also specify a maximum video duration. By default the maximum video duration is 80 seconds.
 
+ ```swift
+ // Set the maximum video duration to 3 minutes.
+ PixelSDK.shared.maxVideoDuration = 60*3
+ ```
+ 
+ That's it! You now have full access to the SDK.
 
-## Getting Started
+## Restrict the SDK
+### Images Only
 
-**Note:** More extensive examples can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
-<getting-started-supplement>
-### Changing Filters
-
-You can change the primary and adjustment filters. If you do change filters, make sure you do so before any controllers are presented.
-
-A full list of available filters can be found in the [documentation](https://www.pixelsdk.com/docs/latest/) sidebar.
-
-Primary filters are used on the Filter tab of the EditController and are also available on the CameraController.
-
-The below example changes the primary filters:
-```swift
-PixelSDK.shared.availablePrimaryFilters = {
-    [
-        SessionFilterWilshire(),
-        SessionFilterMontana(),
-        SessionFilterSanVicente(),
-        SessionFilterMelrose(),
-        SessionFilterSepulveda(),
-        SessionFilterLaCienega(),
-        SessionFilterAbbotKinney(),
-        SessionFilterMulholland(),
-        SessionFilterSunset()
-    ]
-}
-```
-Adjustment filters are used on the Adjust tab of the EditController.
-
-The below example changes the adjustment filters:
-```swift
-PixelSDK.shared.availableAdjustFilters = {
-    [
-        SessionFilterBrightness(),
-        SessionFilterVibrance(),
-        SessionFilterSaturation(),
-        SessionFilterContrast(),
-        SessionFilterExposure(),
-        SessionFilterHue(),
-        SessionFilterWarmth(),
-        SessionFilterSharpness(),
-        SessionFilterGamma(),
-        SessionFilterHighlights(),
-        SessionFilterShadows()
-    ]
-}
-```
-
-### Restricting the Editor
-#### Images Only
-
-The below example shows how to present the editor with only support for images. The user will have access to both the library and camera.
+The below example presents the SDK with only support for images. The user will have access to both the library and camera.
 ```swift
 // Show only the library and photo camera modes in the tab bar
 let container = ContainerController(modes: [.library, .photo])
@@ -220,9 +175,9 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-#### Videos Only
+### Videos Only
 
-The below example shows how to present the editor with only support for videos. The user will have access to both the library and camera.
+The below example presents the SDK with only support for videos. The user will have access to both the library and camera.
 ```swift
 // Show only the library and video camera modes in the tab bar
 let container = ContainerController(modes: [.library, .video])
@@ -239,9 +194,9 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-#### Square Content Only
+### Square Content Only
 
-The below example shows how to present the editor with only support for creating square photos and videos. The user will have access to both the library and camera.
+The below example presents the SDK with only support for creating square photos and videos. The user will have access to both the library and camera.
 ```swift
 let container = ContainerController()
 container.editControllerDelegate = self
@@ -260,9 +215,9 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-#### Library Only
+### Library Only
 
-The below example show how to present the editor with only support for the library.
+The below example presents the SDK with only support for the library.
 ```swift
 let container = ContainerController(mode: .library)
 container.editControllerDelegate = self
@@ -272,9 +227,9 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-#### Camera Only
+### Camera Only
 
-The below example show how to present the editor with only support for the video camera.
+The below example presents the SDK with only support for the video camera.
 ```swift
 let container = ContainerController(mode: .video)
 container.editControllerDelegate = self
@@ -284,25 +239,16 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-### Setting Maximum Video Duration
+## Present the Editor
 
-By default the maximum video duration is 80 seconds. You can change this to any duration you want.
-
-```swift
-// Set the maximum video duration to 3 minutes.
-PixelSDK.shared.maxVideoDuration = 60*3
-```
-
-### Presenting the EditController
-
-If you do not wish to use the ContainerController with the LibraryController or CameraController, you may opt to present only the EditController.
+The camera and library can be bypassed by presenting the EditController with your own media.
 
 <p align="center">
 <img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_2_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>
 </p>
 
-#### Images
-The below example presents the EditController with an image named "test_image" and sets the initial primary filter to SessionFilterWilshire.
+### Images
+The below example presents the EditController with an image named "test_image" and sets the initial primary filter to Wilshire.
 
 ```swift
 let image = UIImage(named: "test_image")!
@@ -317,10 +263,10 @@ let nav = UINavigationController(rootViewController: editController)
 nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
-#### Videos
-You may also present the EditController with AVAssets. The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to SessionFilterWilshire. These two assets will become segments of the video in their respective order.
+### Videos
+The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to Sepulveda. These two assets will become segments of the video in their respective order.
 
-The session video will automatically inherit its renderSize from the actualSize of the first segment, unless you manually pass a renderSize into the Session initializer. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
+You can also manually pass a renderSize into the Session initializer. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
 ```swift
 let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
@@ -345,8 +291,8 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
 })
 ```
 
-### Programmatic Editing
-If you choose to do so, you may make changes to a session programmatically. This is usually not necessary since changes can just be made visually with the EditController.
+## Programmatic Editing
+Images and videos can also be edited programmatically instead of visually. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
 For example, setting the primaryFilter of an image:
 ```swift
@@ -385,14 +331,13 @@ segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 segment.cropRect = segment.suggestedCropRect()
 ```
 
-After making programmatic changes to a session, you should manually call `session.save()`.
+You can present the EditController after making programmatic edits and it will reflect your changes.
 
-If you make programmatic changes to a session that is currently displayed by an EditController it may result in undocumented behavior.
+After making programmatic edits to a session, you should manually call `session.save()`.
 
+## Export Media
 
-## Exporting Media
-
-#### Image Exports
+### Image Exports
 
 The below example demonstrates exporting an image:
 ```swift
@@ -407,9 +352,9 @@ if let image = session.image {
     })
 }
 ```
-In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After your export has completed, you may move, copy or delete this file. When you are finished, you should call `session.destroy()` in order to remove the image from the users drafts.
+In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After the export has completed, you may move, copy or delete this file. When you are finished, you should call `session.destroy()` in order to remove the image from the users drafts.
 
-#### Video Exports
+### Video Exports
 
 The below example demonstrates exporting a video. Characteristics such as frame rate can be set directly on the video.
 ```swift
@@ -426,7 +371,7 @@ if let video = session.video {
     })
 }
 ```
-After your export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.  When you are finished, you should call `session.destroy()` in order to remove the video from the users drafts.
+After the export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.  When you are finished, you should call `session.destroy()` in order to remove the video from the users drafts. 
 
 Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
@@ -434,7 +379,7 @@ You can also change  `video.renderSize` but we recommend you instead set the Pre
 
 Export functions are subject to the following [pricing](https://www.pixelsdk.com/#pricing). If you do not provide an API key or it is invalid, exported images and videos will include a watermark. You can generate an API key [here](https://www.pixelsdk.com/dashboard/api-keys/).
 
-#### Encoding Settings
+### Encoding Settings
 
 If you do not customize the video and audio encoding settings, the default settings will be an mp4 file with H.264 video encoding and stereo AAC audio encoding:
 ```swift
@@ -469,7 +414,7 @@ VideoExporter.shared.export(video: session.video!,
                             completion: { error in
 })
 ```
-There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in the [AVAssetWriterInput](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/1385912-init). There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype) and [settings](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/video_settings_dictionaries). Keep in mind each codec may have different requirements for the settings you provide.
+There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/Headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
 
 Below is an example of HEVC video encoding settings:
 ```swift
@@ -485,7 +430,7 @@ let videoEncodingSettings: [String: Any] = [
 ]
 ```
 
-## Transcoding Media
+## Transcode Media
 
 Media files can also be transcoded without using UI.
 
@@ -563,11 +508,11 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
 
 After your transcode has completed, you may move, copy or delete the file found at the video.exportedVideoURL.
 
-There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in the [AVAssetWriterInput](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/1385912-init). There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype) and [settings](https://developer.apple.com/documentation/avfoundation/avassetwriterinput/video_settings_dictionaries). Keep in mind each codec may have different requirements for the settings you provide.
+There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/Headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
 
-## Writing Custom Filters
+## Write Custom Filters
 
-You can easily create your own filters using Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Saturation --> Sharpen.
+Easily create your own filters with Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Saturation --> Sharpen.
 
 **Step 1:** Open any test image of your choosing in your photo editor.
 
@@ -657,9 +602,9 @@ PixelSDK.shared.availablePrimaryFilters = {
 
 That's it! Enjoy your new custom filter.
 
-## Customizing Colors
+## Customize Colors
 
-You can customize UI colors in the framework by adding color assets to your asset catalog:
+Customize UI colors in the framework by adding color assets to your asset catalog:
 
 <img src="https://www.cdn.pixelsdk.com/assets/img/docs/add_color_asset.jpg" alt="Add Color Asset" width="341" height="auto" class="docs-screenshot"/>
 
