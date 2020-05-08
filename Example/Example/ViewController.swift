@@ -162,7 +162,7 @@ class ViewController: UITableViewController {
             // Set the initial primary filter to Sepulveda
             video.primaryFilter = SessionFilterSepulveda()
             
-            // Apply a brightness filter to the first segment
+            // Apply a Brightness filter to the first segment
             let brightnessFilter = SessionFilterBrightness()
             brightnessFilter.normalizedIntensity = 0.2
             video.videoSegments.first!.filters = [brightnessFilter]
@@ -243,12 +243,12 @@ class ViewController: UITableViewController {
             // Set the video frame rate to 60 fps
             video.frameDuration = CMTime(value: 1, timescale: 60)
             
-            // Apply a saturation filter to the first segment
+            // Apply a Saturation filter to the first segment
             let saturationFilter = SessionFilterSaturation()
             saturationFilter.normalizedIntensity = 0.2
             video.videoSegments[0].filters = [saturationFilter]
             
-            // Apply a pixellate filter to the second segment
+            // Apply a Pixellate filter to the second segment
             let pixellateFilter = SessionFilterPixellate()
             video.videoSegments[1].filters = [pixellateFilter]
             

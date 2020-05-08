@@ -404,19 +404,18 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, closed) {
 /// let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
 /// let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
 ///
-/// let _ = Session(assets: [asset1, asset2], sessionReady: { (session, success) in
-///     if success {
-///         let editController = EditController(session: session)
-///         editController.delegate = self
+/// let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
+///     guard let session = session else {
+///         print("Unable to create session: \(error!)")
+///         return
+///     }
 ///
-///         let nav = UINavigationController(rootViewController: editController)
-///         nav.modalPresentationStyle = .fullScreen
-///         self.present(nav, animated: true, completion: nil)
-///     }
-///     else {
-///         print("ERROR: Unable to create session")
-///         session.destroy()
-///     }
+///     let editController = EditController(session: session)
+///     editController.delegate = self
+///
+///     let nav = UINavigationController(rootViewController: editController)
+///     nav.modalPresentationStyle = .fullScreen
+///     self.present(nav, animated: true, completion: nil)
 /// })
 ///
 /// \endcodeFilters under the Filter or Adjust tabs may be changed by setting the <code>PixelSDK.availablePrimaryFilters</code> <code>PixelSDK.availableAdjustFilters</code> variables respectively.
@@ -861,18 +860,18 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// note:
 /// Some delegate calls may explicitly state that a session should not yet be destroyed.
 /// <h3>Modifying Sessions</h3>
-/// If you choose to do so, you may make changes to a session programmatically. This is usually not necessary since changes can just be made visually with the <code>EditController</code>.
+/// Sessions can also be edited programmatically instead of visually.
 /// For example, setting the primaryFilter of an image:
 /// \code
 /// session.image!.primaryFilter = SessionFilterWilshire()
 ///
-/// \endcodeApplying a brightness filter to an image:
+/// \endcodeApplying a Brightness filter to an image:
 /// \code
 /// let brightnessFilter = SessionFilterBrightness()
 /// brightnessFilter.normalizedIntensity = 0.2
 /// session.image!.filters = [brightnessFilter]
 ///
-/// \endcodeApplying a saturation filter to a whole video:
+/// \endcodeApplying a Saturation filter to a whole video:
 /// \code
 /// let video = session.video!
 /// let saturationFilter = SessionFilterSaturation()
@@ -892,7 +891,14 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
 /// segment.trimDuration = CMTime(seconds: 2, preferredTimescale: segment.duration.timescale)
 ///
-/// \endcodeAfter making programmatic changes to a session, you should manually call <code>save()</code>.
+/// \endcodeChanging the orientation of the first segment of a video:
+/// \code
+/// let segment = session.video!.videoSegments.first!
+/// segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
+/// segment.cropRect = segment.suggestedCropRect()
+///
+/// \endcodeYou can present the <code>EditController</code> after making programmatic edits and it will reflect your changes.
+/// After making programmatic edits to a session, you should manually call <code>session.save()</code>.
 /// warning:
 /// If you make programmatic changes to a session that is currently displayed by an <code>EditController</code> it may result in undocumented behavior.
 /// <h3>Exporting Session Media</h3>
