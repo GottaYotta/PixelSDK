@@ -298,20 +298,20 @@ For example, setting the primaryFilter of an image:
 ```swift
 session.image!.primaryFilter = SessionFilterWilshire()
 ```
-Applying a brightness filter to an image:
+Applying a Brightness filter to an image:
 ```swift
 let brightnessFilter = SessionFilterBrightness()
 brightnessFilter.normalizedIntensity = 0.2
 session.image!.filters = [brightnessFilter]
 ```
-Applying a saturation filter to a whole video:
+Applying a Saturation filter to a whole video:
 ```swift
 let video = session.video!
 let saturationFilter = SessionFilterSaturation()
 saturationFilter.normalizedIntensity = 0.3
 video.filters = [saturationFilter]
 ```
-Applying a contrast filter to the first segment of a video:
+Applying a Contrast filter to the first segment of a video:
 ```swift
 let segment = session.video!.videoSegments.first!
 let contrastFilter = SessionFilterContrast()
@@ -330,7 +330,6 @@ let segment = session.video!.videoSegments.first!
 segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 segment.cropRect = segment.suggestedCropRect()
 ```
-
 You can present the EditController after making programmatic edits and it will reflect your changes.
 
 After making programmatic edits to a session, you should manually call `session.save()`.
@@ -436,7 +435,7 @@ Media files can also be transcoded without using UI.
 
 This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding. 
 
-Additionally, a saturation filter is applied to the first segment (asset), and a pixellate filter is applied to the second segment.
+Additionally, a Saturation filter is applied to the first segment (asset), and a Pixellate filter is applied to the second segment.
 
 ```swift
 import PixelSDK
@@ -459,12 +458,12 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
     // Set the video frame rate to 60 fps
     video.frameDuration = CMTime(value: 1, timescale: 60)
     
-    // Apply a saturation filter to the first segment
+    // Apply a Saturation filter to the first segment
     let saturationFilter = SessionFilterSaturation()
     saturationFilter.normalizedIntensity = 0.2
     video.videoSegments[0].filters = [saturationFilter]
     
-    // Apply a pixellate filter to the second segment
+    // Apply a Pixellate filter to the second segment
     let pixellateFilter = SessionFilterPixellate()
     video.videoSegments[1].filters = [pixellateFilter]
     
