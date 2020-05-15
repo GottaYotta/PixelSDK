@@ -40,7 +40,6 @@ class ViewController: UITableViewController {
         
         let container = ContainerController()
         container.editControllerDelegate = self
-        container.cameraController.faceUpModeAvailable = false
         
         let nav = UINavigationController(rootViewController: container)
         nav.modalPresentationStyle = .fullScreen
