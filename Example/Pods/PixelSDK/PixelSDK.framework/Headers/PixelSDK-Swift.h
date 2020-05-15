@@ -878,7 +878,7 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// saturationFilter.normalizedIntensity = 0.3
 /// video.filters = [saturationFilter]
 ///
-/// \endcodeApplying a contrast filter to the first segment of a video:
+/// \endcodeApplying a Contrast filter to the first segment of a video:
 /// \code
 /// let segment = session.video!.videoSegments.first!
 /// let contrastFilter = SessionFilterContrast()
