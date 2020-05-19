@@ -79,7 +79,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ### CocoaPods
 
-CocoaPods is a dependency manager for iOS projects. For usage and installation instructions, visit their [website](https://cocoapods.org/). To integrate PixelSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org/) is a dependency manager for iOS projects. To integrate PixelSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```
 pod 'PixelSDK'
@@ -121,7 +121,7 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 
-Also implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on. You can then use the  `session` parameter to [export your photo or video](#export-media) at your own convenience.
+Also implement its delegate method. This delegate method will be called when the Next button in the EditController is pressed. In response you should either dismiss the UINavigationController or push a new controller on. The below example pushes a blank controller on. Then use the provided  `session` parameter to [export your photo or video](#export-media) at your own convenience.
 ```swift
 extension ViewController: EditControllerDelegate {
 
@@ -133,7 +133,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-Lastly, [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) for the following [pricing](https://www.pixelsdk.com/#pricing) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. Keep your API key private.
+[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. Keep your API key private.
 
 ```swift
 import PixelSDK
@@ -146,7 +146,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-Optionally, you can also specify a maximum video duration. By default the maximum video duration is 80 seconds.
+Optionally, specify a maximum video duration. The default maximum video duration is 80 seconds.
 
  ```swift
  // Set the maximum video duration to 3 minutes.
