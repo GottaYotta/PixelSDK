@@ -1,5 +1,8 @@
 # Changelog
 
+### 5.2.0 - 5/21/20
+&bull; Added Vignette support in adjustments
+
 ### 5.1.2 - 5/14/20
 &bull; Fix bug which infrequently caused the bottom bar to not appear on the position/crop controller for video
 
