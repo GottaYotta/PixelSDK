@@ -34,7 +34,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Video Segment Composing, Trimming and Re-ordering
 
-✅ Photo and Video Adjustments (Brightness, Vibrance, Saturation, Contrast, Exposure, Hue, Warmth, Sharpness, Gamma, Highlights, Shadows)
+✅ Photo and Video Adjustments (Brightness, Vibrance, Saturation, Contrast, Exposure, Hue, Warmth, Sharpness, Gamma, Highlights, Shadows, Vignette)
 
 ✅ Cropping, Rotation, and Horizontal/Vertical Perspective Correction
 

@@ -1,6 +1,6 @@
 PODS:
   - GPUImage2-Pixel (3.0.3)
-  - PixelSDK (5.1.2):
+  - PixelSDK (5.2.0):
     - GPUImage2-Pixel (~> 3.0.3)
   - RPCircularProgress (0.5.0)
 
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GPUImage2-Pixel: 48fb5ec0b351d8372c1cce3ff5b92874e092d7c7
-  PixelSDK: 38865105e345753482fd839a4465aab46a3bfa2a
+  PixelSDK: 795640562f19b13406d84f45423d571095b32c10
   RPCircularProgress: 4499d4a1453dfbd3fe5bd8c6f344fd51cff3ad00
 
 PODFILE CHECKSUM: 7c5df9c7b9794bd16375631783770e19cb498f47
