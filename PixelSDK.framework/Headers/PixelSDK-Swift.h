@@ -1053,7 +1053,7 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionVideo")
 @property (nonatomic, readonly) CMTime duration;
 /// The framerate for the video.
 /// For example, a frameDuration of 1/30th of a second <code>CMTime(value: 1, timescale: 30)</code> would be a 30fps video.
-/// If not manually set, it is calculated by picking the shortest frameDuration from the segments. So basically it picks the highest framerate from the segments. This is similar to the method used by <a href="https://developer.apple.com/documentation/avfoundation/avvideocomposition/1385892-videocompositionwithpropertiesof?language=objc">videoCompositionWithPropertiesOfAsset:</a>.
+/// If not manually set, it is calculated by picking the shortest frameDuration from the segments. In other words, it picks the highest framerate from the segments. This is similar to the method used by <a href="https://developer.apple.com/documentation/avfoundation/avvideocomposition/1385892-videocompositionwithpropertiesof?language=objc">videoCompositionWithPropertiesOfAsset:</a>.
 /// Will be <code>CMTime.positiveInfinity</code> if the video has no segments.
 @property (nonatomic) CMTime frameDuration;
 /// The URL location of the final video file (with all segments stiched together) after it has been exported. There will only be a file here after the export has been completed for the video. You may move, copy or delete this file. See <code>VideoExporter</code> for more information.
