@@ -1,5 +1,8 @@
 # Changelog
 
+### 5.3.0 - 5/22/20
+&bull; Added localized strings for Vignette filter
+
 ### 5.2.0 - 5/21/20
 &bull; Added Vignette support in adjustments
 
