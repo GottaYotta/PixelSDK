@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name     = 'PixelSDK'
-    s.version  = '5.3.0'
+    s.version  = '5.4.0'
     s.license  = 'https://www.pixelsdk.com/terms-of-use/'
     s.summary  = 'Pixel SDK is a photo and video editing framework written in Swift.'
     s.homepage = 'https://www.pixelsdk.com'
