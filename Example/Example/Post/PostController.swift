@@ -31,9 +31,24 @@ class PostController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
-    private var minNavBarHeight: CGFloat = 75
-    private var maxNavBarHeight: CGFloat = 223
-    private var defaultTableViewInsets: UIEdgeInsets!
+    private var safeAreaInsets: UIEdgeInsets {
+        var safeAreaInsets = self.view.safeAreaInsets
+        if safeAreaInsets.top <= 0 {
+            safeAreaInsets.top = 5
+        }
+        return safeAreaInsets
+    }
+    private var minNavBarHeight: CGFloat {
+        return 51 + self.safeAreaInsets.top
+    }
+    private var maxNavBarHeight: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return UIScreen.main.bounds.height*6/15
+        }
+        else {
+            return 223 + self.safeAreaInsets.top
+        }
+    }
     
     private var previewController = PreviewController()
     
@@ -44,6 +59,7 @@ class PostController: UIViewController {
     
     private var tagLocationCell: PostTagLocationCell!
     private var descriptionCell: PostDescriptionCell!
+    private var isEditingDescription = false
     
     private var availableShareOptions: [ShareOption]!
     private var selectedShareOptions = [ShareOption : Bool]()
@@ -70,18 +86,6 @@ class PostController: UIViewController {
         
         self.tableView.contentInsetAdjustmentBehavior = .never
         self.tableView.register(UINib.init(nibName: "PostShareCell", bundle: Bundle.main), forCellReuseIdentifier: PostShareCell.identifier)
-        
-        let safeAreaInsets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? .zero
-        if safeAreaInsets.top > 0 {
-            self.minNavBarHeight += safeAreaInsets.top-26
-            self.maxNavBarHeight += safeAreaInsets.top-13
-            self.navBarView.layoutMargins =  UIEdgeInsets(top: safeAreaInsets.top-13, left: 0, bottom: 0, right: 0)
-        }
-        
-        self.defaultTableViewInsets = UIEdgeInsets(top: self.maxNavBarHeight, left: 0, bottom: safeAreaInsets.bottom+77, right: 0)
-        self.tableView.contentInset = self.defaultTableViewInsets
-        self.tableView.scrollIndicatorInsets = UIEdgeInsets(top: self.maxNavBarHeight, left: 0, bottom: safeAreaInsets.bottom, right: 0)
-        self.navBarHeightConstraint.constant = self.maxNavBarHeight
         
         // Add the PreviewController as a view
         self.movePreviewToBackground(animated: false)
@@ -111,6 +115,8 @@ class PostController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.updateLayout()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,11 +129,24 @@ class PostController: UIViewController {
         return .lightContent
     }
     
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+        self.updateLayout()
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         // If we switch from light to dark mode, update the CG colors in the tableview.
         self.tableView.reloadData()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // Handle rotation on iPad
+        self.updateLayout()
     }
     
     @IBAction func back() {
@@ -182,6 +201,7 @@ class PostController: UIViewController {
                 }
                 
                 print("Finished image export: \(uiImage!) and to file: \(image.exportedImageURL)")
+                
                 
                 // YOUR IMAGE UPLOAD LOGIC GOES HERE
                 
@@ -279,6 +299,32 @@ class PostController: UIViewController {
         let lastSection = self.numberOfSections(in: self.tableView)-1
         let lastRow = self.tableView(self.tableView, numberOfRowsInSection: lastSection)-1
         self.tableView.scrollToRow(at: IndexPath(row: lastRow, section: lastSection), at: .bottom, animated: true)
+    }
+    
+    // MARK: Layout Update Logic
+    
+    func updateLayout() {
+        self.navBarView.layoutMargins =  UIEdgeInsets(top: self.safeAreaInsets.top, left: 0, bottom: 0, right: 0)
+        
+        if self.isEditingDescription {
+            let keyboardHeight = (UIApplication.shared.delegate as! AppDelegate).keyboardHeight
+            self.tableView.contentInset = UIEdgeInsets(top: self.maxNavBarHeight, left: 0, bottom: keyboardHeight, right: 0)
+        }
+        else {
+            self.tableView.contentInset = UIEdgeInsets(top: self.maxNavBarHeight, left: 0, bottom: self.safeAreaInsets.bottom+77, right: 0)
+        }
+        self.tableView.scrollIndicatorInsets = UIEdgeInsets(top: self.maxNavBarHeight, left: 0, bottom: self.safeAreaInsets.bottom, right: 0)
+        
+        self.updateNavBarHeightConstraint()
+    }
+    
+    func updateNavBarHeightConstraint() {
+        if self.tableView.contentOffset.y <= -self.minNavBarHeight {
+            self.navBarHeightConstraint.constant = abs(self.tableView.contentOffset.y)
+        }
+        else {
+            self.navBarHeightConstraint.constant = self.minNavBarHeight
+        }
     }
     
     // MARK: Preview Controller Foreground/Background Switching
@@ -398,13 +444,7 @@ class PostController: UIViewController {
 extension PostController: UITableViewDataSource, UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= -self.minNavBarHeight {
-            self.navBarHeightConstraint.constant = abs(scrollView.contentOffset.y)
-        }
-        else {
-            self.navBarHeightConstraint.constant = self.minNavBarHeight
-        }
-        
+        self.updateNavBarHeightConstraint()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -542,12 +582,15 @@ extension PostController: UITableViewDataSource, UITableViewDelegate {
 extension PostController: ExpandingTextViewCellDelegate {
     
     func didBeginEditingExpandingTextViewCell(controller: ExpandingTextViewCell) {
-        let keyboardHeight = (UIApplication.shared.delegate as! AppDelegate).keyboardHeight
-        self.tableView.contentInset = UIEdgeInsets(top: self.tableView.contentInset.top, left: 0, bottom: keyboardHeight, right: 0)
+        self.isEditingDescription = true
+        
+        self.updateLayout()
     }
     
     func didEndEditingExpandingTextViewCell(controller: ExpandingTextViewCell){
-        self.tableView.contentInset = self.defaultTableViewInsets
+        self.isEditingDescription = false
+        
+        self.updateLayout()
     }
 }
 

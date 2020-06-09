@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
         
         #if targetEnvironment(simulator)
         if !alertShown {
-            let alert = UIAlertController(title: "Simulator Warning", message: "The simulator has no camera, GPU processing on it is extremely slow, and it does not support high quality media. It is recommended you run this on a physical device instead.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Simulator Warning", message: "The Xcode simulator has limited functionality (no camera or high quality media) and is very slow.\nWe recommend you run this on a physical device instead.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
             alertShown = true

@@ -30,7 +30,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Vine Style Video Camera
 
-✅ Auto Saving Drafts
+✅ Auto-Saving Drafts
 
 ✅ Video Segment Composing, Trimming and Re-ordering
 

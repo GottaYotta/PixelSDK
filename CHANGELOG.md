@@ -1,5 +1,15 @@
 # Changelog
 
+### 5.4.0 - 6/9/20
+&bull; Fix safe area insets on iOS 13 when UIApplicationSceneManifest is specified in Info.plist<br>
+&bull; Added `compactControls` variable to EditController<br>
+&bull; Exposed `backButton` and `nextButton` variables in EditController<br>
+&bull; Fix UIAlertController broken constraint warning<br>
+&bull; Added UIImpactFeedbackGenerator for changing scrub speed<br>
+&bull; Fix bug which prevented an image session from being used if PixelSDK.setup() is not present<br>
+&bull; Fix bug which prevented an image session from being exported immediately after it was created<br>
+&bull; Various bug fixes and stability improvements 
+
 ### 5.3.0 - 5/22/20
 &bull; Added localized strings for Vignette filter
 
