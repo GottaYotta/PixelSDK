@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.5.0 - 6/10/20
+&bull; Fix bug which prevented the EditController cancel/revert button from working properly in some cases<br>
+&bull; Added ability to copy SessionFilters and convert them to/from data
+
 ### 5.4.0 - 6/9/20
 &bull; Fix safe area insets on iOS 13 when UIApplicationSceneManifest is specified in Info.plist<br>
 &bull; Added `compactControls` variable to EditController<br>
