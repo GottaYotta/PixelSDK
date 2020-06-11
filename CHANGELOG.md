@@ -1,5 +1,13 @@
 # Changelog
 
+### 6.0.0 - 6/10/20
+
+&bull; Fix bug which prevented user defined SessionFilters from being properly encoded/decoded<br>
+&bull; Fix bug where CameraController/ContainerController delegate was called prematurely before photo capture had finished<br>
+&bull; Added Objective-C support to ContainerControllerDelegate<br>
+&bull; Renamed ContainerControllerDelegate function from `func containerController(_ containerController: ContainerController, didChangeMode mode: ContainerMode)` to `func containerControllerDidChangeMode(_ containerController: ContainerController)`<br>
+&bull; Various bug fixes and stability improvements
+
 ### 5.5.0 - 6/10/20
 &bull; Fix bug which prevented the EditController cancel/revert button from working properly in some cases<br>
 &bull; Added ability to copy SessionFilters and convert them to/from data
