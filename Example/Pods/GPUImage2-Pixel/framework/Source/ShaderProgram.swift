@@ -59,15 +59,17 @@ public class ShaderProgram {
     }
     
     deinit {
-        //debugPrint("Shader deallocated")
-
-        if (vertexShader != nil) {
-            glDeleteShader(vertexShader)
+        sharedImageProcessingContext.runOperationSynchronously {
+            //debugPrint("Shader deallocated")
+            
+            if (self.vertexShader != nil) {
+                glDeleteShader(self.vertexShader)
+            }
+            if (self.fragmentShader != nil) {
+                glDeleteShader(self.fragmentShader)
+            }
+            glDeleteProgram(self.program)
         }
-        if (fragmentShader != nil) {
-            glDeleteShader(fragmentShader)
-        }
-        glDeleteProgram(program)
     }
     
     // MARK: -

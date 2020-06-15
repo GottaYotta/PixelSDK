@@ -152,10 +152,10 @@ public class PictureInput: ImageSource {
     }
     
     public func processImage(synchronously:Bool = false) {
-        self.imageFramebuffer?.userInfo = self.framebufferUserInfo
-        
         if synchronously {
             sharedImageProcessingContext.runOperationSynchronously{
+                self.imageFramebuffer?.userInfo = self.framebufferUserInfo
+                
                 if let framebuffer = self.imageFramebuffer {
                     self.updateTargetsWithFramebuffer(framebuffer)
                     self.hasProcessedImage = true
@@ -163,6 +163,8 @@ public class PictureInput: ImageSource {
             }
         } else {
             sharedImageProcessingContext.runOperationAsynchronously{
+                self.imageFramebuffer?.userInfo = self.framebufferUserInfo
+                
                 if let framebuffer = self.imageFramebuffer {
                     self.updateTargetsWithFramebuffer(framebuffer)
                     self.hasProcessedImage = true

@@ -49,6 +49,8 @@ open class BasicOperation: ImageProcessingOperation {
     let maskImageRelay = ImageRelay()
     var maskFramebuffer:Framebuffer?
     
+    public private(set) var userInfo:[AnyHashable:Any]?
+    
     // MARK: -
     // MARK: Initialization and teardown
     
@@ -133,6 +135,8 @@ open class BasicOperation: ImageProcessingOperation {
         // If all inputs are still images, have this output behave as one
         renderFramebuffer.timingStyle = .stillImage
         
+        var foundUserInfo:[AnyHashable:Any]?
+        
         var latestTimestamp:Timestamp?
         for (key, framebuffer) in inputFramebuffers {
             
@@ -147,9 +151,16 @@ open class BasicOperation: ImageProcessingOperation {
             } else {
                 remainingFramebuffers[key] = framebuffer
             }
+            
+            // Pick userInfo from whichever input buffer has it
+            if let framebufferUserInfo = framebuffer.userInfo {
+                foundUserInfo = framebufferUserInfo
+            }
         }
         
-        renderFramebuffer.userInfo = inputFramebuffers[0]!.userInfo
+        userInfo = foundUserInfo
+        // Pass onto the output buffer
+        renderFramebuffer.userInfo = foundUserInfo
         
         inputFramebuffers = remainingFramebuffers
     }

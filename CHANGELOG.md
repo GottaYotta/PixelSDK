@@ -1,5 +1,12 @@
 # Changelog
 
+### 6.1.0 - 6/15/20
+
+&bull; Added support for custom `SessionFilter` UIViewControllers<br>
+&bull; Added support for filtered thumbnails in the `requestThumbnail()` function<br>
+&bull; Fix bug which prevented custom colors from working properly on iOS 11 and 12<br>
+&bull; Various bug fixes and stability improvements
+
 ### 6.0.0 - 6/10/20
 
 &bull; Fix bug which prevented user defined SessionFilters from being properly encoded/decoded<br>

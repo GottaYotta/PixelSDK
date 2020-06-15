@@ -15,6 +15,8 @@ public protocol ImageConsumer:AnyObject {
 }
 
 public protocol ImageProcessingOperation: ImageConsumer, ImageSource {
+    // The userInfo of the framebuffer that last received by the ImageProcessingOperation
+    var userInfo:[AnyHashable:Any]? { get }
 }
 
 infix operator --> : AdditionPrecedence
@@ -210,6 +212,8 @@ public class ImageRelay: ImageProcessingOperation {
     public let maximumInputs:UInt = 1
     public var preventRelay:Bool = false
     
+    public private(set) var userInfo:[AnyHashable:Any]?
+    
     public init() {
     }
     
@@ -220,6 +224,8 @@ public class ImageRelay: ImageProcessingOperation {
     }
 
     public func newFramebufferAvailable(_ framebuffer:Framebuffer, fromSourceIndex:UInt) {
+        userInfo = framebuffer.userInfo
+        
         if let newImageCallback = newImageCallback {
             newImageCallback(framebuffer)
         }

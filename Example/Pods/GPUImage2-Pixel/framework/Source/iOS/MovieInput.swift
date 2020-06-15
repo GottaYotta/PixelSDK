@@ -449,7 +449,14 @@ public class MovieInput: ImageSource {
         // Not needed for movie inputs
     }
     
-    public func transmitPreviousFrame() {
+    public func processPreviousFrame() {
+        if let currentThread = self.currentThread,
+            currentThread.isExecuting,
+            !currentThread.isCancelled {
+            // If the current thread is running and has not been cancelled, bail.
+            return
+        }
+        
         sharedImageProcessingContext.runOperationAsynchronously {
             if let movieFramebuffer = self.movieFramebuffer {
                 self.updateTargetsWithFramebuffer(movieFramebuffer)
