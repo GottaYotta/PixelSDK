@@ -54,13 +54,14 @@ class ExampleOperation: OperationGroup {
     let brightnessAdjustment = BrightnessAdjustment()
     let sharpenAdjustment = Sharpen()
     
+    // Will be set in a 0-1 range, as determined by our actualIntensityRange above.
     var intensity: Float = 1  {
         didSet {
-            // 1 is default for intensity
+            // Will be set in a 0-1 range.
             lookupFilter.intensity = self.intensity.translateFromRangeToRange(oldMin: 0, oldMax: 1, newMin: 0, newMax: 1)
-            // 0 is default for brightness
+            // Will be set in a 0-1 range.
             brightnessAdjustment.brightness = self.intensity.translateFromRangeToRange(oldMin: 0, oldMax: 1, newMin: 0, newMax: 0.025)
-            // 0 is default for sharpness
+            // Will be set in a 0-0.25 range.
             sharpenAdjustment.sharpness = self.intensity.translateFromRangeToRange(oldMin: 0, oldMax: 1, newMin: 0, newMax: 0.25)
         }
     }
@@ -76,6 +77,7 @@ class ExampleOperation: OperationGroup {
         }
         
         self.configureGroup { (input, output) in
+            // First apply the lookupFilter, then the brightnessAdjustment, then the sharpenAdjustment.
             input --> lookupFilter --> brightnessAdjustment --> sharpenAdjustment --> output
         }
     }

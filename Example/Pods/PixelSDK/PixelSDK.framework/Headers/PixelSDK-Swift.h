@@ -251,6 +251,8 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 /// Set this to true if you want the brightness slider to be visible.
 /// Default value: <code>false</code>
 @property (nonatomic) BOOL brightnessAdjustmentActive;
+/// When true, if the device is held horizontally with the screen face up, the mode pictured below will appear.
+/// <img src="https://www.cdn.pixelsdk.com/assets/img/docs/face_up_mode.jpg" alt="Face up mode" title="Face up mode" width="250" height="auto"/>
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL faceUpModeAvailable;
 /// When true, the user may double tap anywhere inside the camera view to switch between the front and back facing camera.
@@ -299,6 +301,13 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 
 
 
+
+@class UIView;
+
+@interface CameraController (SWIFT_EXTENSION(PixelSDK))
+@property (nonatomic, readonly, strong) UIView * _Nullable preferredBottomBarView;
+@property (nonatomic, readonly) BOOL prefersBottomBarHidden;
+@end
 
 
 
@@ -382,6 +391,13 @@ SWIFT_CLASS("_TtC8PixelSDK19ContainerController")
 /// :nodoc:
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+@interface ContainerController (SWIFT_EXTENSION(PixelSDK))
+@property (nonatomic, readonly) BOOL prefersBottomBarHidden;
+@property (nonatomic, readonly, strong) UIView * _Nullable preferredBottomBarView;
+- (void)setNeedsBottomBarAppearanceUpdate;
 @end
 
 
@@ -527,10 +543,25 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 
 
 
+@interface EditController (SWIFT_EXTENSION(PixelSDK))
+/// :nodoc:
+@property (nonatomic, readonly, strong) UIView * _Nullable preferredTopBarView;
+/// :nodoc:
+- (void)setNeedsTopBarAppearanceUpdate;
+@end
 
 
 
 
+
+
+
+
+@interface EditController (SWIFT_EXTENSION(PixelSDK))
+@property (nonatomic, readonly) BOOL prefersBottomBarHidden;
+@property (nonatomic, readonly, strong) UIView * _Nullable preferredBottomBarView;
+- (void)setNeedsBottomBarAppearanceUpdate;
+@end
 
 
 
@@ -639,8 +670,6 @@ SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
-
-
 @class UIGestureRecognizer;
 
 @interface LibraryController (SWIFT_EXTENSION(PixelSDK)) <UIGestureRecognizerDelegate>
@@ -654,6 +683,13 @@ SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 
 
 
+
+
+
+
+@interface LibraryController (SWIFT_EXTENSION(PixelSDK))
+@property (nonatomic, readonly) BOOL prefersBottomBarHidden;
+@end
 
 
 
@@ -870,7 +906,6 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 @end
 
 @class UIScrollView;
-@class UIView;
 
 @interface PreviewCropController (SWIFT_EXTENSION(PixelSDK)) <UIScrollViewDelegate>
 - (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
@@ -1058,15 +1093,6 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionImage")
 /// Indicates if the export was completed.
 /// If the sessions dateModified is an older date than the images dateExported, this will be false. In other words, if you export the image this will become true but if you then make modifications to the session this will flip back to false. The exportedImageURL file must also exist for this to be true.
 @property (nonatomic, readonly) BOOL isExported;
-/// Retrieves a thumbnail for the image. Thumbnails do not include filters.
-/// If the thumbnail has not been retrieved before it will be generated and cached. If it has been retrieved before, it will be pulled from cache. Cache persists after restart.
-/// \param size The size in pixels you would like to restrict the thumbnail to. The maximum size you can request is 500x500 pixels.
-///
-/// \param contentMode The contentMode will control how the thumbnail is filled or fit into the size.
-///
-/// \param completion Called when the thumbnail has been retrieved.
-///
-- (void)requestThumbnailWithBoundingSize:(CGSize)boundingSize contentMode:(enum ContentMode)contentMode completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 /// Clears the thumbnail cache.
 - (void)invalidateThumbnails;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1174,15 +1200,6 @@ SWIFT_CLASS("_TtC8PixelSDK19SessionVideoSegment")
 /// Indicates if the export was completed for the individual segment.
 /// If the sessions dateModified is an older date than the video segments dateExported, this will be false. In other words, if you export the video segment this will become true but if you then make modifications to the session this will flip back to false. The exportedVideoURL file must also exist for this to be true.
 @property (nonatomic, readonly) BOOL isExported;
-/// Retrieves a thumbnail for the video segment. Thumbnails do not include filters.
-/// If the thumbnail has not been retrieved before it will be generated and cached. If it has been retrieved before, it will be pulled from cache. Cache persists after restart.
-/// \param size The size in pixels you would like to restrict the thumbnail to. The maximum size you can request is 500x500 pixels.
-///
-/// \param contentMode The contentMode will control how the thumbnail is filled or fit into the size.
-///
-/// \param completion Called when the thumbnail has been retrieved.
-///
-- (void)requestThumbnailWithBoundingSize:(CGSize)boundingSize contentMode:(enum ContentMode)contentMode completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 /// Clears the thumbnail cache.
 - (void)invalidateThumbnails;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

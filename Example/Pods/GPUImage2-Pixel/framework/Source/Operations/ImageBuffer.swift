@@ -7,8 +7,12 @@ public class ImageBuffer: ImageProcessingOperation {
     public let targets = TargetContainer()
     public let sources = SourceContainer()
     var bufferedFramebuffers = [Framebuffer]()
+    
+    public private(set) var userInfo:[AnyHashable:Any]?
 
     public func newFramebufferAvailable(_ framebuffer:Framebuffer, fromSourceIndex:UInt) {
+        userInfo = framebuffer.userInfo
+        
         bufferedFramebuffers.append(framebuffer)
         if (bufferedFramebuffers.count > Int(bufferSize)) {
             let releasedFramebuffer = bufferedFramebuffers.removeFirst()
