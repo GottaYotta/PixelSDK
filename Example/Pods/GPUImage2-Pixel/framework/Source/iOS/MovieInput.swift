@@ -222,7 +222,7 @@ public class MovieInput: ImageSource {
             
             if let movieOutput = self.synchronizedMovieOutput {
                 self.conditionLock.lock()
-                if(self.readingShouldWait) {
+                while self.readingShouldWait {
                     self.synchronizedEncodingDebugPrint("Disable reading")
                     self.conditionLock.wait()
                     self.synchronizedEncodingDebugPrint("Enable reading")

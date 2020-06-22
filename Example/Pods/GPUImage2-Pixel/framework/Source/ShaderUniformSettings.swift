@@ -12,14 +12,24 @@
 #endif
 #endif
 
-public struct ShaderUniformSettings {
-    private var uniformValues = [String:Any]()
+public class ShaderUniformSettings {
+    private var uniformValues: [String:Any] {
+        get {
+            self.uniformValuesProcessingQueue.sync { return self._uniformValues }
+        }
+        set {
+            self.uniformValuesProcessingQueue.async { self._uniformValues = newValue }
+        }
+    }
+    private var _uniformValues = [String:Any]()
+    
+    private let uniformValuesProcessingQueue = DispatchQueue(label: "com.sunsetlakesoftware.GPUImage.uniformValuesProcessingQueue", qos: .default)
     
     public init() {
     }
 
     public subscript(index:String) -> Float? {
-        get { return uniformValues[index] as? Float}
+        get { return uniformValues[index] as? Float }
         set(newValue) { uniformValues[index] = newValue }
     }
     
