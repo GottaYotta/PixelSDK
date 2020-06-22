@@ -30,7 +30,7 @@ public func convertYUVToRGB(shader:ShaderProgram, luminanceFramebuffer:Framebuff
     }
     resultFramebuffer.activateFramebufferForRendering()
     clearFramebufferWithColor(Color.black)
-    var uniformSettings = ShaderUniformSettings()
+    let uniformSettings = ShaderUniformSettings()
     uniformSettings["colorConversionMatrix"] = colorConversionMatrix
     renderQuadWithShader(shader, uniformSettings:uniformSettings, vertexBufferObject:sharedImageProcessingContext.standardImageVBO, inputTextures:textureProperties)
     luminanceFramebuffer.unlock()

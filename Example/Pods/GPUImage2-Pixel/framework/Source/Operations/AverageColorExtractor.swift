@@ -50,7 +50,7 @@ public class AverageColorExtractor: BasicOperation {
 }
 
 func averageColorBySequentialReduction(inputFramebuffer:Framebuffer, shader:ShaderProgram, extractAverageOperation:(Framebuffer) -> ()) {
-    var uniformSettings = ShaderUniformSettings()
+    let uniformSettings = ShaderUniformSettings()
     let inputSize = Size(inputFramebuffer.size)
     let numberOfReductionsInX = floor(log(Double(inputSize.width)) / log(4.0))
     let numberOfReductionsInY = floor(log(Double(inputSize.height)) / log(4.0))
