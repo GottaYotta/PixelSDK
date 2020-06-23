@@ -36,7 +36,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func fullEditorWithInstaFilters() {
-        PixelSDK.shared.availablePrimaryFilters = PixelSDK.instaFilters
+        PixelSDK.shared.primaryFilters = PixelSDK.defaultInstaFilters
         
         let container = ContainerController()
         container.editControllerDelegate = self
@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func fullEditorWithVisualEffectFilters() {
-        PixelSDK.shared.availablePrimaryFilters = PixelSDK.visualEffectFilters
+        PixelSDK.shared.primaryFilters = PixelSDK.defaultVisualEffectFilters
         
         let container = ContainerController()
         container.editControllerDelegate = self
@@ -58,8 +58,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func fullEditorWithCustomFilters() {
-        PixelSDK.shared.availablePrimaryFilters = {
-            [
+        PixelSDK.shared.primaryFilters = [
                 SessionFilterExample1(),
                 SessionFilterExample2(),
                 SessionFilterWilshire(),
@@ -71,8 +70,7 @@ class ViewController: UITableViewController {
                 SessionFilterAbbotKinney(),
                 SessionFilterMulholland(),
                 SessionFilterSunset()
-            ]
-        }
+        ]
         
         let container = ContainerController()
         container.editControllerDelegate = self
@@ -304,12 +302,8 @@ class ViewController: UITableViewController {
 
 extension ViewController: EditControllerDelegate {
     
-    func editController(_ editController: EditController, willBeginEditing session: Session) {
-        // Called when the EditController's view will appear.
-    }
-    
-    func editController(_ editController: EditController, didBeginEditing session: Session) {
-        // Called when the EditController's view did appear.
+    func editController(_ editController: EditController, didLoadEditing session: Session) {
+        // Called after the EditController's view did load.
     }
     
     func editController(_ editController: EditController, didFinishEditing session: Session) {

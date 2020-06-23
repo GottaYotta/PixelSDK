@@ -1,5 +1,15 @@
 # Changelog
 
+### 7.0.0 - 6/22/20
+
+&bull; Added iPad support<br>
+&bull; Added tab bar customization in `EditController`<br>
+&bull; Added support for custom `EditController` UIViewControllers<br>
+&bull; Added real-time `PreviewController` updates after making programmatic changes to a `Session`<br>
+&bull; Fix infrequent crash from adjusting intensity slider/rotation on video sessions<br>
+&bull; Changed variables for primary/adjustment filters from closures to arrays<br>
+&bull; Various bug fixes and stability improvements
+
 ### 6.1.0 - 6/15/20
 
 &bull; Added support for custom `SessionFilter` UIViewControllers<br>
