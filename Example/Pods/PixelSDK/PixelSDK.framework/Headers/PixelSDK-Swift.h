@@ -906,6 +906,7 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 - (void)viewWillAppear:(BOOL)animated;
 /// :nodoc:
 - (void)viewWillLayoutSubviews;
+- (void)viewDidLayoutSubviews;
 /// :nodoc:
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 /// :nodoc:
