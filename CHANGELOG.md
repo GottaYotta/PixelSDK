@@ -1,5 +1,10 @@
 # Changelog
 
+### 7.0.1 - 6/23/20
+
+&bull; Fix bug which would occasionally cause media to layout incorrectly in the `PreviewCropController`<br>
+&bull; Various bug fixes and stability improvements
+
 ### 7.0.0 - 6/22/20
 
 &bull; Added iPad support<br>
