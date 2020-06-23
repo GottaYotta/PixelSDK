@@ -69,7 +69,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 </p>
 
 ## Requirements
-- iPhone and iOS 11+
+- iPhone/iPad and iOS 11+
 - Xcode 10.2+
 
 ## Getting Started
@@ -133,7 +133,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. Keep your API key private.
+[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing matrix](https://www.pixelsdk.com/#pricing) applies to exports from your API key. Without an API key, image and video exports will include a watermark. Keep your API key private.
 
 ```swift
 import PixelSDK
@@ -306,10 +306,9 @@ session.image!.filters = [brightnessFilter]
 ```
 Applying a Saturation filter to a whole video:
 ```swift
-let video = session.video!
 let saturationFilter = SessionFilterSaturation()
 saturationFilter.normalizedIntensity = 0.3
-video.filters = [saturationFilter]
+session.video!.filters = [saturationFilter]
 ```
 Applying a Contrast filter to the first segment of a video:
 ```swift
@@ -330,7 +329,7 @@ let segment = session.video!.videoSegments.first!
 segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 segment.cropRect = segment.suggestedCropRect()
 ```
-You can present the EditController after making programmatic edits and it will reflect your changes.
+You can present the EditController after making programmatic edits and it will reflect your changes. Additionally, the [PreviewController](https://www.pixelsdk.com/docs/latest/Classes/PreviewController.html) will reflect all programmatic edits in real-time.
 
 After making programmatic edits to a session, you should manually call `session.save()`.
 
@@ -375,8 +374,6 @@ After the export has completed, you may move, copy or delete the file found at t
 Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
 
 You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
-
-Export functions are subject to the following [pricing](https://www.pixelsdk.com/#pricing). If you do not provide an API key or it is invalid, exported images and videos will include a watermark. You can generate an API key [here](https://www.pixelsdk.com/dashboard/api-keys/).
 
 ### Encoding Settings
 
@@ -583,20 +580,18 @@ class SessionFilterExample: SessionFilter {
 **Step 6:** Include your custom filter in the list of available filters. Do this before you present the ContainerController or EditController.
 
 ```swift
-PixelSDK.shared.availablePrimaryFilters = {
-    [
-        SessionFilterExample(), // Your custom filter
-        SessionFilterWilshire(),
-        SessionFilterMontana(),
-        SessionFilterSanVicente(),
-        SessionFilterMelrose(),
-        SessionFilterSepulveda(),
-        SessionFilterLaCienega(),
-        SessionFilterAbbotKinney(),
-        SessionFilterMulholland(),
-        SessionFilterSunset()
-    ]
-}
+PixelSDK.shared.primaryFilters = [
+    SessionFilterExample(), // Your custom filter
+    SessionFilterWilshire(),
+    SessionFilterMontana(),
+    SessionFilterSanVicente(),
+    SessionFilterMelrose(),
+    SessionFilterSepulveda(),
+    SessionFilterLaCienega(),
+    SessionFilterAbbotKinney(),
+    SessionFilterMulholland(),
+    SessionFilterSunset()
+]
 ```
 
 That's it! Enjoy your new custom filter.
@@ -631,4 +626,4 @@ The [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master
 
 ## License
 
-See our [Terms of Use](https://www.pixelsdk.com/terms-of-use/) and [Privacy Policy](https://www.pixelsdk.com/privacy-policy/).
+Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing matrix](https://www.pixelsdk.com/#pricing) applies to exports from your API key. Without an API key, image and video exports will include a watermark.

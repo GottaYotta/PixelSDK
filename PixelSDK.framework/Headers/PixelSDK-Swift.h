@@ -220,11 +220,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @protocol CameraControllerDelegate;
 @class AVCapturePhotoSettings;
 @class NSCoder;
+@class UITraitCollection;
+@protocol UIViewControllerTransitionCoordinator;
 @class NSBundle;
 
 /// The <code>CameraController</code> can take photos with low UI latency and Vine style video while also applying realtime filters.
 /// Filters can be applied by swiping left or right in the camera view, or by pressing the filters button.
-/// The filters can be changed with the <code>PixelSDK.availablePrimaryFilters</code> variable.
+/// The filters can be changed with the <code>PixelSDK.primaryFilters</code> variable.
 /// <em>Figure 1</em> Camera controller
 /// <img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/camera_1.jpg" alt="Screenshot" width="190" height="auto" style="border-style: solid; border-width: 1px; border-color: LightGrey;"/>
 /// This controller is used inside the <code>ContainerController</code> and can be used on its own by initializing
@@ -288,6 +290,10 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 /// :nodoc:
 - (void)viewWillLayoutSubviews;
 /// :nodoc:
+- (void)willTransitionToTraitCollection:(UITraitCollection * _Nonnull)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+/// :nodoc:
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+/// :nodoc:
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
@@ -299,12 +305,18 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 
 
 
+@interface CameraController (SWIFT_EXTENSION(PixelSDK))
+@property (nonatomic, readonly) BOOL prefersBottomBarTransparent;
+@end
+
+
 
 
 
 @class UIView;
 
 @interface CameraController (SWIFT_EXTENSION(PixelSDK))
+- (void)setNeedsBottomBarAppearanceUpdate;
 @property (nonatomic, readonly, strong) UIView * _Nullable preferredBottomBarView;
 @property (nonatomic, readonly) BOOL prefersBottomBarHidden;
 @end
@@ -349,8 +361,6 @@ SWIFT_PROTOCOL("_TtP8PixelSDK24CameraControllerDelegate_")
 @protocol ContainerControllerDelegate;
 @protocol EditControllerDelegate;
 @class LibraryController;
-@protocol UIViewControllerTransitionCoordinator;
-@class UITraitCollection;
 
 /// The <code>ContainerController</code> view consists of a tab bar at the bottom and a controller above it.
 /// Each tab is represented by a <code>ContainerMode</code> with an associated controller and title for the tab.
@@ -392,6 +402,8 @@ SWIFT_CLASS("_TtC8PixelSDK19ContainerController")
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
+
+
 
 
 @interface ContainerController (SWIFT_EXTENSION(PixelSDK))
@@ -476,7 +488,7 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, closed) {
 ///     self.present(nav, animated: true, completion: nil)
 /// })
 ///
-/// \endcodeFilters under the Filter or Adjust tabs may be changed by setting the <code>PixelSDK.availablePrimaryFilters</code> <code>PixelSDK.availableAdjustFilters</code> variables respectively.
+/// \endcodeFilters under the Filter or Adjust tabs may be changed by setting the <code>PixelSDK.primaryFilters</code> <code>PixelSDK.adjustmentFilters</code> variables respectively.
 /// The Adjust tab places the Position (cropping) button before the adjust filters. Cropping can be disabled by setting <code>showsPositionAdjustment</code> to false.
 SWIFT_CLASS("_TtC8PixelSDK14EditController")
 @interface EditController : UIViewController
@@ -541,8 +553,6 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 
 
 
-
-
 @interface EditController (SWIFT_EXTENSION(PixelSDK))
 /// :nodoc:
 @property (nonatomic, readonly, strong) UIView * _Nullable preferredTopBarView;
@@ -570,6 +580,12 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 SWIFT_PROTOCOL("_TtP8PixelSDK22EditControllerDelegate_")
 @protocol EditControllerDelegate
 @optional
+/// This will be called after <code>EditController</code> viewDidLoad. This will only be called once per <code>EditController</code>.
+/// \param editController The controller responsible for calling this method.
+///
+/// \param session The session the editController will be editing.
+///
+- (void)editController:(EditController * _Nonnull)editController didLoadEditing:(Session * _Nonnull)session;
 /// This will be called at the end of <code>EditController</code> viewWillAppear.
 /// \param editController The controller responsible for calling this method.
 ///
@@ -685,11 +701,11 @@ SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 
 
 
-
-
 @interface LibraryController (SWIFT_EXTENSION(PixelSDK))
 @property (nonatomic, readonly) BOOL prefersBottomBarHidden;
 @end
+
+
 
 
 
@@ -738,7 +754,9 @@ SWIFT_PROTOCOL("_TtP8PixelSDK25LibraryControllerDelegate_")
 
 @protocol PreviewControllerDelegate;
 
-/// Preview controllers let you draw any image or video based <code>Session</code> object. For example, you can use the <code>PreviewController</code> class to display the contents of a session found in the <code>SessionManager.savedSessions</code> array (user Drafts) or even a <code>Session</code> you have just initialized. You configure a preview controller programmatically by adding its view as a subview to the view of your choosing. For video, you can also use methods of this class to start or stop the video and specify other playback parameters.
+/// Preview controllers let you draw any image or video based <code>Session</code> object.
+/// For example, you can use the <code>PreviewController</code> class to display the contents of a session found in the <code>SessionManager.savedSessions</code> array (user Drafts) or even a <code>Session</code> you have just initialized. You configure a preview controller programmatically by adding its view as a subview to the view of your choosing. For video, you can also use methods of this class to start or stop the video and specify other playback parameters.
+/// The preview controller will also display <a href="https://www.pixelsdk.com/docs/latest/Classes/Session.html#modifying-sessions">programmatic edits</a> that are made on a session in real-time.
 /// <em>Figure 1</em> Preview controller
 /// <img src="https://www.cdn.pixelsdk.com/assets/img/docs/filter_original.jpg" alt="Preview controller" title="Preview controller" width="250" height="auto"/>
 /// A preview controller uses the <code>contentMode</code> variable and the size of the media itself to determine how to display the media. The preview controller can scale your media to fit all or some of the available space. If the size of the preview controller changes, it automatically scales the media as needed.
@@ -778,9 +796,11 @@ SWIFT_CLASS("_TtC8PixelSDK17PreviewController")
 /// :nodoc:
 - (void)viewDidDisappear:(BOOL)animated;
 /// :nodoc:
+- (void)viewWillAppear:(BOOL)animated;
+/// :nodoc:
 - (void)didReceiveMemoryWarning;
 /// The session to be displayed by the preview controller.
-/// If modifications are made to the session you will need to set this again in order to reflect the latest changes.
+/// All changes made to the session (changing filters, trim times, preferredTransform, etc.) will be automatically displayed by the preview controller in real-time.
 /// Default value: <code>nil</code>
 @property (nonatomic, strong) Session * _Nullable session;
 /// The preview controller uses the <code>contentMode</code> variable and the size of the media itself to determine how to display the media. The preview controller can scale your media to fit all or some of the available space.
@@ -971,10 +991,9 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 ///
 /// \endcodeApplying a Saturation filter to a whole video:
 /// \code
-/// let video = session.video!
 /// let saturationFilter = SessionFilterSaturation()
 /// saturationFilter.normalizedIntensity = 0.3
-/// video.filters = [saturationFilter]
+/// session.video!.filters = [saturationFilter]
 ///
 /// \endcodeApplying a Contrast filter to the first segment of a video:
 /// \code
@@ -995,7 +1014,7 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 /// segment.cropRect = segment.suggestedCropRect()
 ///
-/// \endcodeYou can present the <code>EditController</code> after making programmatic edits and it will reflect your changes.
+/// \endcodeYou can present the <code>EditController</code> after making programmatic edits and it will reflect your changes. Additionally, the <code>PreviewController</code> will reflect all programmatic edits in real-time.
 /// After making programmatic edits to a session, you should manually call <code>session.save()</code>.
 /// warning:
 /// If you make programmatic changes to a session that is currently displayed by an <code>EditController</code> it may result in undocumented behavior.
@@ -1025,13 +1044,6 @@ SWIFT_CLASS("_TtC8PixelSDK7Session")
 /// Must be a valid JSON object. https://developer.apple.com/documentation/foundation/jsonserialization/1418461-isvalidjsonobject
 /// Default value: <code>nil</code>
 @property (nonatomic, copy) NSDictionary * _Nullable userInfo;
-/// This is used to prefill the <code>EditController</code> while the actual media loads in.
-/// Can be a very low quality image or a very high quality image.
-/// If your media uses a cropRect, the image you pass here should already be cropped with that cropRect.
-/// It is not necessary you set this, but you can do so if you wish to improve the transition in of the <code>EditController</code>.
-/// Does not persist.
-/// Default value: <code>nil</code>
-@property (nonatomic, strong) UIImage * _Nullable temporaryPlaceholderImage;
 /// If the session can be found in the <code>SessionManager.savedSessions</code> array this will be true.
 @property (nonatomic, readonly) BOOL isSaved;
 /// If the session should never be saved, written to file or the <code>SessionManager.savedSessions</code> array, set this to true.
@@ -1205,6 +1217,8 @@ SWIFT_CLASS("_TtC8PixelSDK19SessionVideoSegment")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
