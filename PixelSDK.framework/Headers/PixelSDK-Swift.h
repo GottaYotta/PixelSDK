@@ -441,7 +441,7 @@ SWIFT_PROTOCOL("_TtP8PixelSDK27ContainerControllerDelegate_")
 @end
 
 ///
-typedef SWIFT_ENUM(NSInteger, ContentMode, closed) {
+typedef SWIFT_ENUM(NSInteger, ContentMode, open) {
 /// Media scaled to fill the space. Distortion may occur.
   ContentModeContentFill = 0,
 /// Media scaled to fit the space while maintaining the media’s original aspect ratio.

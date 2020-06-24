@@ -1,5 +1,9 @@
 # Changelog
 
+### 7.0.2 - 6/23/20
+
+&bull; Fix bug which prevented the framework from being compiled on Swift 5.3
+
 ### 7.0.1 - 6/23/20
 
 &bull; Fix bug which would occasionally cause media to layout incorrectly in the `PreviewCropController`<br>
