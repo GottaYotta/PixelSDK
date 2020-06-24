@@ -155,6 +155,8 @@ class ShareManager {
             shareOptions = [.cameraRoll, .message, .mail, .facebook, .instagram]
         case .none:
             shareOptions = []
+        @unknown default:
+            shareOptions = []
         }
         
         // Keep only options that are installed
