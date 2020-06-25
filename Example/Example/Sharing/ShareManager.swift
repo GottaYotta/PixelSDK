@@ -153,9 +153,7 @@ class ShareManager {
             shareOptions = [.cameraRoll, .message, .mail, .twitter, .facebook, .instagram]
         case .video:
             shareOptions = [.cameraRoll, .message, .mail, .facebook, .instagram]
-        case .none:
-            shareOptions = []
-        @unknown default:
+        default:
             shareOptions = []
         }
         

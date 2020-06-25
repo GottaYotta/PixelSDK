@@ -2,7 +2,7 @@
 Pixel SDK is a photo and video editing framework written in Swift.
 
 <p align="center">
-<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/library_1_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_7_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>
+<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/library_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_7_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
 </p>
 
 - [Features](#features)
@@ -65,7 +65,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 <br>
 
 <p align="center">
-<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/camera_1_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_5_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_6_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>
+<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/camera_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_5_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_6_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
 </p>
 
 ## Requirements
@@ -245,7 +245,7 @@ self.present(nav, animated: true, completion: nil)
 The camera and library can be bypassed by presenting the EditController with your own media.
 
 <p align="center">
-<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_2_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23%" height="auto" class="docs-screenshot"/>
+<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_2_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
 </p>
 
 ### Images
