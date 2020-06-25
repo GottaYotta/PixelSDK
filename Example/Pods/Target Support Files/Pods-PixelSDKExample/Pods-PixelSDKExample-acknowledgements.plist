@@ -27,7 +27,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 			<key>License</key>
 			<string>BSD</string>
 			<key>Title</key>
-			<string>GPUImage2-Pixel</string>
+			<string>PixelSDK-GPUImage2</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

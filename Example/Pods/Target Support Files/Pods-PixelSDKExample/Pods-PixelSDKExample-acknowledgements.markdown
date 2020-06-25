@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## GPUImage2-Pixel
+## PixelSDK-GPUImage2
 
 Copyright (c) 2015, Brad Larson.
 All rights reserved.

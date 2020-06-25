@@ -30,20 +30,18 @@ internal extension PHPhotoLibrary {
             PHPhotoLibrary.requestAuthorization({ (status) in
                 DispatchQueue.main.async {
                     switch status {
-                    case .notDetermined:
-                        completion?(.unknown) // Won't happen here probably
                     case .restricted:
                         completion?(.restricted)
                     case .denied:
                         completion?(.denied)
                     case .authorized:
                         completion?(.authorized)
-                    @unknown default:
+                    default:
                         completion?(.unknown)
                     }
                 }
             })
-        @unknown default:
+        default:
             completion?(.unknown)
         }
     }

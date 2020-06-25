@@ -1,9 +1,9 @@
-## What are the steps to reproduce?
+### What are the steps to reproduce?
 
 
-## What did you expect to happen?
+### What did you expect to happen?
 
 
-## What happened instead?
+### What happened instead?
 
 

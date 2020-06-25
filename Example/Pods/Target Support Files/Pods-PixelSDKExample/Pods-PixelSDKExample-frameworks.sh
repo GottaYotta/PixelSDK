@@ -197,13 +197,11 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GPUImage2-Pixel/GPUImage.framework"
-  install_framework "${PODS_ROOT}/PixelSDK/PixelSDK.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PixelSDK-GPUImage2/GPUImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GPUImage2-Pixel/GPUImage.framework"
-  install_framework "${PODS_ROOT}/PixelSDK/PixelSDK.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PixelSDK-GPUImage2/GPUImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

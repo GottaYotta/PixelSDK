@@ -1,0 +1,11 @@
+framework module PixelSDK {
+  umbrella header "PixelSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module PixelSDK.Swift {
+    header "PixelSDK-Swift.h"
+    requires objc
+}
