@@ -1,5 +1,11 @@
 # Changelog
 
+### 8.0.0 - 6/24/20
+
+&bull; Added Xcode 12 and Swift 5.3 support
+&bull; Migrated to xcframework file from universal binary
+&bull; Fix bug which prevented compilation on Xcode 11.4
+
 ### 7.0.2 - 6/23/20
 
 &bull; Fix bug which prevented the framework from being compiled on Swift 5.3

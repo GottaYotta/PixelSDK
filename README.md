@@ -71,7 +71,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 ## Requirements
 - iPhone or iPad
 - iOS 11+
-- Xcode 10.2+
+- Xcode 11.4+
 
 ## Getting Started
 

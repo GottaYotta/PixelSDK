@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-frameworks.sh
-${BUILT_PRODUCTS_DIR}/GPUImage2-Pixel/GPUImage.framework
-${PODS_ROOT}/PixelSDK/PixelSDK.framework
+${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt
+${BUILT_PRODUCTS_DIR}/PixelSDK-GPUImage2/GPUImage.framework
 ${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework
