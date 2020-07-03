@@ -247,9 +247,6 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 /// Set this to true if you want the front facing camera enabled or to false if you want the back facing camera enabled.
 /// Default value: <code>false</code>
 @property (nonatomic) BOOL frontFacingCameraActive;
-/// Set this to true if you want the camera view to be square.
-/// Default value: <code>false</code>
-@property (nonatomic) BOOL squareCameraActive;
 /// Set this to true if you want the brightness slider to be visible.
 /// Default value: <code>false</code>
 @property (nonatomic) BOOL brightnessAdjustmentActive;
@@ -276,6 +273,9 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 ///
 /// \endcode
 @property (nonatomic, copy) AVCapturePhotoSettings * _Nonnull (^ _Nonnull photoSettings)(void);
+/// Use <code>aspectRatio</code> instead to enable square camera.
+/// Default value: <code>false</code>
+@property (nonatomic) BOOL squareCameraActive SWIFT_DEPRECATED_MSG("Only set aspectRatio now. This variable is no longer needed.");
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 /// :nodoc:
 - (void)viewDidLoad;
@@ -523,6 +523,7 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL showsPositionAdjustment;
 /// Set this to true if you want to reduce the height of the editor controls and increase the height of the media preview. This can improve the user experience if portrait content is edited frequently.
+/// If this controller is presented by a <code>LibraryController</code> or <code>CameraController</code> with a portrait aspect ratio, the default value may be <code>true</code> instead of <code>false</code>.
 /// Default value: <code>false</code>
 @property (nonatomic) BOOL compactControls;
 /// :nodoc:
@@ -906,6 +907,7 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 - (void)viewWillAppear:(BOOL)animated;
 /// :nodoc:
 - (void)viewWillLayoutSubviews;
+/// :nodoc:
 - (void)viewDidLayoutSubviews;
 /// :nodoc:
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
@@ -1080,7 +1082,7 @@ SWIFT_CLASS("_TtC8PixelSDK7Session")
 @end
 
 
-///
+/// For more information see <code>Session</code> documentation.
 SWIFT_CLASS("_TtC8PixelSDK12SessionImage")
 @interface SessionImage : NSObject
 /// The pixel dimensions of the original image. Does not take into account the preferredTransform.
@@ -1137,7 +1139,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _
 @end
 
 
-///
+/// For more information see <code>Session</code> documentation.
 SWIFT_CLASS("_TtC8PixelSDK12SessionVideo")
 @interface SessionVideo : NSObject
 /// The pixel dimensions of the final video.
@@ -1170,7 +1172,7 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionVideo")
 @end
 
 
-///
+/// For more information see <code>Session</code> documentation.
 SWIFT_CLASS("_TtC8PixelSDK19SessionVideoSegment")
 @interface SessionVideoSegment : NSObject
 /// The pixel dimensions of the original video. Does not take into account the preferredTransform.

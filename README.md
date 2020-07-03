@@ -12,6 +12,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
     * [Images Only](#images-only)
     * [Videos Only](#videos-only)
     * [Square Content Only](#square-content-only)
+    * [Portrait Content Only](#portrait-content-only)
     * [Library Only](#library-only)
     * [Camera Only](#camera-only)
 - [Present the Editor](#present-the-editor)
@@ -206,10 +207,23 @@ container.editControllerDelegate = self
 container.libraryController.previewCropController.aspectRatio = CGSize(width: 1, height: 1)
 // Only allow square content from the camera controller
 container.cameraController.aspectRatio = CGSize(width: 1, height: 1)
-// Turn the square camera on
-container.cameraController.squareCameraActive = true
-// Make sure we don't include the square camera button
-container.cameraController.controlButtons = [.cross, .reverse, .brightness, .flash]
+
+let nav = UINavigationController(rootViewController: container)
+nav.modalPresentationStyle = .fullScreen
+self.present(nav, animated: true, completion: nil)
+```
+
+### Portrait Content Only
+
+The below example presents the SDK with only support for creating portrait photos and videos. The user will have access to both the library and camera.
+```swift
+let container = ContainerController()
+container.editControllerDelegate = self
+
+// Only allow portrait content from the library cropper
+container.libraryController.previewCropController.aspectRatio = CGSize(width: 3, height: 4)
+// Only allow portrait content from the camera controller
+container.cameraController.aspectRatio = CGSize(width: 3, height: 4)
 
 let nav = UINavigationController(rootViewController: container)
 nav.modalPresentationStyle = .fullScreen
@@ -338,7 +352,7 @@ After making programmatic edits to a session, you should manually call `session.
 
 ### Image Exports
 
-The below example demonstrates exporting an image:
+The below example demonstrates exporting to a UIImage:
 ```swift
 if let image = session.image {
     ImageExporter.shared.export(image: image, completion: { (error, uiImage) in
@@ -355,7 +369,7 @@ In addition to exporting as a UIImage, the exported image is saved to file as a 
 
 ### Video Exports
 
-The below example demonstrates exporting a video. Characteristics such as frame rate can be set directly on the video.
+The below example demonstrates exporting a video to an mp4 file:
 ```swift
 if let video = session.video {
     VideoExporter.shared.export(video: video, progress: { progress in
@@ -372,7 +386,7 @@ if let video = session.video {
 ```
 After the export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.  When you are finished, you should call `session.destroy()` in order to remove the video from the users drafts. 
 
-Keep in mind you can change properties like `video.frameDuration` ([frame rate](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration)) before exporting the video.
+Frame rate can be customized by setting the [`video.frameDuration`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration) variable before exporting the video.
 
 You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+### 9.0.0 - 7/3/20
+
+&bull; Added portrait content only example<br>
+&bull; Fix bug which would infrequently cause non-square content to be produced when in square content only mode<br>
+&bull; Deprecated `squareCameraActive` in favor of `aspectRatio` on `CameraController`<br>
+&bull; Various bug fixes and stability improvements
+
 ### 8.0.0 - 6/24/20
 
 &bull; Added Xcode 12 and Swift 5.3 support<br>
