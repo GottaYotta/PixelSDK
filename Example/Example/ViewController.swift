@@ -115,10 +115,20 @@ class ViewController: UITableViewController {
         container.libraryController.previewCropController.aspectRatio = CGSize(width: 1, height: 1)
         // Only allow square content from the camera controller
         container.cameraController.aspectRatio = CGSize(width: 1, height: 1)
-        // Turn the square camera on
-        container.cameraController.squareCameraActive = true
-        // Make sure we don't include the square camera button
-        container.cameraController.controlButtons = [.cross, .reverse, .brightness, .flash]
+        
+        let nav = UINavigationController(rootViewController: container)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func portraitContentOnly() {
+        let container = ContainerController()
+        container.editControllerDelegate = self
+        
+        // Only allow portrait content from the library cropper
+        container.libraryController.previewCropController.aspectRatio = CGSize(width: 3, height: 4)
+        // Only allow portrait content from the camera controller
+        container.cameraController.aspectRatio = CGSize(width: 3, height: 4)
         
         let nav = UINavigationController(rootViewController: container)
         nav.modalPresentationStyle = .fullScreen

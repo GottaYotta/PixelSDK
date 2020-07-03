@@ -1274,10 +1274,6 @@ public enum CameraControlButton {
     @objc get
     @objc set
   }
-  @objc public var squareCameraActive: Swift.Bool {
-    @objc get
-    @objc set
-  }
   @objc public var brightnessAdjustmentActive: Swift.Bool {
     @objc get
     @objc set
@@ -1291,12 +1287,20 @@ public enum CameraControlButton {
     get
     set
   }
-  public var aspectRatio: CoreGraphics.CGSize?
+  public var aspectRatio: CoreGraphics.CGSize? {
+    get
+    set
+  }
   @objc public var videoPreset: AVFoundation.AVCaptureSession.Preset {
     @objc get
     @objc set
   }
   @objc public var photoSettings: () -> (AVFoundation.AVCapturePhotoSettings) {
+    @objc get
+    @objc set
+  }
+  @objc @available(*, deprecated, message: "Only set aspectRatio now. This variable is no longer needed.")
+  public var squareCameraActive: Swift.Bool {
     @objc get
     @objc set
   }

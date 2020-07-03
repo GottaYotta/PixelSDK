@@ -158,7 +158,30 @@ class PostController: UIViewController {
     // MARK: Uploading
     
     @IBAction func upload() {
-        if let video = self.session.video {
+        if let image = self.session.image {
+            print("Beginning image export")
+            
+            ImageExporter.shared.export(image: image, completion: { (error, uiImage) in
+                if let error = error {
+                    print("Unable to export image: \(error)")
+                    return
+                }
+                
+                print("Finished image export: \(uiImage!) and to file: \(image.exportedImageURL)")
+                
+                
+                // YOUR IMAGE UPLOAD LOGIC GOES HERE
+                
+                
+                self.share(completion: {
+                    self.dismiss(animated: true, completion: nil)
+                    
+                    // Remove the image from the users drafts after sharing completes
+                    self.session.destroy()
+                })
+            })
+        }
+        else if let video = self.session.video {
             print("Beginning video export")
             
             let (progressAlertController, circularProgress) = self.displayProgressAlertController()
@@ -186,42 +209,18 @@ class PostController: UIViewController {
                 self.share(completion: {
                     self.dismiss(animated: true, completion: nil)
                     
-                    // Remove the session from the users drafts after sharing completes
+                    // Remove the video from the users drafts after sharing completes
                     self.session.destroy()
                 })
             })
         }
-        else if let image = self.session.image {
-            print("Beginning image export")
-            
-            ImageExporter.shared.export(image: image, completion: { (error, uiImage) in
-                if let error = error {
-                    print("Unable to export image: \(error)")
-                    return
-                }
-                
-                print("Finished image export: \(uiImage!) and to file: \(image.exportedImageURL)")
-                
-                
-                // YOUR IMAGE UPLOAD LOGIC GOES HERE
-                
-                
-                self.share(completion: {
-                    self.dismiss(animated: true, completion: nil)
-                    
-                    // Remove the session from the users drafts after sharing completes
-                    self.session.destroy()
-                })
-            })
-        }
-        
     }
     
     // MARK: Progress Alert
     
     func displayProgressAlertController() -> (UIAlertController, RPCircularProgress) {
-        let controller = UIAlertController(title: "Preparing...", message: "\n\n\n", preferredStyle: .alert)
-        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        let controller = UIAlertController(title: NSLocalizedString("Preparing...", comment: "Preparing Title"), message: "\n\n\n", preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel Button"), style: .cancel, handler: { (action) in
             VideoExporter.shared.cancelExport()
             controller.dismiss(animated: true, completion: nil)
         }))
@@ -254,27 +253,20 @@ class PostController: UIViewController {
             return
         }
         
-        var image: SessionImage? = nil
-        var video: SessionVideo? = nil
-        
-        if let aImage = self.session.image {
-            guard aImage.isExported else {
-                print("WARNING: Tried to share image before export was done")
-                return
-            }
-            image = aImage
+        if let image = self.session.image,
+            !image.isExported {
+            print("WARNING: Tried to share image before export was completed")
+            return
         }
-        else if let aVideo = self.session.video {
-            guard aVideo.isExported else {
-                print("WARNING: Tried to share video before export was done")
-                return
-            }
-            video = aVideo
+        else if let video = self.session.video,
+            !video.isExported {
+            print("WARNING: Tried to share video before export was completed")
+            return
         }
         
         ShareManager.share(from: self,
-                           image: image?.exportedImageURL,
-                           video: video?.exportedVideoURL,
+                           image: self.session.image?.exportedImageURL,
+                           video: self.session.video?.exportedVideoURL,
                            description: self.session!.userInfo?[DescriptionKey] as? String,
                            shareOptions: selectedOptions,
                            started: { shareOption in
