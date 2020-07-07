@@ -1,5 +1,10 @@
 # Changelog
 
+### 9.1.0 - 7/7/20
+
+&bull; Added support for disabling cropping on `PreviewCropController`<br>
+&bull; Fix missing error from `Session` sessionReady closure
+
 ### 9.0.0 - 7/3/20
 
 &bull; Added portrait content only example<br>

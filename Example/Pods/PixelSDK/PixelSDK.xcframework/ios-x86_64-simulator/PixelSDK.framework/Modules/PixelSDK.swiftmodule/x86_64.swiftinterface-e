@@ -1524,6 +1524,10 @@ public enum GridLinesMode {
     @objc get
     @objc set
   }
+  @objc public var userInteractionEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @objc public var pausesVideoOnDrag: Swift.Bool
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
