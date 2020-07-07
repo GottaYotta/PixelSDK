@@ -59,17 +59,17 @@ class ViewController: UITableViewController {
     
     @IBAction func fullEditorWithCustomFilters() {
         PixelSDK.shared.primaryFilters = [
-                SessionFilterExample1(),
-                SessionFilterExample2(),
-                SessionFilterWilshire(),
-                SessionFilterMontana(),
-                SessionFilterSanVicente(),
-                SessionFilterMelrose(),
-                SessionFilterSepulveda(),
-                SessionFilterLaCienega(),
-                SessionFilterAbbotKinney(),
-                SessionFilterMulholland(),
-                SessionFilterSunset()
+            SessionFilterExample1(),
+            SessionFilterExample2(),
+            SessionFilterWilshire(),
+            SessionFilterMontana(),
+            SessionFilterSanVicente(),
+            SessionFilterMelrose(),
+            SessionFilterSepulveda(),
+            SessionFilterLaCienega(),
+            SessionFilterAbbotKinney(),
+            SessionFilterMulholland(),
+            SessionFilterSunset()
         ]
         
         let container = ContainerController()

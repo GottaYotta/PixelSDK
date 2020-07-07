@@ -365,7 +365,7 @@ if let image = session.image {
     })
 }
 ```
-In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After the export has completed, you may move, copy or delete this file. When you are finished, you should call `session.destroy()` in order to remove the image from the users drafts.
+In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After the export has completed, you may use, move or copy this file. Once you are finished with the file, you should call `session.destroy()` in order to remove the image from the users drafts and delete its associated files.
 
 ### Video Exports
 
@@ -384,7 +384,7 @@ if let video = session.video {
     })
 }
 ```
-After the export has completed, you may move, copy or delete the file found at the `video.exportedVideoURL`.  When you are finished, you should call `session.destroy()` in order to remove the video from the users drafts. 
+After the export has completed, you should use, move or copy the file found at the `video.exportedVideoURL`. Once you are finished with the file, you should call `session.destroy()` in order to remove the video from the users drafts and delete its associated files.
 
 Frame rate can be customized by setting the [`video.frameDuration`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration) variable before exporting the video.
 

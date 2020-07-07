@@ -1,5 +1,5 @@
 PODS:
-  - PixelSDK (9.0.0):
+  - PixelSDK (9.1.0):
     - PixelSDK-GPUImage2 (~> 5.0.0)
   - PixelSDK-GPUImage2 (5.0.0)
   - RPCircularProgress (0.5.0)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :podspec: "../PixelSDK.podspec"
 
 SPEC CHECKSUMS:
-  PixelSDK: b737524785ecc0022a72c5737dd1cf0017cba570
+  PixelSDK: de0f3b6b4d117739d52fb7ffa7b57da1880c3b0c
   PixelSDK-GPUImage2: 264f0dae8f5e3b1b7713235c35923be87043f708
   RPCircularProgress: 4499d4a1453dfbd3fe5bd8c6f344fd51cff3ad00
 

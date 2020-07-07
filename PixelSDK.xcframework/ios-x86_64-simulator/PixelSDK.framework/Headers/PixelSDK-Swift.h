@@ -895,6 +895,9 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// Size width must be greater than size height.
 /// Default value: <code>CGSize(width: 16, height: 9)</code>
 @property (nonatomic) CGSize maxRatioForLandscapeMedia;
+/// Controls whether cropping is enabled.
+/// Default: <code>true</code>
+@property (nonatomic) BOOL userInteractionEnabled;
 /// Controls whether video media should be paused when the user is dragging it in the crop controller.
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL pausesVideoOnDrag;
