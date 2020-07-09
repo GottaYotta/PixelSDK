@@ -176,7 +176,7 @@ class PostController: UIViewController {
                 self.share(completion: {
                     self.dismiss(animated: true, completion: nil)
                     
-                    // Remove the image from the users drafts after sharing completes
+                    // Remove the image from the users drafts and delete all associated files after sharing completes
                     self.session.destroy()
                 })
             })
@@ -209,7 +209,7 @@ class PostController: UIViewController {
                 self.share(completion: {
                     self.dismiss(animated: true, completion: nil)
                     
-                    // Remove the video from the users drafts after sharing completes
+                    // Remove the video from the users drafts and delete all associated files after sharing completes
                     self.session.destroy()
                 })
             })

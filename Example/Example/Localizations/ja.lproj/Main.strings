@@ -4,9 +4,6 @@
 /* Pressing this button displays the photo/video editing app, but only square photos and videos can be made. */
 "Fw1-22-PyF.text" = "正方形のコンテンツのみ";
 
-/* Pressing this button displays the photo/video editing app, but only portrait photos and videos can be made. */
-"KJq-QJ-ATC.text" = "Portrait Content Only";
-
 /* Leave the words "View Controller" in English. Pressing this button displays the app with a custom page (view controller) of the users choosing. */
 "AGa-2P-QRZ.text" = "タブバーのカスタムのView Controller";
 
@@ -39,3 +36,6 @@
 
 /* Leave the word "Insta" in English. Pressing this button displays the app with photo/video filters that are like Instagram filters. */
 "z19-hF-Xnu.text" = "Instaフィルター付きのフルエディタ";
+/* Portrait means portrait orientation. Pressing this button displays the photo/video editing app, but photos and videos can only be made in the portrait orientation. */
+"KJq-QJ-ATC.text" = "ポートレート（縦向き）コンテンツのみ";
+
