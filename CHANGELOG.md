@@ -1,5 +1,11 @@
 # Changelog
 
+### 9.1.1 - 7/9/20
+
+&bull; Fix bug which could cause a `Session` to not immediately appear in the `savedSessions` array<br>
+&bull; Added missing localizations for "Portrait Content Only", "Preparing" and "The camera is not supported in split view mode. Please switch to fullscreen mode."<br>
+&bull; Various bug fixes and stability improvements
+
 ### 9.1.0 - 7/7/20
 
 &bull; Added support for disabling cropping on `PreviewCropController`<br>

@@ -244,7 +244,7 @@ class ViewController: UITableViewController {
                 return
             }
             
-            // Mark the session as transient so it does not appear in the users drafts and persist on disk
+            // Mark the session as transient so it does not persist on disk/appear in the users drafts
             session.isTransient = true
             
             // Set the video frame rate to 60 fps
@@ -322,6 +322,7 @@ extension ViewController: EditControllerDelegate {
         
         let controller = PostController()
         controller.session = session
+        
         editController.navigationController?.pushViewController(controller, animated: true)
     }
     

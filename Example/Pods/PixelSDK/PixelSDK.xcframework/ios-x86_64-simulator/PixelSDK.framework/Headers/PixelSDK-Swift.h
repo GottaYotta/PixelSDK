@@ -499,7 +499,7 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 /// Provided session must not be destroyed.
 /// \param session The session to initialize the <code>EditController</code> with.
 ///
-- (nonnull instancetype)initWithSession:(Session * _Nonnull)session;
+- (nonnull instancetype)initWithSession:(Session * _Nonnull)session OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 /// The session the <code>EditController</code> was initialized with.
 @property (nonatomic, readonly, strong) Session * _Nonnull session;
@@ -515,7 +515,7 @@ SWIFT_CLASS("_TtC8PixelSDK14EditController")
 /// If this is true, the controller may show the save dialogue when the back button is pressed.
 /// <code>Session.isTransient</code> must be false and there must have been changes to the session for a save dialogue to appear.
 /// If this is false, no save dialogue will be shown when the back button button is pressed.
-/// For all cases, if no save dialogue appears the session will stay saved.
+/// For all cases where no save dialogue appears, the session will stay saved and <code>Session.destroy()</code> will not be called.
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL showsSaveDialogue;
 /// If you would like to disable cropping, rotation and horizontal/vertical perspective correction set this to false.
@@ -979,10 +979,9 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 ///   </li>
 /// </ul>
 /// After a session is successfully created you may delete any local image/video files that you used to create the session.
-/// <h3>Saving Sessions</h3>
+/// <h3>Saving/Restoring Sessions</h3>
 /// By default, all sessions are automatically saved to file and accessible from the users Drafts in the <code>LibraryController</code> and the <code>SessionManager.savedSessions</code> array. If you do not want a session to persist in memory and on disk, you should call <code>destroy()</code> when the session is no longer needed.
-/// note:
-/// Some delegate calls may explicitly state that a session should not yet be destroyed.
+/// If you want to know how to retrieve a session on startup see <code>SessionManager</code> for more information.
 /// <h3>Modifying Sessions</h3>
 /// Sessions can also be edited programmatically instead of visually.
 /// For example, setting the primaryFilter of an image:
@@ -1118,8 +1117,19 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionImage")
 @end
 
 
-/// The <code>SessionManager</code> is responsible for automatically restoring saved sessions when the application starts. By default, all sessions are automatically saved. The <code>savedSessions</code> array will be populated and the <code>DidRestoreSavedSessionsNotification</code> will be called when the session manager has finished restoring the sessions. If you are accessing the <code>savedSessions</code> array and displaying its contents you should refresh your UI when the notification is posted.
+/// By default, all sessions are automatically saved to file and accessible from the users Drafts in the <code>LibraryController</code> and the <code>savedSessions</code> array.
+/// The <code>SessionManager</code> is responsible for automatically restoring saved sessions when the application starts. The <code>savedSessions</code> array will be populated and the <code>DidRestoreSavedSessionsNotification</code> will be called when the session manager has finished restoring the sessions. If you are accessing the <code>savedSessions</code> array and displaying its contents you should refresh your UI when the notification is posted.
 /// You must call <code>PixelSDK.setup()</code> from your App Delegate to guarantee the <code>savedSessions</code> array is populated when the application starts, otherwise we will attempt to populate it at a later point.
+/// <h3>Saving/Restoring a Session</h3>
+/// If you want to retrieve a specific session after your application restarts, simply save its <code>sessionID</code>. For example:
+/// \code
+/// let savedSessionID = session.sessionID
+///
+/// \endcodeAnd then at a later point (after a restart, etc.) you can retrieve the session:
+/// \code
+/// let session = SessionManager.shared.savedSessions.first { $0.sessionID == savedSessionID }
+///
+/// \endcodeAll sessions are automatically saved, so you only need to worry about saving the <code>sessionID</code> and retrieving the session from the <code>savedSessions</code> array. If you destroy the session or delete the session from your drafts, you will no longer be able to retrieve the session.
 SWIFT_CLASS("_TtC8PixelSDK14SessionManager")
 @interface SessionManager : NSObject
 /// Use this to access the shared instance of the <code>SessionManager</code>.

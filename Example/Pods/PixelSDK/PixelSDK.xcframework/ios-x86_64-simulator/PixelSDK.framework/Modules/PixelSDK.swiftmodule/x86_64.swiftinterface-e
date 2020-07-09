@@ -281,7 +281,7 @@ public enum EditMode : Swift.Equatable {
   public static func == (lhs: PixelSDK.EditMode, rhs: PixelSDK.EditMode) -> Swift.Bool
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class EditController : UIKit.UIViewController {
-  @objc convenience public init(session: PixelSDK.Session)
+  @objc public init(session: PixelSDK.Session)
   @objc deinit
   @objc final public let session: PixelSDK.Session
   public var modes: [PixelSDK.EditMode] {

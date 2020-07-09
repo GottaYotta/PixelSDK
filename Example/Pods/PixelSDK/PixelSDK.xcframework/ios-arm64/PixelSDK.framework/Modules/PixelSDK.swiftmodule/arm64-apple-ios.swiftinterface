@@ -281,7 +281,7 @@ public enum EditMode : Swift.Equatable {
   public static func == (lhs: EditMode, rhs: EditMode) -> Swift.Bool
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class EditController : UIKit.UIViewController {
-  @objc convenience public init(session: Session)
+  @objc public init(session: Session)
   @objc deinit
   @objc final public let session: Session
   public var modes: [EditMode] {
