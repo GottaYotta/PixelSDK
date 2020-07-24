@@ -59,6 +59,8 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Import Photos and Videos from DSLR Camera. Lightning to USB Cable Required.
 
+✅ Direct GPU Access with Metal and [GPUImage3](https://github.com/BradLarson/GPUImage3) Integration.
+
 ✅ RAW Images and 60fps 4K UHD Video Support. HEVC Support.
 
 ✅ Full [Documentation](https://www.pixelsdk.com/docs/latest/).
@@ -523,7 +525,7 @@ There are many combinations of encoding settings you can provide. They must conf
 
 ## Write Custom Filters
 
-Easily create your own filters with Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Saturation --> Sharpen.
+Easily create your own filters with Photoshop, Lightroom presets, [3D LUT](https://en.wikipedia.org/wiki/3D_lookup_table) files, or your favorite photo editing application. An RGB lookup image is used to remap the colors in photos and videos. This is the same method used by common social media apps. For more complex filters you can chain [GPUImage3](https://github.com/BradLarson/GPUImage3) operations e.g. LookupFilter --> Saturation --> Sharpen.
 
 **Step 1:** Open any test image of your choosing in your photo editor.
 
@@ -533,7 +535,7 @@ Easily create your own filters with Photoshop, Lightroom presets, [3D LUT](https
 
 **Step 4:** Apply the same changes you made on your test image to the lookup.png image and save the result to a new image lookup_example.png. Do not downsize the lookup image, reduce its quality or change its format. In some photo editors you can simply copy your adjustment layers from your test image to the lookup image.
 
-**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage2](https://github.com/BradLarson/GPUImage2) operations e.g. LookupFilter --> Sharpen --> Saturation. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
+**Note:** Each pixel color must be independent of other pixels (e.g. sharpen will not work). If you need a more complex filter you can chain [GPUImage3](https://github.com/BradLarson/GPUImage3) operations e.g. LookupFilter --> Sharpen --> Saturation. An example of chaining operations is also included in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 
 **Step 5:** Use the below code to create your own SessionFilter subclass that utilizes a LookupFilter operation and your newly created lookup_example.png image. Be sure to add your lookup_example.png image to your Xcode project.
 

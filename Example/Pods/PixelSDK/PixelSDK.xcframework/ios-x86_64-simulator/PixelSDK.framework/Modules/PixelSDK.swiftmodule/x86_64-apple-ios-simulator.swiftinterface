@@ -2,12 +2,14 @@
 // swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PixelSDK
 import AVFoundation
+import AudioToolbox
 import CommonCrypto
 import CoreLocation
 import CoreMotion
 import Foundation
 import GPUImage
 import MediaPlayer
+import Metal
 import MobileCoreServices
 import Photos
 import PhotosUI
@@ -206,7 +208,7 @@ import UIKit
   @objc deinit
   @objc override dynamic public init()
 }
-@_inheritsConvenienceInitializers open class SessionFilterCannyEdgeDetection : SessionFilter {
+@_inheritsConvenienceInitializers open class SessionFilterEdgeDetection : SessionFilter {
   @objc required public init()
   required public init(from decoder: Swift.Decoder) throws
   override open func encode(to encoder: Swift.Encoder) throws
@@ -235,6 +237,12 @@ import UIKit
   override open func operation() -> GPUImage.ImageProcessingOperation
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
+}
+@_inheritsConvenienceInitializers @available(*, deprecated, renamed: "SessionFilterEdgeDetection")
+open class SessionFilterCannyEdgeDetection : SessionFilterEdgeDetection {
+  @objc deinit
+  @objc required public init()
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers open class SessionFilterSwirl : SessionFilter {
   @objc required public init()
@@ -591,6 +599,7 @@ public enum VideoExporterError : Swift.Error, Swift.CustomStringConvertible {
   case cancelled
   case watermarked
   case backgroundState
+  case metalSupport
   case destroyed
   case internalError(Swift.Error)
   public var errorDescription: Swift.String {
@@ -953,7 +962,7 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-@_inheritsConvenienceInitializers open class SessionFilterNobleCornerDetection : SessionFilter {
+@_inheritsConvenienceInitializers open class SessionFilterCornerDetection : SessionFilter {
   @objc required public init()
   required public init(from decoder: Swift.Decoder) throws
   override open func encode(to encoder: Swift.Encoder) throws
@@ -982,6 +991,12 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
   override open func operation() -> GPUImage.ImageProcessingOperation
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
+}
+@_inheritsConvenienceInitializers @available(*, deprecated, renamed: "SessionFilterCornerDetection")
+open class SessionFilterNobleCornerDetection : SessionFilterCornerDetection {
+  @objc deinit
+  @objc required public init()
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers open class SessionFilterTiltShift : SessionFilter {
   @objc required public init()
@@ -1770,6 +1785,7 @@ public enum ImageExporterError : Swift.Error, Swift.CustomStringConvertible {
   case cancelled
   case watermarked
   case backgroundState
+  case metalSupport
   case destroyed
   case internalError(Swift.Error)
   public var errorDescription: Swift.String {
@@ -1864,9 +1880,12 @@ public enum MediaType : Swift.Int {
     @objc set
   }
   @objc public var destroyed: Swift.Bool {
-    get
+    @objc get
   }
-  @objc public var hidden: Swift.Bool
+  @objc public var hidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @objc public func save()
   @objc public func destroy()
   @objc override dynamic public init()

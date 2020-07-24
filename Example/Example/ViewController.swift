@@ -15,24 +15,9 @@ class ViewController: UITableViewController {
     @IBOutlet var activityIndicatorView1: UIActivityIndicatorView!
     @IBOutlet var activityIndicatorView2: UIActivityIndicatorView!
     
-    var alertShown = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        #if targetEnvironment(simulator)
-        if !alertShown {
-            let alert = UIAlertController(title: "Simulator Warning", message: "The Xcode simulator has limited functionality (no camera or high quality media) and is very slow.\nWe recommend you run this on a physical device instead.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            alertShown = true
-        }
-        #endif
     }
     
     @IBAction func fullEditorWithInstaFilters() {
@@ -152,8 +137,8 @@ class ViewController: UITableViewController {
     
     @IBAction func editControllerWithCustomVideoSession() {
         // NOTE: The session video will automatically inherit its renderSize from the actualSize of the first segment (asset) unless you pass a renderSize parameter to the session initializer.
-        let asset1 = AVAsset(url: Bundle.main.url(forResource: "test_1", withExtension: "mov")!)
-        let asset2 = AVAsset(url: Bundle.main.url(forResource: "test_2", withExtension: "mp4")!)
+        let asset1 = AVAsset(url: Bundle.main.url(forResource: "test_2", withExtension: "mp4")!)
+        let asset2 = AVAsset(url: Bundle.main.url(forResource: "test_1", withExtension: "mov")!)
         let asset3 = AVAsset(url: Bundle.main.url(forResource: "test_3", withExtension: "mp4")!)
         
         let _ = Session(assets: [asset1, asset2, asset3], sessionReady: { (session, error) in

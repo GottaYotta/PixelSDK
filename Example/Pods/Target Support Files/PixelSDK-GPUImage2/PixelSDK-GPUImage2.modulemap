@@ -1,6 +1,0 @@
-framework module GPUImage {
-  umbrella header "PixelSDK-GPUImage2-umbrella.h"
-
-  export *
-  module * { export * }
-}

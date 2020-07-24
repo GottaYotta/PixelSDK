@@ -4,5 +4,4 @@ use_frameworks!
 
 target 'PixelSDKExample' do
   pod 'PixelSDK', :podspec => '../PixelSDK.podspec'
-  pod 'RPCircularProgress'
 end

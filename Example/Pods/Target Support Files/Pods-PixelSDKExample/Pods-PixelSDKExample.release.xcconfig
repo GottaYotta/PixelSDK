@@ -1,14 +1,12 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-CLANG_MODULES_AUTOLINK = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK-GPUImage2" "${PODS_CONFIGURATION_BUILD_DIR}/RPCircularProgress" "${PODS_ROOT}/PixelSDK" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-arm64" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-x86_64-simulator"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK-GPUImage3" "${PODS_ROOT}/PixelSDK" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-arm64" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-x86_64-simulator"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK-GPUImage2/GPUImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RPCircularProgress/RPCircularProgress.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK-GPUImage3/GPUImage.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "CoreMedia" -framework "GPUImage" -framework "OpenGLES" -framework "PixelSDK" -framework "QuartzCore" -framework "RPCircularProgress"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS $(inherited) -DGLES
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "GPUImage" -framework "Metal" -framework "PixelSDK" -framework "QuartzCore"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
-VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGLES

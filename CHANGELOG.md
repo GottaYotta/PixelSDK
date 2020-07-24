@@ -1,5 +1,10 @@
 # Changelog
 
+### 10.0.0 - 7/23/20
+
+&bull; Migrated to Metal from OpenGL<br>
+&bull; Various bug fixes and stability improvements
+
 ### 9.1.1 - 7/9/20
 
 &bull; Fix bug which could cause a `Session` to not immediately appear in the `savedSessions` array<br>

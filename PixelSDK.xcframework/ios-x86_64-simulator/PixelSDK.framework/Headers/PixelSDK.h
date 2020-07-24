@@ -23,3 +23,5 @@ FOUNDATION_EXPORT const unsigned char PixelSDKVersionString[];
 #import "UICollectionViewOffsetLock.h"
 #import "CalloutView.h"
 #import "JSONSerializationHelper.h"
+#import "NSObject+Exception.h"
+#import "TPCircularBuffer.h"

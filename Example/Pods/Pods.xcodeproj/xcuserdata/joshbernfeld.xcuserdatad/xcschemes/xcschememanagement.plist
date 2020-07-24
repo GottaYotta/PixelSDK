@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PixelSDK-GPUImage2.xcscheme</key>
+		<key>PixelSDK-GPUImage3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -15,11 +15,6 @@
 			<false/>
 		</dict>
 		<key>Pods-PixelSDKExample.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RPCircularProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
