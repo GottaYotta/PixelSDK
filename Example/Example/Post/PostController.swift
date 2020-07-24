@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import PixelSDK
-import RPCircularProgress
 
 let LocationNameKey = "location_name"
 let DescriptionKey = "description"

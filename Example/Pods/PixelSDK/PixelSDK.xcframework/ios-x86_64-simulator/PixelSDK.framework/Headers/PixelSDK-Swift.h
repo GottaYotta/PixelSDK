@@ -230,7 +230,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// <em>Figure 1</em> Camera controller
 /// <img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/camera_1.jpg" alt="Screenshot" width="190" height="auto" style="border-style: solid; border-width: 1px; border-color: LightGrey;"/>
 /// This controller is used inside the <code>ContainerController</code> and can be used on its own by initializing
-/// the <code>ContainerController</code> with only one mode <code>.photo</code> or <code>.video</code>.
+/// the container controller with only one mode <code>.photo</code> or <code>.video</code>.
+/// The camera can be restricted to produce only content of a specific aspect ratio. For example square content:
+/// \code
+/// container.cameraController.aspectRatio = CGSize(width: 1, height: 1)
+///
+/// \endcodeBy default, the camera controller pushes an <code>EditController</code> onto the navigation stack after a photo or video is taken. This can be disabled by setting <code>showsEditControllerWhenDone</code> to false. You will also need to implement the <code>CameraControllerDelegate</code> in order to respond the <code>CameraControllerDelegate.cameraController(_:didFinishWithSession:)</code> delegate method.
 SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 @interface CameraController : UIViewController
 /// Set this delegate in order to handle events that occur in this controller.
@@ -453,8 +458,9 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, open) {
 @class UIButton;
 
 /// The primary functionality of the <code>EditController</code> includes filter selection, filter intensity, adjustments (brightness, vibrance, saturation, etc.), cropping, rotation, horizontal/vertical perspective correction, and video segment composing/trimming/re-ordering.
-/// When editing a photo, the controller consists of two tabs Filter and Adjust. When editing a video, the controller consist of three tabs Filter, Trim and Adjust. You may edit media of any aspect ratio. All editing functionality available to photos is also available to videos.
-/// Normally the <code>EditController</code> is pushed onto the navigation stack by either the <code>LibraryController</code> or <code>CameraController</code>. You may also present this controller manually with a <code>Session</code> for example:
+/// The edit controller is always presented with an image or video based <code>Session</code> object. Sessions can be edited programmatically by changing filters, crop rects, trim times and more. The edit controller will display all programmatic changes to a session in its interface. For more information on modifying a session see the <code>Session</code> documentation.
+/// When editing an image based session, the controller consists of two tabs Filter and Adjust. When editing a video, the controller consist of three tabs Filter, Trim and Adjust. You may edit media of any aspect ratio. All editing functionality available to images is also available to videos.
+/// Normally the edit controller is pushed onto the navigation stack by either the <code>LibraryController</code> or <code>CameraController</code>. You may also present the edit controller manually with a <code>Session</code> for example:
 /// \code
 /// let image = UIImage(named: "test_image")!
 ///
@@ -469,7 +475,7 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, open) {
 ///
 /// \endcodeattention:
 /// Sessions are automatically saved so you a responsible for calling <code>Session.destroy()</code> when you are done with a session (unless noted otherwise). If you do not destroy a session it will persist in the users Drafts in memory and on disk.
-/// You may also present an <code>EditController</code> with one or more AVAssets, for example:
+/// You may also present an edit controller with one or more AVAssets, for example:
 /// \code
 /// let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
 /// let asset2 = AVAsset(url: Bundle.main.url(forResource: "test2", withExtension: "mp4")!)
@@ -626,17 +632,14 @@ SWIFT_PROTOCOL("_TtP8PixelSDK22EditControllerDelegate_")
 /// <em>Figure 1</em> Library controller
 /// <img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/library_1.jpg" alt="Screenshot" width="190" height="auto" style="border-style: solid; border-width: 1px; border-color: LightGrey;"/>
 /// This controller is used inside the <code>ContainerController</code> and can be used on its own by initializing
-/// the <code>ContainerController</code> with only one mode <code>.library</code>.
-/// The <code>LibraryController</code> can be customized to produce content of a specific aspect ratio or simply limited to a maximum aspect ratio by modifying its <code>previewCropController</code>. For example square content only:
+/// the container controller with only one mode <code>.library</code>.
+/// For more information on modifying the cropping behavior of the library controller see its <code>PreviewCropController</code>.
+/// The library controller can also be restricted to only display certain types of media. For example images only:
 /// \code
-/// libraryController.previewCropController.aspectRatio = CGSize(width: 1, height: 1)
+/// containerController.libraryController.fetchPredicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
+/// containerController.libraryController.draftMediaTypes = [.image]
 ///
-/// \endcodeYou can also restrict this controller to only display certain types of media. For example images only:
-/// \code
-/// libraryController.fetchPredicate = NSPredicate(format: "mediaType == %d", PHAssetMediaType.image.rawValue)
-/// libraryController.draftMediaTypes = [.image]
-///
-/// \endcode
+/// \endcodeBy default, the library controller pushes an <code>EditController</code> onto the navigation stack when the Next button is pressed. This can be disabled by setting <code>showsEditControllerWhenDone</code> to false. You will also need to implement the <code>LibraryControllerDelegate</code> in order to respond the <code>LibraryControllerDelegate.libraryController(_:didFinishWithSession:withSegment:)</code> delegate method.
 SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 @interface LibraryController : UIViewController
 /// Set this delegate in order to handle events that occur in this controller.
@@ -687,6 +690,8 @@ SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
+
 @class UIGestureRecognizer;
 
 @interface LibraryController (SWIFT_EXTENSION(PixelSDK)) <UIGestureRecognizerDelegate>
@@ -698,13 +703,11 @@ SWIFT_CLASS("_TtC8PixelSDK17LibraryController")
 
 
 
-
-
-
-
 @interface LibraryController (SWIFT_EXTENSION(PixelSDK))
 @property (nonatomic, readonly) BOOL prefersBottomBarHidden;
 @end
+
+
 
 
 
@@ -861,6 +864,38 @@ SWIFT_PROTOCOL("_TtP8PixelSDK25PreviewControllerDelegate_")
 /// The <code>PreviewCropController</code> handles cropping for media in the <code>LibraryController</code>.
 /// <em>Figure 1</em> Preview crop controller
 /// <img src="https://www.cdn.pixelsdk.com/assets/img/docs/crop_controller.jpg" alt="Preview crop controller" title="Preview crop controller" width="250" height="auto"/>
+/// The crop controller can be accessed with the following:
+/// \code
+/// let cropController = containerController.libraryController.previewCropController
+///
+/// \endcodeThe below examples demonstrate a few custom variations in cropping behavior.
+/// Allow only content of a specific aspect ratio. For example square content only:
+/// \code
+/// cropController.aspectRatio = CGSize(width: 1, height: 1)
+///
+/// \endcodeAllow only content of a maximum aspect ratio. This is the default functionality.
+/// \code
+/// cropController.maxRatioForPortraitMedia = CGSize(width: 3, height: 4)
+/// cropController.maxRatioForLandscapeMedia = CGSize(width: 16, height: 9)
+///
+/// \endcodeSet content initially zoomed in or out. For example initially zoomed out:
+/// \code
+/// cropController.defaultsToAspectFillForPortraitMedia = false
+/// cropController.defaultsToAspectFillForLandscapeMedia = false
+///
+/// \endcodeApply no initial cropping, unless the user interacts with the cropper:
+/// \code
+/// cropController.maxRatioForPortraitMedia = CGSize(width: 1, height: .max)
+/// cropController.maxRatioForLandscapeMedia = CGSize(width: .max, height: 1)
+///
+/// cropController.defaultsToAspectFillForPortraitMedia = false
+/// cropController.defaultsToAspectFillForLandscapeMedia = false
+///
+/// \endcodeDisable cropping from user interaction:
+/// \code
+/// cropController.userInteractionEnabled = false
+///
+/// \endcodeIf the last two examples are combined, cropping will be disabled entirely.
 SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 @interface PreviewCropController : UIViewController
 /// If this is true when portrait media is loaded into the crop controller, the media will by default be zoomed in to fill the crop controller and if false it will by default be zoomed out.
@@ -980,8 +1015,8 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// </ul>
 /// After a session is successfully created you may delete any local image/video files that you used to create the session.
 /// <h3>Saving/Restoring Sessions</h3>
-/// By default, all sessions are automatically saved to file and accessible from the users Drafts in the <code>LibraryController</code> and the <code>SessionManager.savedSessions</code> array. If you do not want a session to persist in memory and on disk, you should call <code>destroy()</code> when the session is no longer needed.
-/// If you want to know how to retrieve a session on startup see <code>SessionManager</code> for more information.
+/// By default, all sessions are automatically saved to file and accessible from the users Drafts in the <code>LibraryController</code> and the <code>SessionManager.savedSessions</code> array. If you do not want a session to persist in memory and on disk, you should call <code>destroy()</code> when the session is no longer needed. No further action is required on your part.
+/// If you want to know how to retrieve a saved session on startup see <code>SessionManager</code> for more information.
 /// <h3>Modifying Sessions</h3>
 /// Sessions can also be edited programmatically instead of visually.
 /// For example, setting the primaryFilter of an image:
@@ -1120,16 +1155,35 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionImage")
 /// By default, all sessions are automatically saved to file and accessible from the users Drafts in the <code>LibraryController</code> and the <code>savedSessions</code> array.
 /// The <code>SessionManager</code> is responsible for automatically restoring saved sessions when the application starts. The <code>savedSessions</code> array will be populated and the <code>DidRestoreSavedSessionsNotification</code> will be called when the session manager has finished restoring the sessions. If you are accessing the <code>savedSessions</code> array and displaying its contents you should refresh your UI when the notification is posted.
 /// You must call <code>PixelSDK.setup()</code> from your App Delegate to guarantee the <code>savedSessions</code> array is populated when the application starts, otherwise we will attempt to populate it at a later point.
-/// <h3>Saving/Restoring a Session</h3>
-/// If you want to retrieve a specific session after your application restarts, simply save its <code>sessionID</code>. For example:
+/// <h3>Retrieving a Session</h3>
+/// If you want to retrieve a specific session after your application restarts, simply save its <code>sessionID</code> beforehand. You can save it in user defaults or your own data structure. For example with user defaults:
 /// \code
 /// let savedSessionID = session.sessionID
+/// UserDefaults.standard.set(savedSessionID, forKey: "mySessionID")
 ///
-/// \endcodeAnd then at a later point (after a restart, etc.) you can retrieve the session:
+/// \endcodeAnd then at a later point (after a restart, etc.) you can retrieve the session using the ID you saved:
 /// \code
-/// let session = SessionManager.shared.savedSessions.first { $0.sessionID == savedSessionID }
+/// if let savedSessionID = UserDefaults.standard.object(forKey: "mySessionID") as? Int,
+///     let session = SessionManager.shared.savedSessions.first { $0.sessionID == savedSessionID } {
+///     // Retrieved session!
+/// }
 ///
 /// \endcodeAll sessions are automatically saved, so you only need to worry about saving the <code>sessionID</code> and retrieving the session from the <code>savedSessions</code> array. If you destroy the session or delete the session from your drafts, you will no longer be able to retrieve the session.
+/// Another option for retrieving a session is to simply set some identifying <code>userInfo</code> on the session beforehand.
+/// For example:
+/// \code
+/// session.userInfo = ["my_internal_id": 2]
+///
+/// \endcodeAnd then at a later point (after a restart, etc.) you can retrieve the session by finding the session with your user info:
+/// \code
+/// for session in SessionManager.shared.savedSessions {
+///     if let myInternalID = session.userInfo?["my_internal_id"] as? Int,
+///         myInternalID == 2 {
+///         // Retrieved session!
+///     }
+/// }
+///
+/// \endcode
 SWIFT_CLASS("_TtC8PixelSDK14SessionManager")
 @interface SessionManager : NSObject
 /// Use this to access the shared instance of the <code>SessionManager</code>.
@@ -1233,6 +1287,8 @@ SWIFT_CLASS("_TtC8PixelSDK19SessionVideoSegment")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 

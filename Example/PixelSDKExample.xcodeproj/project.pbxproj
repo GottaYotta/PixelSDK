@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0902B124CA732D0034473B /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0902B024CA732D0034473B /* RPCircularProgress.swift */; };
 		1F161F222436995D008F0E73 /* PHPhotoLibrary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */; };
 		1FC45F09246126EB00BF87F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC45F07246126EB00BF87F7 /* Main.storyboard */; };
 		1FC45F0C246126F300BF87F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC45F0A246126F300BF87F7 /* LaunchScreen.storyboard */; };
@@ -35,8 +36,6 @@
 		1FCA591723B6BE530087B542 /* SessionFilterExample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58EC23B6BE530087B542 /* SessionFilterExample2.swift */; };
 		1FCA591823B6BE530087B542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA58ED23B6BE530087B542 /* Assets.xcassets */; };
 		1FCA591923B6BE530087B542 /* SessionFilterExample1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58EE23B6BE530087B542 /* SessionFilterExample1.swift */; };
-		1FCA591C23B6BE530087B542 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58F423B6BE530087B542 /* UIImage+Additions.swift */; };
-		1FCA591D23B6BE530087B542 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58F523B6BE530087B542 /* UIColor+Additions.swift */; };
 		1FCA591E23B6BE530087B542 /* PHAsset+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58F623B6BE530087B542 /* PHAsset+Additions.swift */; };
 		1FCA592023B6BE530087B542 /* TouchDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58F823B6BE530087B542 /* TouchDetectionView.swift */; };
 		1FCA592123B6BE530087B542 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA58F923B6BE530087B542 /* LocationManager.swift */; };
@@ -50,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0D210D24085027C9CE622875 /* Pods_PixelSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0902B024CA732D0034473B /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCircularProgress.swift; sourceTree = "<group>"; };
 		1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Additions.swift"; sourceTree = "<group>"; };
 		1FC45F08246126EB00BF87F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Localizations/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FC45F0B246126F300BF87F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Localizations/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -200,8 +200,6 @@
 		1FCA58EC23B6BE530087B542 /* SessionFilterExample2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFilterExample2.swift; sourceTree = "<group>"; };
 		1FCA58ED23B6BE530087B542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FCA58EE23B6BE530087B542 /* SessionFilterExample1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFilterExample1.swift; sourceTree = "<group>"; };
-		1FCA58F423B6BE530087B542 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
-		1FCA58F523B6BE530087B542 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		1FCA58F623B6BE530087B542 /* PHAsset+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+Additions.swift"; sourceTree = "<group>"; };
 		1FCA58F823B6BE530087B542 /* TouchDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectionView.swift; sourceTree = "<group>"; };
 		1FCA58F923B6BE530087B542 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -304,13 +302,12 @@
 		1FCA58F323B6BE530087B542 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				1FCA58F423B6BE530087B542 /* UIImage+Additions.swift */,
-				1FCA58F523B6BE530087B542 /* UIColor+Additions.swift */,
 				1FCA58F623B6BE530087B542 /* PHAsset+Additions.swift */,
 				1FCA58F823B6BE530087B542 /* TouchDetectionView.swift */,
 				1FCA58F923B6BE530087B542 /* LocationManager.swift */,
 				1FCA58FA23B6BE530087B542 /* MKPlacemark+Additions.swift */,
 				1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */,
+				1F0902B024CA732D0034473B /* RPCircularProgress.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -363,7 +360,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = "Foodworthy, Inc.";
+				ORGANIZATIONNAME = "GottaYotta, Inc.";
 				TargetAttributes = {
 					1FCA58BA23B6BDEB0087B542 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -524,7 +521,7 @@
 				1FCA592023B6BE530087B542 /* TouchDetectionView.swift in Sources */,
 				1FCA592123B6BE530087B542 /* LocationManager.swift in Sources */,
 				1FCA591923B6BE530087B542 /* SessionFilterExample1.swift in Sources */,
-				1FCA591D23B6BE530087B542 /* UIColor+Additions.swift in Sources */,
+				1F0902B124CA732D0034473B /* RPCircularProgress.swift in Sources */,
 				1FCA591523B6BE530087B542 /* ShareMail.swift in Sources */,
 				1FCA591223B6BE530087B542 /* ShareInstagram.swift in Sources */,
 				1FCA590423B6BE530087B542 /* PostTagLocationCell.swift in Sources */,
@@ -539,7 +536,6 @@
 				1FCA590623B6BE530087B542 /* PostController.swift in Sources */,
 				1FCA591723B6BE530087B542 /* SessionFilterExample2.swift in Sources */,
 				1FCA591123B6BE530087B542 /* ShareTwitter.swift in Sources */,
-				1FCA591C23B6BE530087B542 /* UIImage+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

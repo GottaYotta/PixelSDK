@@ -1,27 +1,23 @@
 PODS:
-  - PixelSDK (9.1.1):
-    - PixelSDK-GPUImage2 (~> 5.0.0)
-  - PixelSDK-GPUImage2 (5.0.0)
-  - RPCircularProgress (0.5.0)
+  - PixelSDK (10.0.0):
+    - PixelSDK-GPUImage3 (~> 1.1.1)
+  - PixelSDK-GPUImage3 (1.1.11)
 
 DEPENDENCIES:
   - PixelSDK (from `../PixelSDK.podspec`)
-  - RPCircularProgress
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - PixelSDK-GPUImage2
-    - RPCircularProgress
+    - PixelSDK-GPUImage3
 
 EXTERNAL SOURCES:
   PixelSDK:
     :podspec: "../PixelSDK.podspec"
 
 SPEC CHECKSUMS:
-  PixelSDK: 6cc9f297f5854e7c297e0a2002babbf40711bd52
-  PixelSDK-GPUImage2: 264f0dae8f5e3b1b7713235c35923be87043f708
-  RPCircularProgress: 4499d4a1453dfbd3fe5bd8c6f344fd51cff3ad00
+  PixelSDK: c87d182fdb19873a82b06e6ce47a66ba52df7296
+  PixelSDK-GPUImage3: 34cf4b83a4367160c5e5c40165b553a37f8786ac
 
-PODFILE CHECKSUM: 7c5df9c7b9794bd16375631783770e19cb498f47
+PODFILE CHECKSUM: 79b82a0f7e6f394eddc31f60b1ddd0470bc90801
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
