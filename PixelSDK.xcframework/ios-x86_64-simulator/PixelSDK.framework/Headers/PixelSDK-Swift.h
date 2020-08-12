@@ -459,7 +459,7 @@ typedef SWIFT_ENUM(NSInteger, ContentMode, open) {
 
 /// The primary functionality of the <code>EditController</code> includes filter selection, filter intensity, adjustments (brightness, vibrance, saturation, etc.), cropping, rotation, horizontal/vertical perspective correction, and video segment composing/trimming/re-ordering.
 /// The edit controller is always presented with an image or video based <code>Session</code> object. Sessions can be edited programmatically by changing filters, crop rects, trim times and more. The edit controller will display all programmatic changes to a session in its interface. For more information on modifying a session see the <code>Session</code> documentation.
-/// When editing an image based session, the controller consists of two tabs Filter and Adjust. When editing a video, the controller consist of three tabs Filter, Trim and Adjust. You may edit media of any aspect ratio. All editing functionality available to images is also available to videos.
+/// When presented with an image based session, the controller consists of two tabs Filter and Adjust. When presented with a video, the controller consist of three tabs Filter, Trim and Adjust. You may edit media of any aspect ratio. All editing functionality available to images is also available to videos.
 /// Normally the edit controller is pushed onto the navigation stack by either the <code>LibraryController</code> or <code>CameraController</code>. You may also present the edit controller manually with a <code>Session</code> for example:
 /// \code
 /// let image = UIImage(named: "test_image")!
@@ -798,9 +798,13 @@ SWIFT_CLASS("_TtC8PixelSDK17PreviewController")
 /// :nodoc:
 - (void)viewDidLoad;
 /// :nodoc:
+- (void)viewWillDisappear:(BOOL)animated;
+/// :nodoc:
 - (void)viewDidDisappear:(BOOL)animated;
 /// :nodoc:
 - (void)viewWillAppear:(BOOL)animated;
+/// :nodoc:
+- (void)viewDidAppear:(BOOL)animated;
 /// :nodoc:
 - (void)didReceiveMemoryWarning;
 /// The session to be displayed by the preview controller.
@@ -1019,40 +1023,45 @@ SWIFT_CLASS("_TtC8PixelSDK21PreviewCropController")
 /// If you want to know how to retrieve a saved session on startup see <code>SessionManager</code> for more information.
 /// <h3>Modifying Sessions</h3>
 /// Sessions can also be edited programmatically instead of visually.
-/// For example, setting the primaryFilter of an image:
+/// For example, setting the primaryFilter of an image to <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionFilterWilshire.html">Wilshire</a>:
 /// \code
 /// session.image!.primaryFilter = SessionFilterWilshire()
 ///
-/// \endcodeApplying a Brightness filter to an image:
+/// \endcodeApplying a <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionFilterBrightness.html">Brightness</a> filter to an image:
 /// \code
 /// let brightnessFilter = SessionFilterBrightness()
 /// brightnessFilter.normalizedIntensity = 0.2
 /// session.image!.filters = [brightnessFilter]
 ///
-/// \endcodeApplying a Saturation filter to a whole video:
+/// \endcodeApplying a <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionFilterSaturation.html">Saturation</a> filter to a whole video:
 /// \code
 /// let saturationFilter = SessionFilterSaturation()
 /// saturationFilter.normalizedIntensity = 0.3
 /// session.video!.filters = [saturationFilter]
 ///
-/// \endcodeApplying a Contrast filter to the first segment of a video:
+/// \endcodeApplying a <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionFilterContrast.html">Contrast</a> filter to the first segment of a video:
 /// \code
 /// let segment = session.video!.videoSegments.first!
 /// let contrastFilter = SessionFilterContrast()
 /// contrastFilter.normalizedIntensity = 0.2
 /// segment.filters = [contrastFilter]
 ///
-/// \endcodeTrimming a segment so it starts at one second in, with a duration of two seconds:
+/// \endcodeTrimming a segment so it <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)trimStartTime">starts</a> at one second in, with a <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)trimDuration">duration</a> of two seconds:
 /// \code
 /// let segment = session.video!.videoSegments.first!
 /// segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
 /// segment.trimDuration = CMTime(seconds: 2, preferredTimescale: segment.duration.timescale)
 ///
-/// \endcodeChanging the orientation of the first segment of a video:
+/// \endcodeRotating the first segment of a video with <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)preferredTransform">preferredTransform</a>:
 /// \code
 /// let segment = session.video!.videoSegments.first!
 /// segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 /// segment.cropRect = segment.suggestedCropRect()
+///
+/// \endcodeIncreasing the <a href="https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)speedMultiplier">speed</a> of the first segment of a video:
+/// \code
+/// let segment = session.video!.videoSegments.first!
+/// segment.speedMultiplier = 2 // 2x faster
 ///
 /// \endcodeYou can present the <code>EditController</code> after making programmatic edits and it will reflect your changes. Additionally, the <code>PreviewController</code> will reflect all programmatic edits in real-time.
 /// After making programmatic edits to a session, you should manually call <code>session.save()</code>.
@@ -1194,7 +1203,12 @@ SWIFT_CLASS("_TtC8PixelSDK14SessionManager")
 /// \endcode
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SessionManager * _Nonnull shared;)
 + (SessionManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-/// This array contains all sessions that have been saved. The contents of this array will be displayed as the Drafts section of the <code>LibraryController</code>. If a session is destroyed it will be removed from this array.
+/// This array contains all sessions that have been saved. The contents of this array will be displayed as the Drafts section of the <code>LibraryController</code>. If a session is deleted from Drafts or <a href="https://www.pixelsdk.com/docs/latest/Classes/Session.html#/c:@M@PixelSDK@objc(cs)Session(im)destroy">destroyed</a> it will be removed from this array.
+/// For example to access the saved sessions:
+/// \code
+/// print("Saved Sessions: \(SessionManager.shared.savedSessions)")
+///
+/// \endcode
 @property (nonatomic, readonly, copy) NSArray<Session *> * _Nonnull savedSessions;
 /// This will be true after the <code>savedSessions</code> array has been populated. This will be set to true shortly after the application starts.
 /// Default value: <code>false</code>
@@ -1211,7 +1225,7 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionVideo")
 @interface SessionVideo : NSObject
 /// The pixel dimensions of the final video.
 /// If not manually set, this will be equal to the size of the cropRect of the first segment. If there is no cropRect, it is equal to the actualSize of the first segment. If the first segment later changes, the renderSize will not also change.
-/// If you manually change the renderSize, you will need to update the cropRect for each segment if the renderSize width/height ratio has changed. You can avoid this by setting the <code>CameraController.aspectRatio</code> and <code>PreviewCropController.aspectRatio</code> beforehand.
+/// If you manually change the renderSize, you will need to update the cropRect for each segment if the renderSize width/height ratio has changed. You can avoid this by setting the <code>CameraController</code> <code>CameraController.aspectRatio</code> and <code>PreviewCropController</code> <code>PreviewCropController.aspectRatio</code> beforehand.
 /// If you provide floating point numbers, they will be rounded using the Drawin.round() function.
 /// If you provide odd numbers, they will be reduced to the next lower even number, e.g. 5 becomes 4. This is because AVFoundation can’t handle odd pixel dimensions when writing video files and will instead substitute in a green line.
 @property (nonatomic) CGSize renderSize;
@@ -1220,13 +1234,24 @@ SWIFT_CLASS("_TtC8PixelSDK12SessionVideo")
 /// There must be one or more videoSegments.
 @property (nonatomic, readonly, copy) NSArray<SessionVideoSegment *> * _Nonnull videoSegments;
 /// The total duration of the video.
-/// Calculated by adding the trimDuration of every segment together.
+/// Calculated by adding the <code>SessionVideoSegment.renderDuration</code> of every segment together.
 @property (nonatomic, readonly) CMTime duration;
 /// The framerate for the video.
 /// For example, a frameDuration of 1/30th of a second <code>CMTime(value: 1, timescale: 30)</code> would be a 30fps video.
 /// If not manually set, it is calculated by picking the shortest frameDuration from the segments. In other words, it picks the highest framerate from the segments. This is similar to the method used by <a href="https://developer.apple.com/documentation/avfoundation/avvideocomposition/1385892-videocompositionwithpropertiesof?language=objc">videoCompositionWithPropertiesOfAsset:</a>.
 /// Will be <code>CMTime.positiveInfinity</code> if the video has no segments.
 @property (nonatomic) CMTime frameDuration;
+/// The playback speed of the video.
+/// precondition:
+/// Must be greater than zero.
+/// note:
+/// The speed of individual segments can be set with <code>SessionVideoSegment</code> <code>SessionVideoSegment.speedMultiplier</code> instead.
+/// For example:
+/// A value of <code>2</code> with result in 2x faster playback speed.
+/// A value of <code>.5</code> will result .5x slower playback speed.
+/// A value of <code>1</code> will result in normal playback speed.
+/// Default value: <code>1</code>
+@property (nonatomic) double speedMultiplier;
 /// The URL location of the final video file (with all segments stiched together) after it has been exported. There will only be a file here after the export has been completed for the video. You may move, copy or delete this file. See <code>VideoExporter</code> for more information.
 @property (nonatomic, readonly, copy) NSURL * _Nonnull exportedVideoURL;
 /// The UTC date when the last successful video export started.
@@ -1255,22 +1280,38 @@ SWIFT_CLASS("_TtC8PixelSDK19SessionVideoSegment")
 - (CGRect)suggestedCropRect SWIFT_WARN_UNUSED_RESULT;
 /// The start time of the video segment after it has been trimmed.
 /// <code>.zero</code> corresponds with a start time at the beginning of the video segment.
+/// Speed is not factored into this time.
 /// precondition:
 /// Cannot be greater than <code>duration</code> and cannot be negative.
 /// Default value: <code>.zero</code>
 @property (nonatomic) CMTime trimStartTime;
 /// The duration of the video segment after it has been trimmed.
 /// This is the duration of video to play after the <code>trimStartTime</code>.
+/// Speed is not factored into this time.
 /// precondition:
 /// Cannot be greater than <code>duration</code> - <code>trimStartTime</code> and cannot be negative.
 /// Default value: <code>duration</code>
 @property (nonatomic) CMTime trimDuration;
-/// The original duration of the video segment.
+/// The final duration of the video segment after it has been trimmed and speed multipliers divided in.
+/// Default value: <code>SessionVideoSegment.trimDuration</code> \ <code>SessionVideoSegment.speedMultiplier</code> \ <code>SessionVideo</code> <code>SessionVideo.speedMultiplier</code>
+@property (nonatomic, readonly) CMTime renderDuration;
+/// The original duration of the video segment. Originates from the <a href="https://developer.apple.com/documentation/avfoundation/avassettrack/1388335-timerange">timeRange</a> of the original AVAsset.
 @property (nonatomic, readonly) CMTime duration;
-/// The framerate for the video segment. Originates from the minFrameDuration of the original AVAsset.
+/// The framerate for the video segment. Originates from the <a href="https://developer.apple.com/documentation/avfoundation/avassettrack/1388608-minframeduration">minFrameDuration</a> of the original AVAsset.
 /// For example, a frameDuration of 1/30th of a second <code>CMTime(value: 1, timescale: 30)</code> would be a 30fps video segment.
 /// Will be <code>CMTime(value: 1, timescale: 30)</code> if the minFrameDuration of the AVAsset is not known or cannot be calculated.
 @property (nonatomic) CMTime frameDuration;
+/// The playback speed for the current segment.
+/// precondition:
+/// Must be greater than zero.
+/// note:
+/// The speed of the whole video can be set with <code>SessionVideo</code> <code>SessionVideo.speedMultiplier</code> instead.
+/// For example:
+/// A value of <code>2</code> with result in 2x faster playback speed.
+/// A value of <code>.5</code> will result .5x slower playback speed.
+/// A value of <code>1</code> will result in normal playback speed.
+/// Default value: <code>1</code>
+@property (nonatomic) double speedMultiplier;
 /// If the video segment came from the users Photo Library and there was location information associated, this will be set.
 /// See the <a href="https://developer.apple.com/documentation/corelocation/cllocation">documentation</a> for CLLocation.
 /// Default value: <code>nil</code>

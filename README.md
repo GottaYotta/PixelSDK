@@ -33,7 +33,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Auto-Saving Drafts
 
-✅ Video Segment Composing, Trimming and Re-ordering
+✅ Video Segment Composing, Trimming, Scaling, and Re-ordering
 
 ✅ Photo and Video Adjustments (Brightness, Vibrance, Saturation, Contrast, Exposure, Hue, Warmth, Sharpness, Gamma, Highlights, Shadows, Vignette)
 
@@ -59,7 +59,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Import Photos and Videos from DSLR Camera. Lightning to USB Cable Required.
 
-✅ Direct GPU Access with Metal and [GPUImage3](https://github.com/BradLarson/GPUImage3) Integration.
+✅ Direct GPU Access with Metal and [GPUImage3](https://github.com/BradLarson/GPUImage3).
 
 ✅ RAW Images and 60fps 4K UHD Video Support. HEVC Support.
 
@@ -258,7 +258,7 @@ self.present(nav, animated: true, completion: nil)
 
 ## Present the Editor
 
-The camera and library can be bypassed by presenting the EditController with your own media.
+The camera and library can be bypassed by presenting the [EditController](https://www.pixelsdk.com/docs/latest/Classes/EditController.html) with your own media.
 
 <p align="center">
 <img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_2_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_4_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
@@ -283,7 +283,7 @@ self.present(nav, animated: true, completion: nil)
 ### Videos
 The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to Sepulveda. These two assets will become segments of the video in their respective order.
 
-You can also manually pass a renderSize into the Session initializer. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
+You can also manually pass a renderSize into the Session initializer. For more information see [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
 ```swift
 let asset1 = AVAsset(url: Bundle.main.url(forResource: "test", withExtension: "mov")!)
@@ -309,46 +309,52 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
 ```
 
 ## Programmatic Editing
-Images and videos can also be edited programmatically instead of visually. For more information see the [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
+Images and videos can also be edited programmatically instead of visually. For more information see [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
-For example, setting the primaryFilter of an image:
+For example, setting the primaryFilter of an image to [Wilshire](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterWilshire.html):
 ```swift
 session.image!.primaryFilter = SessionFilterWilshire()
 ```
-Applying a Brightness filter to an image:
+Applying a [Brightness](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterBrightness.html) filter to an image:
 ```swift
 let brightnessFilter = SessionFilterBrightness()
 brightnessFilter.normalizedIntensity = 0.2
 session.image!.filters = [brightnessFilter]
 ```
-Applying a Saturation filter to a whole video:
+Applying a [Saturation](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterSaturation.html) filter to a whole video:
 ```swift
 let saturationFilter = SessionFilterSaturation()
 saturationFilter.normalizedIntensity = 0.3
 session.video!.filters = [saturationFilter]
 ```
-Applying a Contrast filter to the first segment of a video:
+Applying a [Contrast](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterContrast.html) filter to the first segment of a video:
 ```swift
 let segment = session.video!.videoSegments.first!
 let contrastFilter = SessionFilterContrast()
 contrastFilter.normalizedIntensity = 0.2
 segment.filters = [contrastFilter]
 ```
-Trimming a segment so it starts at one second in, with a duration of two seconds:
+Trimming a segment so it [starts](https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)trimStartTime) at one second in, with a [duration](https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)trimDuration) of two seconds:
 ```swift
 let segment = session.video!.videoSegments.first!
 segment.trimStartTime = CMTime(seconds: 1, preferredTimescale: segment.duration.timescale)
 segment.trimDuration = CMTime(seconds: 2, preferredTimescale: segment.duration.timescale)
 ```
-Changing the orientation of the first segment of a video:
+Rotating the first segment of a video with [preferredTransform](https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)preferredTransform):
 ```swift
 let segment = session.video!.videoSegments.first!
 segment.preferredTransform = .rotated180Degrees(segment.naturalSize)
 segment.cropRect = segment.suggestedCropRect()
 ```
-You can present the EditController after making programmatic edits and it will reflect your changes. Additionally, the [PreviewController](https://www.pixelsdk.com/docs/latest/Classes/PreviewController.html) will reflect all programmatic edits in real-time.
+Increasing the [speed](https://www.pixelsdk.com/docs/latest/Classes/SessionVideoSegment.html#/c:@M@PixelSDK@objc(cs)SessionVideoSegment(py)speedMultiplier) of the first segment of a video:
+```swift
+let segment = session.video!.videoSegments.first!
+segment.speedMultiplier = 2 // 2x faster
+```
 
-After making programmatic edits to a session, you should manually call `session.save()`.
+You can present the [EditController](https://www.pixelsdk.com/docs/latest/Classes/EditController.html) after making programmatic edits and it will reflect your changes. Additionally, the [PreviewController](https://www.pixelsdk.com/docs/latest/Classes/PreviewController.html) will reflect all programmatic edits in real-time.
+
+After making programmatic edits to a session, you should manually call [`session.save()`](https://www.pixelsdk.com/docs/latest/Classes/Session.html#/c:@M@PixelSDK@objc(cs)Session(im)save).
 
 ## Export Media
 
@@ -367,7 +373,7 @@ if let image = session.image {
     })
 }
 ```
-In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the `image.exportedImageURL` variable. After the export has completed, you may use, move or copy this file. Once you are finished with the file, you should call `session.destroy()` in order to remove the image from the users drafts and delete its associated files.
+In addition to exporting as a UIImage, the exported image is saved to file as a JPEG at the [`image.exportedImageURL`](https://www.pixelsdk.com/docs/latest/Classes/SessionImage.html#/c:@M@PixelSDK@objc(cs)SessionImage(py)exportedImageURL) variable. After the export has completed, you may use, move or copy this file. Once you are finished with the file, you should call [`session.destroy()`](https://www.pixelsdk.com/docs/latest/Classes/Session.html#/c:@M@PixelSDK@objc(cs)Session(im)destroy) in order to remove the image from the users drafts and delete its associated files.
 
 ### Video Exports
 
@@ -386,11 +392,11 @@ if let video = session.video {
     })
 }
 ```
-After the export has completed, you should use, move or copy the file found at the `video.exportedVideoURL`. Once you are finished with the file, you should call `session.destroy()` in order to remove the video from the users drafts and delete its associated files.
+After the export has completed, you should use, move or copy the file found at the [`video.exportedVideoURL`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)exportedVideoURL). Once you are finished with the file, you should call [`session.destroy()`](https://www.pixelsdk.com/docs/latest/Classes/Session.html#/c:@M@PixelSDK@objc(cs)Session(im)destroy) in order to remove the video from the users drafts and delete its associated files.
 
 Frame rate can be customized by setting the [`video.frameDuration`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)frameDuration) variable before exporting the video.
 
-You can also change  `video.renderSize` but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
+You can also change  [`video.renderSize`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)renderSize) but we recommend you instead set the PreviewCropController aspectRatio and CameraController aspectRatio. See the [square content example](#square-content-only). These properties allow you to preserve video quality by delaying any upscaling or downscaling until a later point in your video processing logic. If you plan on converting your video to HLS on a server that encoder should handle any upscaling or downscaling.
 
 ### Encoding Settings
 
@@ -449,7 +455,7 @@ Media files can also be transcoded without using UI.
 
 This example stitches two AVAssets named "test.mov" and "test2.mp4" into a single 60 fps mp4 file with H.264 video encoding and stereo AAC audio encoding. 
 
-Additionally, a Saturation filter is applied to the first segment (asset), and a Pixellate filter is applied to the second segment.
+Additionally, a [Saturation](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterSaturation.html) filter is applied to the first segment (asset), and a [Pixellate](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterPixellate.html) filter is applied to the second segment.
 
 ```swift
 import PixelSDK
@@ -519,7 +525,7 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
 })
 ```
 
-After your transcode has completed, you may move, copy or delete the file found at the video.exportedVideoURL.
+After your transcode has completed, you may move, copy or delete the file found at the [`video.exportedVideoURL`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)exportedVideoURL).
 
 There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/Headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
 

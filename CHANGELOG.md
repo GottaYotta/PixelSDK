@@ -1,5 +1,12 @@
 # Changelog
 
+### 10.1.0 - 8/11/20
+
+&bull; Added playback speed multiplier support<br>
+&bull; Improved multithreading stability<br>
+&bull; Fixed `LibraryController` albums animation<br>
+&bull; Various bug fixes and stability improvements
+
 ### 10.0.0 - 7/23/20
 
 &bull; Migrated to Metal from OpenGL<br>

@@ -24,7 +24,7 @@ public class MetalRenderingDevice {
     }()
 
     init() {
-        guard let device = MTLCreateSystemDefaultDevice() else {fatalError("Could not create Metal Device. The simulator only supports Metal on iOS 13 and up.")}
+        guard let device = MTLCreateSystemDefaultDevice() else {fatalError("Could not create Metal Device. Metal is supported on iOS 11+ physical devices and iOS 13+ simulators.")}
         self.device = device
         
         guard let queue = self.device.makeCommandQueue() else {fatalError("Could not create command queue")}
