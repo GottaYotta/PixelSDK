@@ -13,7 +13,7 @@ public class RenderView: UIView, ImageConsumer {
     public let sources = SourceContainer()
     public let maximumInputs: UInt = 1
     var currentTexture: Texture?
-    var renderPipelineState:MTLRenderPipelineState!
+    var renderPipelineState:MTLRenderPipelineState?
     
     // Separate var so we can access from place other than main thread
     unowned var internalLayer: CALayer!
@@ -38,15 +38,18 @@ public class RenderView: UIView, ImageConsumer {
             let layer = self.internalLayer as! CAMetalLayer
             layer.framebufferOnly = false
             layer.device = sharedMetalRenderingDevice.device
+            
+            let (pipelineState, _, _) = generateRenderPipelineState(device:sharedMetalRenderingDevice, vertexFunctionName:"oneInputVertex", fragmentFunctionName:"passthroughFragment", operationName:"RenderView")
+            self.renderPipelineState = pipelineState
         }
         #else
         let layer = self.internalLayer as! CAMetalLayer
         layer.framebufferOnly = false
         layer.device = sharedMetalRenderingDevice.device
-        #endif
         
         let (pipelineState, _, _) = generateRenderPipelineState(device:sharedMetalRenderingDevice, vertexFunctionName:"oneInputVertex", fragmentFunctionName:"passthroughFragment", operationName:"RenderView")
         self.renderPipelineState = pipelineState
+        #endif
     }
     
     // We use CAMetalLayer instead of MTKView because on iOS 11 we were getting the following crash when moving videos around in the cropper: [CAMetalLayerDrawable texture] should not be called after already presenting this drawable. Get a nextDrawable instead.
@@ -120,6 +123,11 @@ public class RenderView: UIView, ImageConsumer {
         
         guard let currentTexture = self.currentTexture else {
             Log.warning("Could not retrieve current texture")
+            return
+        }
+        
+        guard let renderPipelineState = self.renderPipelineState else {
+            Log.warning("Could not retrieve render pipeline state")
             return
         }
         
