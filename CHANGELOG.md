@@ -1,5 +1,9 @@
 # Changelog
 
+### 10.1.1 - 8/28/20
+
+&bull; Added missing localizations for `SessionFilterSpeed`
+
 ### 10.1.0 - 8/11/20
 
 &bull; Added playback speed multiplier support<br>

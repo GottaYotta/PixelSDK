@@ -124,10 +124,10 @@ install_xcframework() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_xcframework "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework" "" "true" "ios-x86_64-simulator/PixelSDK.framework" "ios-arm64/PixelSDK.framework"
+  install_xcframework "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework" "" "true" "ios-arm64/PixelSDK.framework" "ios-x86_64-simulator/PixelSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_xcframework "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework" "" "true" "ios-x86_64-simulator/PixelSDK.framework" "ios-arm64/PixelSDK.framework"
+  install_xcframework "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework" "" "true" "ios-arm64/PixelSDK.framework" "ios-x86_64-simulator/PixelSDK.framework"
 fi
 
 echo "Artifact list stored at $ARTIFACT_LIST_FILE"
