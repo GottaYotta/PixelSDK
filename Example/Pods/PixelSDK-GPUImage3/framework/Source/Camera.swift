@@ -155,12 +155,13 @@ public class Camera: NSObject, ImageSource, AVCaptureVideoDataOutputSampleBuffer
         
         if captureAsYUV {
             supportsFullYUVRange = false
-            let supportedPixelFormats = videoOutput.availableVideoPixelFormatTypes
-            for currentPixelFormat in supportedPixelFormats {
-                if ((currentPixelFormat as NSNumber).int32Value == Int32(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)) {
-                    supportsFullYUVRange = true
-                }
-            }
+            // Temporarily disabled due to Xcode 12 Simulator bug preventing access to availableVideoPixelFormatTypes https://twitter.com/MartinPucik/status/1306149902406356992
+            //let supportedPixelFormats = videoOutput.availableVideoPixelFormatTypes
+            //for currentPixelFormat in supportedPixelFormats {
+            //    if ((currentPixelFormat as NSNumber).int32Value == Int32(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)) {
+            //        supportsFullYUVRange = true
+            //    }
+            //}
             if (supportsFullYUVRange) {
                 let (pipelineState, lookupTable, bufferSize) = generateRenderPipelineState(device:sharedMetalRenderingDevice, vertexFunctionName:"twoInputVertex", fragmentFunctionName:"yuvConversionFullRangeFragment", operationName:"YUVToRGB")
                 self.yuvConversionRenderPipelineState = pipelineState
