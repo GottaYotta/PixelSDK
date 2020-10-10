@@ -2,7 +2,7 @@
 
 ### 10.1.2 - 10/10/20
 
-&bull; Fix static sound playback bug on iOS 14
+&bull; Fix static sound playback bug on iOS 14<br>
 &bull; Fix Xcode 12 missing availableVideoPixelFormatTypes when compiling on Simulator
 
 ### 10.1.1 - 8/28/20
