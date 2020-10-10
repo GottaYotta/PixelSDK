@@ -13,4 +13,7 @@ Pod::Spec.new do |s|
     s.ios.dependency 'PixelSDK-GPUImage3', '~> 1.1.1'
     s.frameworks   = ['AVFoundation']
     s.swift_version = '5.0'
+
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
