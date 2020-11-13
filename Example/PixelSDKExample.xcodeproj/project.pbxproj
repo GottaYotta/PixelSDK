@@ -359,7 +359,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "GottaYotta, Inc.";
 				TargetAttributes = {
 					1FCA58BA23B6BDEB0087B542 = {
