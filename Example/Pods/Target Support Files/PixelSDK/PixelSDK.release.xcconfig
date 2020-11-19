@@ -1,4 +1,5 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PixelSDK-GPUImage3" "${PODS_ROOT}/PixelSDK" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-arm64" "${PODS_ROOT}/PixelSDK/PixelSDK.xcframework/ios-x86_64-simulator"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 OTHER_LDFLAGS = $(inherited) -framework "AVFoundation"

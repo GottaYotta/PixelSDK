@@ -3,7 +3,7 @@ Pixel SDK supports the below list of languages.
 
 If you would like a language added or have a translation suggestion please [contact us](https://www.pixelsdk.com/contact/).
 
-| Language | Locale |
+| Language | Code |
 | ----------- | ------- |
 | English | en |
 | Arabic | ar |

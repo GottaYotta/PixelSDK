@@ -29,14 +29,15 @@ public enum PhysicalCameraLocation {
     }
     
     public func device() -> AVCaptureDevice? {
-        let devices = AVCaptureDevice.devices(for:AVMediaType.video)
-        for case let device in devices {
-            if (device.position == self.captureDevicePosition()) {
-                return device
-            }
+        if let device = AVCaptureDevice.default(.builtInDualCamera,
+                                                for: .video, position: self.captureDevicePosition()) {
+            return device
+        } else if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                                       for: .video, position: self.captureDevicePosition()) {
+            return device
+        } else {
+            return AVCaptureDevice.default(for: AVMediaType.video)
         }
-        
-        return AVCaptureDevice.default(for: AVMediaType.video)
     }
 }
 

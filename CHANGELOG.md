@@ -1,9 +1,17 @@
 # Changelog
 
+### 10.2.0 - 10/10/20
+
+&bull; Added support for system language override with [languageCode](https://www.pixelsdk.com/docs/latest/Classes/PixelSDK.html#/s:8PixelSDKAAC12languageCodeSSSgv) variable<br>
+&bull; Fixed photo camera incompatibility with iPhone 12, iPhone 12 Pro and iPhone 12 Pro Max<br>
+&bull; Fixed bug which prevented dates from being properly encoded on Arabic locale devices<br>
+&bull; Fixed filter thumbnails hide/show animation on `CameraController`<br>
+&bull; Improved audio playback interruption handling
+
 ### 10.1.2 - 10/10/20
 
-&bull; Fix static sound playback bug on iOS 14<br>
-&bull; Fix Xcode 12 missing availableVideoPixelFormatTypes when compiling on Simulator
+&bull; Fixed static sound playback bug on iOS 14<br>
+&bull; Fixed Xcode 12 missing availableVideoPixelFormatTypes when compiling on Simulator
 
 ### 10.1.1 - 8/28/20
 

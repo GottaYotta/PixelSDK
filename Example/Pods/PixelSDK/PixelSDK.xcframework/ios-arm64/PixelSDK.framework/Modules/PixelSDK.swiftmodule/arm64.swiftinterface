@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PixelSDK
 import AVFoundation
 import AudioToolbox
@@ -828,14 +828,24 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
     @objc get
   }
   @objc public class func setup(_ apiKey: Swift.String)
-  public var primaryFilters: [SessionFilter]
-  public var adjustmentFilters: [SessionFilter]
+  public var primaryFilters: [SessionFilter] {
+    get
+    set
+  }
+  public var adjustmentFilters: [SessionFilter] {
+    get
+    set
+  }
   public static let defaultInstaFilters: [SessionFilter]
   public static let defaultVisualEffectFilters: [SessionFilter]
   @objc public var apiKey: Swift.String? {
     @objc get
   }
   @objc public var maxVideoDuration: Swift.Int
+  @objc public var languageCode: Swift.String? {
+    @objc get
+    @objc set
+  }
   @available(*, deprecated, renamed: "primaryFilters")
   public var availablePrimaryFilters: () -> [SessionFilter] {
     get
