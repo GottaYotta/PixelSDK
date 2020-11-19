@@ -1257,6 +1257,43 @@
 			};
 			name = Debug;
 		};
+		217B25007E2C66E2DF93DD281FA895A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 888EC57F9B82595886425B8C03377FF5 /* PixelSDK-GPUImage3.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3.modulemap";
+				PRODUCT_MODULE_NAME = GPUImage;
+				PRODUCT_NAME = GPUImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1356,10 +1393,11 @@
 			};
 			name = Release;
 		};
-		9E5B47CCD6324EC6007B1802626E193D /* Debug */ = {
+		6AB29EC95346B778523E46CE77614D80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E961C4218A6266503E5C287422CA3DF /* PixelSDK-GPUImage3.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1372,7 +1410,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1493,42 +1531,6 @@
 			};
 			name = Debug;
 		};
-		EAD275426D1568BB859AA29D7621346B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 888EC57F9B82595886425B8C03377FF5 /* PixelSDK-GPUImage3.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3.modulemap";
-				PRODUCT_MODULE_NAME = GPUImage;
-				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F071719EA22C1E324CB042A3885FB8E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 876D555A81F976EBC05E4D719ABF7CE0 /* PixelSDK.release.xcconfig */;
@@ -1553,8 +1555,8 @@
 		1D3084BED87B444E2EE6C29CEE0664B4 /* Build configuration list for PBXNativeTarget "PixelSDK-GPUImage3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E5B47CCD6324EC6007B1802626E193D /* Debug */,
-				EAD275426D1568BB859AA29D7621346B /* Release */,
+				6AB29EC95346B778523E46CE77614D80 /* Debug */,
+				217B25007E2C66E2DF93DD281FA895A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
