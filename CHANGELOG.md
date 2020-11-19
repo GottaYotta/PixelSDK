@@ -1,6 +1,6 @@
 # Changelog
 
-### 10.2.0 - 10/10/20
+### 10.2.0 - 11/19/20
 
 &bull; Added support for system language override with [languageCode](https://www.pixelsdk.com/docs/latest/Classes/PixelSDK.html#/s:8PixelSDKAAC12languageCodeSSSgv) variable<br>
 &bull; Fixed photo camera incompatibility with iPhone 12, iPhone 12 Pro and iPhone 12 Pro Max<br>
