@@ -5,8 +5,7 @@
 &bull; Added support for system language override with [languageCode](https://www.pixelsdk.com/docs/latest/Classes/PixelSDK.html#/s:8PixelSDKAAC12languageCodeSSSgv) variable<br>
 &bull; Fixed photo camera incompatibility with iPhone 12, iPhone 12 Pro and iPhone 12 Pro Max<br>
 &bull; Fixed bug which prevented dates from being properly encoded on Arabic locale devices<br>
-&bull; Fixed filter thumbnails hide/show animation on `CameraController`<br>
-&bull; Improved audio playback interruption handling
+&bull; Fixed filter thumbnails hide/show animation on `CameraController`
 
 ### 10.1.2 - 10/10/20
 
