@@ -1,5 +1,11 @@
 # Changelog
 
+### 11.0.0 - 11/21/20
+
+&bull; Added simulator support for M1 Macs (arm64)<br>
+&bull; Migrated GPUImage dependency to xcframework distribution for ABI stability and reduced compile time<br>
+&bull; Fixed issue that would occasionally prevent audio playback on `EditController` after coming from `CameraController`
+
 ### 10.2.0 - 11/19/20
 
 &bull; Added support for system language override with [languageCode](https://www.pixelsdk.com/docs/latest/Classes/PixelSDK.html#/s:8PixelSDKAAC12languageCodeSSSgv) variable<br>

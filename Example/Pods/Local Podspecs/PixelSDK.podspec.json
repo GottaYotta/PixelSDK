@@ -1,6 +1,6 @@
 {
   "name": "PixelSDK",
-  "version": "10.2.0",
+  "version": "11.0.0",
   "license": "https://www.pixelsdk.com/terms-of-use/",
   "summary": "Pixel SDK is a photo and video editing framework written in Swift.",
   "homepage": "https://www.pixelsdk.com",
@@ -17,7 +17,7 @@
   "ios": {
     "dependencies": {
       "PixelSDK-GPUImage3": [
-        "~> 2.0.0"
+        "~> 3.0.0"
       ]
     }
   },
@@ -25,11 +25,5 @@
     "AVFoundation"
   ],
   "swift_versions": "5.0",
-  "pod_target_xcconfig": {
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
-  },
-  "user_target_xcconfig": {
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
-  },
   "swift_version": "5.0"
 }

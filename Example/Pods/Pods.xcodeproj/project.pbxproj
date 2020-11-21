@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		E4CCE2DEE87A7CB6ED83791A3E4813FB /* PixelSDK */ = {
+		31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 899D67E1BD6EFCA9C4CF2B7546962BD3 /* Build configuration list for PBXAggregateTarget "PixelSDK" */;
+			buildConfigurationList = 0421767B1EEFA4DA0BFF17DEFC1D7843 /* Build configuration list for PBXAggregateTarget "PixelSDK-GPUImage3" */;
 			buildPhases = (
+				7EDCAB74296F9FAC6F2B9316EBC8258F /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				F9C3A9B3DEA42DC755CD66A9E99F4EE1 /* PBXTargetDependency */,
+			);
+			name = "PixelSDK-GPUImage3";
+			productName = "PixelSDK-GPUImage3";
+		};
+		E4CCE2DEE87A7CB6ED83791A3E4813FB /* PixelSDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 367600C5EFB28704E952DDEE49A75A38 /* Build configuration list for PBXAggregateTarget "PixelSDK" */;
+			buildPhases = (
+				963D01246719166B796D8683973D74E9 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				AA5A6564B46A0DE441D2498B4159FF89 /* PBXTargetDependency */,
 			);
 			name = PixelSDK;
 			productName = PixelSDK;
@@ -21,819 +33,143 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0034DB8EF87F8EE5FC6A54C2585E33BE /* ColorBurnBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = CD7DB027C7E77860F19764BAE1BF6BA7 /* ColorBurnBlend.metal */; };
-		015A9ED3EC298CBE6B4DAE7765ED7B5A /* HueAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773EAF5F9E4E7DAD5FCACD5F461F0F51 /* HueAdjustment.swift */; };
-		02C3A8CE45B050EB85CA1C15BE7CB7C2 /* PrewittEdgeDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC053C14F3364CF7073A56F2746EBE /* PrewittEdgeDetection.swift */; };
-		058989729AC85FAA051AB7E6C824F234 /* SepiaToneFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E846D78D8DD3E8ECC1FBB1F12FFE58 /* SepiaToneFilter.swift */; };
-		085AC5F0D037720C8ADD22FBA1A55420 /* OperationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D3152DB696F7FA63288403B3282E0 /* OperationGroup.swift */; };
-		09023BAAD9CF4D20D392348CF43D8B41 /* RGBAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE32C307151B7C9B1C9B7B9DEBF5D0 /* RGBAdjustment.swift */; };
-		093AABAF6EDC31FFA2020F65FC50C2E6 /* HighlightsAndShadows.metal in Sources */ = {isa = PBXBuildFile; fileRef = F1326344F8986580F408686BF14DA3B7 /* HighlightsAndShadows.metal */; };
-		09480ABAFD32C40DECA3BE20F7DF0EA3 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D479D06716366D6F2015CF218C9CB5 /* Position.swift */; };
-		0970CE8F5CC4707DFA30D6967FAACA82 /* GlassSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBA1CE0557B8D5CCDBB0AB74ED9FD4 /* GlassSphere.swift */; };
-		09B7F4A4C336BBCD8A0E82DA5AFCD191 /* DivideBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 81A55D1C760128FAEE9DCDC64BA84A9F /* DivideBlend.metal */; };
-		0B809DB1CB6E734E9EE57FED4021350A /* SolidColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B6E3A8BCBFA780CFD2186CF66E946 /* SolidColorGenerator.swift */; };
-		0D840DA49C48AA5904A7FDC6973B8FA3 /* Crosshatch.metal in Sources */ = {isa = PBXBuildFile; fileRef = F20D3601616E86219A2C427E83419D52 /* Crosshatch.metal */; };
-		0DC7A09D6E45DE2ACF9FDF7430BCD47D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42120EF5A20354C53169CE082A389E8F /* AVFoundation.framework */; };
-		0DF3DA893F9C87C30978C9A5FAB5B41B /* iOSBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8E475171DD0D6934EBE8B30814B49F /* iOSBlur.swift */; };
-		0F4AE588E202C094C9EBFE02514DEBAC /* Luminance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857BB6D236E770EC8FE33375F9AF6B1 /* Luminance.swift */; };
-		0F4E5C1174DBABAB0E0EEEBC373263FB /* SphereRefraction.metal in Sources */ = {isa = PBXBuildFile; fileRef = D57EF110140EEFDBF96931D1B46A7CC7 /* SphereRefraction.metal */; };
-		0FA3B357AF4D955B82F7E28CB5D78AFB /* Pods-PixelSDKExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8930B1487E61DA149A9B92E2D8E0E7 /* Pods-PixelSDKExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1537EF43D366E386FFFF07CF956C2225 /* ColorMatrixFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4F791E147E7A34C3F2AE7072A499F /* ColorMatrixFilter.metal */; };
-		15534BFB1C196E0DACF03FC66F37385A /* LuminanceRangeReduction.metal in Sources */ = {isa = PBXBuildFile; fileRef = 06A733254F43418263123376E961EB1E /* LuminanceRangeReduction.metal */; };
-		1563011F658A12B4F3E5E7C56BB8F71D /* LightenBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = BEA69C0642C9ED4C5FAD789FB71FA545 /* LightenBlend.metal */; };
-		15704622C87D179550236F674E9DEC43 /* MultiplyBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1F5D9C774FA665B2444C26E6A1FDE /* MultiplyBlend.metal */; };
-		15C2F388F2BFF33CBC72140ACD740925 /* Empty.h in Headers */ = {isa = PBXBuildFile; fileRef = 062A334D89F2AF8934A86534F8ABDAA9 /* Empty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16A67EE4FC938692C3E6E44A597F1744 /* SphereRefraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16905AFBF724E2EE45497FF2F226C3B0 /* SphereRefraction.swift */; };
-		18B54459564A241EB95536B46366AFA6 /* SoftElegance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F49427202CCBCACD80AF6466A6274 /* SoftElegance.swift */; };
-		18C50A5C7BE44A9A674D7F2E9FC4A4AC /* FalseColor.metal in Sources */ = {isa = PBXBuildFile; fileRef = F8C0A7B0D37C3992A8F708C720ED831D /* FalseColor.metal */; };
-		199604ECC0B32DEEE71AF60BD0688055 /* DarkenBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = CA65B308597AA7A03A62DE4529C6C9EA /* DarkenBlend.metal */; };
-		1A0DB23F7260999CBDADBACF98BD3061 /* ColorInversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F548CBBBD5CB641B1B33B24BCD6B042E /* ColorInversion.swift */; };
-		1AAAE4D6CC8764AD7208197DBA46ABA6 /* MonochromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B00D07679E01BF14B22171139C787 /* MonochromeFilter.swift */; };
-		1C1BDA11B93FC571843012C1B57F44FB /* ContrastAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0DF51F6D4E8FAC54D5D4E9304C34E7D5 /* ContrastAdjustment.metal */; };
-		1E783C31887F47DC7DC512B7753DC769 /* LevelsAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = EF9964CAF1D06FADEBA688CC89FE6562 /* LevelsAdjustment.metal */; };
-		1F8AFEB2DEA5285A259C756FF0268FCF /* YUVToRGBConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E48DC5A8EBF05FDFBF0703D86F5B6A /* YUVToRGBConversion.swift */; };
-		2095E492A2A1273784FB2BD0F4603F83 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885D3CB206B147DF9C1F6C62BED677C /* Texture.swift */; };
-		236BFBEAFC649A8E3AF2D3CE56291B03 /* KuwaharaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939B2BD8BC42807B18B93D7E2D06657 /* KuwaharaFilter.swift */; };
-		25E526E877F63C980767CE0B7E50A898 /* SobelEdgeDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B528D81B2EBEE00F65D97A53B83F /* SobelEdgeDetection.swift */; };
-		261732FE58B12070A7C306E1F3C72B65 /* KuwaharaRadius3Filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = BD1DF7B0CAF739E1E7E8A0CB5CBB82AC /* KuwaharaRadius3Filter.metal */; };
-		2645239EC29BF56EE176D3DFDE1BB4E3 /* NormalBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4F64AA3BB2269DDBCB2AF8F9BB890F0B /* NormalBlend.metal */; };
-		274757C5B66B4A9B6A7629F9888BCDED /* HarrisCornerDetector.metal in Sources */ = {isa = PBXBuildFile; fileRef = 246CA8549D258001E285C3DE053F5B10 /* HarrisCornerDetector.metal */; };
-		27D3162324442FB6FE269AA6C7EADFDF /* ChromaKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C4C892E807EAFD4ABD5DAF9809906 /* ChromaKey.swift */; };
-		2953998EA174FAD5F83CE6FFE56671B6 /* ZoomBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1138D4A2D91452846D0AFF9C378E8647 /* ZoomBlur.metal */; };
-		296929BAA7A53A0EB62C8CCA5E2D72BB /* HardLightBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC101A6A02BBA46317C3FD352579B /* HardLightBlend.swift */; };
-		2A7AAFAC6082A2748EC19795626F1734 /* SaturationBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA59A62A3F120A78B0CC141899F590 /* SaturationBlend.swift */; };
-		2E11C883AE26925337CD8AA454AA78D6 /* AmatorkaFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B9074749B4D8D0FAD613267BAC080 /* AmatorkaFilter.swift */; };
-		2F8BCB3D17F1318AEA96C318DBB7C5B6 /* AddBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = FB3A9EC0C52D1484C1FAE7547CC76016 /* AddBlend.metal */; };
-		3003D41715305A8C1A7CE95F49302F2B /* ChromaKey.metal in Sources */ = {isa = PBXBuildFile; fileRef = 08252F9A0D80A48A1674B4086F05E0F7 /* ChromaKey.metal */; };
-		3226A4BC8B82CB9BD3AE603B1D7513F5 /* AdaptiveThreshold.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2C1649946F994954DDB3CAC107E5FC20 /* AdaptiveThreshold.metal */; };
-		33739B721B6CCED011D3DE9107373C6B /* GaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE306F78156E207F1FD2F5860181EFE7 /* GaussianBlur.swift */; };
-		34DBCB90640156192EB2302D64A8516C /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 58FBAA26D2274B30AE09EA987BD675ED /* Passthrough.metal */; };
-		3525A377B8AD806F7A7078813E412452 /* MovieOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9C71C7D2EED0D3E3C48E243D36EEED /* MovieOutput.swift */; };
-		3555E90C274EFE94D3B24337E33B76BD /* ContrastAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAE9FF914B541AA9E0B26019BDC61D /* ContrastAdjustment.swift */; };
-		3651A8B4406E88E940508E009AA1C5CE /* NobleCornerDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D66C215B79FD4AC5FA67C2A53DBC9F /* NobleCornerDetector.swift */; };
-		369E5D70F62B4F1638BF3E2D0D719001 /* HighlightAndShadowTint.metal in Sources */ = {isa = PBXBuildFile; fileRef = 995902D137D9BA23BC1D768867DE4B06 /* HighlightAndShadowTint.metal */; };
-		37095B1029C71711B56DC8E2D06667BD /* Sharpen.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1169059E7D165C3DFC7DFF66021349FD /* Sharpen.metal */; };
-		370EE10A124C602781CDDDC58DD43566 /* HardLightBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = A20C3B423F4FE1DF380A7FC17F1D22B7 /* HardLightBlend.metal */; };
-		3984F4F9A4F343F5BC462670FFF7A92A /* Haze.metal in Sources */ = {isa = PBXBuildFile; fileRef = A4153D607861203CD47B102BAE75155C /* Haze.metal */; };
-		3AC83B9DD043AF64E28806C43C3F222F /* ColorDodgeBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = C78B065F9EF7847AFC023527A9B7DCC0 /* ColorDodgeBlend.metal */; };
-		3AF081FDE3F5519DB1A2AFE46558FD08 /* Convolution3x3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFDC924D397BE6E21F6D829D6A323F /* Convolution3x3.swift */; };
-		3AF438B78E46632C922163AFAF2D7FD1 /* LookupFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98829FF587C71D04F3A441D51BECAFD1 /* LookupFilter.swift */; };
-		3DB76B1AB1CB6753134277560425F5D6 /* Vibrance.metal in Sources */ = {isa = PBXBuildFile; fileRef = 01AC305277B8A993EA9E467F7AFF91C8 /* Vibrance.metal */; };
-		3E4675B6E2E0C51C46C0C19B1D680F1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E196B29BA57E669F0E3D1E9183693 /* QuartzCore.framework */; };
-		3F302132C8B13814BE26B66CD53A8AC0 /* MotionBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = E5ABA193BC8D790AC8DC49BBF39AC242 /* MotionBlur.metal */; };
-		3FBB2E1BEC9D53DB7D8D1322EA279C1A /* ThresholdNonMaximumSuppresssion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F2206DDF7C9D180E1A2813B68047 /* ThresholdNonMaximumSuppresssion.metal */; };
-		40CBD49D1E666DD03392B11EB012405C /* ColorDodgeBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00756E875F1BC0CEE04F362CFA6AE4EF /* ColorDodgeBlend.swift */; };
-		410C9F64D3944EF36C2F62830542F858 /* LuminanceRangeReduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EE9A24C193E9FD2CCF4BAF9AE37E6 /* LuminanceRangeReduction.swift */; };
-		41A8538F31A00584A8D4DE50B5F482CD /* ColorMatrixFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD042B86E2EFC093DFD6B94D96C6CC28 /* ColorMatrixFilter.swift */; };
-		432A6246DED20D9F52669B407FE402CB /* HarrisCornerDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0671BAE78DCD746A0496847976D3E382 /* HarrisCornerDetector.swift */; };
-		458D5362C2653EFF0DB328BC9E85BD3D /* ThresholdSobelEdgeDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FE7786B5838D31BB63BA7EB505C /* ThresholdSobelEdgeDetection.swift */; };
-		467E54A9FA905715586E11D814E478D4 /* MissEtikateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F6D4802DE9A9D18D94617DC4404AD2 /* MissEtikateFilter.swift */; };
-		473DDF35B3F86938218D0C61244BAAD1 /* OverlayBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219329E4706716733863A4A1F0E75C0B /* OverlayBlend.swift */; };
-		47571A3784B4821690B934BA121D25C3 /* BlendShaderTypes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 26E0103140DEC092B5863CA17DB861B3 /* BlendShaderTypes.metal */; };
-		483A43E32360FD2FA18D2847F1ECF838 /* TexelSamplingTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C5163EA9C46A1C539B6D04690092431 /* TexelSamplingTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		49387B01D8906DED51DA34ABBCB578FC /* SourceOverBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9278E050921AD32C6FE683290A901969 /* SourceOverBlend.metal */; };
-		49A5CF286C6B7B250575CEA0D13F3FFB /* SwirlDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2571BF93121268758604B632B6E01A6 /* SwirlDistortion.swift */; };
-		4A04D9A8DF2CEB4F4BA82AEF4E13B660 /* HighPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B22C7C18888B1173212DE2115BC57 /* HighPassFilter.swift */; };
-		4CCD4FFFF63BC7B913858A183170D3A0 /* LightenBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E433AE5B021F0710852F96EC7C03BCCC /* LightenBlend.swift */; };
-		4E2FC183F63FA4E5A649F705BA6286A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130DF1AB4BFE8147C6D398434FB19FAC /* Foundation.framework */; };
-		4EA9F0D59A23C25C47EDC4266112A208 /* DivideBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A78BED4E2D1CE4B8483D0BB048EDC3 /* DivideBlend.swift */; };
-		4F5C62E477B3C2E66421C9CC9DB4B23B /* GlassSphere.metal in Sources */ = {isa = PBXBuildFile; fileRef = AEDE8E14329E2C395B28263176454F78 /* GlassSphere.metal */; };
-		5114AE76419819CBB6305F63046FB27B /* LuminosityBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB5090016EFCF9693C7B2692E995A37 /* LuminosityBlend.swift */; };
-		527E343BA7AAF23F69F4E4FD5138BE33 /* MovieInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB2FCEDF94483551DA2C2D9A2527F5 /* MovieInput.swift */; };
-		52844797BF6EBD146F17E5C5C6A639C5 /* HalfTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD06F6AB8D94D6C430DA6EAF8CB43B8 /* HalfTone.swift */; };
-		53F177EEE1D58A0A846725DA4AEA68AC /* Vignette.metal in Sources */ = {isa = PBXBuildFile; fileRef = AAB0FCD92CCAAC1300AB388C21E403E5 /* Vignette.metal */; };
-		5405E2A94DED2E290F49440A7CF5BF51 /* BasicOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A3A978EEC34ED765AAC94751B833D8 /* BasicOperation.swift */; };
-		54F979187930DF0A53EB9B68CF4DCA10 /* NormalBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F824B907966412F03F1C0B81EE4C1 /* NormalBlend.swift */; };
-		5551B7AAE6D850343AFC91F3B0B210A2 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A565452996411126028C053AC32A518F /* Metal.framework */; };
-		55BA6FF1C3F83F87C4F57EBDD85DE84B /* Sketch.metal in Sources */ = {isa = PBXBuildFile; fileRef = 76773F37C4AFF51AEB7C9FFC2E4509A6 /* Sketch.metal */; };
-		56196A73AE770CE4442A647CC568BAE0 /* ColorLocalBinaryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252FA7618A1D9A581C987C1577420C5F /* ColorLocalBinaryPattern.swift */; };
-		56AD58854738071AD542D35E3B33CB53 /* DarkenBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622B31938CA83EF0079446566E17EA4 /* DarkenBlend.swift */; };
-		57BE49AB50B278188A79E7E6BD0407BD /* SubtractBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5E424E1AD530D231B87A7F2FF6C8F98D /* SubtractBlend.metal */; };
-		5984724A0DEF3888CF7683CEB80A1283 /* MultiplyBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8A921B0B2B6D4B8078F28CF4B139FD /* MultiplyBlend.swift */; };
-		59C659371130F629B7FDEE0D76C34D8D /* OperationShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = B20FD6D83470E0207E7FE2A365C783B4 /* OperationShaderTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5A34D063D972C0D643A75DC4B5C1B249 /* ColorSwizzle.metal in Sources */ = {isa = PBXBuildFile; fileRef = E818EFE481F990D8195AC27A4FE5FDE0 /* ColorSwizzle.metal */; };
-		5B50D6549B417201D8785F3754E51513 /* CGAColorspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C53EF3EA027E2DFD3D2B5F60148CD /* CGAColorspace.swift */; };
-		5DE005507620F8D034966031F7F99E55 /* PolkaDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FAF1C4DE683BF2323AD0643EFC0EB4 /* PolkaDot.swift */; };
-		602CD0DBCACB24FE6EAAA9CF1F134EAA /* ColorLocalBinaryPattern.metal in Sources */ = {isa = PBXBuildFile; fileRef = 168731CBAF9C972BDA48A0C6A29F4855 /* ColorLocalBinaryPattern.metal */; };
-		60D00E0CBF7E5DAFD9CFFB7710E21DF7 /* Pixellate.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BFF5242FD3C89084E8BE1B08E1E30 /* Pixellate.metal */; };
-		62FA88DB41EF2FD495635814A42D6174 /* Solarize.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D4AFCF38EDDED9FD4C3F6881066AC /* Solarize.metal */; };
-		63062DC134E4B9CAC30D810D2A3AA2F4 /* SwirlDistortion.metal in Sources */ = {isa = PBXBuildFile; fileRef = C5B190C761458B384F0C215F72CE057F /* SwirlDistortion.metal */; };
-		6452F946075EE50A21446E6736DF9969 /* AddBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752777AB2D2E9429DAC465F6C113F02E /* AddBlend.swift */; };
-		647E10CBB84C65851ABDFDF99C2D071D /* ThresholdSketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B26EA835ECA48E409FF13024C9F1F /* ThresholdSketch.swift */; };
-		663022B29CDCB60F815990F59D277444 /* BulgeDistortion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 10C27B276F454EECE50FAE66F7E3FFF1 /* BulgeDistortion.metal */; };
-		6890295548675ECEE621492C56EB7AB1 /* DifferenceBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25204B5CB421D5C6E3C88E6B06D15159 /* DifferenceBlend.swift */; };
-		68EEB2AA2699C1DF21ABCE6C319D38FB /* AdaptiveThreshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1B66062B8A9FB9D1231A6B3AB0459 /* AdaptiveThreshold.swift */; };
-		6A83A1C098B22D9140255405DCF0FF9C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39DDDC41AF5D2036B5FAE4B4CB433F /* Log.swift */; };
-		6AE09E9EBA7E1874AFE4E2D68B4DB908 /* ThresholdSobelEdgeDetection.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51DCAC1742A5466F433870CDD95D1EBC /* ThresholdSobelEdgeDetection.metal */; };
-		6C664072A1CBBCD2C781A9139ABE096C /* BrightnessAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = DECC06CFF129AD6528475FA45EBA556B /* BrightnessAdjustment.metal */; };
-		6C70680D2F9FDE15196ED712E06B63A6 /* Pixellate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E08E003E14C76A55FD14AAB68E8820 /* Pixellate.swift */; };
-		6C75BB700E53651B64F9A8A506D5149C /* GammaAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = F5652587AEF7E2ACAB57D459D148581C /* GammaAdjustment.metal */; };
-		6CFD1580B9D38D2557F553B7812ACEC9 /* BlendShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = F37EAF733EECE2CB4B9E64B568F41112 /* BlendShaderTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6D61B172AAE1E9DDE89238C4577FB50D /* OpacityAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32432CC6E7B10BD3B91037DE5384940 /* OpacityAdjustment.swift */; };
-		702A331707C20B3A9075A986646084E8 /* ColorBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4FF18371D27C9B795C179770D0AFD /* ColorBlend.swift */; };
-		703434A4A0DD72A950DCFD536A811971 /* PinchDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FEF42555F3C021D5D3AB3BB0C3ECCE /* PinchDistortion.swift */; };
-		705B8CA116F7E721BB15A12B23344474 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F856EE7E9D3957524D0E0D5C8BA3B8C /* Color.swift */; };
-		70D6E6F5153DCE814891543E2C451C2D /* ExclusionBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = C58A3F3688E5670698EA5AC03615EFDB /* ExclusionBlend.metal */; };
-		71450324DE35C2FADB6DB7C94B4A42E4 /* SmoothToonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914D2732B64147453FEED771548DDE5 /* SmoothToonFilter.swift */; };
-		71CA43444995BDEDA0AD9363C5FDD8ED /* XYDerivative.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B02299D6C13712077A53A3EF1E92A /* XYDerivative.metal */; };
-		73E39D0034E427AE76819494FFAF64FB /* WhiteBalance.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C3DCA8E22CFE1F4F1177696FFC484 /* WhiteBalance.metal */; };
-		7462D91EB6C3464A2210ABC5DF696F0B /* LocalBinaryPattern.metal in Sources */ = {isa = PBXBuildFile; fileRef = E57FE1D0940374BA92B65EE481CF3F53 /* LocalBinaryPattern.metal */; };
-		7507972B737578F6411A5AFBF19F7753 /* ColourFASTFeatureDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DC60458EE65A7FA9D3DE9F7C8822D1 /* ColourFASTFeatureDetection.swift */; };
-		758509433269118D2A235C52D42DB9AC /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B705E086899A117AA88E913D76608E /* ImageGenerator.swift */; };
-		759C3E9D3D11F10D3E7516114294E68B /* SobelEdgeDetection.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7BB029D13159DBA1937C29B462910C93 /* SobelEdgeDetection.metal */; };
-		75F1B4B8F65654F4245EDC4CD965EF01 /* EmbossFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D4160F6725DA97DEB5EDB390C8ADF /* EmbossFilter.swift */; };
-		764DBDDB81FCD11DCE0BA7B96BE31505 /* DissolveBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = F239704884B6229032186BD125175B96 /* DissolveBlend.metal */; };
-		774F314075A253DEA2BD21158531511F /* SaturationAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 237C3B4500D210D27A26D5FD15775E47 /* SaturationAdjustment.metal */; };
-		7786BB82FD77940D2A167A07B35B34EC /* ScreenBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1DC900FBED97C8C886C1728310EB8273 /* ScreenBlend.metal */; };
-		787D55A0F9B60DABBA1B56FCC34BD1CE /* LinearBurnBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = F98A0FFB03665E8BC9C6FB68E06FDDA8 /* LinearBurnBlend.metal */; };
-		78A178405394B1EADF95A72BE01F9A6D /* FalseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F3C4DDFD74EE3E16C25901D733C6D /* FalseColor.swift */; };
-		791CBD3181B21C359E6480BB7243EBAD /* SaturationBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0EEDD0293A3C0DD1D327F2F74A0763DD /* SaturationBlend.metal */; };
-		7E90039A28DECCFAD6A11C048FAA9370 /* ColorInversion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5CA726A15CB3326FD5199F5611652736 /* ColorInversion.metal */; };
-		81F4F1F433A16FA862D39C94D08D13E5 /* ShaderUniformSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65AAF331F12139187EFD4DC3E62197 /* ShaderUniformSettings.swift */; };
-		838961E9465C4A1ACF5B919248A6AE26 /* ToonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DA0325666619C4478D06FD7645065 /* ToonFilter.swift */; };
-		83BE2C729F780CC04F5C5A40CE437117 /* LuminanceThreshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68256CA4E3A0DA7987A9F8449C394C /* LuminanceThreshold.swift */; };
-		83C967B9D282DAF22D79D55660CFB51F /* DissolveBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E043DDC653D95A365D8F5B6FCA37881 /* DissolveBlend.swift */; };
-		847B1290D6C7FE22A79694C63A6A0E52 /* KuwaharaFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 60022FB06113EE2394C3B4E07D84CCD4 /* KuwaharaFilter.metal */; };
-		85222B1818AC12688F1FB11A042EFC75 /* Haze.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BAEEB9E8D26C7975DD9B7ECEAA6D6F /* Haze.swift */; };
-		859CDFB5577943B3AFC1B031BA153AE0 /* NobleCornerDetector.metal in Sources */ = {isa = PBXBuildFile; fileRef = C91F8817CA017E649D3D6DEA855B5BF3 /* NobleCornerDetector.metal */; };
-		865676E0AB882B13237E538401C94BEA /* HighlightAndShadowTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B5698554A38D758B79CDA2FDFDCC23 /* HighlightAndShadowTint.swift */; };
-		867AEB9C922D4C81EEB77015092FF61F /* MetalRendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D01BAE7B6C016E845D8ED315F7C385 /* MetalRendering.swift */; };
-		8BD9AE9CD53B431997D092491FF2F8BA /* ExposureAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = AF474D45EB5330147CD55C68167BB3BD /* ExposureAdjustment.metal */; };
-		8E0BDE3479BBA0FC2B86A5B80004BEEA /* SoftLightBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = AB9746437CBC2D005E2E44732644D181 /* SoftLightBlend.metal */; };
-		8EDE9748178D24A1DB466FFF4E97F67B /* PixelSDK-GPUImage3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2353FF9AB3769199A29D0A4DB7BF66BA /* PixelSDK-GPUImage3-dummy.m */; };
-		8F8F4E119D19D1991EF8198BC8B8B633 /* HueBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6B5B15AF058543C56BAEE93539E13 /* HueBlend.swift */; };
-		8FA5572BEB8C9AF4FB9031B89F45490A /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD91F6D9EE49900E3A87A37CD578410 /* LowPassFilter.swift */; };
-		90EC8DD086781249F930C189F5A93DB4 /* ColourFASTFeatureDetection.metal in Sources */ = {isa = PBXBuildFile; fileRef = B816C7986C4EFD27E8BF3A42EEBBAB56 /* ColourFASTFeatureDetection.metal */; };
-		9220F9BDDBD222AEBD83CB889E288D8D /* DifferenceBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = BFA55291E8016A01382653022974BEC4 /* DifferenceBlend.metal */; };
-		9323D27AE080485DDC9C999D796BCDF1 /* HalfTone.metal in Sources */ = {isa = PBXBuildFile; fileRef = DBE84147176CE0ACA003ED07D51AD400 /* HalfTone.metal */; };
-		94FE27CBF769EF2E37CB4F09F8C104BC /* GammaAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CDE9BA3E5364484F073F4C9E1E90DC /* GammaAdjustment.swift */; };
-		9549E6785408E2C9EC72B06014D00701 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DA5AE78C4C51ED64DD97E5C258D30F /* Matrix.swift */; };
-		9820CE2BA7D5496B6B4DA3E5BE6242B8 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC85723A12DF3252034B975599E82F /* Sketch.swift */; };
-		98E360A5D02A566433EB1129B5C28188 /* BoxBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6842998CF8FC6A9AF1285AB92CECDC9 /* BoxBlur.swift */; };
-		98F3FC80CE331D157CF599EC193A3439 /* YUVToRGBConversion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0BDE053484EEF7F805A6022A1D241 /* YUVToRGBConversion.metal */; };
-		9AE9D704EFBF223B14DC943174364134 /* KuwaharaRadius3Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F6C354F3E4EF762C3E879B91219F /* KuwaharaRadius3Filter.swift */; };
-		9B421FBF91EDC83D0F122493845AD3AA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693155BF924429B57D5B9E5AC5FB9F74 /* Camera.swift */; };
-		9C5F5B1D7AD49B5F7DEC2F791A83AE26 /* AlphaBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CA5DB0007DBD973A0133C8A80D20F /* AlphaBlend.metal */; };
-		9C86F6EB123E49A7BD23867ED37256CF /* ExclusionBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A0D41A0AD30BBA9B80451CCA47BC8 /* ExclusionBlend.swift */; };
-		9D42B68E2AF768094C1A737D5446B2C1 /* LinearBurnBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441B93F166C118017F1CE00C38F79B2 /* LinearBurnBlend.swift */; };
-		9EB82BA9712F723B8C715BE5E9766D9C /* ColorBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = C7DDAC7FD46490223CEA6E81441C42D0 /* ColorBlend.metal */; };
-		9F8950204C12EFF24163256BB7D2312B /* Vibrance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC106B2EE67F9AEEDF618ED9C06EA68 /* Vibrance.swift */; };
-		A0B0000F341F470D72E55FF22D195563 /* PolarPixellate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E2619ABBECC3C6FD42E7A1849CE416 /* PolarPixellate.swift */; };
-		A0C1C471613504FC1A733836BD6AC1B5 /* Posterize.metal in Sources */ = {isa = PBXBuildFile; fileRef = C27D7AB270EA27377CA6C6410C81C42C /* Posterize.metal */; };
-		A1832D8AD95F1A561138A621CCE2C178 /* MotionBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C80BF328FF0DE531041D36AF3852F18 /* MotionBlur.swift */; };
-		A3D4DCB12693CF48D7A9524CB654818C /* PolarPixellate.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7B7FF1997C94B1226E46C196815102A3 /* PolarPixellate.metal */; };
-		A4B0EC3C28DBE7B4BF7E27042C19849F /* PictureInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79CAB4BDA8E2B0FE8732816B94B8E5 /* PictureInput.swift */; };
-		A56588D53A5EBBCA5380C8C9E7B086F9 /* RGBAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA2824FAB46BDC662DFFF9EFFCA312 /* RGBAdjustment.metal */; };
-		A732445B6C2B6F45F8F95E8E38B38ECE /* WhiteBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EF839B8F6D2A3F3119A997BF9C686C /* WhiteBalance.swift */; };
-		A818858A3D95346657990933D35FA9DD /* AlphaBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE08ACD8DA74A46A20C2B1682AEF44 /* AlphaBlend.swift */; };
-		AB2E65395AE980804B8FE5310BC0B3E4 /* Solarize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F28CC72846B2BC19B922370115BD29 /* Solarize.swift */; };
-		AF49D0C6AE5F645BDDBD75815FB672DF /* LookupFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = B00EDC0A4B0B8A1021C86C6988052A39 /* LookupFilter.metal */; };
-		B04A12F63F583A9C10BFA18A7889DEC9 /* BrightnessAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C2FF33C0F1E8B83E47C34F5BECB15 /* BrightnessAdjustment.swift */; };
-		B0B9EB4AD46610DC34C14D8DADBFE0B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130DF1AB4BFE8147C6D398434FB19FAC /* Foundation.framework */; };
-		B0F715238719234AE8FD522A0E741926 /* ImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06264D7BD85E37D9B7FC7B0C49C9FB /* ImageOrientation.swift */; };
-		B134F50CA8EE8688E3CB0D918283752B /* Pods-PixelSDKExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDFF607B1217D51B9D3F09EEC8AD7DB /* Pods-PixelSDKExample-dummy.m */; };
-		B47D0A22725C10C0C8A6AABEE3F1056A /* OverlayBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = E774037CB1F3B91E73DCD62784B5D390 /* OverlayBlend.metal */; };
-		B5104BCCB8B6A3A717308E6237226366 /* PictureOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E540E2E1B3E7DDF78C2362AF54AD624B /* PictureOutput.swift */; };
-		B731D6332E59611EA83AE3221A403CAA /* TiltShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA270384C854BC13F588CA36471D61 /* TiltShift.swift */; };
-		B94386C101213401A8AB6B9212461B69 /* NearbyTexelSampling.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2EB149398CD337A14AAE0945BDD35C6F /* NearbyTexelSampling.metal */; };
-		BB90EB58854C95742D9A12EE508C6F1A /* Crosshatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F523E131E2EDD1F32ED6A43278625A /* Crosshatch.swift */; };
-		BD8C319EDAC18825F0E605EF0AC05B15 /* ChromaKeyBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 471500BC51E7891A03C73A826B07EB36 /* ChromaKeyBlend.metal */; };
-		BF8827A29DC71673CF98D1BFBC7ACAA9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91BFBE9BC0A75CD1ADB7182CCC3144 /* Timestamp.swift */; };
-		C0A667D0E12A8C8BA59F2CE53DF3FFB2 /* CGAColorspace.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5457AFF358EAF4722995B739469BB926 /* CGAColorspace.metal */; };
-		C218B0E3BF1A3F964814E9CE854297B6 /* ChromaKeyBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F918BD5ABD032B532BBFC0C7B50C048 /* ChromaKeyBlend.swift */; };
-		C286B6E0B4401CA298E4D79EECA8FAAC /* StretchDistortion.metal in Sources */ = {isa = PBXBuildFile; fileRef = ECC1AADFF0B535E9EABC20781C758184 /* StretchDistortion.metal */; };
-		C56D205BDB7C3A4A4AFA23428C5E9213 /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608138CBF706C6C9DCD221CA0C1210C /* RenderView.swift */; };
-		C5D2490F48681630E885FC4EB23AB999 /* ThresholdSketch.metal in Sources */ = {isa = PBXBuildFile; fileRef = CC00D14149CD8B5C0F501719E0833B16 /* ThresholdSketch.metal */; };
-		C5F0EFC99521BBF29CAB516EE09854AD /* LuminanceThreshold.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9B89046E9FB469F18034B6B8CC8BC393 /* LuminanceThreshold.metal */; };
-		C7C403AA1FCE854A342AD8A7DC4C82A3 /* SubtractBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7407628C5D2E003913333816813D78 /* SubtractBlend.swift */; };
-		C920D2A4663B0447AADF71FE5EB1147A /* LuminosityBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0790F076CB9A1043AD403B9C942C7A19 /* LuminosityBlend.metal */; };
-		C984991935D02632C131F303ED4FCF10 /* ColorBurnBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958BD007936853C8EFE1EBD36EB3DBE /* ColorBurnBlend.swift */; };
-		CA007D0734DB8960C8FB634FCA076499 /* HueAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = D27E8F525E074DD03ECC434D3CFB0FBC /* HueAdjustment.metal */; };
-		CA4751532CB00870C9DEA20EE46B5EEB /* MedianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB2CB35A86E19F8310F0FFD5368002 /* MedianFilter.swift */; };
-		CAB7C8463364D20F7250F7C7C692FD4E /* ImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ECE7FADC724E6163C5038BC026AA5 /* ImageBuffer.swift */; };
-		CB06FE9EFACAC040F8488764ED00A249 /* ScreenBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF29CFAF7E48E062123A6878B636882 /* ScreenBlend.swift */; };
-		CB4F70DFBDD8B211F4441988DE5D78BC /* ZoomBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78193E81D8734D37E6871AB15D806B95 /* ZoomBlur.swift */; };
-		CCDB7823ED175AC9B8BF9E2D143C1E09 /* HueBlend.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0FB986D571403112EE4C4AE400479868 /* HueBlend.metal */; };
-		CD2BE35CDD6AEE5154EF43650F358DDE /* TiltShift.metal in Sources */ = {isa = PBXBuildFile; fileRef = CF709C8A0C1D217C7379AB825B02AA8A /* TiltShift.metal */; };
-		D0D5D0DEE55131D8BACDE069B189D569 /* Laplacian.metal in Sources */ = {isa = PBXBuildFile; fileRef = 36339584132174F52AFC385A15F55479 /* Laplacian.metal */; };
-		D139E9CC80A0639228D89504421F705F /* LocalBinaryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B2FE28710011E16AC60B76CDEBF26 /* LocalBinaryPattern.swift */; };
-		D146AA4BD7421A954A4573DB9C5AAEE9 /* TextureSamplingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A3DDE580E44295834C21D989FDB89 /* TextureSamplingOperation.swift */; };
-		D35D0186B63D1D4BFBF9F8E570D0CF67 /* Vignette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369D7C66BE96D0EBE33B4C3355F23D8 /* Vignette.swift */; };
-		D3658EA98E0043724B48DDB91896A177 /* ToonFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72890DF7C653DEAD15786248C290A450 /* ToonFilter.metal */; };
-		D4253FA87D8C7AD896715C59F58637B6 /* PixelSDK-GPUImage3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F13556A9C56E691ACBE1497E90665AC /* PixelSDK-GPUImage3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D47F2428A271633D4228BDA84460306A /* BulgeDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911EE98DD058B0A268EFD0CAD892F17 /* BulgeDistortion.swift */; };
-		D6175C24ECFA74E6E5B45168809868E5 /* MonochromeFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 23FEC108BA5CDFC7B5D017366F89104F /* MonochromeFilter.metal */; };
-		D91FEF3B13385A6952B73D96D9D05684 /* MedianFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 65E5B6A41E7D7988BBCBA670269415BB /* MedianFilter.metal */; };
-		D9B4BCE8569E46FDAE83AE1AE699605B /* PrewittEdgeDetection.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9A988AE03BBB80DB20DEACB18593F19A /* PrewittEdgeDetection.metal */; };
-		DA85B59C2E4E8FC26A8F8DDBC3452649 /* Laplacian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411318254393F937B27B033DB9E76AB2 /* Laplacian.swift */; };
-		DCC8E0062E2C4A90F55576E9AEC93A8F /* StretchDistortion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90BD933FBC37A80218E8862DCF06E85 /* StretchDistortion.swift */; };
-		DD597B4FB2C4809DB64BC01CB396DD5B /* OpacityAdjustment.metal in Sources */ = {isa = PBXBuildFile; fileRef = 63FD200E1D79AF00728A859047FFFA60 /* OpacityAdjustment.metal */; };
-		E0636C8F68D4A3FDBE39330E7321BB2A /* ExposureAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85A80ABF4DA7774C1404A506783E9B /* ExposureAdjustment.swift */; };
-		E1B4DDD1FD6975C3BC547749F64D0A6D /* Luminance.metal in Sources */ = {isa = PBXBuildFile; fileRef = 55974CFA0C42B881606548FF11318286 /* Luminance.metal */; };
-		E47D229A86DA0E2DB15F697468CBA3A1 /* PinchDistortion.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9A7D9B040A65A5113C581BC2AD4C /* PinchDistortion.metal */; };
-		E9C908A2909393A208255CD3DD57E124 /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B22659830DE2C451133F1F9337905 /* Pipeline.swift */; };
-		EB07E1D85F5177697F560AA453AB5363 /* MetalRenderingDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A387324038E004D3E636BE357F5116 /* MetalRenderingDevice.swift */; };
-		EC20DCB5A0EAC599CFFAD0324674BD42 /* PolkaDot.metal in Sources */ = {isa = PBXBuildFile; fileRef = 02877A01520076D4D7CD15A1DA7604C1 /* PolkaDot.metal */; };
-		EFB714A2E3C1ACC9CAC459339139139F /* SaturationAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA85E428C6B47B167BDCE61BF700390 /* SaturationAdjustment.swift */; };
-		F0DF072D9932BAF5F984FE43E2AB2473 /* Convolution3x3.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4388313CDE4E3FD7B83393405F32E1BC /* Convolution3x3.metal */; };
-		F29C415333D9FBCE3C332E56A9F66AB2 /* HighlightsAndShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A1596B96792B027A25638230A5885 /* HighlightsAndShadows.swift */; };
-		F4870824DF03721A43A7073329DB5368 /* Posterize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056522C7C0C34BCDE5582C92D271A54 /* Posterize.swift */; };
-		F5A0A2369FD997ABA82D5FC7A2F07C4D /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22AC6C82F554EB6332EEFF2AAEC07A /* Size.swift */; };
-		F5C6631EA89A3B1367D177B8AD128150 /* Sharpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE0529EE654FF863C34D586B066D50 /* Sharpen.swift */; };
-		F6D7205632AC4E026CC38745F39A5B2D /* SourceOverBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609D9175E18CDB116F8428174AFA172 /* SourceOverBlend.swift */; };
-		F80420FF13A1EDE6B93F196E918FB0CE /* LevelsAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37DF2E81DC22CF9BF37AFA1F3AF17CB /* LevelsAdjustment.swift */; };
-		F87E215EB84AAE1A0F39BBB2176731CB /* SoftLightBlend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251D60FBE63D705706A529187839D3A /* SoftLightBlend.swift */; };
+		4C2D68FCEFD60209E4901F3BDBD6D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7FA635A95B200B2EAA9C56A9EE35681B /* Pods-PixelSDKExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0032266FC389F315E585A623ABA6F6F4 /* Pods-PixelSDKExample-dummy.m */; };
+		F50668022BD36E6147350976FBC9DB4B /* Pods-PixelSDKExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C12FA40F67E915AE47D5BC1F06FC7F /* Pods-PixelSDKExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1619BCA95DBA0D8507AFB11392F48E81 /* PBXContainerItemProxy */ = {
+		02B4274B9CAEA1F855187E60BA90FA54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 31C731E1D92A46A86B580AE667C9D567;
 			remoteInfo = "PixelSDK-GPUImage3";
 		};
-		8C77F3DF4FCA985E973DEACAC97A44D9 /* PBXContainerItemProxy */ = {
+		530049EE8FD21D748A314FC84F05C274 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31C731E1D92A46A86B580AE667C9D567;
+			remoteInfo = "PixelSDK-GPUImage3";
+		};
+		F17A8D6CCD21E93476CB685505F29308 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E4CCE2DEE87A7CB6ED83791A3E4813FB;
 			remoteInfo = PixelSDK;
 		};
-		E88B4D66A623632E6EAB8A23EC722A05 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 31C731E1D92A46A86B580AE667C9D567;
-			remoteInfo = "PixelSDK-GPUImage3";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00756E875F1BC0CEE04F362CFA6AE4EF /* ColorDodgeBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorDodgeBlend.swift; path = framework/Source/Operations/ColorDodgeBlend.swift; sourceTree = "<group>"; };
-		01AC305277B8A993EA9E467F7AFF91C8 /* Vibrance.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Vibrance.metal; path = framework/Source/Operations/Vibrance.metal; sourceTree = "<group>"; };
-		02877A01520076D4D7CD15A1DA7604C1 /* PolkaDot.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = PolkaDot.metal; path = framework/Source/Operations/PolkaDot.metal; sourceTree = "<group>"; };
-		05AD310DD09001BC92B59D9766480063 /* Pods-PixelSDKExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixelSDKExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		062A334D89F2AF8934A86534F8ABDAA9 /* Empty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Empty.h; path = framework/Source/Empty.h; sourceTree = "<group>"; };
-		0671BAE78DCD746A0496847976D3E382 /* HarrisCornerDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HarrisCornerDetector.swift; path = framework/Source/Operations/HarrisCornerDetector.swift; sourceTree = "<group>"; };
-		06A733254F43418263123376E961EB1E /* LuminanceRangeReduction.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LuminanceRangeReduction.metal; path = framework/Source/Operations/LuminanceRangeReduction.metal; sourceTree = "<group>"; };
-		06D66C215B79FD4AC5FA67C2A53DBC9F /* NobleCornerDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NobleCornerDetector.swift; path = framework/Source/Operations/NobleCornerDetector.swift; sourceTree = "<group>"; };
-		0790F076CB9A1043AD403B9C942C7A19 /* LuminosityBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LuminosityBlend.metal; path = framework/Source/Operations/LuminosityBlend.metal; sourceTree = "<group>"; };
-		08252F9A0D80A48A1674B4086F05E0F7 /* ChromaKey.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ChromaKey.metal; path = framework/Source/Operations/ChromaKey.metal; sourceTree = "<group>"; };
-		09DEC101A6A02BBA46317C3FD352579B /* HardLightBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardLightBlend.swift; path = framework/Source/Operations/HardLightBlend.swift; sourceTree = "<group>"; };
-		0DF51F6D4E8FAC54D5D4E9304C34E7D5 /* ContrastAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ContrastAdjustment.metal; path = framework/Source/Operations/ContrastAdjustment.metal; sourceTree = "<group>"; };
-		0EEDD0293A3C0DD1D327F2F74A0763DD /* SaturationBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SaturationBlend.metal; path = framework/Source/Operations/SaturationBlend.metal; sourceTree = "<group>"; };
-		0FB986D571403112EE4C4AE400479868 /* HueBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HueBlend.metal; path = framework/Source/Operations/HueBlend.metal; sourceTree = "<group>"; };
-		10C27B276F454EECE50FAE66F7E3FFF1 /* BulgeDistortion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = BulgeDistortion.metal; path = framework/Source/Operations/BulgeDistortion.metal; sourceTree = "<group>"; };
-		1138D4A2D91452846D0AFF9C378E8647 /* ZoomBlur.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ZoomBlur.metal; path = framework/Source/Operations/ZoomBlur.metal; sourceTree = "<group>"; };
-		1169059E7D165C3DFC7DFF66021349FD /* Sharpen.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Sharpen.metal; path = framework/Source/Operations/Sharpen.metal; sourceTree = "<group>"; };
-		130DF1AB4BFE8147C6D398434FB19FAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		15F28CC72846B2BC19B922370115BD29 /* Solarize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Solarize.swift; path = framework/Source/Operations/Solarize.swift; sourceTree = "<group>"; };
-		168731CBAF9C972BDA48A0C6A29F4855 /* ColorLocalBinaryPattern.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorLocalBinaryPattern.metal; path = framework/Source/Operations/ColorLocalBinaryPattern.metal; sourceTree = "<group>"; };
-		16905AFBF724E2EE45497FF2F226C3B0 /* SphereRefraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SphereRefraction.swift; path = framework/Source/Operations/SphereRefraction.swift; sourceTree = "<group>"; };
-		16DC60458EE65A7FA9D3DE9F7C8822D1 /* ColourFASTFeatureDetection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColourFASTFeatureDetection.swift; path = framework/Source/Operations/ColourFASTFeatureDetection.swift; sourceTree = "<group>"; };
-		17E2619ABBECC3C6FD42E7A1849CE416 /* PolarPixellate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolarPixellate.swift; path = framework/Source/Operations/PolarPixellate.swift; sourceTree = "<group>"; };
-		19FEF42555F3C021D5D3AB3BB0C3ECCE /* PinchDistortion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PinchDistortion.swift; path = framework/Source/Operations/PinchDistortion.swift; sourceTree = "<group>"; };
-		1A9C71C7D2EED0D3E3C48E243D36EEED /* MovieOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieOutput.swift; path = framework/Source/MovieOutput.swift; sourceTree = "<group>"; };
-		1B0B02299D6C13712077A53A3EF1E92A /* XYDerivative.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = XYDerivative.metal; path = framework/Source/Operations/XYDerivative.metal; sourceTree = "<group>"; };
-		1B3C3DCA8E22CFE1F4F1177696FFC484 /* WhiteBalance.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = WhiteBalance.metal; path = framework/Source/Operations/WhiteBalance.metal; sourceTree = "<group>"; };
-		1BBFDC924D397BE6E21F6D829D6A323F /* Convolution3x3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Convolution3x3.swift; path = framework/Source/Operations/Convolution3x3.swift; sourceTree = "<group>"; };
-		1C3BFF5242FD3C89084E8BE1B08E1E30 /* Pixellate.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Pixellate.metal; path = framework/Source/Operations/Pixellate.metal; sourceTree = "<group>"; };
-		1DC900FBED97C8C886C1728310EB8273 /* ScreenBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ScreenBlend.metal; path = framework/Source/Operations/ScreenBlend.metal; sourceTree = "<group>"; };
-		1E043DDC653D95A365D8F5B6FCA37881 /* DissolveBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DissolveBlend.swift; path = framework/Source/Operations/DissolveBlend.swift; sourceTree = "<group>"; };
-		1F856EE7E9D3957524D0E0D5C8BA3B8C /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Color.swift; path = framework/Source/Color.swift; sourceTree = "<group>"; };
-		219329E4706716733863A4A1F0E75C0B /* OverlayBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayBlend.swift; path = framework/Source/Operations/OverlayBlend.swift; sourceTree = "<group>"; };
-		220A1596B96792B027A25638230A5885 /* HighlightsAndShadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HighlightsAndShadows.swift; path = framework/Source/Operations/HighlightsAndShadows.swift; sourceTree = "<group>"; };
-		22DA5AE78C4C51ED64DD97E5C258D30F /* Matrix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = framework/Source/Matrix.swift; sourceTree = "<group>"; };
-		2353FF9AB3769199A29D0A4DB7BF66BA /* PixelSDK-GPUImage3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PixelSDK-GPUImage3-dummy.m"; sourceTree = "<group>"; };
-		237C3B4500D210D27A26D5FD15775E47 /* SaturationAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SaturationAdjustment.metal; path = framework/Source/Operations/SaturationAdjustment.metal; sourceTree = "<group>"; };
-		23FEC108BA5CDFC7B5D017366F89104F /* MonochromeFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = MonochromeFilter.metal; path = framework/Source/Operations/MonochromeFilter.metal; sourceTree = "<group>"; };
-		241B2FE28710011E16AC60B76CDEBF26 /* LocalBinaryPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalBinaryPattern.swift; path = framework/Source/Operations/LocalBinaryPattern.swift; sourceTree = "<group>"; };
-		246CA8549D258001E285C3DE053F5B10 /* HarrisCornerDetector.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HarrisCornerDetector.metal; path = framework/Source/Operations/HarrisCornerDetector.metal; sourceTree = "<group>"; };
-		25204B5CB421D5C6E3C88E6B06D15159 /* DifferenceBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DifferenceBlend.swift; path = framework/Source/Operations/DifferenceBlend.swift; sourceTree = "<group>"; };
-		252FA7618A1D9A581C987C1577420C5F /* ColorLocalBinaryPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorLocalBinaryPattern.swift; path = framework/Source/Operations/ColorLocalBinaryPattern.swift; sourceTree = "<group>"; };
-		26C1B66062B8A9FB9D1231A6B3AB0459 /* AdaptiveThreshold.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveThreshold.swift; path = framework/Source/Operations/AdaptiveThreshold.swift; sourceTree = "<group>"; };
-		26E0103140DEC092B5863CA17DB861B3 /* BlendShaderTypes.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = BlendShaderTypes.metal; path = framework/Source/Operations/BlendShaderTypes.metal; sourceTree = "<group>"; };
-		28A387324038E004D3E636BE357F5116 /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetalRenderingDevice.swift; path = framework/Source/MetalRenderingDevice.swift; sourceTree = "<group>"; };
-		2BF0BDE053484EEF7F805A6022A1D241 /* YUVToRGBConversion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = YUVToRGBConversion.metal; path = framework/Source/YUVToRGBConversion.metal; sourceTree = "<group>"; };
-		2C0F824B907966412F03F1C0B81EE4C1 /* NormalBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NormalBlend.swift; path = framework/Source/Operations/NormalBlend.swift; sourceTree = "<group>"; };
-		2C1649946F994954DDB3CAC107E5FC20 /* AdaptiveThreshold.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = AdaptiveThreshold.metal; path = framework/Source/Operations/AdaptiveThreshold.metal; sourceTree = "<group>"; };
-		2C1A9A7D9B040A65A5113C581BC2AD4C /* PinchDistortion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = PinchDistortion.metal; path = framework/Source/Operations/PinchDistortion.metal; sourceTree = "<group>"; };
-		2CDBA1CE0557B8D5CCDBB0AB74ED9FD4 /* GlassSphere.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlassSphere.swift; path = framework/Source/Operations/GlassSphere.swift; sourceTree = "<group>"; };
-		2DC1F5D9C774FA665B2444C26E6A1FDE /* MultiplyBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = MultiplyBlend.metal; path = framework/Source/Operations/MultiplyBlend.metal; sourceTree = "<group>"; };
-		2EB149398CD337A14AAE0945BDD35C6F /* NearbyTexelSampling.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = NearbyTexelSampling.metal; path = framework/Source/Operations/NearbyTexelSampling.metal; sourceTree = "<group>"; };
-		2F22AC6C82F554EB6332EEFF2AAEC07A /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = framework/Source/Size.swift; sourceTree = "<group>"; };
-		2F8B22659830DE2C451133F1F9337905 /* Pipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pipeline.swift; path = framework/Source/Pipeline.swift; sourceTree = "<group>"; };
-		2FB5090016EFCF9693C7B2692E995A37 /* LuminosityBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LuminosityBlend.swift; path = framework/Source/Operations/LuminosityBlend.swift; sourceTree = "<group>"; };
-		31A61FE7786B5838D31BB63BA7EB505C /* ThresholdSobelEdgeDetection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThresholdSobelEdgeDetection.swift; path = framework/Source/Operations/ThresholdSobelEdgeDetection.swift; sourceTree = "<group>"; };
-		31FAF1C4DE683BF2323AD0643EFC0EB4 /* PolkaDot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolkaDot.swift; path = framework/Source/Operations/PolkaDot.swift; sourceTree = "<group>"; };
-		327D37BBCBDDE1CCA1D178F173D84C91 /* Pods-PixelSDKExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixelSDKExample-frameworks.sh"; sourceTree = "<group>"; };
-		328F3C4DDFD74EE3E16C25901D733C6D /* FalseColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FalseColor.swift; path = framework/Source/Operations/FalseColor.swift; sourceTree = "<group>"; };
-		32EF839B8F6D2A3F3119A997BF9C686C /* WhiteBalance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhiteBalance.swift; path = framework/Source/Operations/WhiteBalance.swift; sourceTree = "<group>"; };
-		3441B93F166C118017F1CE00C38F79B2 /* LinearBurnBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinearBurnBlend.swift; path = framework/Source/Operations/LinearBurnBlend.swift; sourceTree = "<group>"; };
-		34A3A978EEC34ED765AAC94751B833D8 /* BasicOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasicOperation.swift; path = framework/Source/BasicOperation.swift; sourceTree = "<group>"; };
-		36339584132174F52AFC385A15F55479 /* Laplacian.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Laplacian.metal; path = framework/Source/Operations/Laplacian.metal; sourceTree = "<group>"; };
-		37FC053C14F3364CF7073A56F2746EBE /* PrewittEdgeDetection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrewittEdgeDetection.swift; path = framework/Source/Operations/PrewittEdgeDetection.swift; sourceTree = "<group>"; };
-		38B5698554A38D758B79CDA2FDFDCC23 /* HighlightAndShadowTint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HighlightAndShadowTint.swift; path = framework/Source/Operations/HighlightAndShadowTint.swift; sourceTree = "<group>"; };
-		3A65AAF331F12139187EFD4DC3E62197 /* ShaderUniformSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShaderUniformSettings.swift; path = framework/Source/ShaderUniformSettings.swift; sourceTree = "<group>"; };
-		3AC106B2EE67F9AEEDF618ED9C06EA68 /* Vibrance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Vibrance.swift; path = framework/Source/Operations/Vibrance.swift; sourceTree = "<group>"; };
-		3BD91F6D9EE49900E3A87A37CD578410 /* LowPassFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LowPassFilter.swift; path = framework/Source/Operations/LowPassFilter.swift; sourceTree = "<group>"; };
-		3E961C4218A6266503E5C287422CA3DF /* PixelSDK-GPUImage3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.debug.xcconfig"; sourceTree = "<group>"; };
-		3F918BD5ABD032B532BBFC0C7B50C048 /* ChromaKeyBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaKeyBlend.swift; path = framework/Source/Operations/ChromaKeyBlend.swift; sourceTree = "<group>"; };
-		410E0B2BFF7B8FE1007C27EA3369B125 /* Pods-PixelSDKExample-artifacts-Release-input-files.xcfilelist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcfilelist; path = "Pods-PixelSDKExample-artifacts-Release-input-files.xcfilelist"; sourceTree = "<group>"; };
-		411318254393F937B27B033DB9E76AB2 /* Laplacian.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Laplacian.swift; path = framework/Source/Operations/Laplacian.swift; sourceTree = "<group>"; };
-		42120EF5A20354C53169CE082A389E8F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		4251D60FBE63D705706A529187839D3A /* SoftLightBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoftLightBlend.swift; path = framework/Source/Operations/SoftLightBlend.swift; sourceTree = "<group>"; };
-		4369D7C66BE96D0EBE33B4C3355F23D8 /* Vignette.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Vignette.swift; path = framework/Source/Operations/Vignette.swift; sourceTree = "<group>"; };
-		4388313CDE4E3FD7B83393405F32E1BC /* Convolution3x3.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Convolution3x3.metal; path = framework/Source/Operations/Convolution3x3.metal; sourceTree = "<group>"; };
-		445B22C7C18888B1173212DE2115BC57 /* HighPassFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HighPassFilter.swift; path = framework/Source/Operations/HighPassFilter.swift; sourceTree = "<group>"; };
-		471500BC51E7891A03C73A826B07EB36 /* ChromaKeyBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ChromaKeyBlend.metal; path = framework/Source/Operations/ChromaKeyBlend.metal; sourceTree = "<group>"; };
-		4C4E25F1F2CAD57AB2DC482FBDAB9149 /* Pods-PixelSDKExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PixelSDKExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4C85A80ABF4DA7774C1404A506783E9B /* ExposureAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExposureAdjustment.swift; path = framework/Source/Operations/ExposureAdjustment.swift; sourceTree = "<group>"; };
-		4CCB2FCEDF94483551DA2C2D9A2527F5 /* MovieInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieInput.swift; path = framework/Source/MovieInput.swift; sourceTree = "<group>"; };
-		4F64AA3BB2269DDBCB2AF8F9BB890F0B /* NormalBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = NormalBlend.metal; path = framework/Source/Operations/NormalBlend.metal; sourceTree = "<group>"; };
-		519B9074749B4D8D0FAD613267BAC080 /* AmatorkaFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AmatorkaFilter.swift; path = framework/Source/Operations/AmatorkaFilter.swift; sourceTree = "<group>"; };
-		51DCAC1742A5466F433870CDD95D1EBC /* ThresholdSobelEdgeDetection.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ThresholdSobelEdgeDetection.metal; path = framework/Source/Operations/ThresholdSobelEdgeDetection.metal; sourceTree = "<group>"; };
-		52DA270384C854BC13F588CA36471D61 /* TiltShift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TiltShift.swift; path = framework/Source/Operations/TiltShift.swift; sourceTree = "<group>"; };
-		5457AFF358EAF4722995B739469BB926 /* CGAColorspace.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = CGAColorspace.metal; path = framework/Source/Operations/CGAColorspace.metal; sourceTree = "<group>"; };
-		55974CFA0C42B881606548FF11318286 /* Luminance.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Luminance.metal; path = framework/Source/Operations/Luminance.metal; sourceTree = "<group>"; };
-		57A1F2206DDF7C9D180E1A2813B68047 /* ThresholdNonMaximumSuppresssion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ThresholdNonMaximumSuppresssion.metal; path = framework/Source/Operations/ThresholdNonMaximumSuppresssion.metal; sourceTree = "<group>"; };
-		58FBAA26D2274B30AE09EA987BD675ED /* Passthrough.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Passthrough.metal; path = framework/Source/Operations/Passthrough.metal; sourceTree = "<group>"; };
-		597C4C892E807EAFD4ABD5DAF9809906 /* ChromaKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaKey.swift; path = framework/Source/Operations/ChromaKey.swift; sourceTree = "<group>"; };
-		5C68256CA4E3A0DA7987A9F8449C394C /* LuminanceThreshold.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LuminanceThreshold.swift; path = framework/Source/Operations/LuminanceThreshold.swift; sourceTree = "<group>"; };
-		5C7D3152DB696F7FA63288403B3282E0 /* OperationGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationGroup.swift; path = framework/Source/OperationGroup.swift; sourceTree = "<group>"; };
-		5CA726A15CB3326FD5199F5611652736 /* ColorInversion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorInversion.metal; path = framework/Source/Operations/ColorInversion.metal; sourceTree = "<group>"; };
-		5DA08DE5C57C9343736315D7C6689084 /* Pods-PixelSDKExample-artifacts-Debug-output-files.xcfilelist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcfilelist; path = "Pods-PixelSDKExample-artifacts-Debug-output-files.xcfilelist"; sourceTree = "<group>"; };
-		5DF4F791E147E7A34C3F2AE7072A499F /* ColorMatrixFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorMatrixFilter.metal; path = framework/Source/Operations/ColorMatrixFilter.metal; sourceTree = "<group>"; };
-		5E424E1AD530D231B87A7F2FF6C8F98D /* SubtractBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SubtractBlend.metal; path = framework/Source/Operations/SubtractBlend.metal; sourceTree = "<group>"; };
-		5F8E475171DD0D6934EBE8B30814B49F /* iOSBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iOSBlur.swift; path = framework/Source/Operations/iOSBlur.swift; sourceTree = "<group>"; };
-		60022FB06113EE2394C3B4E07D84CCD4 /* KuwaharaFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = KuwaharaFilter.metal; path = framework/Source/Operations/KuwaharaFilter.metal; sourceTree = "<group>"; };
-		61B705E086899A117AA88E913D76608E /* ImageGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageGenerator.swift; path = framework/Source/ImageGenerator.swift; sourceTree = "<group>"; };
-		62F6D4802DE9A9D18D94617DC4404AD2 /* MissEtikateFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MissEtikateFilter.swift; path = framework/Source/Operations/MissEtikateFilter.swift; sourceTree = "<group>"; };
-		63E846D78D8DD3E8ECC1FBB1F12FFE58 /* SepiaToneFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SepiaToneFilter.swift; path = framework/Source/Operations/SepiaToneFilter.swift; sourceTree = "<group>"; };
-		63FD200E1D79AF00728A859047FFFA60 /* OpacityAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = OpacityAdjustment.metal; path = framework/Source/Operations/OpacityAdjustment.metal; sourceTree = "<group>"; };
-		64695908B30E6B6077C6FB53CAB1D4DD /* PixelSDK-GPUImage3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PixelSDK-GPUImage3.modulemap"; sourceTree = "<group>"; };
-		65E5B6A41E7D7988BBCBA670269415BB /* MedianFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = MedianFilter.metal; path = framework/Source/Operations/MedianFilter.metal; sourceTree = "<group>"; };
-		66A78BED4E2D1CE4B8483D0BB048EDC3 /* DivideBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DivideBlend.swift; path = framework/Source/Operations/DivideBlend.swift; sourceTree = "<group>"; };
-		67D01BAE7B6C016E845D8ED315F7C385 /* MetalRendering.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetalRendering.swift; path = framework/Source/MetalRendering.swift; sourceTree = "<group>"; };
-		693155BF924429B57D5B9E5AC5FB9F74 /* Camera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = framework/Source/Camera.swift; sourceTree = "<group>"; };
-		6C80BF328FF0DE531041D36AF3852F18 /* MotionBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionBlur.swift; path = framework/Source/Operations/MotionBlur.swift; sourceTree = "<group>"; };
-		6D8A921B0B2B6D4B8078F28CF4B139FD /* MultiplyBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiplyBlend.swift; path = framework/Source/Operations/MultiplyBlend.swift; sourceTree = "<group>"; };
-		6DDFF607B1217D51B9D3F09EEC8AD7DB /* Pods-PixelSDKExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PixelSDKExample-dummy.m"; sourceTree = "<group>"; };
-		72890DF7C653DEAD15786248C290A450 /* ToonFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ToonFilter.metal; path = framework/Source/Operations/ToonFilter.metal; sourceTree = "<group>"; };
-		752777AB2D2E9429DAC465F6C113F02E /* AddBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddBlend.swift; path = framework/Source/Operations/AddBlend.swift; sourceTree = "<group>"; };
-		753EE9A24C193E9FD2CCF4BAF9AE37E6 /* LuminanceRangeReduction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LuminanceRangeReduction.swift; path = framework/Source/Operations/LuminanceRangeReduction.swift; sourceTree = "<group>"; };
-		761DA0325666619C4478D06FD7645065 /* ToonFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToonFilter.swift; path = framework/Source/Operations/ToonFilter.swift; sourceTree = "<group>"; };
-		76773F37C4AFF51AEB7C9FFC2E4509A6 /* Sketch.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Sketch.metal; path = framework/Source/Operations/Sketch.metal; sourceTree = "<group>"; };
-		773EAF5F9E4E7DAD5FCACD5F461F0F51 /* HueAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HueAdjustment.swift; path = framework/Source/Operations/HueAdjustment.swift; sourceTree = "<group>"; };
-		77CA59A62A3F120A78B0CC141899F590 /* SaturationBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SaturationBlend.swift; path = framework/Source/Operations/SaturationBlend.swift; sourceTree = "<group>"; };
-		78193E81D8734D37E6871AB15D806B95 /* ZoomBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomBlur.swift; path = framework/Source/Operations/ZoomBlur.swift; sourceTree = "<group>"; };
-		79CE32C307151B7C9B1C9B7B9DEBF5D0 /* RGBAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RGBAdjustment.swift; path = framework/Source/Operations/RGBAdjustment.swift; sourceTree = "<group>"; };
-		7B4CA5DB0007DBD973A0133C8A80D20F /* AlphaBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = AlphaBlend.metal; path = framework/Source/Operations/AlphaBlend.metal; sourceTree = "<group>"; };
-		7B7FF1997C94B1226E46C196815102A3 /* PolarPixellate.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = PolarPixellate.metal; path = framework/Source/Operations/PolarPixellate.metal; sourceTree = "<group>"; };
-		7BB029D13159DBA1937C29B462910C93 /* SobelEdgeDetection.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SobelEdgeDetection.metal; path = framework/Source/Operations/SobelEdgeDetection.metal; sourceTree = "<group>"; };
-		7C79CAB4BDA8E2B0FE8732816B94B8E5 /* PictureInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PictureInput.swift; path = framework/Source/PictureInput.swift; sourceTree = "<group>"; };
-		81A55D1C760128FAEE9DCDC64BA84A9F /* DivideBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = DivideBlend.metal; path = framework/Source/Operations/DivideBlend.metal; sourceTree = "<group>"; };
-		848F49427202CCBCACD80AF6466A6274 /* SoftElegance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoftElegance.swift; path = framework/Source/Operations/SoftElegance.swift; sourceTree = "<group>"; };
-		857D0BB2D9022101B10AA83F879BE6AF /* PixelSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.debug.xcconfig; sourceTree = "<group>"; };
-		876D555A81F976EBC05E4D719ABF7CE0 /* PixelSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.release.xcconfig; sourceTree = "<group>"; };
-		8857BB6D236E770EC8FE33375F9AF6B1 /* Luminance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Luminance.swift; path = framework/Source/Operations/Luminance.swift; sourceTree = "<group>"; };
-		888EC57F9B82595886425B8C03377FF5 /* PixelSDK-GPUImage3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.release.xcconfig"; sourceTree = "<group>"; };
-		8939B2BD8BC42807B18B93D7E2D06657 /* KuwaharaFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KuwaharaFilter.swift; path = framework/Source/Operations/KuwaharaFilter.swift; sourceTree = "<group>"; };
-		8AEF650E1D1289E5CF7832B6B7121121 /* PixelSDK-GPUImage3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PixelSDK-GPUImage3-prefix.pch"; sourceTree = "<group>"; };
-		8B32D414C67B6A350AD3E9BE006D580C /* Pods-PixelSDKExample-artifacts-Release-output-files.xcfilelist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcfilelist; path = "Pods-PixelSDKExample-artifacts-Release-output-files.xcfilelist"; sourceTree = "<group>"; };
-		8C5163EA9C46A1C539B6D04690092431 /* TexelSamplingTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TexelSamplingTypes.h; path = framework/Source/Operations/TexelSamplingTypes.h; sourceTree = "<group>"; };
-		8CAA2824FAB46BDC662DFFF9EFFCA312 /* RGBAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = RGBAdjustment.metal; path = framework/Source/Operations/RGBAdjustment.metal; sourceTree = "<group>"; };
-		8F13556A9C56E691ACBE1497E90665AC /* PixelSDK-GPUImage3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PixelSDK-GPUImage3-umbrella.h"; sourceTree = "<group>"; };
-		9056522C7C0C34BCDE5582C92D271A54 /* Posterize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Posterize.swift; path = framework/Source/Operations/Posterize.swift; sourceTree = "<group>"; };
-		9278E050921AD32C6FE683290A901969 /* SourceOverBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SourceOverBlend.metal; path = framework/Source/Operations/SourceOverBlend.metal; sourceTree = "<group>"; };
-		92C7127828B5C0FC6D59D29F2A859802 /* Pods-PixelSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PixelSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
-		969DD6F93576A385DA3CE00BC0EF66C6 /* Pods-PixelSDKExample-artifacts-Debug-input-files.xcfilelist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcfilelist; path = "Pods-PixelSDKExample-artifacts-Debug-input-files.xcfilelist"; sourceTree = "<group>"; };
-		96E3BA21BA902774CE4862FA6FA7669D /* Pods-PixelSDKExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PixelSDKExample.modulemap"; sourceTree = "<group>"; };
-		98829FF587C71D04F3A441D51BECAFD1 /* LookupFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LookupFilter.swift; path = framework/Source/Operations/LookupFilter.swift; sourceTree = "<group>"; };
-		995902D137D9BA23BC1D768867DE4B06 /* HighlightAndShadowTint.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HighlightAndShadowTint.metal; path = framework/Source/Operations/HighlightAndShadowTint.metal; sourceTree = "<group>"; };
-		9A988AE03BBB80DB20DEACB18593F19A /* PrewittEdgeDetection.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = PrewittEdgeDetection.metal; path = framework/Source/Operations/PrewittEdgeDetection.metal; sourceTree = "<group>"; };
-		9B89046E9FB469F18034B6B8CC8BC393 /* LuminanceThreshold.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LuminanceThreshold.metal; path = framework/Source/Operations/LuminanceThreshold.metal; sourceTree = "<group>"; };
-		9B8930B1487E61DA149A9B92E2D8E0E7 /* Pods-PixelSDKExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PixelSDKExample-umbrella.h"; sourceTree = "<group>"; };
-		9D6D4AFCF38EDDED9FD4C3F6881066AC /* Solarize.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Solarize.metal; path = framework/Source/Operations/Solarize.metal; sourceTree = "<group>"; };
+		0032266FC389F315E585A623ABA6F6F4 /* Pods-PixelSDKExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PixelSDKExample-dummy.m"; sourceTree = "<group>"; };
+		04E3F3B5824BC85981995741BAC6D086 /* Pods-PixelSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PixelSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		06F17AAD104459A88D44032C91621CE4 /* PixelSDK-GPUImage3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.release.xcconfig"; sourceTree = "<group>"; };
+		10BADC3393B04F8F8126D9FFB8BD3A17 /* PixelSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PixelSDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		22C12FA40F67E915AE47D5BC1F06FC7F /* Pods-PixelSDKExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PixelSDKExample-umbrella.h"; sourceTree = "<group>"; };
+		33FF3D14AB1E9B204E685C89A6FDA902 /* GPUImage.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GPUImage.xcframework; path = framework/Build/GPUImage.xcframework; sourceTree = "<group>"; };
+		4A5AC0300B0B8D792C098EF0EEF448C5 /* PixelSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.debug.xcconfig; sourceTree = "<group>"; };
+		526E583A8E6C91A8F68288ADB9A97896 /* Pods-PixelSDKExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PixelSDKExample.modulemap"; sourceTree = "<group>"; };
+		6B9F670E8D5BBF0F38B5DED6D5C4A986 /* PixelSDK-GPUImage3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		83762A96A9A5871F9AB3C03571E5032E /* PixelSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F3E196B29BA57E669F0E3D1E9183693 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		A0BB2CB35A86E19F8310F0FFD5368002 /* MedianFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedianFilter.swift; path = framework/Source/Operations/MedianFilter.swift; sourceTree = "<group>"; };
-		A0CDE9BA3E5364484F073F4C9E1E90DC /* GammaAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GammaAdjustment.swift; path = framework/Source/Operations/GammaAdjustment.swift; sourceTree = "<group>"; };
-		A0DB57BBE92BBAF180704CE6AFA89E7C /* Pods-PixelSDKExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixelSDKExample-Info.plist"; sourceTree = "<group>"; };
-		A1A9B528D81B2EBEE00F65D97A53B83F /* SobelEdgeDetection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SobelEdgeDetection.swift; path = framework/Source/Operations/SobelEdgeDetection.swift; sourceTree = "<group>"; };
-		A20C3B423F4FE1DF380A7FC17F1D22B7 /* HardLightBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HardLightBlend.metal; path = framework/Source/Operations/HardLightBlend.metal; sourceTree = "<group>"; };
-		A4153D607861203CD47B102BAE75155C /* Haze.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Haze.metal; path = framework/Source/Operations/Haze.metal; sourceTree = "<group>"; };
-		A565452996411126028C053AC32A518F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
-		A622B31938CA83EF0079446566E17EA4 /* DarkenBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DarkenBlend.swift; path = framework/Source/Operations/DarkenBlend.swift; sourceTree = "<group>"; };
-		A79A3DDE580E44295834C21D989FDB89 /* TextureSamplingOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextureSamplingOperation.swift; path = framework/Source/TextureSamplingOperation.swift; sourceTree = "<group>"; };
-		A90BD933FBC37A80218E8862DCF06E85 /* StretchDistortion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StretchDistortion.swift; path = framework/Source/Operations/StretchDistortion.swift; sourceTree = "<group>"; };
-		AAAAE9FF914B541AA9E0B26019BDC61D /* ContrastAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContrastAdjustment.swift; path = framework/Source/Operations/ContrastAdjustment.swift; sourceTree = "<group>"; };
-		AAB0FCD92CCAAC1300AB388C21E403E5 /* Vignette.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Vignette.metal; path = framework/Source/Operations/Vignette.metal; sourceTree = "<group>"; };
-		AB9746437CBC2D005E2E44732644D181 /* SoftLightBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SoftLightBlend.metal; path = framework/Source/Operations/SoftLightBlend.metal; sourceTree = "<group>"; };
-		ADBE08ACD8DA74A46A20C2B1682AEF44 /* AlphaBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlphaBlend.swift; path = framework/Source/Operations/AlphaBlend.swift; sourceTree = "<group>"; };
-		AE306F78156E207F1FD2F5860181EFE7 /* GaussianBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GaussianBlur.swift; path = framework/Source/Operations/GaussianBlur.swift; sourceTree = "<group>"; };
-		AE7BC6AF1DD773D6B3EF99CC4485943D /* PixelSDK-GPUImage3-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PixelSDK-GPUImage3-Info.plist"; sourceTree = "<group>"; };
-		AEDE8E14329E2C395B28263176454F78 /* GlassSphere.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = GlassSphere.metal; path = framework/Source/Operations/GlassSphere.metal; sourceTree = "<group>"; };
-		AF474D45EB5330147CD55C68167BB3BD /* ExposureAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ExposureAdjustment.metal; path = framework/Source/Operations/ExposureAdjustment.metal; sourceTree = "<group>"; };
-		B00EDC0A4B0B8A1021C86C6988052A39 /* LookupFilter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LookupFilter.metal; path = framework/Source/Operations/LookupFilter.metal; sourceTree = "<group>"; };
-		B05C2FF33C0F1E8B83E47C34F5BECB15 /* BrightnessAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessAdjustment.swift; path = framework/Source/Operations/BrightnessAdjustment.swift; sourceTree = "<group>"; };
-		B15D4160F6725DA97DEB5EDB390C8ADF /* EmbossFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmbossFilter.swift; path = framework/Source/Operations/EmbossFilter.swift; sourceTree = "<group>"; };
+		A5FA19946870E02730B3CEA023A85218 /* Pods-PixelSDKExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PixelSDKExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B1BFAAB9F6E1B7F92A46A61F065B07E8 /* Pods_PixelSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B20FD6D83470E0207E7FE2A365C783B4 /* OperationShaderTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OperationShaderTypes.h; path = framework/Source/Operations/OperationShaderTypes.h; sourceTree = "<group>"; };
-		B2571BF93121268758604B632B6E01A6 /* SwirlDistortion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwirlDistortion.swift; path = framework/Source/Operations/SwirlDistortion.swift; sourceTree = "<group>"; };
-		B316F6C354F3E4EF762C3E879B91219F /* KuwaharaRadius3Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KuwaharaRadius3Filter.swift; path = framework/Source/Operations/KuwaharaRadius3Filter.swift; sourceTree = "<group>"; };
-		B37DF2E81DC22CF9BF37AFA1F3AF17CB /* LevelsAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LevelsAdjustment.swift; path = framework/Source/Operations/LevelsAdjustment.swift; sourceTree = "<group>"; };
-		B3E48DC5A8EBF05FDFBF0703D86F5B6A /* YUVToRGBConversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YUVToRGBConversion.swift; path = framework/Source/YUVToRGBConversion.swift; sourceTree = "<group>"; };
-		B5F9954122B8464698BA7E76E2C8E2A7 /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B608138CBF706C6C9DCD221CA0C1210C /* RenderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderView.swift; path = framework/Source/RenderView.swift; sourceTree = "<group>"; };
-		B816C7986C4EFD27E8BF3A42EEBBAB56 /* ColourFASTFeatureDetection.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColourFASTFeatureDetection.metal; path = framework/Source/Operations/ColourFASTFeatureDetection.metal; sourceTree = "<group>"; };
-		B911EE98DD058B0A268EFD0CAD892F17 /* BulgeDistortion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BulgeDistortion.swift; path = framework/Source/Operations/BulgeDistortion.swift; sourceTree = "<group>"; };
-		B932BA002F43D3ACA29C0953EA1A06FA /* Pods-PixelSDKExample-artifacts.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixelSDKExample-artifacts.sh"; sourceTree = "<group>"; };
-		BA6ECE7FADC724E6163C5038BC026AA5 /* ImageBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageBuffer.swift; path = framework/Source/Operations/ImageBuffer.swift; sourceTree = "<group>"; };
-		BD042B86E2EFC093DFD6B94D96C6CC28 /* ColorMatrixFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMatrixFilter.swift; path = framework/Source/Operations/ColorMatrixFilter.swift; sourceTree = "<group>"; };
-		BD1DF7B0CAF739E1E7E8A0CB5CBB82AC /* KuwaharaRadius3Filter.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = KuwaharaRadius3Filter.metal; path = framework/Source/Operations/KuwaharaRadius3Filter.metal; sourceTree = "<group>"; };
-		BEA69C0642C9ED4C5FAD789FB71FA545 /* LightenBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LightenBlend.metal; path = framework/Source/Operations/LightenBlend.metal; sourceTree = "<group>"; };
-		BFA55291E8016A01382653022974BEC4 /* DifferenceBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = DifferenceBlend.metal; path = framework/Source/Operations/DifferenceBlend.metal; sourceTree = "<group>"; };
-		C27D7AB270EA27377CA6C6410C81C42C /* Posterize.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Posterize.metal; path = framework/Source/Operations/Posterize.metal; sourceTree = "<group>"; };
-		C58A3F3688E5670698EA5AC03615EFDB /* ExclusionBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ExclusionBlend.metal; path = framework/Source/Operations/ExclusionBlend.metal; sourceTree = "<group>"; };
-		C5AE0529EE654FF863C34D586B066D50 /* Sharpen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharpen.swift; path = framework/Source/Operations/Sharpen.swift; sourceTree = "<group>"; };
-		C5B190C761458B384F0C215F72CE057F /* SwirlDistortion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SwirlDistortion.metal; path = framework/Source/Operations/SwirlDistortion.metal; sourceTree = "<group>"; };
-		C5D479D06716366D6F2015CF218C9CB5 /* Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Position.swift; path = framework/Source/Position.swift; sourceTree = "<group>"; };
-		C5F523E131E2EDD1F32ED6A43278625A /* Crosshatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Crosshatch.swift; path = framework/Source/Operations/Crosshatch.swift; sourceTree = "<group>"; };
-		C609D9175E18CDB116F8428174AFA172 /* SourceOverBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceOverBlend.swift; path = framework/Source/Operations/SourceOverBlend.swift; sourceTree = "<group>"; };
-		C78B065F9EF7847AFC023527A9B7DCC0 /* ColorDodgeBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorDodgeBlend.metal; path = framework/Source/Operations/ColorDodgeBlend.metal; sourceTree = "<group>"; };
-		C7DDAC7FD46490223CEA6E81441C42D0 /* ColorBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorBlend.metal; path = framework/Source/Operations/ColorBlend.metal; sourceTree = "<group>"; };
-		C91F8817CA017E649D3D6DEA855B5BF3 /* NobleCornerDetector.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = NobleCornerDetector.metal; path = framework/Source/Operations/NobleCornerDetector.metal; sourceTree = "<group>"; };
-		CA65B308597AA7A03A62DE4529C6C9EA /* DarkenBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = DarkenBlend.metal; path = framework/Source/Operations/DarkenBlend.metal; sourceTree = "<group>"; };
-		CC00D14149CD8B5C0F501719E0833B16 /* ThresholdSketch.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ThresholdSketch.metal; path = framework/Source/Operations/ThresholdSketch.metal; sourceTree = "<group>"; };
-		CD7DB027C7E77860F19764BAE1BF6BA7 /* ColorBurnBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorBurnBlend.metal; path = framework/Source/Operations/ColorBurnBlend.metal; sourceTree = "<group>"; };
-		CEA85E428C6B47B167BDCE61BF700390 /* SaturationAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SaturationAdjustment.swift; path = framework/Source/Operations/SaturationAdjustment.swift; sourceTree = "<group>"; };
-		CF709C8A0C1D217C7379AB825B02AA8A /* TiltShift.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = TiltShift.metal; path = framework/Source/Operations/TiltShift.metal; sourceTree = "<group>"; };
-		D27E8F525E074DD03ECC434D3CFB0FBC /* HueAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HueAdjustment.metal; path = framework/Source/Operations/HueAdjustment.metal; sourceTree = "<group>"; };
-		D31B00D07679E01BF14B22171139C787 /* MonochromeFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MonochromeFilter.swift; path = framework/Source/Operations/MonochromeFilter.swift; sourceTree = "<group>"; };
-		D32432CC6E7B10BD3B91037DE5384940 /* OpacityAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpacityAdjustment.swift; path = framework/Source/Operations/OpacityAdjustment.swift; sourceTree = "<group>"; };
-		D57EF110140EEFDBF96931D1B46A7CC7 /* SphereRefraction.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = SphereRefraction.metal; path = framework/Source/Operations/SphereRefraction.metal; sourceTree = "<group>"; };
-		D6BAEEB9E8D26C7975DD9B7ECEAA6D6F /* Haze.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Haze.swift; path = framework/Source/Operations/Haze.swift; sourceTree = "<group>"; };
-		D885D3CB206B147DF9C1F6C62BED677C /* Texture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Texture.swift; path = framework/Source/Texture.swift; sourceTree = "<group>"; };
-		DAA6B5B15AF058543C56BAEE93539E13 /* HueBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HueBlend.swift; path = framework/Source/Operations/HueBlend.swift; sourceTree = "<group>"; };
-		DBE84147176CE0ACA003ED07D51AD400 /* HalfTone.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HalfTone.metal; path = framework/Source/Operations/HalfTone.metal; sourceTree = "<group>"; };
-		DC7407628C5D2E003913333816813D78 /* SubtractBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubtractBlend.swift; path = framework/Source/Operations/SubtractBlend.swift; sourceTree = "<group>"; };
-		DC7B26EA835ECA48E409FF13024C9F1F /* ThresholdSketch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThresholdSketch.swift; path = framework/Source/Operations/ThresholdSketch.swift; sourceTree = "<group>"; };
-		DECC06CFF129AD6528475FA45EBA556B /* BrightnessAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = BrightnessAdjustment.metal; path = framework/Source/Operations/BrightnessAdjustment.metal; sourceTree = "<group>"; };
-		DF06264D7BD85E37D9B7FC7B0C49C9FB /* ImageOrientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageOrientation.swift; path = framework/Source/ImageOrientation.swift; sourceTree = "<group>"; };
-		DFD06F6AB8D94D6C430DA6EAF8CB43B8 /* HalfTone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HalfTone.swift; path = framework/Source/Operations/HalfTone.swift; sourceTree = "<group>"; };
-		E433AE5B021F0710852F96EC7C03BCCC /* LightenBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightenBlend.swift; path = framework/Source/Operations/LightenBlend.swift; sourceTree = "<group>"; };
-		E540E2E1B3E7DDF78C2362AF54AD624B /* PictureOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PictureOutput.swift; path = framework/Source/PictureOutput.swift; sourceTree = "<group>"; };
-		E57FE1D0940374BA92B65EE481CF3F53 /* LocalBinaryPattern.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LocalBinaryPattern.metal; path = framework/Source/Operations/LocalBinaryPattern.metal; sourceTree = "<group>"; };
-		E5ABA193BC8D790AC8DC49BBF39AC242 /* MotionBlur.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = MotionBlur.metal; path = framework/Source/Operations/MotionBlur.metal; sourceTree = "<group>"; };
-		E774037CB1F3B91E73DCD62784B5D390 /* OverlayBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = OverlayBlend.metal; path = framework/Source/Operations/OverlayBlend.metal; sourceTree = "<group>"; };
-		E818EFE481F990D8195AC27A4FE5FDE0 /* ColorSwizzle.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorSwizzle.metal; path = framework/Source/Operations/ColorSwizzle.metal; sourceTree = "<group>"; };
-		E958BD007936853C8EFE1EBD36EB3DBE /* ColorBurnBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorBurnBlend.swift; path = framework/Source/Operations/ColorBurnBlend.swift; sourceTree = "<group>"; };
-		E9D4FF18371D27C9B795C179770D0AFD /* ColorBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorBlend.swift; path = framework/Source/Operations/ColorBlend.swift; sourceTree = "<group>"; };
-		ECC1AADFF0B535E9EABC20781C758184 /* StretchDistortion.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = StretchDistortion.metal; path = framework/Source/Operations/StretchDistortion.metal; sourceTree = "<group>"; };
-		EE91BFBE9BC0A75CD1ADB7182CCC3144 /* Timestamp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timestamp.swift; path = framework/Source/Timestamp.swift; sourceTree = "<group>"; };
-		EF9964CAF1D06FADEBA688CC89FE6562 /* LevelsAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LevelsAdjustment.metal; path = framework/Source/Operations/LevelsAdjustment.metal; sourceTree = "<group>"; };
-		EFAC85723A12DF3252034B975599E82F /* Sketch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sketch.swift; path = framework/Source/Operations/Sketch.swift; sourceTree = "<group>"; };
-		F0E08E003E14C76A55FD14AAB68E8820 /* Pixellate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pixellate.swift; path = framework/Source/Operations/Pixellate.swift; sourceTree = "<group>"; };
-		F1326344F8986580F408686BF14DA3B7 /* HighlightsAndShadows.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HighlightsAndShadows.metal; path = framework/Source/Operations/HighlightsAndShadows.metal; sourceTree = "<group>"; };
-		F19B6E3A8BCBFA780CFD2186CF66E946 /* SolidColorGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SolidColorGenerator.swift; path = framework/Source/Operations/SolidColorGenerator.swift; sourceTree = "<group>"; };
-		F20D3601616E86219A2C427E83419D52 /* Crosshatch.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Crosshatch.metal; path = framework/Source/Operations/Crosshatch.metal; sourceTree = "<group>"; };
-		F239704884B6229032186BD125175B96 /* DissolveBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = DissolveBlend.metal; path = framework/Source/Operations/DissolveBlend.metal; sourceTree = "<group>"; };
-		F25A0D41A0AD30BBA9B80451CCA47BC8 /* ExclusionBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExclusionBlend.swift; path = framework/Source/Operations/ExclusionBlend.swift; sourceTree = "<group>"; };
-		F37EAF733EECE2CB4B9E64B568F41112 /* BlendShaderTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BlendShaderTypes.h; path = framework/Source/Operations/BlendShaderTypes.h; sourceTree = "<group>"; };
-		F548CBBBD5CB641B1B33B24BCD6B042E /* ColorInversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorInversion.swift; path = framework/Source/Operations/ColorInversion.swift; sourceTree = "<group>"; };
-		F5652587AEF7E2ACAB57D459D148581C /* GammaAdjustment.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = GammaAdjustment.metal; path = framework/Source/Operations/GammaAdjustment.metal; sourceTree = "<group>"; };
-		F5E0D1ABB49D541E18100BD8FEFF5B51 /* PixelSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = PixelSDK.xcframework; sourceTree = "<group>"; };
-		F6842998CF8FC6A9AF1285AB92CECDC9 /* BoxBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoxBlur.swift; path = framework/Source/Operations/BoxBlur.swift; sourceTree = "<group>"; };
-		F68C53EF3EA027E2DFD3D2B5F60148CD /* CGAColorspace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGAColorspace.swift; path = framework/Source/Operations/CGAColorspace.swift; sourceTree = "<group>"; };
-		F8C0A7B0D37C3992A8F708C720ED831D /* FalseColor.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = FalseColor.metal; path = framework/Source/Operations/FalseColor.metal; sourceTree = "<group>"; };
-		F914D2732B64147453FEED771548DDE5 /* SmoothToonFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SmoothToonFilter.swift; path = framework/Source/Operations/SmoothToonFilter.swift; sourceTree = "<group>"; };
-		F98A0FFB03665E8BC9C6FB68E06FDDA8 /* LinearBurnBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LinearBurnBlend.metal; path = framework/Source/Operations/LinearBurnBlend.metal; sourceTree = "<group>"; };
-		FB3A9EC0C52D1484C1FAE7547CC76016 /* AddBlend.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = AddBlend.metal; path = framework/Source/Operations/AddBlend.metal; sourceTree = "<group>"; };
-		FBF29CFAF7E48E062123A6878B636882 /* ScreenBlend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScreenBlend.swift; path = framework/Source/Operations/ScreenBlend.swift; sourceTree = "<group>"; };
-		FC39DDDC41AF5D2036B5FAE4B4CB433F /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = framework/Source/Log.swift; sourceTree = "<group>"; };
-		FCFBE7C9C30E2AC508119076D1886D8E /* Pods-PixelSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PixelSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		B4A6FADB9B55BB78895680A2B6BC998A /* PixelSDK-GPUImage3-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PixelSDK-GPUImage3-xcframeworks.sh"; sourceTree = "<group>"; };
+		B4C4B599E7F930EEB749880DBF2CC813 /* Pods-PixelSDKExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixelSDKExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		C0D191A121B731528ED16ADCAE566EA0 /* Pods-PixelSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PixelSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
+		C95EEF0049292DF53CD505E4E3799AB2 /* Pods-PixelSDKExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixelSDKExample-Info.plist"; sourceTree = "<group>"; };
+		D45A6E0B9CB544D61657B3F2F4BC3141 /* Pods-PixelSDKExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixelSDKExample-frameworks.sh"; sourceTree = "<group>"; };
+		EF202458552D4C3D446C08519AA61DB4 /* PixelSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = PixelSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		74E821E14FA9EB96FF9CA9C5167D9DFE /* Frameworks */ = {
+		A333CB23FB81ED9D1DC8CD888EA12C31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B9EB4AD46610DC34C14D8DADBFE0B6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A8D97EDB8121968BB3310BB942B472E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DC7A09D6E45DE2ACF9FDF7430BCD47D /* AVFoundation.framework in Frameworks */,
-				4E2FC183F63FA4E5A649F705BA6286A1 /* Foundation.framework in Frameworks */,
-				5551B7AAE6D850343AFC91F3B0B210A2 /* Metal.framework in Frameworks */,
-				3E4675B6E2E0C51C46C0C19B1D680F1A /* QuartzCore.framework in Frameworks */,
+				4C2D68FCEFD60209E4901F3BDBD6D3BD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01D5EDC5BF6DF0F28009EA6EC4586821 /* PixelSDK-GPUImage3 */ = {
+		07A77F7B98D2A41B1BD4225B1ADEAD62 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2C1649946F994954DDB3CAC107E5FC20 /* AdaptiveThreshold.metal */,
-				26C1B66062B8A9FB9D1231A6B3AB0459 /* AdaptiveThreshold.swift */,
-				FB3A9EC0C52D1484C1FAE7547CC76016 /* AddBlend.metal */,
-				752777AB2D2E9429DAC465F6C113F02E /* AddBlend.swift */,
-				7B4CA5DB0007DBD973A0133C8A80D20F /* AlphaBlend.metal */,
-				ADBE08ACD8DA74A46A20C2B1682AEF44 /* AlphaBlend.swift */,
-				519B9074749B4D8D0FAD613267BAC080 /* AmatorkaFilter.swift */,
-				34A3A978EEC34ED765AAC94751B833D8 /* BasicOperation.swift */,
-				F37EAF733EECE2CB4B9E64B568F41112 /* BlendShaderTypes.h */,
-				26E0103140DEC092B5863CA17DB861B3 /* BlendShaderTypes.metal */,
-				F6842998CF8FC6A9AF1285AB92CECDC9 /* BoxBlur.swift */,
-				DECC06CFF129AD6528475FA45EBA556B /* BrightnessAdjustment.metal */,
-				B05C2FF33C0F1E8B83E47C34F5BECB15 /* BrightnessAdjustment.swift */,
-				10C27B276F454EECE50FAE66F7E3FFF1 /* BulgeDistortion.metal */,
-				B911EE98DD058B0A268EFD0CAD892F17 /* BulgeDistortion.swift */,
-				693155BF924429B57D5B9E5AC5FB9F74 /* Camera.swift */,
-				5457AFF358EAF4722995B739469BB926 /* CGAColorspace.metal */,
-				F68C53EF3EA027E2DFD3D2B5F60148CD /* CGAColorspace.swift */,
-				08252F9A0D80A48A1674B4086F05E0F7 /* ChromaKey.metal */,
-				597C4C892E807EAFD4ABD5DAF9809906 /* ChromaKey.swift */,
-				471500BC51E7891A03C73A826B07EB36 /* ChromaKeyBlend.metal */,
-				3F918BD5ABD032B532BBFC0C7B50C048 /* ChromaKeyBlend.swift */,
-				1F856EE7E9D3957524D0E0D5C8BA3B8C /* Color.swift */,
-				C7DDAC7FD46490223CEA6E81441C42D0 /* ColorBlend.metal */,
-				E9D4FF18371D27C9B795C179770D0AFD /* ColorBlend.swift */,
-				CD7DB027C7E77860F19764BAE1BF6BA7 /* ColorBurnBlend.metal */,
-				E958BD007936853C8EFE1EBD36EB3DBE /* ColorBurnBlend.swift */,
-				C78B065F9EF7847AFC023527A9B7DCC0 /* ColorDodgeBlend.metal */,
-				00756E875F1BC0CEE04F362CFA6AE4EF /* ColorDodgeBlend.swift */,
-				5CA726A15CB3326FD5199F5611652736 /* ColorInversion.metal */,
-				F548CBBBD5CB641B1B33B24BCD6B042E /* ColorInversion.swift */,
-				168731CBAF9C972BDA48A0C6A29F4855 /* ColorLocalBinaryPattern.metal */,
-				252FA7618A1D9A581C987C1577420C5F /* ColorLocalBinaryPattern.swift */,
-				5DF4F791E147E7A34C3F2AE7072A499F /* ColorMatrixFilter.metal */,
-				BD042B86E2EFC093DFD6B94D96C6CC28 /* ColorMatrixFilter.swift */,
-				E818EFE481F990D8195AC27A4FE5FDE0 /* ColorSwizzle.metal */,
-				B816C7986C4EFD27E8BF3A42EEBBAB56 /* ColourFASTFeatureDetection.metal */,
-				16DC60458EE65A7FA9D3DE9F7C8822D1 /* ColourFASTFeatureDetection.swift */,
-				0DF51F6D4E8FAC54D5D4E9304C34E7D5 /* ContrastAdjustment.metal */,
-				AAAAE9FF914B541AA9E0B26019BDC61D /* ContrastAdjustment.swift */,
-				4388313CDE4E3FD7B83393405F32E1BC /* Convolution3x3.metal */,
-				1BBFDC924D397BE6E21F6D829D6A323F /* Convolution3x3.swift */,
-				F20D3601616E86219A2C427E83419D52 /* Crosshatch.metal */,
-				C5F523E131E2EDD1F32ED6A43278625A /* Crosshatch.swift */,
-				CA65B308597AA7A03A62DE4529C6C9EA /* DarkenBlend.metal */,
-				A622B31938CA83EF0079446566E17EA4 /* DarkenBlend.swift */,
-				BFA55291E8016A01382653022974BEC4 /* DifferenceBlend.metal */,
-				25204B5CB421D5C6E3C88E6B06D15159 /* DifferenceBlend.swift */,
-				F239704884B6229032186BD125175B96 /* DissolveBlend.metal */,
-				1E043DDC653D95A365D8F5B6FCA37881 /* DissolveBlend.swift */,
-				81A55D1C760128FAEE9DCDC64BA84A9F /* DivideBlend.metal */,
-				66A78BED4E2D1CE4B8483D0BB048EDC3 /* DivideBlend.swift */,
-				B15D4160F6725DA97DEB5EDB390C8ADF /* EmbossFilter.swift */,
-				062A334D89F2AF8934A86534F8ABDAA9 /* Empty.h */,
-				C58A3F3688E5670698EA5AC03615EFDB /* ExclusionBlend.metal */,
-				F25A0D41A0AD30BBA9B80451CCA47BC8 /* ExclusionBlend.swift */,
-				AF474D45EB5330147CD55C68167BB3BD /* ExposureAdjustment.metal */,
-				4C85A80ABF4DA7774C1404A506783E9B /* ExposureAdjustment.swift */,
-				F8C0A7B0D37C3992A8F708C720ED831D /* FalseColor.metal */,
-				328F3C4DDFD74EE3E16C25901D733C6D /* FalseColor.swift */,
-				F5652587AEF7E2ACAB57D459D148581C /* GammaAdjustment.metal */,
-				A0CDE9BA3E5364484F073F4C9E1E90DC /* GammaAdjustment.swift */,
-				AE306F78156E207F1FD2F5860181EFE7 /* GaussianBlur.swift */,
-				AEDE8E14329E2C395B28263176454F78 /* GlassSphere.metal */,
-				2CDBA1CE0557B8D5CCDBB0AB74ED9FD4 /* GlassSphere.swift */,
-				DBE84147176CE0ACA003ED07D51AD400 /* HalfTone.metal */,
-				DFD06F6AB8D94D6C430DA6EAF8CB43B8 /* HalfTone.swift */,
-				A20C3B423F4FE1DF380A7FC17F1D22B7 /* HardLightBlend.metal */,
-				09DEC101A6A02BBA46317C3FD352579B /* HardLightBlend.swift */,
-				246CA8549D258001E285C3DE053F5B10 /* HarrisCornerDetector.metal */,
-				0671BAE78DCD746A0496847976D3E382 /* HarrisCornerDetector.swift */,
-				A4153D607861203CD47B102BAE75155C /* Haze.metal */,
-				D6BAEEB9E8D26C7975DD9B7ECEAA6D6F /* Haze.swift */,
-				995902D137D9BA23BC1D768867DE4B06 /* HighlightAndShadowTint.metal */,
-				38B5698554A38D758B79CDA2FDFDCC23 /* HighlightAndShadowTint.swift */,
-				F1326344F8986580F408686BF14DA3B7 /* HighlightsAndShadows.metal */,
-				220A1596B96792B027A25638230A5885 /* HighlightsAndShadows.swift */,
-				445B22C7C18888B1173212DE2115BC57 /* HighPassFilter.swift */,
-				D27E8F525E074DD03ECC434D3CFB0FBC /* HueAdjustment.metal */,
-				773EAF5F9E4E7DAD5FCACD5F461F0F51 /* HueAdjustment.swift */,
-				0FB986D571403112EE4C4AE400479868 /* HueBlend.metal */,
-				DAA6B5B15AF058543C56BAEE93539E13 /* HueBlend.swift */,
-				BA6ECE7FADC724E6163C5038BC026AA5 /* ImageBuffer.swift */,
-				61B705E086899A117AA88E913D76608E /* ImageGenerator.swift */,
-				DF06264D7BD85E37D9B7FC7B0C49C9FB /* ImageOrientation.swift */,
-				5F8E475171DD0D6934EBE8B30814B49F /* iOSBlur.swift */,
-				60022FB06113EE2394C3B4E07D84CCD4 /* KuwaharaFilter.metal */,
-				8939B2BD8BC42807B18B93D7E2D06657 /* KuwaharaFilter.swift */,
-				BD1DF7B0CAF739E1E7E8A0CB5CBB82AC /* KuwaharaRadius3Filter.metal */,
-				B316F6C354F3E4EF762C3E879B91219F /* KuwaharaRadius3Filter.swift */,
-				36339584132174F52AFC385A15F55479 /* Laplacian.metal */,
-				411318254393F937B27B033DB9E76AB2 /* Laplacian.swift */,
-				EF9964CAF1D06FADEBA688CC89FE6562 /* LevelsAdjustment.metal */,
-				B37DF2E81DC22CF9BF37AFA1F3AF17CB /* LevelsAdjustment.swift */,
-				BEA69C0642C9ED4C5FAD789FB71FA545 /* LightenBlend.metal */,
-				E433AE5B021F0710852F96EC7C03BCCC /* LightenBlend.swift */,
-				F98A0FFB03665E8BC9C6FB68E06FDDA8 /* LinearBurnBlend.metal */,
-				3441B93F166C118017F1CE00C38F79B2 /* LinearBurnBlend.swift */,
-				E57FE1D0940374BA92B65EE481CF3F53 /* LocalBinaryPattern.metal */,
-				241B2FE28710011E16AC60B76CDEBF26 /* LocalBinaryPattern.swift */,
-				FC39DDDC41AF5D2036B5FAE4B4CB433F /* Log.swift */,
-				B00EDC0A4B0B8A1021C86C6988052A39 /* LookupFilter.metal */,
-				98829FF587C71D04F3A441D51BECAFD1 /* LookupFilter.swift */,
-				3BD91F6D9EE49900E3A87A37CD578410 /* LowPassFilter.swift */,
-				55974CFA0C42B881606548FF11318286 /* Luminance.metal */,
-				8857BB6D236E770EC8FE33375F9AF6B1 /* Luminance.swift */,
-				06A733254F43418263123376E961EB1E /* LuminanceRangeReduction.metal */,
-				753EE9A24C193E9FD2CCF4BAF9AE37E6 /* LuminanceRangeReduction.swift */,
-				9B89046E9FB469F18034B6B8CC8BC393 /* LuminanceThreshold.metal */,
-				5C68256CA4E3A0DA7987A9F8449C394C /* LuminanceThreshold.swift */,
-				0790F076CB9A1043AD403B9C942C7A19 /* LuminosityBlend.metal */,
-				2FB5090016EFCF9693C7B2692E995A37 /* LuminosityBlend.swift */,
-				22DA5AE78C4C51ED64DD97E5C258D30F /* Matrix.swift */,
-				65E5B6A41E7D7988BBCBA670269415BB /* MedianFilter.metal */,
-				A0BB2CB35A86E19F8310F0FFD5368002 /* MedianFilter.swift */,
-				67D01BAE7B6C016E845D8ED315F7C385 /* MetalRendering.swift */,
-				28A387324038E004D3E636BE357F5116 /* MetalRenderingDevice.swift */,
-				62F6D4802DE9A9D18D94617DC4404AD2 /* MissEtikateFilter.swift */,
-				23FEC108BA5CDFC7B5D017366F89104F /* MonochromeFilter.metal */,
-				D31B00D07679E01BF14B22171139C787 /* MonochromeFilter.swift */,
-				E5ABA193BC8D790AC8DC49BBF39AC242 /* MotionBlur.metal */,
-				6C80BF328FF0DE531041D36AF3852F18 /* MotionBlur.swift */,
-				4CCB2FCEDF94483551DA2C2D9A2527F5 /* MovieInput.swift */,
-				1A9C71C7D2EED0D3E3C48E243D36EEED /* MovieOutput.swift */,
-				2DC1F5D9C774FA665B2444C26E6A1FDE /* MultiplyBlend.metal */,
-				6D8A921B0B2B6D4B8078F28CF4B139FD /* MultiplyBlend.swift */,
-				2EB149398CD337A14AAE0945BDD35C6F /* NearbyTexelSampling.metal */,
-				C91F8817CA017E649D3D6DEA855B5BF3 /* NobleCornerDetector.metal */,
-				06D66C215B79FD4AC5FA67C2A53DBC9F /* NobleCornerDetector.swift */,
-				4F64AA3BB2269DDBCB2AF8F9BB890F0B /* NormalBlend.metal */,
-				2C0F824B907966412F03F1C0B81EE4C1 /* NormalBlend.swift */,
-				63FD200E1D79AF00728A859047FFFA60 /* OpacityAdjustment.metal */,
-				D32432CC6E7B10BD3B91037DE5384940 /* OpacityAdjustment.swift */,
-				5C7D3152DB696F7FA63288403B3282E0 /* OperationGroup.swift */,
-				B20FD6D83470E0207E7FE2A365C783B4 /* OperationShaderTypes.h */,
-				E774037CB1F3B91E73DCD62784B5D390 /* OverlayBlend.metal */,
-				219329E4706716733863A4A1F0E75C0B /* OverlayBlend.swift */,
-				58FBAA26D2274B30AE09EA987BD675ED /* Passthrough.metal */,
-				7C79CAB4BDA8E2B0FE8732816B94B8E5 /* PictureInput.swift */,
-				E540E2E1B3E7DDF78C2362AF54AD624B /* PictureOutput.swift */,
-				2C1A9A7D9B040A65A5113C581BC2AD4C /* PinchDistortion.metal */,
-				19FEF42555F3C021D5D3AB3BB0C3ECCE /* PinchDistortion.swift */,
-				2F8B22659830DE2C451133F1F9337905 /* Pipeline.swift */,
-				1C3BFF5242FD3C89084E8BE1B08E1E30 /* Pixellate.metal */,
-				F0E08E003E14C76A55FD14AAB68E8820 /* Pixellate.swift */,
-				7B7FF1997C94B1226E46C196815102A3 /* PolarPixellate.metal */,
-				17E2619ABBECC3C6FD42E7A1849CE416 /* PolarPixellate.swift */,
-				02877A01520076D4D7CD15A1DA7604C1 /* PolkaDot.metal */,
-				31FAF1C4DE683BF2323AD0643EFC0EB4 /* PolkaDot.swift */,
-				C5D479D06716366D6F2015CF218C9CB5 /* Position.swift */,
-				C27D7AB270EA27377CA6C6410C81C42C /* Posterize.metal */,
-				9056522C7C0C34BCDE5582C92D271A54 /* Posterize.swift */,
-				9A988AE03BBB80DB20DEACB18593F19A /* PrewittEdgeDetection.metal */,
-				37FC053C14F3364CF7073A56F2746EBE /* PrewittEdgeDetection.swift */,
-				B608138CBF706C6C9DCD221CA0C1210C /* RenderView.swift */,
-				8CAA2824FAB46BDC662DFFF9EFFCA312 /* RGBAdjustment.metal */,
-				79CE32C307151B7C9B1C9B7B9DEBF5D0 /* RGBAdjustment.swift */,
-				237C3B4500D210D27A26D5FD15775E47 /* SaturationAdjustment.metal */,
-				CEA85E428C6B47B167BDCE61BF700390 /* SaturationAdjustment.swift */,
-				0EEDD0293A3C0DD1D327F2F74A0763DD /* SaturationBlend.metal */,
-				77CA59A62A3F120A78B0CC141899F590 /* SaturationBlend.swift */,
-				1DC900FBED97C8C886C1728310EB8273 /* ScreenBlend.metal */,
-				FBF29CFAF7E48E062123A6878B636882 /* ScreenBlend.swift */,
-				63E846D78D8DD3E8ECC1FBB1F12FFE58 /* SepiaToneFilter.swift */,
-				3A65AAF331F12139187EFD4DC3E62197 /* ShaderUniformSettings.swift */,
-				1169059E7D165C3DFC7DFF66021349FD /* Sharpen.metal */,
-				C5AE0529EE654FF863C34D586B066D50 /* Sharpen.swift */,
-				2F22AC6C82F554EB6332EEFF2AAEC07A /* Size.swift */,
-				76773F37C4AFF51AEB7C9FFC2E4509A6 /* Sketch.metal */,
-				EFAC85723A12DF3252034B975599E82F /* Sketch.swift */,
-				F914D2732B64147453FEED771548DDE5 /* SmoothToonFilter.swift */,
-				7BB029D13159DBA1937C29B462910C93 /* SobelEdgeDetection.metal */,
-				A1A9B528D81B2EBEE00F65D97A53B83F /* SobelEdgeDetection.swift */,
-				848F49427202CCBCACD80AF6466A6274 /* SoftElegance.swift */,
-				AB9746437CBC2D005E2E44732644D181 /* SoftLightBlend.metal */,
-				4251D60FBE63D705706A529187839D3A /* SoftLightBlend.swift */,
-				9D6D4AFCF38EDDED9FD4C3F6881066AC /* Solarize.metal */,
-				15F28CC72846B2BC19B922370115BD29 /* Solarize.swift */,
-				F19B6E3A8BCBFA780CFD2186CF66E946 /* SolidColorGenerator.swift */,
-				9278E050921AD32C6FE683290A901969 /* SourceOverBlend.metal */,
-				C609D9175E18CDB116F8428174AFA172 /* SourceOverBlend.swift */,
-				D57EF110140EEFDBF96931D1B46A7CC7 /* SphereRefraction.metal */,
-				16905AFBF724E2EE45497FF2F226C3B0 /* SphereRefraction.swift */,
-				ECC1AADFF0B535E9EABC20781C758184 /* StretchDistortion.metal */,
-				A90BD933FBC37A80218E8862DCF06E85 /* StretchDistortion.swift */,
-				5E424E1AD530D231B87A7F2FF6C8F98D /* SubtractBlend.metal */,
-				DC7407628C5D2E003913333816813D78 /* SubtractBlend.swift */,
-				C5B190C761458B384F0C215F72CE057F /* SwirlDistortion.metal */,
-				B2571BF93121268758604B632B6E01A6 /* SwirlDistortion.swift */,
-				8C5163EA9C46A1C539B6D04690092431 /* TexelSamplingTypes.h */,
-				D885D3CB206B147DF9C1F6C62BED677C /* Texture.swift */,
-				A79A3DDE580E44295834C21D989FDB89 /* TextureSamplingOperation.swift */,
-				57A1F2206DDF7C9D180E1A2813B68047 /* ThresholdNonMaximumSuppresssion.metal */,
-				CC00D14149CD8B5C0F501719E0833B16 /* ThresholdSketch.metal */,
-				DC7B26EA835ECA48E409FF13024C9F1F /* ThresholdSketch.swift */,
-				51DCAC1742A5466F433870CDD95D1EBC /* ThresholdSobelEdgeDetection.metal */,
-				31A61FE7786B5838D31BB63BA7EB505C /* ThresholdSobelEdgeDetection.swift */,
-				CF709C8A0C1D217C7379AB825B02AA8A /* TiltShift.metal */,
-				52DA270384C854BC13F588CA36471D61 /* TiltShift.swift */,
-				EE91BFBE9BC0A75CD1ADB7182CCC3144 /* Timestamp.swift */,
-				72890DF7C653DEAD15786248C290A450 /* ToonFilter.metal */,
-				761DA0325666619C4478D06FD7645065 /* ToonFilter.swift */,
-				01AC305277B8A993EA9E467F7AFF91C8 /* Vibrance.metal */,
-				3AC106B2EE67F9AEEDF618ED9C06EA68 /* Vibrance.swift */,
-				AAB0FCD92CCAAC1300AB388C21E403E5 /* Vignette.metal */,
-				4369D7C66BE96D0EBE33B4C3355F23D8 /* Vignette.swift */,
-				1B3C3DCA8E22CFE1F4F1177696FFC484 /* WhiteBalance.metal */,
-				32EF839B8F6D2A3F3119A997BF9C686C /* WhiteBalance.swift */,
-				1B0B02299D6C13712077A53A3EF1E92A /* XYDerivative.metal */,
-				2BF0BDE053484EEF7F805A6022A1D241 /* YUVToRGBConversion.metal */,
-				B3E48DC5A8EBF05FDFBF0703D86F5B6A /* YUVToRGBConversion.swift */,
-				1138D4A2D91452846D0AFF9C378E8647 /* ZoomBlur.metal */,
-				78193E81D8734D37E6871AB15D806B95 /* ZoomBlur.swift */,
-				75FCE0673F28F70F1E83AB48842C3BBA /* Support Files */,
-			);
-			path = "PixelSDK-GPUImage3";
-			sourceTree = "<group>";
-		};
-		0FBFE77DCADAFCC10CB96697C434E591 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9897816B94CF66466ADDC35E6DB1DE6 /* Pods-PixelSDKExample */,
+				5230B0B7653CCC492BB935FA0E000E2E /* Pods-PixelSDKExample */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		35D49E30A062C08B9936E73AD40B45E9 /* iOS */ = {
+		175BF5E31213AD358FAEABF5B5229CE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42120EF5A20354C53169CE082A389E8F /* AVFoundation.framework */,
-				130DF1AB4BFE8147C6D398434FB19FAC /* Foundation.framework */,
-				A565452996411126028C053AC32A518F /* Metal.framework */,
-				9F3E196B29BA57E669F0E3D1E9183693 /* QuartzCore.framework */,
+				B1BFAAB9F6E1B7F92A46A61F065B07E8 /* Pods_PixelSDKExample.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		308B249B54E439D9245189F6AA8C69EC /* PixelSDK-GPUImage3 */ = {
+			isa = PBXGroup;
+			children = (
+				A83C552DD43E530E571A5C59BE7DB17B /* Frameworks */,
+				A3B717446483283FBB6B96F1B5B854C5 /* Support Files */,
+			);
+			path = "PixelSDK-GPUImage3";
+			sourceTree = "<group>";
+		};
+		32719FF20071F388F34F061C7CFAB3F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF202458552D4C3D446C08519AA61DB4 /* PixelSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5230B0B7653CCC492BB935FA0E000E2E /* Pods-PixelSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				526E583A8E6C91A8F68288ADB9A97896 /* Pods-PixelSDKExample.modulemap */,
+				A5FA19946870E02730B3CEA023A85218 /* Pods-PixelSDKExample-acknowledgements.markdown */,
+				B4C4B599E7F930EEB749880DBF2CC813 /* Pods-PixelSDKExample-acknowledgements.plist */,
+				0032266FC389F315E585A623ABA6F6F4 /* Pods-PixelSDKExample-dummy.m */,
+				D45A6E0B9CB544D61657B3F2F4BC3141 /* Pods-PixelSDKExample-frameworks.sh */,
+				C95EEF0049292DF53CD505E4E3799AB2 /* Pods-PixelSDKExample-Info.plist */,
+				22C12FA40F67E915AE47D5BC1F06FC7F /* Pods-PixelSDKExample-umbrella.h */,
+				C0D191A121B731528ED16ADCAE566EA0 /* Pods-PixelSDKExample.debug.xcconfig */,
+				04E3F3B5824BC85981995741BAC6D086 /* Pods-PixelSDKExample.release.xcconfig */,
+			);
+			name = "Pods-PixelSDKExample";
+			path = "Target Support Files/Pods-PixelSDKExample";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		75FCE0673F28F70F1E83AB48842C3BBA /* Support Files */ = {
+		A3B717446483283FBB6B96F1B5B854C5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				64695908B30E6B6077C6FB53CAB1D4DD /* PixelSDK-GPUImage3.modulemap */,
-				2353FF9AB3769199A29D0A4DB7BF66BA /* PixelSDK-GPUImage3-dummy.m */,
-				AE7BC6AF1DD773D6B3EF99CC4485943D /* PixelSDK-GPUImage3-Info.plist */,
-				8AEF650E1D1289E5CF7832B6B7121121 /* PixelSDK-GPUImage3-prefix.pch */,
-				8F13556A9C56E691ACBE1497E90665AC /* PixelSDK-GPUImage3-umbrella.h */,
-				3E961C4218A6266503E5C287422CA3DF /* PixelSDK-GPUImage3.debug.xcconfig */,
-				888EC57F9B82595886425B8C03377FF5 /* PixelSDK-GPUImage3.release.xcconfig */,
+				B4A6FADB9B55BB78895680A2B6BC998A /* PixelSDK-GPUImage3-xcframeworks.sh */,
+				6B9F670E8D5BBF0F38B5DED6D5C4A986 /* PixelSDK-GPUImage3.debug.xcconfig */,
+				06F17AAD104459A88D44032C91621CE4 /* PixelSDK-GPUImage3.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PixelSDK-GPUImage3";
 			sourceTree = "<group>";
 		};
-		851D63D5CE42ED1B6E5F49A055372ADA /* Support Files */ = {
+		A83C552DD43E530E571A5C59BE7DB17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				857D0BB2D9022101B10AA83F879BE6AF /* PixelSDK.debug.xcconfig */,
-				876D555A81F976EBC05E4D719ABF7CE0 /* PixelSDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/PixelSDK";
-			sourceTree = "<group>";
-		};
-		8E450CD2D5EE8E450C5C7BA90E26EAFE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F5E0D1ABB49D541E18100BD8FEFF5B51 /* PixelSDK.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9CF569DBD4C41DFC71AF6A8EBCF2EAE1 /* PixelSDK */ = {
-			isa = PBXGroup;
-			children = (
-				8E450CD2D5EE8E450C5C7BA90E26EAFE /* Frameworks */,
-				851D63D5CE42ED1B6E5F49A055372ADA /* Support Files */,
-			);
-			path = PixelSDK;
-			sourceTree = "<group>";
-		};
-		A32BCA62D492E601B9FEE5305FF7020F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9CF569DBD4C41DFC71AF6A8EBCF2EAE1 /* PixelSDK */,
-				01D5EDC5BF6DF0F28009EA6EC4586821 /* PixelSDK-GPUImage3 */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				35D49E30A062C08B9936E73AD40B45E9 /* iOS */,
+				33FF3D14AB1E9B204E685C89A6FDA902 /* GPUImage.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -842,102 +178,78 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				A32BCA62D492E601B9FEE5305FF7020F /* Pods */,
-				FF3744ECC702E3EF43065751743C3120 /* Products */,
-				0FBFE77DCADAFCC10CB96697C434E591 /* Targets Support Files */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E7477ACC4A7AD79E648D437C28E04E84 /* Pods */,
+				175BF5E31213AD358FAEABF5B5229CE9 /* Products */,
+				07A77F7B98D2A41B1BD4225B1ADEAD62 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		E9897816B94CF66466ADDC35E6DB1DE6 /* Pods-PixelSDKExample */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96E3BA21BA902774CE4862FA6FA7669D /* Pods-PixelSDKExample.modulemap */,
-				4C4E25F1F2CAD57AB2DC482FBDAB9149 /* Pods-PixelSDKExample-acknowledgements.markdown */,
-				05AD310DD09001BC92B59D9766480063 /* Pods-PixelSDKExample-acknowledgements.plist */,
-				B932BA002F43D3ACA29C0953EA1A06FA /* Pods-PixelSDKExample-artifacts.sh */,
-				969DD6F93576A385DA3CE00BC0EF66C6 /* Pods-PixelSDKExample-artifacts-Debug-input-files.xcfilelist */,
-				5DA08DE5C57C9343736315D7C6689084 /* Pods-PixelSDKExample-artifacts-Debug-output-files.xcfilelist */,
-				410E0B2BFF7B8FE1007C27EA3369B125 /* Pods-PixelSDKExample-artifacts-Release-input-files.xcfilelist */,
-				8B32D414C67B6A350AD3E9BE006D580C /* Pods-PixelSDKExample-artifacts-Release-output-files.xcfilelist */,
-				6DDFF607B1217D51B9D3F09EEC8AD7DB /* Pods-PixelSDKExample-dummy.m */,
-				327D37BBCBDDE1CCA1D178F173D84C91 /* Pods-PixelSDKExample-frameworks.sh */,
-				A0DB57BBE92BBAF180704CE6AFA89E7C /* Pods-PixelSDKExample-Info.plist */,
-				9B8930B1487E61DA149A9B92E2D8E0E7 /* Pods-PixelSDKExample-umbrella.h */,
-				92C7127828B5C0FC6D59D29F2A859802 /* Pods-PixelSDKExample.debug.xcconfig */,
-				FCFBE7C9C30E2AC508119076D1886D8E /* Pods-PixelSDKExample.release.xcconfig */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
-			name = "Pods-PixelSDKExample";
-			path = "Target Support Files/Pods-PixelSDKExample";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF3744ECC702E3EF43065751743C3120 /* Products */ = {
+		DD6306FD902436619F392AE920EBC22B /* PixelSDK */ = {
 			isa = PBXGroup;
 			children = (
-				B5F9954122B8464698BA7E76E2C8E2A7 /* GPUImage.framework */,
-				B1BFAAB9F6E1B7F92A46A61F065B07E8 /* Pods_PixelSDKExample.framework */,
+				32719FF20071F388F34F061C7CFAB3F7 /* Frameworks */,
+				E8F3F162B97464E1E86403410279B58E /* Support Files */,
 			);
-			name = Products;
+			path = PixelSDK;
+			sourceTree = "<group>";
+		};
+		E7477ACC4A7AD79E648D437C28E04E84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD6306FD902436619F392AE920EBC22B /* PixelSDK */,
+				308B249B54E439D9245189F6AA8C69EC /* PixelSDK-GPUImage3 */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8F3F162B97464E1E86403410279B58E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10BADC3393B04F8F8126D9FFB8BD3A17 /* PixelSDK-xcframeworks.sh */,
+				4A5AC0300B0B8D792C098EF0EEF448C5 /* PixelSDK.debug.xcconfig */,
+				83762A96A9A5871F9AB3C03571E5032E /* PixelSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PixelSDK";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9A690AEC52233204728FAD4C852D642F /* Headers */ = {
+		63C665775FDE639912B29750A49B3FBA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFD1580B9D38D2557F553B7812ACEC9 /* BlendShaderTypes.h in Headers */,
-				15C2F388F2BFF33CBC72140ACD740925 /* Empty.h in Headers */,
-				59C659371130F629B7FDEE0D76C34D8D /* OperationShaderTypes.h in Headers */,
-				D4253FA87D8C7AD896715C59F58637B6 /* PixelSDK-GPUImage3-umbrella.h in Headers */,
-				483A43E32360FD2FA18D2847F1ECF838 /* TexelSamplingTypes.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4246553634DB5FEA2057A92BDB33575 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FA3B357AF4D955B82F7E28CB5D78AFB /* Pods-PixelSDKExample-umbrella.h in Headers */,
+				F50668022BD36E6147350976FBC9DB4B /* Pods-PixelSDKExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1D3084BED87B444E2EE6C29CEE0664B4 /* Build configuration list for PBXNativeTarget "PixelSDK-GPUImage3" */;
-			buildPhases = (
-				9A690AEC52233204728FAD4C852D642F /* Headers */,
-				1C88EA9939F8420439E563A12DA36225 /* Sources */,
-				8A8D97EDB8121968BB3310BB942B472E /* Frameworks */,
-				103C5ACADC0ABCB11E15C124F35E8BCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PixelSDK-GPUImage3";
-			productName = "PixelSDK-GPUImage3";
-			productReference = B5F9954122B8464698BA7E76E2C8E2A7 /* GPUImage.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		8415EE0E3A87250EF68E76303FA7010F /* Pods-PixelSDKExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 476DF6F964394184368CFC73DE60B4C4 /* Build configuration list for PBXNativeTarget "Pods-PixelSDKExample" */;
+			buildConfigurationList = 8CFA31E5C829D048EA3D862C70B208F7 /* Build configuration list for PBXNativeTarget "Pods-PixelSDKExample" */;
 			buildPhases = (
-				D4246553634DB5FEA2057A92BDB33575 /* Headers */,
-				FC8887F4790E9AA676CA7A94E0A45F11 /* Sources */,
-				74E821E14FA9EB96FF9CA9C5167D9DFE /* Frameworks */,
-				26BBE9230099DB04C00F1CDC73772F79 /* Resources */,
+				63C665775FDE639912B29750A49B3FBA /* Headers */,
+				77019E8C9636138C32D80526DC66F83E /* Sources */,
+				A333CB23FB81ED9D1DC8CD888EA12C31 /* Frameworks */,
+				DBBAB9A692C6028065668C16630EEE3B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5F6068D7D024A25BEF120A95CA523CBD /* PBXTargetDependency */,
-				FEB5235ED0C9A4453F7C4F0824035EC5 /* PBXTargetDependency */,
+				B746E238FB1E69ED48E5388FC81C50DC /* PBXTargetDependency */,
+				23521DF58A8A5CA47BDD0D05C7A5D877 /* PBXTargetDependency */,
 			);
 			name = "Pods-PixelSDKExample";
 			productName = "Pods-PixelSDKExample";
@@ -962,7 +274,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = FF3744ECC702E3EF43065751743C3120 /* Products */;
+			productRefGroup = 175BF5E31213AD358FAEABF5B5229CE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -974,14 +286,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		103C5ACADC0ABCB11E15C124F35E8BCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26BBE9230099DB04C00F1CDC73772F79 /* Resources */ = {
+		DBBAB9A692C6028065668C16630EEE3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -990,263 +295,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXSourcesBuildPhase section */
-		1C88EA9939F8420439E563A12DA36225 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		7EDCAB74296F9FAC6F2B9316EBC8258F /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3226A4BC8B82CB9BD3AE603B1D7513F5 /* AdaptiveThreshold.metal in Sources */,
-				68EEB2AA2699C1DF21ABCE6C319D38FB /* AdaptiveThreshold.swift in Sources */,
-				2F8BCB3D17F1318AEA96C318DBB7C5B6 /* AddBlend.metal in Sources */,
-				6452F946075EE50A21446E6736DF9969 /* AddBlend.swift in Sources */,
-				9C5F5B1D7AD49B5F7DEC2F791A83AE26 /* AlphaBlend.metal in Sources */,
-				A818858A3D95346657990933D35FA9DD /* AlphaBlend.swift in Sources */,
-				2E11C883AE26925337CD8AA454AA78D6 /* AmatorkaFilter.swift in Sources */,
-				5405E2A94DED2E290F49440A7CF5BF51 /* BasicOperation.swift in Sources */,
-				47571A3784B4821690B934BA121D25C3 /* BlendShaderTypes.metal in Sources */,
-				98E360A5D02A566433EB1129B5C28188 /* BoxBlur.swift in Sources */,
-				6C664072A1CBBCD2C781A9139ABE096C /* BrightnessAdjustment.metal in Sources */,
-				B04A12F63F583A9C10BFA18A7889DEC9 /* BrightnessAdjustment.swift in Sources */,
-				663022B29CDCB60F815990F59D277444 /* BulgeDistortion.metal in Sources */,
-				D47F2428A271633D4228BDA84460306A /* BulgeDistortion.swift in Sources */,
-				9B421FBF91EDC83D0F122493845AD3AA /* Camera.swift in Sources */,
-				C0A667D0E12A8C8BA59F2CE53DF3FFB2 /* CGAColorspace.metal in Sources */,
-				5B50D6549B417201D8785F3754E51513 /* CGAColorspace.swift in Sources */,
-				3003D41715305A8C1A7CE95F49302F2B /* ChromaKey.metal in Sources */,
-				27D3162324442FB6FE269AA6C7EADFDF /* ChromaKey.swift in Sources */,
-				BD8C319EDAC18825F0E605EF0AC05B15 /* ChromaKeyBlend.metal in Sources */,
-				C218B0E3BF1A3F964814E9CE854297B6 /* ChromaKeyBlend.swift in Sources */,
-				705B8CA116F7E721BB15A12B23344474 /* Color.swift in Sources */,
-				9EB82BA9712F723B8C715BE5E9766D9C /* ColorBlend.metal in Sources */,
-				702A331707C20B3A9075A986646084E8 /* ColorBlend.swift in Sources */,
-				0034DB8EF87F8EE5FC6A54C2585E33BE /* ColorBurnBlend.metal in Sources */,
-				C984991935D02632C131F303ED4FCF10 /* ColorBurnBlend.swift in Sources */,
-				3AC83B9DD043AF64E28806C43C3F222F /* ColorDodgeBlend.metal in Sources */,
-				40CBD49D1E666DD03392B11EB012405C /* ColorDodgeBlend.swift in Sources */,
-				7E90039A28DECCFAD6A11C048FAA9370 /* ColorInversion.metal in Sources */,
-				1A0DB23F7260999CBDADBACF98BD3061 /* ColorInversion.swift in Sources */,
-				602CD0DBCACB24FE6EAAA9CF1F134EAA /* ColorLocalBinaryPattern.metal in Sources */,
-				56196A73AE770CE4442A647CC568BAE0 /* ColorLocalBinaryPattern.swift in Sources */,
-				1537EF43D366E386FFFF07CF956C2225 /* ColorMatrixFilter.metal in Sources */,
-				41A8538F31A00584A8D4DE50B5F482CD /* ColorMatrixFilter.swift in Sources */,
-				5A34D063D972C0D643A75DC4B5C1B249 /* ColorSwizzle.metal in Sources */,
-				90EC8DD086781249F930C189F5A93DB4 /* ColourFASTFeatureDetection.metal in Sources */,
-				7507972B737578F6411A5AFBF19F7753 /* ColourFASTFeatureDetection.swift in Sources */,
-				1C1BDA11B93FC571843012C1B57F44FB /* ContrastAdjustment.metal in Sources */,
-				3555E90C274EFE94D3B24337E33B76BD /* ContrastAdjustment.swift in Sources */,
-				F0DF072D9932BAF5F984FE43E2AB2473 /* Convolution3x3.metal in Sources */,
-				3AF081FDE3F5519DB1A2AFE46558FD08 /* Convolution3x3.swift in Sources */,
-				0D840DA49C48AA5904A7FDC6973B8FA3 /* Crosshatch.metal in Sources */,
-				BB90EB58854C95742D9A12EE508C6F1A /* Crosshatch.swift in Sources */,
-				199604ECC0B32DEEE71AF60BD0688055 /* DarkenBlend.metal in Sources */,
-				56AD58854738071AD542D35E3B33CB53 /* DarkenBlend.swift in Sources */,
-				9220F9BDDBD222AEBD83CB889E288D8D /* DifferenceBlend.metal in Sources */,
-				6890295548675ECEE621492C56EB7AB1 /* DifferenceBlend.swift in Sources */,
-				764DBDDB81FCD11DCE0BA7B96BE31505 /* DissolveBlend.metal in Sources */,
-				83C967B9D282DAF22D79D55660CFB51F /* DissolveBlend.swift in Sources */,
-				09B7F4A4C336BBCD8A0E82DA5AFCD191 /* DivideBlend.metal in Sources */,
-				4EA9F0D59A23C25C47EDC4266112A208 /* DivideBlend.swift in Sources */,
-				75F1B4B8F65654F4245EDC4CD965EF01 /* EmbossFilter.swift in Sources */,
-				70D6E6F5153DCE814891543E2C451C2D /* ExclusionBlend.metal in Sources */,
-				9C86F6EB123E49A7BD23867ED37256CF /* ExclusionBlend.swift in Sources */,
-				8BD9AE9CD53B431997D092491FF2F8BA /* ExposureAdjustment.metal in Sources */,
-				E0636C8F68D4A3FDBE39330E7321BB2A /* ExposureAdjustment.swift in Sources */,
-				18C50A5C7BE44A9A674D7F2E9FC4A4AC /* FalseColor.metal in Sources */,
-				78A178405394B1EADF95A72BE01F9A6D /* FalseColor.swift in Sources */,
-				6C75BB700E53651B64F9A8A506D5149C /* GammaAdjustment.metal in Sources */,
-				94FE27CBF769EF2E37CB4F09F8C104BC /* GammaAdjustment.swift in Sources */,
-				33739B721B6CCED011D3DE9107373C6B /* GaussianBlur.swift in Sources */,
-				4F5C62E477B3C2E66421C9CC9DB4B23B /* GlassSphere.metal in Sources */,
-				0970CE8F5CC4707DFA30D6967FAACA82 /* GlassSphere.swift in Sources */,
-				9323D27AE080485DDC9C999D796BCDF1 /* HalfTone.metal in Sources */,
-				52844797BF6EBD146F17E5C5C6A639C5 /* HalfTone.swift in Sources */,
-				370EE10A124C602781CDDDC58DD43566 /* HardLightBlend.metal in Sources */,
-				296929BAA7A53A0EB62C8CCA5E2D72BB /* HardLightBlend.swift in Sources */,
-				274757C5B66B4A9B6A7629F9888BCDED /* HarrisCornerDetector.metal in Sources */,
-				432A6246DED20D9F52669B407FE402CB /* HarrisCornerDetector.swift in Sources */,
-				3984F4F9A4F343F5BC462670FFF7A92A /* Haze.metal in Sources */,
-				85222B1818AC12688F1FB11A042EFC75 /* Haze.swift in Sources */,
-				369E5D70F62B4F1638BF3E2D0D719001 /* HighlightAndShadowTint.metal in Sources */,
-				865676E0AB882B13237E538401C94BEA /* HighlightAndShadowTint.swift in Sources */,
-				093AABAF6EDC31FFA2020F65FC50C2E6 /* HighlightsAndShadows.metal in Sources */,
-				F29C415333D9FBCE3C332E56A9F66AB2 /* HighlightsAndShadows.swift in Sources */,
-				4A04D9A8DF2CEB4F4BA82AEF4E13B660 /* HighPassFilter.swift in Sources */,
-				CA007D0734DB8960C8FB634FCA076499 /* HueAdjustment.metal in Sources */,
-				015A9ED3EC298CBE6B4DAE7765ED7B5A /* HueAdjustment.swift in Sources */,
-				CCDB7823ED175AC9B8BF9E2D143C1E09 /* HueBlend.metal in Sources */,
-				8F8F4E119D19D1991EF8198BC8B8B633 /* HueBlend.swift in Sources */,
-				CAB7C8463364D20F7250F7C7C692FD4E /* ImageBuffer.swift in Sources */,
-				758509433269118D2A235C52D42DB9AC /* ImageGenerator.swift in Sources */,
-				B0F715238719234AE8FD522A0E741926 /* ImageOrientation.swift in Sources */,
-				0DF3DA893F9C87C30978C9A5FAB5B41B /* iOSBlur.swift in Sources */,
-				847B1290D6C7FE22A79694C63A6A0E52 /* KuwaharaFilter.metal in Sources */,
-				236BFBEAFC649A8E3AF2D3CE56291B03 /* KuwaharaFilter.swift in Sources */,
-				261732FE58B12070A7C306E1F3C72B65 /* KuwaharaRadius3Filter.metal in Sources */,
-				9AE9D704EFBF223B14DC943174364134 /* KuwaharaRadius3Filter.swift in Sources */,
-				D0D5D0DEE55131D8BACDE069B189D569 /* Laplacian.metal in Sources */,
-				DA85B59C2E4E8FC26A8F8DDBC3452649 /* Laplacian.swift in Sources */,
-				1E783C31887F47DC7DC512B7753DC769 /* LevelsAdjustment.metal in Sources */,
-				F80420FF13A1EDE6B93F196E918FB0CE /* LevelsAdjustment.swift in Sources */,
-				1563011F658A12B4F3E5E7C56BB8F71D /* LightenBlend.metal in Sources */,
-				4CCD4FFFF63BC7B913858A183170D3A0 /* LightenBlend.swift in Sources */,
-				787D55A0F9B60DABBA1B56FCC34BD1CE /* LinearBurnBlend.metal in Sources */,
-				9D42B68E2AF768094C1A737D5446B2C1 /* LinearBurnBlend.swift in Sources */,
-				7462D91EB6C3464A2210ABC5DF696F0B /* LocalBinaryPattern.metal in Sources */,
-				D139E9CC80A0639228D89504421F705F /* LocalBinaryPattern.swift in Sources */,
-				6A83A1C098B22D9140255405DCF0FF9C /* Log.swift in Sources */,
-				AF49D0C6AE5F645BDDBD75815FB672DF /* LookupFilter.metal in Sources */,
-				3AF438B78E46632C922163AFAF2D7FD1 /* LookupFilter.swift in Sources */,
-				8FA5572BEB8C9AF4FB9031B89F45490A /* LowPassFilter.swift in Sources */,
-				E1B4DDD1FD6975C3BC547749F64D0A6D /* Luminance.metal in Sources */,
-				0F4AE588E202C094C9EBFE02514DEBAC /* Luminance.swift in Sources */,
-				15534BFB1C196E0DACF03FC66F37385A /* LuminanceRangeReduction.metal in Sources */,
-				410C9F64D3944EF36C2F62830542F858 /* LuminanceRangeReduction.swift in Sources */,
-				C5F0EFC99521BBF29CAB516EE09854AD /* LuminanceThreshold.metal in Sources */,
-				83BE2C729F780CC04F5C5A40CE437117 /* LuminanceThreshold.swift in Sources */,
-				C920D2A4663B0447AADF71FE5EB1147A /* LuminosityBlend.metal in Sources */,
-				5114AE76419819CBB6305F63046FB27B /* LuminosityBlend.swift in Sources */,
-				9549E6785408E2C9EC72B06014D00701 /* Matrix.swift in Sources */,
-				D91FEF3B13385A6952B73D96D9D05684 /* MedianFilter.metal in Sources */,
-				CA4751532CB00870C9DEA20EE46B5EEB /* MedianFilter.swift in Sources */,
-				867AEB9C922D4C81EEB77015092FF61F /* MetalRendering.swift in Sources */,
-				EB07E1D85F5177697F560AA453AB5363 /* MetalRenderingDevice.swift in Sources */,
-				467E54A9FA905715586E11D814E478D4 /* MissEtikateFilter.swift in Sources */,
-				D6175C24ECFA74E6E5B45168809868E5 /* MonochromeFilter.metal in Sources */,
-				1AAAE4D6CC8764AD7208197DBA46ABA6 /* MonochromeFilter.swift in Sources */,
-				3F302132C8B13814BE26B66CD53A8AC0 /* MotionBlur.metal in Sources */,
-				A1832D8AD95F1A561138A621CCE2C178 /* MotionBlur.swift in Sources */,
-				527E343BA7AAF23F69F4E4FD5138BE33 /* MovieInput.swift in Sources */,
-				3525A377B8AD806F7A7078813E412452 /* MovieOutput.swift in Sources */,
-				15704622C87D179550236F674E9DEC43 /* MultiplyBlend.metal in Sources */,
-				5984724A0DEF3888CF7683CEB80A1283 /* MultiplyBlend.swift in Sources */,
-				B94386C101213401A8AB6B9212461B69 /* NearbyTexelSampling.metal in Sources */,
-				859CDFB5577943B3AFC1B031BA153AE0 /* NobleCornerDetector.metal in Sources */,
-				3651A8B4406E88E940508E009AA1C5CE /* NobleCornerDetector.swift in Sources */,
-				2645239EC29BF56EE176D3DFDE1BB4E3 /* NormalBlend.metal in Sources */,
-				54F979187930DF0A53EB9B68CF4DCA10 /* NormalBlend.swift in Sources */,
-				DD597B4FB2C4809DB64BC01CB396DD5B /* OpacityAdjustment.metal in Sources */,
-				6D61B172AAE1E9DDE89238C4577FB50D /* OpacityAdjustment.swift in Sources */,
-				085AC5F0D037720C8ADD22FBA1A55420 /* OperationGroup.swift in Sources */,
-				B47D0A22725C10C0C8A6AABEE3F1056A /* OverlayBlend.metal in Sources */,
-				473DDF35B3F86938218D0C61244BAAD1 /* OverlayBlend.swift in Sources */,
-				34DBCB90640156192EB2302D64A8516C /* Passthrough.metal in Sources */,
-				A4B0EC3C28DBE7B4BF7E27042C19849F /* PictureInput.swift in Sources */,
-				B5104BCCB8B6A3A717308E6237226366 /* PictureOutput.swift in Sources */,
-				E47D229A86DA0E2DB15F697468CBA3A1 /* PinchDistortion.metal in Sources */,
-				703434A4A0DD72A950DCFD536A811971 /* PinchDistortion.swift in Sources */,
-				E9C908A2909393A208255CD3DD57E124 /* Pipeline.swift in Sources */,
-				60D00E0CBF7E5DAFD9CFFB7710E21DF7 /* Pixellate.metal in Sources */,
-				6C70680D2F9FDE15196ED712E06B63A6 /* Pixellate.swift in Sources */,
-				8EDE9748178D24A1DB466FFF4E97F67B /* PixelSDK-GPUImage3-dummy.m in Sources */,
-				A3D4DCB12693CF48D7A9524CB654818C /* PolarPixellate.metal in Sources */,
-				A0B0000F341F470D72E55FF22D195563 /* PolarPixellate.swift in Sources */,
-				EC20DCB5A0EAC599CFFAD0324674BD42 /* PolkaDot.metal in Sources */,
-				5DE005507620F8D034966031F7F99E55 /* PolkaDot.swift in Sources */,
-				09480ABAFD32C40DECA3BE20F7DF0EA3 /* Position.swift in Sources */,
-				A0C1C471613504FC1A733836BD6AC1B5 /* Posterize.metal in Sources */,
-				F4870824DF03721A43A7073329DB5368 /* Posterize.swift in Sources */,
-				D9B4BCE8569E46FDAE83AE1AE699605B /* PrewittEdgeDetection.metal in Sources */,
-				02C3A8CE45B050EB85CA1C15BE7CB7C2 /* PrewittEdgeDetection.swift in Sources */,
-				C56D205BDB7C3A4A4AFA23428C5E9213 /* RenderView.swift in Sources */,
-				A56588D53A5EBBCA5380C8C9E7B086F9 /* RGBAdjustment.metal in Sources */,
-				09023BAAD9CF4D20D392348CF43D8B41 /* RGBAdjustment.swift in Sources */,
-				774F314075A253DEA2BD21158531511F /* SaturationAdjustment.metal in Sources */,
-				EFB714A2E3C1ACC9CAC459339139139F /* SaturationAdjustment.swift in Sources */,
-				791CBD3181B21C359E6480BB7243EBAD /* SaturationBlend.metal in Sources */,
-				2A7AAFAC6082A2748EC19795626F1734 /* SaturationBlend.swift in Sources */,
-				7786BB82FD77940D2A167A07B35B34EC /* ScreenBlend.metal in Sources */,
-				CB06FE9EFACAC040F8488764ED00A249 /* ScreenBlend.swift in Sources */,
-				058989729AC85FAA051AB7E6C824F234 /* SepiaToneFilter.swift in Sources */,
-				81F4F1F433A16FA862D39C94D08D13E5 /* ShaderUniformSettings.swift in Sources */,
-				37095B1029C71711B56DC8E2D06667BD /* Sharpen.metal in Sources */,
-				F5C6631EA89A3B1367D177B8AD128150 /* Sharpen.swift in Sources */,
-				F5A0A2369FD997ABA82D5FC7A2F07C4D /* Size.swift in Sources */,
-				55BA6FF1C3F83F87C4F57EBDD85DE84B /* Sketch.metal in Sources */,
-				9820CE2BA7D5496B6B4DA3E5BE6242B8 /* Sketch.swift in Sources */,
-				71450324DE35C2FADB6DB7C94B4A42E4 /* SmoothToonFilter.swift in Sources */,
-				759C3E9D3D11F10D3E7516114294E68B /* SobelEdgeDetection.metal in Sources */,
-				25E526E877F63C980767CE0B7E50A898 /* SobelEdgeDetection.swift in Sources */,
-				18B54459564A241EB95536B46366AFA6 /* SoftElegance.swift in Sources */,
-				8E0BDE3479BBA0FC2B86A5B80004BEEA /* SoftLightBlend.metal in Sources */,
-				F87E215EB84AAE1A0F39BBB2176731CB /* SoftLightBlend.swift in Sources */,
-				62FA88DB41EF2FD495635814A42D6174 /* Solarize.metal in Sources */,
-				AB2E65395AE980804B8FE5310BC0B3E4 /* Solarize.swift in Sources */,
-				0B809DB1CB6E734E9EE57FED4021350A /* SolidColorGenerator.swift in Sources */,
-				49387B01D8906DED51DA34ABBCB578FC /* SourceOverBlend.metal in Sources */,
-				F6D7205632AC4E026CC38745F39A5B2D /* SourceOverBlend.swift in Sources */,
-				0F4E5C1174DBABAB0E0EEEBC373263FB /* SphereRefraction.metal in Sources */,
-				16A67EE4FC938692C3E6E44A597F1744 /* SphereRefraction.swift in Sources */,
-				C286B6E0B4401CA298E4D79EECA8FAAC /* StretchDistortion.metal in Sources */,
-				DCC8E0062E2C4A90F55576E9AEC93A8F /* StretchDistortion.swift in Sources */,
-				57BE49AB50B278188A79E7E6BD0407BD /* SubtractBlend.metal in Sources */,
-				C7C403AA1FCE854A342AD8A7DC4C82A3 /* SubtractBlend.swift in Sources */,
-				63062DC134E4B9CAC30D810D2A3AA2F4 /* SwirlDistortion.metal in Sources */,
-				49A5CF286C6B7B250575CEA0D13F3FFB /* SwirlDistortion.swift in Sources */,
-				2095E492A2A1273784FB2BD0F4603F83 /* Texture.swift in Sources */,
-				D146AA4BD7421A954A4573DB9C5AAEE9 /* TextureSamplingOperation.swift in Sources */,
-				3FBB2E1BEC9D53DB7D8D1322EA279C1A /* ThresholdNonMaximumSuppresssion.metal in Sources */,
-				C5D2490F48681630E885FC4EB23AB999 /* ThresholdSketch.metal in Sources */,
-				647E10CBB84C65851ABDFDF99C2D071D /* ThresholdSketch.swift in Sources */,
-				6AE09E9EBA7E1874AFE4E2D68B4DB908 /* ThresholdSobelEdgeDetection.metal in Sources */,
-				458D5362C2653EFF0DB328BC9E85BD3D /* ThresholdSobelEdgeDetection.swift in Sources */,
-				CD2BE35CDD6AEE5154EF43650F358DDE /* TiltShift.metal in Sources */,
-				B731D6332E59611EA83AE3221A403CAA /* TiltShift.swift in Sources */,
-				BF8827A29DC71673CF98D1BFBC7ACAA9 /* Timestamp.swift in Sources */,
-				D3658EA98E0043724B48DDB91896A177 /* ToonFilter.metal in Sources */,
-				838961E9465C4A1ACF5B919248A6AE26 /* ToonFilter.swift in Sources */,
-				3DB76B1AB1CB6753134277560425F5D6 /* Vibrance.metal in Sources */,
-				9F8950204C12EFF24163256BB7D2312B /* Vibrance.swift in Sources */,
-				53F177EEE1D58A0A846725DA4AEA68AC /* Vignette.metal in Sources */,
-				D35D0186B63D1D4BFBF9F8E570D0CF67 /* Vignette.swift in Sources */,
-				73E39D0034E427AE76819494FFAF64FB /* WhiteBalance.metal in Sources */,
-				A732445B6C2B6F45F8F95E8E38B38ECE /* WhiteBalance.swift in Sources */,
-				71CA43444995BDEDA0AD9363C5FDD8ED /* XYDerivative.metal in Sources */,
-				98F3FC80CE331D157CF599EC193A3439 /* YUVToRGBConversion.metal in Sources */,
-				1F8AFEB2DEA5285A259C756FF0268FCF /* YUVToRGBConversion.swift in Sources */,
-				2953998EA174FAD5F83CE6FFE56671B6 /* ZoomBlur.metal in Sources */,
-				CB4F70DFBDD8B211F4441988DE5D78BC /* ZoomBlur.swift in Sources */,
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-xcframeworks-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-		FC8887F4790E9AA676CA7A94E0A45F11 /* Sources */ = {
+		963D01246719166B796D8683973D74E9 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PixelSDK/PixelSDK-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/PixelSDK/PixelSDK-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/PixelSDK/PixelSDK-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77019E8C9636138C32D80526DC66F83E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B134F50CA8EE8688E3CB0D918283752B /* Pods-PixelSDKExample-dummy.m in Sources */,
+				7FA635A95B200B2EAA9C56A9EE35681B /* Pods-PixelSDKExample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F6068D7D024A25BEF120A95CA523CBD /* PBXTargetDependency */ = {
+		23521DF58A8A5CA47BDD0D05C7A5D877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PixelSDK-GPUImage3";
+			target = 31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */;
+			targetProxy = 530049EE8FD21D748A314FC84F05C274 /* PBXContainerItemProxy */;
+		};
+		AA5A6564B46A0DE441D2498B4159FF89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PixelSDK-GPUImage3";
+			target = 31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */;
+			targetProxy = 02B4274B9CAEA1F855187E60BA90FA54 /* PBXContainerItemProxy */;
+		};
+		B746E238FB1E69ED48E5388FC81C50DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PixelSDK;
 			target = E4CCE2DEE87A7CB6ED83791A3E4813FB /* PixelSDK */;
-			targetProxy = 8C77F3DF4FCA985E973DEACAC97A44D9 /* PBXContainerItemProxy */;
-		};
-		F9C3A9B3DEA42DC755CD66A9E99F4EE1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "PixelSDK-GPUImage3";
-			target = 31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */;
-			targetProxy = 1619BCA95DBA0D8507AFB11392F48E81 /* PBXContainerItemProxy */;
-		};
-		FEB5235ED0C9A4453F7C4F0824035EC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "PixelSDK-GPUImage3";
-			target = 31C731E1D92A46A86B580AE667C9D567 /* PixelSDK-GPUImage3 */;
-			targetProxy = E88B4D66A623632E6EAB8A23EC722A05 /* PBXContainerItemProxy */;
+			targetProxy = F17A8D6CCD21E93476CB685505F29308 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C8741871ED5F8B5E47F2831CFA58EA7 /* Debug */ = {
+		202DE3E65E052806C2F86395E70DA664 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 857D0BB2D9022101B10AA83F879BE6AF /* PixelSDK.debug.xcconfig */;
+			baseConfigurationReference = C0D191A121B731528ED16ADCAE566EA0 /* Pods-PixelSDKExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		727403B204EB351CE7041A4B1E9F0AE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B9F670E8D5BBF0F38B5DED6D5C4A986 /* PixelSDK-GPUImage3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1257,47 +419,11 @@
 			};
 			name = Debug;
 		};
-		217B25007E2C66E2DF93DD281FA895A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 888EC57F9B82595886425B8C03377FF5 /* PixelSDK-GPUImage3.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3.modulemap";
-				PRODUCT_MODULE_NAME = GPUImage;
-				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		257497152829C177993B5EC99C1D227A /* Release */ = {
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1320,6 +446,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1354,123 +481,29 @@
 			};
 			name = Release;
 		};
-		39FE5EF49656618556C6DDB27A421E84 /* Release */ = {
+		A5E3C2305736AE7C640691245984CFDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCFBE7C9C30E2AC508119076D1886D8E /* Pods-PixelSDKExample.release.xcconfig */;
+			baseConfigurationReference = 83762A96A9A5871F9AB3C03571E5032E /* PixelSDK.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		6AB29EC95346B778523E46CE77614D80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E961C4218A6266503E5C287422CA3DF /* PixelSDK-GPUImage3.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PixelSDK-GPUImage3/PixelSDK-GPUImage3.modulemap";
-				PRODUCT_MODULE_NAME = GPUImage;
-				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D59EFFA891402B3DDBD70DA5900864A4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92C7127828B5C0FC6D59D29F2A859802 /* Pods-PixelSDKExample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1493,6 +526,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1531,13 +565,51 @@
 			};
 			name = Debug;
 		};
-		F071719EA22C1E324CB042A3885FB8E7 /* Release */ = {
+		C311635E7A3DC49429F360E265DF92A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 876D555A81F976EBC05E4D719ABF7CE0 /* PixelSDK.release.xcconfig */;
+			baseConfigurationReference = 04E3F3B5824BC85981995741BAC6D086 /* Pods-PixelSDKExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E7C8BEEF18E33D18178657301BC365F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06F17AAD104459A88D44032C91621CE4 /* PixelSDK-GPUImage3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1549,23 +621,40 @@
 			};
 			name = Release;
 		};
+		F1020BAD4F7E671A97D09B1A373B2FB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A5AC0300B0B8D792C098EF0EEF448C5 /* PixelSDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D3084BED87B444E2EE6C29CEE0664B4 /* Build configuration list for PBXNativeTarget "PixelSDK-GPUImage3" */ = {
+		0421767B1EEFA4DA0BFF17DEFC1D7843 /* Build configuration list for PBXAggregateTarget "PixelSDK-GPUImage3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AB29EC95346B778523E46CE77614D80 /* Debug */,
-				217B25007E2C66E2DF93DD281FA895A1 /* Release */,
+				727403B204EB351CE7041A4B1E9F0AE7 /* Debug */,
+				E7C8BEEF18E33D18178657301BC365F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		476DF6F964394184368CFC73DE60B4C4 /* Build configuration list for PBXNativeTarget "Pods-PixelSDKExample" */ = {
+		367600C5EFB28704E952DDEE49A75A38 /* Build configuration list for PBXAggregateTarget "PixelSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D59EFFA891402B3DDBD70DA5900864A4 /* Debug */,
-				39FE5EF49656618556C6DDB27A421E84 /* Release */,
+				F1020BAD4F7E671A97D09B1A373B2FB9 /* Debug */,
+				A5E3C2305736AE7C640691245984CFDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1573,17 +662,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
-				257497152829C177993B5EC99C1D227A /* Release */,
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		899D67E1BD6EFCA9C4CF2B7546962BD3 /* Build configuration list for PBXAggregateTarget "PixelSDK" */ = {
+		8CFA31E5C829D048EA3D862C70B208F7 /* Build configuration list for PBXNativeTarget "Pods-PixelSDKExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C8741871ED5F8B5E47F2831CFA58EA7 /* Debug */,
-				F071719EA22C1E324CB042A3885FB8E7 /* Release */,
+				202DE3E65E052806C2F86395E70DA664 /* Debug */,
+				C311635E7A3DC49429F360E265DF92A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

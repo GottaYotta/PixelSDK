@@ -1,3 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-frameworks.sh
-${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt
-${BUILT_PRODUCTS_DIR}/PixelSDK-GPUImage3/GPUImage.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/PixelSDK/PixelSDK.framework/PixelSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/GPUImage/GPUImage.framework/GPUImage
