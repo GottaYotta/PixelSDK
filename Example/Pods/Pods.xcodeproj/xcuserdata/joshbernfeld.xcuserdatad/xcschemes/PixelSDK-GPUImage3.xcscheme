@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31C731E1D92A46A86B580AE667C9D567"
-               BuildableName = "GPUImage.framework"
+               BuildableName = "PixelSDK-GPUImage3"
                BlueprintName = "PixelSDK-GPUImage3"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
