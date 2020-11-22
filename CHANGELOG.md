@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.0.1 - 11/21/20
+
+&bull; Added CocoaPods minimum version requirement to Podspec
+
 ### 11.0.0 - 11/21/20
 
 &bull; Added simulator support for M1 Macs (arm64)<br>
