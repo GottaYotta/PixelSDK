@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.0.2 - 12/23/20
+
+&bull; Fixed variable scope issue with image, video, and segment of  `SessionFilterControllerAdditions`
+
 ### 11.0.1 - 11/21/20
 
 &bull; Added CocoaPods minimum version requirement to Podspec
@@ -12,7 +16,7 @@
 
 ### 10.2.0 - 11/19/20
 
-&bull; Added support for system language override with [languageCode](https://www.pixelsdk.com/docs/latest/Classes/PixelSDK.html#/s:8PixelSDKAAC12languageCodeSSSgv) variable<br>
+&bull; Added support for system language override with `languageCode` variable<br>
 &bull; Fixed photo camera incompatibility with iPhone 12, iPhone 12 Pro and iPhone 12 Pro Max<br>
 &bull; Fixed bug which prevented dates from being properly encoded on Arabic locale devices<br>
 &bull; Fixed filter thumbnails hide/show animation on `CameraController`
