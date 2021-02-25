@@ -273,7 +273,7 @@ The camera and library can be bypassed by presenting the [EditController](https:
 </p>
 
 ### Images
-The below example presents the EditController with an image named "test_image" and sets the initial primary filter to Wilshire.
+The below example presents the EditController with an image named "test_image" and sets the initial primary filter to [Wilshire](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterWilshire.html).
 
 ```swift
 let image = UIImage(named: "test_image")!
@@ -289,7 +289,7 @@ nav.modalPresentationStyle = .fullScreen
 self.present(nav, animated: true, completion: nil)
 ```
 ### Videos
-The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to Sepulveda. These two assets will become segments of the video in their respective order.
+The below example presents the EditController with two AVAssets named "test.mov" and "test2.mp4" and sets the initial primary filter to [Sepulveda](https://www.pixelsdk.com/docs/latest/Classes/SessionFilterSepulveda.html). These two assets will become segments of the video in their respective order.
 
 You can also manually pass a renderSize into the Session initializer. For more information see [Session](https://www.pixelsdk.com/docs/latest/Classes/Session.html) documentation.
 
