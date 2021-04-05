@@ -441,7 +441,7 @@ VideoExporter.shared.export(video: session.video!,
                             completion: { error in
 })
 ```
-There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/Headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
+There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/GottaYotta/PixelSDK/blob/master/.github/headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/GottaYotta/PixelSDK/blob/master/.github/headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
 
 Below is an example of HEVC video encoding settings:
 ```swift
@@ -535,7 +535,7 @@ let _ = Session(assets: [asset1, asset2], sessionReady: { (session, error) in
 
 After your transcode has completed, you may move, copy or delete the file found at the [`video.exportedVideoURL`](https://www.pixelsdk.com/docs/latest/Classes/SessionVideo.html#/c:@M@PixelSDK@objc(cs)SessionVideo(py)exportedVideoURL).
 
-There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/theos/sdks/blob/master/iPhoneOS11.2.sdk/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/Headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
+There are many combinations of encoding settings you can provide. They must conform to the specifications set forth in AVFoundations [AVVideoSettings.h](https://github.com/GottaYotta/PixelSDK/blob/master/.github/headers/AVVideoSettings.h) and [AVAudioSettings.h](https://github.com/GottaYotta/PixelSDK/blob/master/.github/headers/AVAudioSettings.h) headers. There is also a list of available [codecs](https://developer.apple.com/documentation/avfoundation/avvideocodectype). Keep in mind each codec may have different requirements for the settings you provide.
 
 ## Write Custom Filters
 
