@@ -3,7 +3,7 @@
 //  PixelSDKExample
 //
 //  Created by Josh Bernfeld on 2/15/18.
-//  Copyright © 2018 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 import Foundation
@@ -132,7 +132,7 @@ enum ShareOption: String {
     }
 }
 
-protocol ShareProtocol: class {
+protocol ShareProtocol: AnyObject {
     var controller: UIViewController! { get set }
     var contentDescription: String? { get set }
     var completion: ((Bool) -> Void)? { get set }

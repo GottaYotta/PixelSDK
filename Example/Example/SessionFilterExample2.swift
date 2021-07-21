@@ -3,7 +3,7 @@
 //  PixelSDKExample
 //
 //  Created by Josh Bernfeld on 11/20/19.
-//  Copyright © 2019 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 import Foundation
