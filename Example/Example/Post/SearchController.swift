@@ -3,14 +3,14 @@
 //  PixelSDKExample
 //
 //  Created by Josh Bernfeld on 8/12/19.
-//  Copyright © 2019 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import MapKit
 
-protocol SearchControllerDelegate: class {
+protocol SearchControllerDelegate: AnyObject {
     func searchController(_ searchController: SearchController, didSelectMapItem mapItem: MKMapItem)
 }
 

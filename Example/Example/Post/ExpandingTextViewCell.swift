@@ -3,13 +3,13 @@
 //  PixelSDKExample
 //
 //  Created by Josh Bernfeld on 12/17/17.
-//  Copyright © 2017 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol ExpandingTextViewCellDelegate: class {
+protocol ExpandingTextViewCellDelegate: AnyObject {
     func didBeginEditingExpandingTextViewCell(controller: ExpandingTextViewCell)
     func didEndEditingExpandingTextViewCell(controller: ExpandingTextViewCell)
 }
