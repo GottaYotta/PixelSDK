@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PixelSDK
 import AVFoundation
 import AudioToolbox
@@ -205,8 +205,8 @@ import UIKit
     get
   }
   @objc public static let DidRestoreSavedSessionsNotification: Foundation.Notification.Name
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterEdgeDetection : PixelSDK.SessionFilter {
   @objc required public init()
@@ -240,9 +240,9 @@ import UIKit
 }
 @_inheritsConvenienceInitializers @available(*, deprecated, renamed: "SessionFilterEdgeDetection")
 open class SessionFilterCannyEdgeDetection : PixelSDK.SessionFilterEdgeDetection {
-  @objc deinit
   @objc required public init()
   required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterSwirl : PixelSDK.SessionFilter {
   @objc required public init()
@@ -274,7 +274,7 @@ open class SessionFilterCannyEdgeDetection : PixelSDK.SessionFilterEdgeDetection
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-@objc public protocol EditControllerDelegate : AnyObject {
+@objc public protocol EditControllerDelegate {
   @objc optional func editController(_ editController: PixelSDK.EditController, didLoadEditing session: PixelSDK.Session)
   @objc optional func editController(_ editController: PixelSDK.EditController, willBeginEditing session: PixelSDK.Session)
   @objc optional func editController(_ editController: PixelSDK.EditController, didBeginEditing session: PixelSDK.Session)
@@ -621,7 +621,7 @@ public enum VideoExporterError : Swift.Error, Swift.CustomStringConvertible {
   @objc public func cancelExport(completion: (() -> Swift.Void)? = nil)
   @objc deinit
 }
-@objc public protocol ContainerControllerDelegate : AnyObject {
+@objc public protocol ContainerControllerDelegate {
   @objc optional func containerControllerDidChangeMode(_ containerController: PixelSDK.ContainerController)
   @objc optional func containerControllerDidCancel(_ containerController: PixelSDK.ContainerController)
   @objc optional func containerController(_ containerController: PixelSDK.ContainerController, willShowEditController editController: PixelSDK.EditController, withSession session: PixelSDK.Session)
@@ -666,8 +666,8 @@ public enum ContainerMode : Swift.Equatable {
   @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
 }
 extension ContainerController : PixelSDK.BottomBarProvider {
   @objc dynamic public var prefersBottomBarHidden: Swift.Bool {
@@ -688,10 +688,10 @@ public enum BottomBarAnimation {
   case slide
   case none
   public static func == (a: PixelSDK.BottomBarAnimation, b: PixelSDK.BottomBarAnimation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol BottomBarProvider {
   var prefersBottomBarHidden: Swift.Bool { get }
@@ -1004,9 +1004,9 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
 }
 @_inheritsConvenienceInitializers @available(*, deprecated, renamed: "SessionFilterCornerDetection")
 open class SessionFilterNobleCornerDetection : PixelSDK.SessionFilterCornerDetection {
-  @objc deinit
   @objc required public init()
   required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterSpeed : PixelSDK.SessionFilter {
   @objc required public init()
@@ -1129,7 +1129,7 @@ extension TopBarProvider where Self : UIKit.UIViewController {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-@objc public protocol LibraryControllerDelegate : AnyObject {
+@objc public protocol LibraryControllerDelegate {
   @objc optional func libraryControllerDidCancel(_ libraryController: PixelSDK.LibraryController)
   @objc optional func libraryController(_ libraryController: PixelSDK.LibraryController, didFinishWithSession session: PixelSDK.Session, withSegment segment: PixelSDK.SessionVideoSegment?)
   @objc optional func libraryController(_ libraryController: PixelSDK.LibraryController, willShowEditController editController: PixelSDK.EditController, withSession session: PixelSDK.Session)
@@ -1209,8 +1209,8 @@ extension LibraryController : PixelSDK.BottomBarProvider {
 }
 public enum Model : Swift.String {
   case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPad5, iPad6, iPad7, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, AppleTV, AppleTV_4K, unrecognized
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1280,7 +1280,7 @@ extension UIDevice {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-@objc public protocol CameraControllerDelegate : AnyObject {
+@objc public protocol CameraControllerDelegate {
   @objc optional func cameraControllerDidCancel(_ cameraController: PixelSDK.CameraController)
   @objc optional func cameraController(_ cameraController: PixelSDK.CameraController, didFinishWithSession session: PixelSDK.Session)
   @objc optional func cameraController(_ cameraController: PixelSDK.CameraController, willShowEditController editController: PixelSDK.EditController, withSession session: PixelSDK.Session)
@@ -1293,10 +1293,10 @@ public enum CameraControlButton {
   case flash
   case spacer
   public static func == (a: PixelSDK.CameraControlButton, b: PixelSDK.CameraControlButton) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class CameraController : UIKit.UIViewController {
   @objc weak public var delegate: PixelSDK.CameraControllerDelegate?
@@ -1488,8 +1488,8 @@ extension SessionFilterControllerAdditions where Self : UIKit.UIViewController {
   }
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterHistogram : PixelSDK.SessionFilter {
   @objc required public init()
@@ -1556,10 +1556,10 @@ public enum GridLinesMode {
   case interaction
   case never
   public static func == (a: PixelSDK.GridLinesMode, b: PixelSDK.GridLinesMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class PreviewCropController : UIKit.UIViewController {
   @objc public var defaultsToAspectFillForPortraitMedia: Swift.Bool
@@ -1613,13 +1613,13 @@ extension PreviewCropController : UIKit.UIScrollViewDelegate {
   case contentFill
   case contentAspectFit
   case contentAspectFill
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
-@objc public protocol PreviewControllerDelegate : AnyObject {
+@objc public protocol PreviewControllerDelegate {
   @objc func previewControllerWillDisplayMedia(_ previewController: PixelSDK.PreviewController, withSize size: CoreGraphics.CGSize)
   @objc func previewControllerDidDisplayMedia(_ previewController: PixelSDK.PreviewController, withSize size: CoreGraphics.CGSize)
 }
@@ -1872,8 +1872,8 @@ public enum SessionSource : Swift.String {
   case library
   case user
   case drafts
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1882,8 +1882,8 @@ public enum MediaType : Swift.Int {
   case image
   case video
   case none
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }

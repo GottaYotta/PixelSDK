@@ -3,7 +3,7 @@
 //  PixelSDK
 //
 //  Created by Josh Bernfeld on 7/31/19.
-//  Copyright © 2019 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

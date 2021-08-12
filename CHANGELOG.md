@@ -1,5 +1,10 @@
 # Changelog
 
+### 11.0.3 - 8/11/21
+
+&bull; Added ability to provide empty audio encoding settings dictionary for no audio on export<br>
+&bull; Improved stability when device disk space is full
+
 ### 11.0.2 - 12/23/20
 
 &bull; Fixed variable scope issue with image, video, and segment of  `SessionFilterControllerAdditions`
