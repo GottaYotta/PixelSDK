@@ -3,7 +3,7 @@
 //  PixelSDKFramework
 //
 //  Created by Josh Bernfeld on 8/14/16.
-//  Copyright © 2016 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -3,7 +3,7 @@
 //  PixelSDKFramework
 //
 //  Created by Josh Bernfeld on 11/15/17.
-//  Copyright © 2017 GottaYotta, Inc. All rights reserved.
+//  Copyright © 2021 GottaYotta, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
