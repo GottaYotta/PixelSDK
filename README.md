@@ -145,7 +145,7 @@ extension ViewController: EditControllerDelegate {
 }
 ```
 
-[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing matrix](https://www.pixelsdk.com/#pricing) applies to exports from your API key. Without an API key, image and video exports will include a watermark. Keep your API key private.
+[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key. Keep your API key private.
 
 ```swift
 import PixelSDK
@@ -657,4 +657,4 @@ The [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master
 
 ## License
 
-Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing matrix](https://www.pixelsdk.com/#pricing) applies to exports from your API key. Without an API key, image and video exports will include a watermark.
+Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key.
