@@ -105,7 +105,20 @@ $ pod install
 
 ### Setup
 
-Include the following lines in your application Info.plist:
+[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key. Keep your API key private.
+
+```swift
+import PixelSDK
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    PixelSDK.setup("YOUR API KEY")
+
+    return true
+}
+```
+
+Include the following lines in your application `Info.plist`:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
@@ -115,14 +128,11 @@ Include the following lines in your application Info.plist:
 <key>NSCameraUsageDescription</key>
 <string>Camera access is needed so you can take photos.</string>
 ```
-
-Import PixelSDK into the file you are working on.
+Present the SDK in response to a user action, for example, clicking a button. The default primary filters and adjustment filters will be used. The SDK will support both photo and video of any dimension with access to both the camera and library.
 
 ```swift
 import PixelSDK
 ```
-
-Present the SDK in response to a user action, for example, clicking a button. The default primary filters and adjustment filters will be used. The SDK will support both photo and video of any dimension with access to both the camera and library.
 ```swift
 let container = ContainerController()
 container.editControllerDelegate = self
@@ -142,19 +152,6 @@ extension ViewController: EditControllerDelegate {
 
         editController.navigationController?.pushViewController(controller, animated: true)
     }
-}
-```
-
-[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key. Keep your API key private.
-
-```swift
-import PixelSDK
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    PixelSDK.setup("YOUR API KEY")
-
-    return true
 }
 ```
 
