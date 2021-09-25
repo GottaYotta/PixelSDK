@@ -105,19 +105,6 @@ $ pod install
 
 ### Setup
 
-[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key. Keep your API key private.
-
-```swift
-import PixelSDK
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    PixelSDK.setup("YOUR API KEY")
-
-    return true
-}
-```
-
 Include the following lines in your application `Info.plist`:
 
 ```xml
@@ -152,6 +139,19 @@ extension ViewController: EditControllerDelegate {
 
         editController.navigationController?.pushViewController(controller, animated: true)
     }
+}
+```
+
+[Generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) and specify it in your  `application(_, didFinishLaunchingWithOptions:)` of your App Delegate. <span style="display: none;">The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key.</span> Without an API key, image and video exports will include a watermark. Keep your API key private.
+
+```swift
+import PixelSDK
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    PixelSDK.setup("YOUR API KEY")
+
+    return true
 }
 ```
 
@@ -654,4 +654,4 @@ The [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master
 
 ## License
 
-Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key.
+Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key. Without an API key, image and video exports will include a watermark.
