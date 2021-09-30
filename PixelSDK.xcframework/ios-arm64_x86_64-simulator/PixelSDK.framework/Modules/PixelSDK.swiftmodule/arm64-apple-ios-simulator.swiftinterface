@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PixelSDK
 import AVFoundation
 import AudioToolbox
@@ -16,6 +16,7 @@ import PhotosUI
 @_exported import PixelSDK
 import Swift
 import UIKit
+import _Concurrency
 @_inheritsConvenienceInitializers open class SessionFilterToon : SessionFilter {
   @objc required public init()
   required public init(from decoder: Swift.Decoder) throws
@@ -288,69 +289,68 @@ public enum EditMode : Swift.Equatable {
   case custom(title: Swift.String, controller: UIKit.UIViewController)
   public static func == (lhs: EditMode, rhs: EditMode) -> Swift.Bool
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class EditController : UIKit.UIViewController {
-  @objc public init(session: Session)
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class EditController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public init(session: Session)
   @objc deinit
-  @objc final public let session: Session
-  public var modes: [EditMode] {
+  @objc @_Concurrency.MainActor(unsafe) final public let session: Session
+  @_Concurrency.MainActor(unsafe) public var modes: [EditMode] {
     get
     set
   }
-  public var currentMode: EditMode {
+  @_Concurrency.MainActor(unsafe) public var currentMode: EditMode {
     get
   }
-  @objc weak public var delegate: EditControllerDelegate? {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: EditControllerDelegate? {
     @objc get
     @objc set
   }
-  @objc @IBOutlet public var backButton: UIKit.UIButton! {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var backButton: UIKit.UIButton! {
     get
   }
-  @objc @IBOutlet public var nextButton: UIKit.UIButton! {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var nextButton: UIKit.UIButton! {
     get
   }
-  @objc public var showsSaveDialogue: Swift.Bool
-  @objc public var showsPositionAdjustment: Swift.Bool
-  @objc public var compactControls: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var showsSaveDialogue: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var showsPositionAdjustment: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var compactControls: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewDidLayoutSubviews()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
 }
 extension EditController : TopBarProvider {
-  @objc dynamic public var preferredTopBarView: UIKit.UIView? {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var preferredTopBarView: UIKit.UIView? {
     @objc get
   }
-  @objc dynamic public func setNeedsTopBarAppearanceUpdate()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setNeedsTopBarAppearanceUpdate()
 }
 extension EditController : BottomBarProvider {
-  @objc dynamic public var prefersBottomBarHidden: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var prefersBottomBarHidden: Swift.Bool {
     @objc get
   }
-  @objc dynamic public var preferredBottomBarView: UIKit.UIView? {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var preferredBottomBarView: UIKit.UIView? {
     @objc get
   }
-  public var preferredBottomBarUpdateAnimation: BottomBarAnimation {
+  @_Concurrency.MainActor(unsafe) public var preferredBottomBarUpdateAnimation: BottomBarAnimation {
     get
   }
-  @objc dynamic public func setNeedsBottomBarAppearanceUpdate()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setNeedsBottomBarAppearanceUpdate()
 }
 @_inheritsConvenienceInitializers open class SessionFilterStraighten : SessionFilter {
   @objc required public init()
@@ -502,7 +502,7 @@ extension EditController : BottomBarProvider {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-extension CLLocation : Swift.Encodable {
+extension CoreLocation.CLLocation : Swift.Encodable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 @_inheritsConvenienceInitializers open class SessionFilterVibrance : SessionFilter {
@@ -633,55 +633,54 @@ public enum ContainerMode : Swift.Equatable {
   case custom(title: Swift.String, controller: UIKit.UIViewController)
   public static func == (lhs: ContainerMode, rhs: ContainerMode) -> Swift.Bool
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class ContainerController : UIKit.UIViewController {
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class ContainerController : UIKit.UIViewController {
   @objc convenience dynamic public init()
-  convenience public init(mode: ContainerMode)
-  convenience public init(modes: [ContainerMode])
-  public init(modes: [ContainerMode], initialMode: ContainerMode, restoresPreviousMode: Swift.Bool = true)
-  public var modes: [ContainerMode] {
+  @_Concurrency.MainActor(unsafe) convenience public init(mode: ContainerMode)
+  @_Concurrency.MainActor(unsafe) convenience public init(modes: [ContainerMode])
+  @_Concurrency.MainActor(unsafe) public init(modes: [ContainerMode], initialMode: ContainerMode, restoresPreviousMode: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public var modes: [ContainerMode] {
     get
   }
-  public var currentMode: ContainerMode {
+  @_Concurrency.MainActor(unsafe) public var currentMode: ContainerMode {
     get
   }
-  @objc weak public var delegate: ContainerControllerDelegate?
-  @objc weak public var editControllerDelegate: EditControllerDelegate?
-  @objc public var cameraController: CameraController {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: ContainerControllerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) weak public var editControllerDelegate: EditControllerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) public var cameraController: CameraController {
     @objc get
   }
-  @objc public var libraryController: LibraryController {
+  @objc @_Concurrency.MainActor(unsafe) public var libraryController: LibraryController {
     @objc get
   }
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public var childForStatusBarStyle: UIKit.UIViewController? {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var childForStatusBarStyle: UIKit.UIViewController? {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
 }
 extension ContainerController : BottomBarProvider {
-  @objc dynamic public var prefersBottomBarHidden: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var prefersBottomBarHidden: Swift.Bool {
     @objc get
   }
-  @objc dynamic public var preferredBottomBarView: UIKit.UIView? {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var preferredBottomBarView: UIKit.UIView? {
     @objc get
   }
-  public var preferredBottomBarUpdateAnimation: BottomBarAnimation {
+  @_Concurrency.MainActor(unsafe) public var preferredBottomBarUpdateAnimation: BottomBarAnimation {
     get
   }
-  @objc dynamic public func setNeedsBottomBarAppearanceUpdate()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setNeedsBottomBarAppearanceUpdate()
 }
-extension UIColor : Swift.Encodable {
+extension UIKit.UIColor : Swift.Encodable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public enum BottomBarAnimation {
@@ -790,7 +789,6 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
   @objc deinit
   public func requestThumbnail(boundingSize: CoreGraphics.CGSize, contentMode: ContentMode, filter: SessionFilter? = nil, completion: @escaping ((UIKit.UIImage?) -> Swift.Void))
   @objc public func invalidateThumbnails()
-  @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers open class SessionFilterPinch : SessionFilter {
   @objc required public init()
@@ -1078,13 +1076,13 @@ open class SessionFilterNobleCornerDetection : SessionFilterCornerDetection {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-extension CGFloat {
+extension CoreGraphics.CGFloat {
   public func translateFromRangeToRange(oldMin: CoreGraphics.CGFloat, oldMax: CoreGraphics.CGFloat, newMin: CoreGraphics.CGFloat, newMax: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
 }
-extension Double {
+extension Swift.Double {
   public func translateFromRangeToRange(oldMin: Swift.Double, oldMax: Swift.Double, newMin: Swift.Double, newMax: Swift.Double) -> Swift.Double
 }
-extension Float {
+extension Swift.Float {
   public func translateFromRangeToRange(oldMin: Swift.Float, oldMax: Swift.Float, newMin: Swift.Float, newMax: Swift.Float) -> Swift.Float
 }
 public protocol TopBarProvider {
@@ -1134,46 +1132,45 @@ extension TopBarProvider where Self : UIKit.UIViewController {
   @objc optional func libraryController(_ libraryController: LibraryController, didFinishWithSession session: Session, withSegment segment: SessionVideoSegment?)
   @objc optional func libraryController(_ libraryController: LibraryController, willShowEditController editController: EditController, withSession session: Session)
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class LibraryController : UIKit.UIViewController {
-  @objc weak public var delegate: LibraryControllerDelegate?
-  @objc public var showsEditControllerWhenDone: Swift.Bool
-  @objc public var fetchPredicate: Foundation.NSPredicate?
-  public var draftMediaTypes: [MediaType] {
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class LibraryController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: LibraryControllerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) public var showsEditControllerWhenDone: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var fetchPredicate: Foundation.NSPredicate?
+  @_Concurrency.MainActor(unsafe) public var draftMediaTypes: [MediaType] {
     get
     set
   }
-  @objc public var splitVideoDraftsIntoSegments: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var splitVideoDraftsIntoSegments: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @IBOutlet public var cancelButton: UIKit.UIButton! {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var cancelButton: UIKit.UIButton! {
     get
   }
-  @objc @IBOutlet public var nextButton: UIKit.UIButton! {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var nextButton: UIKit.UIButton! {
     get
   }
-  @objc @IBOutlet public var activityIndicatorView: UIKit.UIActivityIndicatorView! {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) public var activityIndicatorView: UIKit.UIActivityIndicatorView! {
     get
   }
-  @objc final public let previewCropController: PreviewCropController
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillLayoutSubviews()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+  @objc @_Concurrency.MainActor(unsafe) final public let previewCropController: PreviewCropController
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
 }
 extension LibraryController : UIKit.UIGestureRecognizerDelegate {
-  @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 extension LibraryController : BottomBarProvider {
-  @objc dynamic public var prefersBottomBarHidden: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var prefersBottomBarHidden: Swift.Bool {
     @objc get
   }
 }
@@ -1215,8 +1212,8 @@ public enum Model : Swift.String {
     get
   }
 }
-extension UIDevice {
-  public var type: Model {
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var type: Model {
     get
   }
 }
@@ -1298,72 +1295,71 @@ public enum CameraControlButton {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class CameraController : UIKit.UIViewController {
-  @objc weak public var delegate: CameraControllerDelegate?
-  @objc public var showsEditControllerWhenDone: Swift.Bool
-  @objc public var flashActive: Swift.Bool {
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class CameraController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: CameraControllerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) public var showsEditControllerWhenDone: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var flashActive: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc public var frontFacingCameraActive: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var frontFacingCameraActive: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc public var brightnessAdjustmentActive: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var brightnessAdjustmentActive: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc public var faceUpModeAvailable: Swift.Bool
-  @objc public var doubleTapForFrontFacingCamera: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var faceUpModeAvailable: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var doubleTapForFrontFacingCamera: Swift.Bool {
     @objc get
     @objc set
   }
-  public var controlButtons: [CameraControlButton] {
+  @_Concurrency.MainActor(unsafe) public var controlButtons: [CameraControlButton] {
     get
     set
   }
-  public var aspectRatio: CoreGraphics.CGSize? {
+  @_Concurrency.MainActor(unsafe) public var aspectRatio: CoreGraphics.CGSize? {
     get
     set
   }
-  @objc public var videoPreset: AVFoundation.AVCaptureSession.Preset {
+  @objc @_Concurrency.MainActor(unsafe) public var videoPreset: AVFoundation.AVCaptureSession.Preset {
     @objc get
     @objc set
   }
-  @objc public var photoSettings: () -> (AVFoundation.AVCapturePhotoSettings) {
+  @objc @_Concurrency.MainActor(unsafe) public var photoSettings: () -> (AVFoundation.AVCapturePhotoSettings) {
     @objc get
     @objc set
   }
   @objc @available(*, deprecated, message: "Only set aspectRatio now. This variable is no longer needed.")
-  public var squareCameraActive: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var squareCameraActive: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillLayoutSubviews()
-  @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
   @objc deinit
-  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
 }
 extension CameraController : BottomBarProvider {
-  @objc dynamic public func setNeedsBottomBarAppearanceUpdate()
-  @objc dynamic public var preferredBottomBarView: UIKit.UIView? {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setNeedsBottomBarAppearanceUpdate()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var preferredBottomBarView: UIKit.UIView? {
     @objc get
   }
-  @objc dynamic public var prefersBottomBarHidden: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var prefersBottomBarHidden: Swift.Bool {
     @objc get
   }
 }
 extension CameraController {
-  @objc dynamic public var prefersBottomBarTransparent: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var prefersBottomBarTransparent: Swift.Bool {
     @objc get
   }
 }
@@ -1488,7 +1484,6 @@ extension SessionFilterControllerAdditions where Self : UIKit.UIViewController {
   }
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterHistogram : SessionFilter {
@@ -1561,53 +1556,52 @@ public enum GridLinesMode {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class PreviewCropController : UIKit.UIViewController {
-  @objc public var defaultsToAspectFillForPortraitMedia: Swift.Bool
-  @objc public var defaultsToAspectFillForLandscapeMedia: Swift.Bool
-  public var gridLinesMode: GridLinesMode {
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class PreviewCropController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var defaultsToAspectFillForPortraitMedia: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var defaultsToAspectFillForLandscapeMedia: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var gridLinesMode: GridLinesMode {
     get
     set
   }
-  @objc public func flashGridLines()
-  public var aspectRatio: CoreGraphics.CGSize?
-  @objc public var maxRatioForPortraitMedia: CoreGraphics.CGSize {
+  @objc @_Concurrency.MainActor(unsafe) public func flashGridLines()
+  @_Concurrency.MainActor(unsafe) public var aspectRatio: CoreGraphics.CGSize?
+  @objc @_Concurrency.MainActor(unsafe) public var maxRatioForPortraitMedia: CoreGraphics.CGSize {
     @objc get
     @objc set
   }
-  @objc public var maxRatioForLandscapeMedia: CoreGraphics.CGSize {
+  @objc @_Concurrency.MainActor(unsafe) public var maxRatioForLandscapeMedia: CoreGraphics.CGSize {
     @objc get
     @objc set
   }
-  @objc public var userInteractionEnabled: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var userInteractionEnabled: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc public var pausesVideoOnDrag: Swift.Bool
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillLayoutSubviews()
-  @objc override dynamic public func viewDidLayoutSubviews()
-  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc public func layoutMedia()
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc @_Concurrency.MainActor(unsafe) public var pausesVideoOnDrag: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc @_Concurrency.MainActor(unsafe) public func layoutMedia()
   @objc deinit
 }
 extension PreviewCropController : PreviewControllerDelegate {
-  @objc dynamic public func previewControllerWillDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
-  @objc dynamic public func previewControllerDidDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func previewControllerWillDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func previewControllerDidDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
 }
 extension PreviewCropController : UIKit.UIScrollViewDelegate {
-  @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
-  @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
-  @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
-  @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
-  @objc dynamic public func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
-  @objc dynamic public func scrollViewWillBeginZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?)
-  @objc dynamic public func scrollViewDidEndZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?, atScale scale: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidZoom(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewWillBeginZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndZooming(_ scrollView: UIKit.UIScrollView, with view: UIKit.UIView?, atScale scale: CoreGraphics.CGFloat)
 }
 @objc public enum ContentMode : Swift.Int {
   case contentFill
@@ -1623,45 +1617,44 @@ extension PreviewCropController : UIKit.UIScrollViewDelegate {
   @objc func previewControllerWillDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
   @objc func previewControllerDidDisplayMedia(_ previewController: PreviewController, withSize size: CoreGraphics.CGSize)
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class PreviewController : UIKit.UIViewController {
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class PreviewController : UIKit.UIViewController {
   @objc dynamic public init()
-  @objc weak public var delegate: PreviewControllerDelegate?
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func didReceiveMemoryWarning()
-  @objc public var session: Session? {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: PreviewControllerDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didReceiveMemoryWarning()
+  @objc @_Concurrency.MainActor(unsafe) public var session: Session? {
     @objc get
     @objc set
   }
-  @objc public var contentMode: ContentMode {
+  @objc @_Concurrency.MainActor(unsafe) public var contentMode: ContentMode {
     @objc get
     @objc set
   }
-  @objc public var loops: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var loops: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc dynamic public var isMuted: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isMuted: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc public var currentTime: CoreMedia.CMTime {
+  @objc @_Concurrency.MainActor(unsafe) public var currentTime: CoreMedia.CMTime {
     @objc get
   }
-  public var initialStartTime: CoreMedia.CMTime? {
+  @_Concurrency.MainActor(unsafe) public var initialStartTime: CoreMedia.CMTime? {
     get
     set
   }
-  @objc public var autoplayEnabled: Swift.Bool
-  @objc public var isPlaying: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) public var autoplayEnabled: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var isPlaying: Swift.Bool {
     get
   }
-  @objc public func play()
-  @objc public func pause()
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc @_Concurrency.MainActor(unsafe) public func play()
+  @objc @_Concurrency.MainActor(unsafe) public func pause()
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterSaturation : SessionFilter {
@@ -1694,7 +1687,7 @@ extension PreviewCropController : UIKit.UIScrollViewDelegate {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-extension CGAffineTransform {
+extension CoreGraphics.CGAffineTransform {
   public static func rotated90Degrees(_ naturalSize: CoreGraphics.CGSize) -> CoreGraphics.CGAffineTransform
   public static func rotated180Degrees(_ naturalSize: CoreGraphics.CGSize) -> CoreGraphics.CGAffineTransform
   public static func rotated270Degrees(_ naturalSize: CoreGraphics.CGSize) -> CoreGraphics.CGAffineTransform
@@ -1759,7 +1752,7 @@ extension CGAffineTransform {
   override open func operationUpdateNeeded(_ op: GPUImage.ImageProcessingOperation)
   @objc deinit
 }
-extension CMTime : Swift.Codable {
+extension CoreMedia.CMTime : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -1827,7 +1820,6 @@ extension CMTime : Swift.Codable {
   public func requestThumbnail(boundingSize: CoreGraphics.CGSize, contentMode: ContentMode, filter: SessionFilter? = nil, completion: @escaping ((UIKit.UIImage?) -> Swift.Void))
   @objc public func invalidateThumbnails()
   public func generateFrame(time: CoreMedia.CMTime, cropped: Swift.Bool, maximumSize: CoreGraphics.CGSize? = nil) -> UIKit.UIImage?
-  @objc override dynamic public init()
 }
 public enum ImageExporterError : Swift.Error, Swift.CustomStringConvertible {
   case cancelled
@@ -1849,7 +1841,7 @@ public enum ImageExporterError : Swift.Error, Swift.CustomStringConvertible {
     @objc get
   }
   public func export(image: SessionImage, compressionQuality: Swift.Float = 0.95, completion: @escaping (ImageExporterError?, UIKit.UIImage?) -> Swift.Void)
-  @objc public func export(images: [SessionImage], compressionQuality: Swift.Float = 0.95, progress: ((Swift.Double) -> Swift.Void)? = nil, completion: @escaping (Swift.Error?, [UIKit.UIImage]?) -> Swift.Void)
+  @objc public func export(images: [SessionImage], compressionQuality: Swift.Float = 0.95, progress: ((_ progress: Swift.Double) -> Swift.Void)? = nil, completion: @escaping (Swift.Error?, [UIKit.UIImage]?) -> Swift.Void)
   @objc public func cancelExport()
   @objc deinit
 }
@@ -1862,7 +1854,7 @@ public enum SessionInitError : Swift.Error, Swift.CustomStringConvertible {
     get
   }
 }
-extension String : Foundation.LocalizedError {
+extension Swift.String : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1936,7 +1928,6 @@ public enum MediaType : Swift.Int {
   }
   @objc public func save()
   @objc public func destroy()
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterSanVicente : SessionFilter {
@@ -2213,7 +2204,7 @@ public enum MediaType : Swift.Int {
   @objc open func viewController() -> UIKit.UIViewController
   @objc deinit
 }
-extension Array where Element : SessionFilter {
+extension Swift.Array where Element : SessionFilter {
   public func copy() -> [SessionFilter]
 }
 extension BottomBarAnimation : Swift.Equatable {}

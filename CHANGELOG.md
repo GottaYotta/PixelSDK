@@ -1,5 +1,11 @@
 # Changelog
 
+### 11.0.4 - 9/30/21
+
+&bull; Fixed crash caused by iOS 15 UIView infinite layout loop<br>
+&bull; Fixed crash caused by pressing back on EditController while photo is still being captured<br>
+&bull; General bug fixes and stability improvements
+
 ### 11.0.3 - 8/11/21
 
 &bull; Added ability to provide empty audio encoding settings dictionary for no audio on export<br>
