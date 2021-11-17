@@ -1,5 +1,10 @@
 # Changelog
 
+
+### 11.0.5 - 11/16/21
+
+&bull; Fixed bug which would cause HDR content to appear washed out on iPhone 12 and iPhone 13
+
 ### 11.0.4 - 9/30/21
 
 &bull; Fixed crash caused by iOS 15 UIView infinite layout loop<br>
