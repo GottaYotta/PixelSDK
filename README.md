@@ -41,9 +41,11 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 ✅ Adjust Individual Video Segments and Whole Video Composition
 
+✅ Programmatic and Visual Editing
+
 ✅ Press and Hold Photo/Video to See Original While Editing
 
-✅ Landscape, Portrait and or Square Support
+✅ Landscape, Portrait and or Square Content Support
 
 ✅ Swipe for Realtime Camera Filters
 
@@ -60,6 +62,8 @@ Pixel SDK is a photo and video editing framework written in Swift.
 ✅ Import Photos and Videos from DSLR Camera. Lightning to USB Cable Required.
 
 ✅ Direct GPU Access with Metal and [GPUImage3](https://github.com/BradLarson/GPUImage3).
+
+✅ Transcode Video Files with Codecs, Filters, Trimming and more.
 
 ✅ RAW Images and 60fps 4K UHD Video Support. HEVC Support.
 
