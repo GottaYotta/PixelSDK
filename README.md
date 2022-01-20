@@ -8,6 +8,7 @@ Pixel SDK is a photo and video editing framework written in Swift.
 - [Features](#features)
 - [Getting Started](#getting-started)
     * [CocoaPods](#cocoapods)
+    * [Swift Package Manager](#swift-package-manager)
 - [Restrict the SDK](#restrict-the-sdk)
     * [Images Only](#images-only)
     * [Videos Only](#videos-only)
@@ -106,6 +107,20 @@ Run the following command from within your project directory:
 ```
 $ pod install
 ```
+
+### Swift Package Manager
+
+[Swift Package Manager](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) is a dependency manager built into Xcode. To integrate PixelSDK into your Xcode project, first verify you have the latest version of Xcode installed.
+
+In the Xcode menu bar select File > Add Packages and enter the following repository URL into the search bar:
+
+```
+https://github.com/GottaYotta/PixelSDK.git
+```
+
+For Dependency Rule select `Branch` and `master`. Then press Add Package.
+
+Note: We do not recommend setting the Dependency Rule to a major version because it will prevent you from receiving critical bug fixes in the future.
 
 ### Setup
 
