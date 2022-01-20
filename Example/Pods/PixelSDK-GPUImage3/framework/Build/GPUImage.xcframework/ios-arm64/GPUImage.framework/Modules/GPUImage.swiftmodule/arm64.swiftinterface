@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GPUImage
 import AVFoundation
 import Foundation
@@ -9,6 +9,7 @@ import MetalPerformanceShaders
 import QuartzCore
 import Swift
 import UIKit
+import _Concurrency
 public class PrewittEdgeDetection : GPUImage.TextureSamplingOperation {
   public var edgeStrength: Swift.Float {
     get
@@ -16,7 +17,6 @@ public class PrewittEdgeDetection : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Convolution3x3 : GPUImage.TextureSamplingOperation {
   public var convolutionKernel: GPUImage.Matrix3x3 {
@@ -25,9 +25,8 @@ public class Convolution3x3 : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
-extension Matrix3x3 {
+extension GPUImage.Matrix3x3 {
   public func toMPSFloatArray() -> [Swift.Float]
 }
 public class MonochromeFilter : GPUImage.BasicOperation {
@@ -41,12 +40,10 @@ public class MonochromeFilter : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class SubtractBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class StretchDistortion : GPUImage.BasicOperation {
   public var center: GPUImage.Position {
@@ -55,7 +52,6 @@ public class StretchDistortion : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public struct Size {
   public let width: Swift.Float
@@ -65,22 +61,20 @@ public struct Size {
 public class LightenBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Luminance : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public typealias PlatformImageType = UIKit.UIImage
 public enum PictureFileFormat {
   case png
   case jpeg
   public static func == (a: GPUImage.PictureFileFormat, b: GPUImage.PictureFileFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public class PictureOutput : GPUImage.ImageConsumer {
   public var encodedImageAvailableCallback: ((Foundation.Data?) -> ())?
@@ -95,10 +89,10 @@ public class PictureOutput : GPUImage.ImageConsumer {
   public func saveNextFrameToURL(_ url: Foundation.URL, format: GPUImage.PictureFileFormat)
   public func newTextureAvailable(_ texture: GPUImage.Texture, fromSourceIndex: Swift.UInt)
 }
-extension ImageSource {
+extension GPUImage.ImageSource {
   public func saveNextFrameToURL(_ url: Foundation.URL, format: GPUImage.PictureFileFormat)
 }
-extension UIImage {
+extension UIKit.UIImage {
   public func filterWithOperation<T>(_ operation: T) throws -> GPUImage.PlatformImageType? where T : GPUImage.ImageProcessingOperation
   public func filterWithPipeline(_ pipeline: (GPUImage.PictureInput, GPUImage.PictureOutput) -> ()) throws -> GPUImage.PlatformImageType?
 }
@@ -109,7 +103,6 @@ public class SobelEdgeDetection : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public struct Matrix4x4 {
   public let m11: Swift.Float, m12: Swift.Float, m13: Swift.Float, m14: Swift.Float
@@ -128,14 +121,13 @@ public struct Matrix3x3 {
   public static let centerOnly: GPUImage.Matrix3x3
 }
 public func orthographicMatrix(_ left: Swift.Float, right: Swift.Float, bottom: Swift.Float, top: Swift.Float, near: Swift.Float, far: Swift.Float, anchorTopLeft: Swift.Bool = false) -> GPUImage.Matrix4x4
-extension Matrix4x4 {
+extension GPUImage.Matrix4x4 {
   public init(_ transform3D: QuartzCore.CATransform3D)
   public init(_ transform: CoreGraphics.CGAffineTransform)
 }
 public class SoftLightBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ThresholdSketchFilter : GPUImage.TextureSamplingOperation {
   public var edgeStrength: Swift.Float {
@@ -148,12 +140,10 @@ public class ThresholdSketchFilter : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class NormalBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class BoxBlur : GPUImage.BasicOperation {
   public var blurRadiusInPixels: Swift.Float {
@@ -162,12 +152,10 @@ public class BoxBlur : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class LuminosityBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class LuminanceRangeReduction : GPUImage.BasicOperation {
   public var rangeReductionFactor: Swift.Float {
@@ -176,7 +164,6 @@ public class LuminanceRangeReduction : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class LevelsAdjustment : GPUImage.BasicOperation {
   public var minimum: GPUImage.Color {
@@ -201,12 +188,10 @@ public class LevelsAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class MedianFilter : GPUImage.TextureSamplingOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public func defaultVertexFunctionNameForInputs(_ inputCount: Swift.UInt) -> Swift.String
 open class BasicOperation : GPUImage.ImageProcessingOperation {
@@ -238,10 +223,10 @@ public enum ImageOrientation {
   case landscapeRight
   public func rotationNeeded(for targetOrientation: GPUImage.ImageOrientation) -> GPUImage.Rotation
   public static func == (a: GPUImage.ImageOrientation, b: GPUImage.ImageOrientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum Rotation {
   case noRotation
@@ -253,15 +238,14 @@ public enum Rotation {
   case rotateClockwiseAndFlipVertically
   case rotateClockwiseAndFlipHorizontally
   public static func == (a: GPUImage.Rotation, b: GPUImage.Rotation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public class HardLightBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers open class TextureSamplingOperation : GPUImage.BasicOperation {
   override public init(vertexFunctionName: Swift.String? = "nearbyTexelSampling", fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = 1, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = nil)
@@ -294,7 +278,6 @@ public class ColorMatrixFilter : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public struct Color {
   public let redComponent: Swift.Float
@@ -320,7 +303,6 @@ public class Crosshatch : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class TiltShift : GPUImage.OperationGroup {
   public var blurRadiusInPixels: Swift.Float {
@@ -345,7 +327,6 @@ public class Crosshatch : GPUImage.BasicOperation {
 public class DarkenBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public struct Position {
   public let x: Swift.Float
@@ -370,12 +351,10 @@ public class SketchFilter : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Laplacian : GPUImage.TextureSamplingOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ZoomBlur : GPUImage.BasicOperation {
   public var blurSize: Swift.Float {
@@ -388,24 +367,23 @@ public class ZoomBlur : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public protocol RenderViewDelegate : AnyObject {
   func willDisplayTexture(renderView: GPUImage.RenderView, texture: GPUImage.Texture)
   func didDisplayTexture(renderView: GPUImage.RenderView, texture: GPUImage.Texture)
 }
-@objc @_inheritsConvenienceInitializers public class RenderView : UIKit.UIView, GPUImage.ImageConsumer {
-  weak public var renderViewDelegate: GPUImage.RenderViewDelegate?
-  final public let sources: GPUImage.SourceContainer
-  final public let maximumInputs: Swift.UInt
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc override dynamic public class var layerClass: Swift.AnyClass {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class RenderView : UIKit.UIView, GPUImage.ImageConsumer {
+  @_Concurrency.MainActor(unsafe) weak public var renderViewDelegate: GPUImage.RenderViewDelegate?
+  @_Concurrency.MainActor(unsafe) final public let sources: GPUImage.SourceContainer
+  @_Concurrency.MainActor(unsafe) final public let maximumInputs: Swift.UInt
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public func newTextureAvailable(_ texture: GPUImage.Texture, fromSourceIndex: Swift.UInt)
-  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
-  @objc override dynamic public func draw(_ layer: QuartzCore.CALayer, in ctx: CoreGraphics.CGContext)
+  @_Concurrency.MainActor(unsafe) public func newTextureAvailable(_ texture: GPUImage.Texture, fromSourceIndex: Swift.UInt)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ layer: QuartzCore.CALayer, in ctx: CoreGraphics.CGContext)
   @objc deinit
 }
 public class GaussianBlur : GPUImage.BasicOperation {
@@ -414,13 +392,11 @@ public class GaussianBlur : GPUImage.BasicOperation {
     set
   }
   public init()
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
   @objc deinit
 }
 public class SourceOverBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class PinchDistortion : GPUImage.BasicOperation {
   public var radius: Swift.Float {
@@ -437,7 +413,6 @@ public class PinchDistortion : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class SepiaToneFilter : GPUImage.ColorMatrixFilter {
   override public init()
@@ -458,7 +433,6 @@ public class SwirlDistortion : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Solarize : GPUImage.BasicOperation {
   public var threshold: Swift.Float {
@@ -467,7 +441,6 @@ public class Solarize : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public protocol AudioEncodingTarget {
   func activateAudioTrack()
@@ -493,7 +466,6 @@ public class KuwaharaFilter : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Haze : GPUImage.BasicOperation {
   public var distance: Swift.Float {
@@ -506,7 +478,6 @@ public class Haze : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class SmoothToonFilter : GPUImage.OperationGroup {
   public var blurRadiusInPixels: Swift.Float {
@@ -527,12 +498,10 @@ public class Haze : GPUImage.BasicOperation {
 public class ExclusionBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class LinearBurnBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class AlphaBlend : GPUImage.BasicOperation {
   public var mix: Swift.Float {
@@ -541,7 +510,6 @@ public class AlphaBlend : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ChromaKeying : GPUImage.BasicOperation {
   public var thresholdSensitivity: Swift.Float {
@@ -558,7 +526,6 @@ public class ChromaKeying : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Vibrance : GPUImage.BasicOperation {
   public var vibrance: Swift.Float {
@@ -567,7 +534,6 @@ public class Vibrance : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Posterize : GPUImage.BasicOperation {
   public var colorLevels: Swift.Float {
@@ -576,12 +542,10 @@ public class Posterize : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class SaturationBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class AmatorkaFilter : GPUImage.LookupFilter {
   override public init()
@@ -590,7 +554,6 @@ public class SaturationBlend : GPUImage.BasicOperation {
 public class ColorInversion : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class HighlightsAndShadows : GPUImage.BasicOperation {
   public var shadows: Swift.Float {
@@ -603,12 +566,10 @@ public class HighlightsAndShadows : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class OverlayBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_hasMissingDesignatedInitializers public class ImageBuffer : GPUImage.ImageProcessingOperation {
   public var bufferSize: Swift.UInt
@@ -630,7 +591,6 @@ public class OverlayBlend : GPUImage.BasicOperation {
 public class ColorLocalBinaryPattern : GPUImage.TextureSamplingOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class MovieInput : GPUImage.ImageSource {
   final public let targets: GPUImage.TargetContainer
@@ -657,7 +617,6 @@ public class ChromaKeyBlend : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class SoftElegance : GPUImage.OperationGroup {
   override public init()
@@ -671,8 +630,8 @@ public struct TimestampFlags : Swift.OptionSet {
   public static let positiveInfinity: GPUImage.TimestampFlags
   public static let negativeInfinity: GPUImage.TimestampFlags
   public static let indefinite: GPUImage.TimestampFlags
-  public typealias Element = GPUImage.TimestampFlags
   public typealias ArrayLiteralElement = GPUImage.TimestampFlags
+  public typealias Element = GPUImage.TimestampFlags
   public typealias RawValue = Swift.UInt32
 }
 public struct Timestamp : Swift.Comparable {
@@ -693,12 +652,10 @@ public func < (x: GPUImage.Timestamp, y: GPUImage.Timestamp) -> Swift.Bool
 public class MultiplyBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class AddBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 open class OperationGroup : GPUImage.ImageProcessingOperation {
   public var sources: GPUImage.SourceContainer {
@@ -713,7 +670,7 @@ open class OperationGroup : GPUImage.ImageProcessingOperation {
   }
   public init()
   public func newTextureAvailable(_ texture: GPUImage.Texture, fromSourceIndex: Swift.UInt)
-  public func configureGroup(_ configurationOperation: (GPUImage.ImageRelay, GPUImage.ImageRelay) -> ())
+  public func configureGroup(_ configurationOperation: (_ input: GPUImage.ImageRelay, _ output: GPUImage.ImageRelay) -> ())
   public func transmitPreviousImage(to target: GPUImage.ImageConsumer, atIndex: Swift.UInt)
   @objc deinit
 }
@@ -736,7 +693,6 @@ public class Vignette : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ContrastAdjustment : GPUImage.BasicOperation {
   public var contrast: Swift.Float {
@@ -745,12 +701,10 @@ public class ContrastAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class NobleCornerDetector : GPUImage.HarrisCornerDetector {
   override public init()
   @objc deinit
-  override public init(fragmentShaderFunction: Swift.String)
 }
 public class PolarPixellate : GPUImage.BasicOperation {
   public var pixelSize: GPUImage.Size {
@@ -763,7 +717,6 @@ public class PolarPixellate : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class AdaptiveThreshold : GPUImage.OperationGroup {
   public var blurRadiusInPixels: Swift.Float {
@@ -783,11 +736,10 @@ open class LookupFilter : GPUImage.BasicOperation {
     set
   }
   public init()
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
   @objc deinit
 }
 public let standardImageVertices: [Swift.Float]
-extension MTLCommandBuffer {
+extension Metal.MTLCommandBuffer {
   public func clear(with color: GPUImage.Color, outputTexture: GPUImage.Texture)
   public func renderQuad(pipelineState: Metal.MTLRenderPipelineState, uniformSettings: GPUImage.ShaderUniformSettings? = nil, inputTextures: [Swift.UInt : GPUImage.Texture], useNormalizedTextureCoordinates: Swift.Bool = true, imageVertices: [Swift.Float] = standardImageVertices, outputTexture: GPUImage.Texture, outputOrientation: GPUImage.ImageOrientation = .portrait)
 }
@@ -799,7 +751,6 @@ public class ExposureAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public enum TextureTimingStyle {
   case stillImage
@@ -817,7 +768,7 @@ public class Texture {
   public init?(device: Metal.MTLDevice, orientation: GPUImage.ImageOrientation, pixelFormat: Metal.MTLPixelFormat = .bgra8Unorm, width: Swift.Int, height: Swift.Int, mipmapped: Swift.Bool = false, timingStyle: GPUImage.TextureTimingStyle = .stillImage)
   @objc deinit
 }
-extension Texture {
+extension GPUImage.Texture {
   public func aspectRatio(for rotation: GPUImage.Rotation) -> Swift.Float
   public func texelSize(for rotation: GPUImage.Rotation) -> GPUImage.Size
 }
@@ -828,7 +779,6 @@ public class GammaAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class HarrisCornerDetector : GPUImage.OperationGroup {
   public var blurRadiusInPixels: Swift.Float {
@@ -856,10 +806,10 @@ public enum PhysicalCameraLocation {
   case frontFacing
   public func device() -> AVFoundation.AVCaptureDevice?
   public static func == (a: GPUImage.PhysicalCameraLocation, b: GPUImage.PhysicalCameraLocation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum CameraError : Swift.Error, Swift.CustomStringConvertible {
   case avCaptureDeviceNotFound
@@ -870,10 +820,10 @@ public enum CameraError : Swift.Error, Swift.CustomStringConvertible {
     get
   }
   public static func == (a: GPUImage.CameraError, b: GPUImage.CameraError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc public class Camera : ObjectiveC.NSObject, GPUImage.ImageSource, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate, AVFoundation.AVCaptureAudioDataOutputSampleBufferDelegate {
   public var location: GPUImage.PhysicalCameraLocation {
@@ -904,7 +854,6 @@ public enum CameraError : Swift.Error, Swift.CustomStringConvertible {
   public func transmitPreviousImage(to target: GPUImage.ImageConsumer, atIndex: Swift.UInt)
   public func addAudioInputsAndOutputs() throws
   public func removeAudioInputsAndOutputs()
-  @objc override dynamic public init()
 }
 public class HighlightAndShadowTint : GPUImage.BasicOperation {
   public var shadowTintIntensity: Swift.Float {
@@ -925,17 +874,14 @@ public class HighlightAndShadowTint : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ColorDodgeBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class DifferenceBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class WhiteBalance : GPUImage.BasicOperation {
   public var temperature: Swift.Float {
@@ -948,7 +894,6 @@ public class WhiteBalance : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class RGBAdjustment : GPUImage.BasicOperation {
   public var red: Swift.Float {
@@ -965,7 +910,6 @@ public class RGBAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class DissolveBlend : GPUImage.BasicOperation {
   public var mix: Swift.Float {
@@ -974,7 +918,6 @@ public class DissolveBlend : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public let sharedMetalRenderingDevice: GPUImage.MetalRenderingDevice
 @_hasMissingDesignatedInitializers public class MetalRenderingDevice {
@@ -995,7 +938,6 @@ public class Halftone : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Pixellate : GPUImage.BasicOperation {
   public var fractionalWidthOfAPixel: Swift.Float {
@@ -1004,7 +946,6 @@ public class Pixellate : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public enum PictureInputError : Swift.Error, Swift.CustomStringConvertible {
   case cgImageNilError
@@ -1029,17 +970,15 @@ public class PictureInput : GPUImage.ImageSource {
 public class ColorBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class HueBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class SolidColorGenerator : GPUImage.ImageGenerator {
   public func renderColor(_ color: GPUImage.Color)
-  @objc deinit
   override public init?(size: GPUImage.Size)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers public class LowPassFilter : GPUImage.OperationGroup {
   public var strength: Swift.Float {
@@ -1088,28 +1027,27 @@ public class ShaderUniformSettings {
 public protocol UniformConvertible {
   func toFloatArray() -> [Swift.Float]
 }
-extension Float : GPUImage.UniformConvertible {
+extension Swift.Float : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
-extension Double : GPUImage.UniformConvertible {
+extension Swift.Double : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
-extension Position : GPUImage.UniformConvertible {
+extension GPUImage.Position : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
-extension Matrix3x3 : GPUImage.UniformConvertible {
+extension GPUImage.Matrix3x3 : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
-extension Matrix4x4 : GPUImage.UniformConvertible {
+extension GPUImage.Matrix4x4 : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
-extension Size : GPUImage.UniformConvertible {
+extension GPUImage.Size : GPUImage.UniformConvertible {
   public func toFloatArray() -> [Swift.Float]
 }
 public class ScreenBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class ColourFASTFeatureDetection : GPUImage.OperationGroup {
   public var blurRadiusInPixels: Swift.Float {
@@ -1133,7 +1071,6 @@ public class BrightnessAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class SphereRefraction : GPUImage.BasicOperation {
   public var radius: Swift.Float {
@@ -1150,7 +1087,6 @@ public class SphereRefraction : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class GlassSphereRefraction : GPUImage.BasicOperation {
   public var radius: Swift.Float {
@@ -1167,12 +1103,10 @@ public class GlassSphereRefraction : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ColorBurnBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class BulgeDistortion : GPUImage.BasicOperation {
   public var radius: Swift.Float {
@@ -1189,7 +1123,6 @@ public class BulgeDistortion : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class PolkaDot : GPUImage.BasicOperation {
   public var dotScaling: Swift.Float {
@@ -1202,7 +1135,6 @@ public class PolkaDot : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class LuminanceThreshold : GPUImage.BasicOperation {
   public var threshold: Swift.Float {
@@ -1211,7 +1143,6 @@ public class LuminanceThreshold : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 @_inheritsConvenienceInitializers public class EmbossFilter : GPUImage.Convolution3x3 {
   public var intensity: Swift.Float {
@@ -1232,7 +1163,6 @@ public class FalseColor : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class ThresholdSobelEdgeDetection : GPUImage.TextureSamplingOperation {
   public var edgeStrength: Swift.Float {
@@ -1245,7 +1175,6 @@ public class ThresholdSobelEdgeDetection : GPUImage.TextureSamplingOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class Sharpen : GPUImage.BasicOperation {
   public var sharpness: Swift.Float {
@@ -1256,12 +1185,10 @@ public class Sharpen : GPUImage.BasicOperation {
   public init()
   override public func newTextureAvailable(_ texture: GPUImage.Texture, fromSourceIndex: Swift.UInt)
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class CGAColorspaceFilter : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class OpacityAdjustment : GPUImage.BasicOperation {
   public var opacity: Swift.Float {
@@ -1270,7 +1197,6 @@ public class OpacityAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class HueAdjustment : GPUImage.BasicOperation {
   public var hue: Swift.Float {
@@ -1279,7 +1205,6 @@ public class HueAdjustment : GPUImage.BasicOperation {
   }
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class SaturationAdjustment : GPUImage.BasicOperation {
   public var saturation: Swift.Float {
@@ -1287,7 +1212,6 @@ public class SaturationAdjustment : GPUImage.BasicOperation {
     set
   }
   public init()
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
   @objc deinit
 }
 public class ToonFilter : GPUImage.TextureSamplingOperation {
@@ -1300,7 +1224,6 @@ public class ToonFilter : GPUImage.TextureSamplingOperation {
     set
   }
   public init()
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class HighPassFilter : GPUImage.OperationGroup {
@@ -1314,17 +1237,14 @@ public class ToonFilter : GPUImage.TextureSamplingOperation {
 public class LocalBinaryPattern : GPUImage.TextureSamplingOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class KuwaharaRadius3Filter : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public class DivideBlend : GPUImage.BasicOperation {
   public init()
   @objc deinit
-  override public init(vertexFunctionName: Swift.String? = super, fragmentFunctionName: Swift.String, numberOfInputs: Swift.UInt = super, operationName: Swift.String = #file, shaderLibrary: Metal.MTLLibrary? = super)
 }
 public protocol ImageSource {
   var targets: GPUImage.TargetContainer { get }
@@ -1341,13 +1261,13 @@ public protocol ImageProcessingOperation : GPUImage.ImageConsumer, GPUImage.Imag
 infix operator --> : AdditionPrecedence
 @discardableResult
 public func --> <T>(source: GPUImage.ImageSource, destination: T) -> T where T : GPUImage.ImageConsumer
-extension ImageSource {
+extension GPUImage.ImageSource {
   public func addTarget(_ target: GPUImage.ImageConsumer, atTargetIndex: Swift.UInt? = nil)
   public func removeAllTargets()
   public func remove(_ target: GPUImage.ImageConsumer)
   public func updateTargetsWithTexture(_ texture: GPUImage.Texture)
 }
-extension ImageConsumer {
+extension GPUImage.ImageConsumer {
   public func removeAllSources()
 }
 public class TargetContainer {

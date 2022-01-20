@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.1.0 - 1/19/22
+
+&bull; Added Swift Package Manager support<br>
+&bull; Fixed crash on iOS 15.2 that occurs when the user opens their Library for the first time
 
 ### 11.0.5 - 11/16/21
 
