@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		HwouzDobAzbRUszJTVhCDu0tHgQ=
+		TESHtHdisRNoGulJFryNraAqD0o=
 		</data>
 		<key>CameraBottomController.nib</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Headers/PixelSDK-Swift.h</key>
 		<data>
-		Mltkj2vp39AMQh/o5DBUpDlx35w=
+		b7RL62ieH+OSAVOxcpECmvUMWH8=
 		</data>
 		<key>Headers/PixelSDK.h</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QLA3cdc+4Wm1PixVl33KqqkGDw0=
+		Cc+VXtgmqKO0k19JSEnQUo5l89s=
 		</data>
 		<key>LibraryAlbumBrowserControllerCell.nib</key>
 		<data>
@@ -174,51 +174,51 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		nAN5KB5vz9QRyAGjc/K943zuAtM=
+		UpAvUJq+st9LCK/19we55ccx6Gw=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hSgvuSM/07i8g5O0Nl50DCcph3U=
+		qzP1FJdbGpRcSg9QToSxHDf/gv4=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qz49XDEJDJczFAkLKp62XkH+lPo=
+		ZnxnQmapmlqR1ubl6hMpFgfDEfg=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		nAN5KB5vz9QRyAGjc/K943zuAtM=
+		UpAvUJq+st9LCK/19we55ccx6Gw=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		hSgvuSM/07i8g5O0Nl50DCcph3U=
+		qzP1FJdbGpRcSg9QToSxHDf/gv4=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		qz49XDEJDJczFAkLKp62XkH+lPo=
+		ZnxnQmapmlqR1ubl6hMpFgfDEfg=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		n9JO40rdywAsOX/P9RrYdqZcYFg=
+		kPtf6lgq55FWDH69CHVn8qV+DWA=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ajHz0NU/8QflDjijvAhaK5oZkVU=
+		/LAXEeKuuWMOSn+SEj3d2ast1i4=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		T+vVHTAxhS1UhCFXZe8IAnANAzM=
+		UsV8NMdjH8Md+D3F1lyGA/fLJv0=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		n9JO40rdywAsOX/P9RrYdqZcYFg=
+		kPtf6lgq55FWDH69CHVn8qV+DWA=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		ajHz0NU/8QflDjijvAhaK5oZkVU=
+		/LAXEeKuuWMOSn+SEj3d2ast1i4=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		T+vVHTAxhS1UhCFXZe8IAnANAzM=
+		UsV8NMdjH8Md+D3F1lyGA/fLJv0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -291,7 +291,7 @@
 		</dict>
 		<key>default.metallib</key>
 		<data>
-		3yJQYQUzJflOlw/rZW+4w/IcKVk=
+		bzMuel04UMwGHywRB18i1m+jhAE=
 		</data>
 		<key>el.lproj/Localizable.strings</key>
 		<dict>
@@ -624,7 +624,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dyedubt9cpITRrBju3M9wdC9yyY9ZhIkOW6wkdlj4qw=
+			cOcJWBM7qG8BmSeqCVxtr9dTJSvFJ6VjU7AWbh4Rhgc=
 			</data>
 		</dict>
 		<key>CameraBottomController.nib</key>
@@ -848,7 +848,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G2tY98oFgZRgVTuhKEXQxs9dCIi7aZq9UEA2Mj0FWGU=
+			z/O/uhCdmiS76vHua7E0FnBn00toMOc0b+/z6gFLsu0=
 			</data>
 		</dict>
 		<key>Headers/PixelSDK.h</key>
@@ -911,84 +911,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mx9ueJ+70/xL5A1X+VdYe6X231yuznxe8QHngIwMFeE=
+			cKDVQFOpTfqYtaeuX1Xg8s9JXZjxC3D8LqzUWd3AAC4=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJoaJUB/p8wJpcoW/RaTJlenDMq6ZcoQcvymAUtJm68=
+			Jh24GTTKlnIdeHFpvvzCQdzVf2QA//FvWQLl8ivwycQ=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e768Qb/jDXtP9235y3gUtEytOCPJLj2hNnKFbtjAL7U=
+			M+w+1Z0nE5xO/XSUMfI/pB0us+GWuNuT5F0h/zllWeI=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mx9ueJ+70/xL5A1X+VdYe6X231yuznxe8QHngIwMFeE=
+			cKDVQFOpTfqYtaeuX1Xg8s9JXZjxC3D8LqzUWd3AAC4=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJoaJUB/p8wJpcoW/RaTJlenDMq6ZcoQcvymAUtJm68=
+			Jh24GTTKlnIdeHFpvvzCQdzVf2QA//FvWQLl8ivwycQ=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e768Qb/jDXtP9235y3gUtEytOCPJLj2hNnKFbtjAL7U=
+			M+w+1Z0nE5xO/XSUMfI/pB0us+GWuNuT5F0h/zllWeI=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T9jr8vEshalLo4iQDKmIayT9qWR/QIe6ESZwA0Klyew=
+			qnTe0b0ncLl6N+3xXPJuv6CaavUzlep6BF+QVP+Ur5s=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DpugVEAHObAtU4xra+Ilfnz1K9AffId44aRnT62KUyY=
+			IUHa1GeShaoNtJBuMH2HY/1rT72KXFkgQjoYA02Ylfw=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wdr1MdJu4XLzMlpZabqWigSd5XgejX/NDOmYjFxd/PE=
+			/nOBTvJYy4WJnLz1adk/jnc92jUUvKizJd75gNBpN0s=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T9jr8vEshalLo4iQDKmIayT9qWR/QIe6ESZwA0Klyew=
+			qnTe0b0ncLl6N+3xXPJuv6CaavUzlep6BF+QVP+Ur5s=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DpugVEAHObAtU4xra+Ilfnz1K9AffId44aRnT62KUyY=
+			IUHa1GeShaoNtJBuMH2HY/1rT72KXFkgQjoYA02Ylfw=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wdr1MdJu4XLzMlpZabqWigSd5XgejX/NDOmYjFxd/PE=
+			/nOBTvJYy4WJnLz1adk/jnc92jUUvKizJd75gNBpN0s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1082,7 +1082,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M1j1ShX04PmimPBIEXjY4VKyrlIM4C65NMfZXLEWzs8=
+			B5umX3H10e+jMUBpOyp1Y0k/gqQFYqoZur3RVjoLmt0=
 			</data>
 		</dict>
 		<key>el.lproj/Localizable.strings</key>
