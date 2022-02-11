@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		TESHtHdisRNoGulJFryNraAqD0o=
+		taMIDOCZ8YYjm1d9fGV7PKdKqaE=
 		</data>
 		<key>CameraBottomController.nib</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Cc+VXtgmqKO0k19JSEnQUo5l89s=
+		oQcm0oJVQx99kjTlV49U5B5rPfo=
 		</data>
 		<key>LibraryAlbumBrowserControllerCell.nib</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZnxnQmapmlqR1ubl6hMpFgfDEfg=
+		Fq36D+cOirm9sulX18tWJWmxKwA=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ZnxnQmapmlqR1ubl6hMpFgfDEfg=
+		Fq36D+cOirm9sulX18tWJWmxKwA=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UsV8NMdjH8Md+D3F1lyGA/fLJv0=
+		bXDWuJu/XLFdPtFIPbQPmwx3F0I=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		UsV8NMdjH8Md+D3F1lyGA/fLJv0=
+		bXDWuJu/XLFdPtFIPbQPmwx3F0I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -624,7 +624,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cOcJWBM7qG8BmSeqCVxtr9dTJSvFJ6VjU7AWbh4Rhgc=
+			5h58kc9XYohsHfQVWR3JuMLkHWse1qZ4QgU2sonvwzk=
 			</data>
 		</dict>
 		<key>CameraBottomController.nib</key>
@@ -925,7 +925,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M+w+1Z0nE5xO/XSUMfI/pB0us+GWuNuT5F0h/zllWeI=
+			wKv2mlkoUFKaekCtv7pqyg/2zL5OiONBn4ydn/FHuHY=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64.swiftdoc</key>
@@ -946,7 +946,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M+w+1Z0nE5xO/XSUMfI/pB0us+GWuNuT5F0h/zllWeI=
+			wKv2mlkoUFKaekCtv7pqyg/2zL5OiONBn4ydn/FHuHY=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -967,7 +967,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/nOBTvJYy4WJnLz1adk/jnc92jUUvKizJd75gNBpN0s=
+			TYrUe7Y0cKUc2kXchx7/higXsEg3Yt7jqLpRhq0slTo=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -988,7 +988,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/nOBTvJYy4WJnLz1adk/jnc92jUUvKizJd75gNBpN0s=
+			TYrUe7Y0cKUc2kXchx7/higXsEg3Yt7jqLpRhq0slTo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

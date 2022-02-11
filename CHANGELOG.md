@@ -1,5 +1,10 @@
 # Changelog
 
+### 11.1.1 - 2/10/22
+
+&bull; Fixed issue where editing media of certain sizes would cause the UI to freeze (e.g. selfies from the native Camera app)<br>
+&bull; General bug fixes and stability improvements
+
 ### 11.1.0 - 1/19/22
 
 &bull; Added Swift Package Manager support<br>
