@@ -1,23 +1,22 @@
 PODS:
-  - PixelSDK (11.1.0):
+  - PixelSDK (11.1.1):
     - PixelSDK-GPUImage3 (~> 3.0)
-  - PixelSDK-GPUImage3 (3.1.0)
+  - PixelSDK-GPUImage3 (3.1.1)
 
 DEPENDENCIES:
   - PixelSDK (from `../PixelSDK.podspec`)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - PixelSDK-GPUImage3
+  - PixelSDK-GPUImage3 (from `../../GPUImage3/PixelSDK-GPUImage3.podspec`)
 
 EXTERNAL SOURCES:
   PixelSDK:
     :podspec: "../PixelSDK.podspec"
+  PixelSDK-GPUImage3:
+    :podspec: "../../GPUImage3/PixelSDK-GPUImage3.podspec"
 
 SPEC CHECKSUMS:
-  PixelSDK: 7e8921cde7b1d6e72cb274cd8f25cec68f44c933
-  PixelSDK-GPUImage3: 4036d2a6188fa0afbbf99ede47f0520c9a5df3f9
+  PixelSDK: 7130912e38481235f33815d928f4a6e90e8a87c2
+  PixelSDK-GPUImage3: 7024652fa01edc13c66ecc878b0696239464c32b
 
-PODFILE CHECKSUM: 79b82a0f7e6f394eddc31f60b1ddd0470bc90801
+PODFILE CHECKSUM: 3f50319b487b31032c251463cca85b3a88bc0b80
 
 COCOAPODS: 1.11.2
