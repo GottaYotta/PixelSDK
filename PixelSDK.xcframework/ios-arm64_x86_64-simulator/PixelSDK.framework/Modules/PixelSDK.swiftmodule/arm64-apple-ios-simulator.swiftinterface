@@ -834,7 +834,7 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
     get
     set
   }
-  public static let defaultInstaFilters: [SessionFilter]
+  public static let defaultStandardFilters: [SessionFilter]
   public static let defaultVisualEffectFilters: [SessionFilter]
   @objc public var apiKey: Swift.String? {
     @objc get
@@ -854,7 +854,7 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
     get
     set
   }
-  @available(*, deprecated, renamed: "defaultInstaFilters")
+  @available(*, deprecated, renamed: "defaultStandardFilters")
   public static var instaFilters: () -> [SessionFilter] {
     get
   }
@@ -862,6 +862,8 @@ extension BottomBarProvider where Self : UIKit.UIViewController {
   public static var visualEffectFilters: () -> [SessionFilter] {
     get
   }
+  @available(*, deprecated, renamed: "defaultStandardFilters")
+  public static let defaultInstaFilters: [SessionFilter]
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class SessionFilterVignette : SessionFilter {

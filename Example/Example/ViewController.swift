@@ -20,8 +20,8 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func fullEditorWithInstaFilters() {
-        PixelSDK.shared.primaryFilters = PixelSDK.defaultInstaFilters
+    @IBAction func fullEditorWithStandardFilters() {
+        PixelSDK.shared.primaryFilters = PixelSDK.defaultStandardFilters
         
         let container = ContainerController()
         container.editControllerDelegate = self
