@@ -34,8 +34,8 @@
 /* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom image. "w/" means "with". */
 "ta1-D0-g0P.text" = "तदनुकूल चित्र सत्र के साथ Controller संपादन";
 
-/* Leave the word "Insta" in English. Pressing this button displays the app with photo/video filters that are like Instagram filters. */
-"z19-hF-Xnu.text" = "Insta फिल्‍टर्स के साथ पूर्ण एडिटर";
+/* Pressing this button displays the app with standard photo/video filters. */
+"z19-hF-Xnu.text" = "Standard फिल्‍टर्स के साथ पूर्ण एडिटर";
 /* Portrait means portrait orientation. Pressing this button displays the photo/video editing app, but photos and videos can only be made in the portrait orientation. */
 "KJq-QJ-ATC.text" = "केवल पोर्ट्रेट सामग्री";
 

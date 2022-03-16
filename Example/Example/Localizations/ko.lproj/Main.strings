@@ -34,8 +34,8 @@
 /* Leave the words "Session" and "Controller" in English. Pressing this button displays the app with a custom image. "w/" means "with". */
 "ta1-D0-g0P.text" = "사용자 지정 이미지 Session을 사용한 편집 Controller";
 
-/* Leave the word "Insta" in English. Pressing this button displays the app with photo/video filters that are like Instagram filters. */
-"z19-hF-Xnu.text" = "Insta 필터를 사용한 전체 편집기";
+/* Pressing this button displays the app with standard photo/video filters. */
+"z19-hF-Xnu.text" = "Standard 필터를 사용한 전체 편집기";
 /* Portrait means portrait orientation. Pressing this button displays the photo/video editing app, but photos and videos can only be made in the portrait orientation. */
 "KJq-QJ-ATC.text" = "세로 콘텐츠만";
 

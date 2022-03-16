@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.1.2 - 3/15/22
+
+&bull; Updated example
+
 ### 11.1.1 - 2/10/22
 
 &bull; Fixed issue where editing media of certain sizes would cause the UI to freeze (e.g. selfies from the native Camera app)<br>
