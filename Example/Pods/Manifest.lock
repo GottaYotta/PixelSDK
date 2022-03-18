@@ -1,5 +1,5 @@
 PODS:
-  - PixelSDK (11.1.2):
+  - PixelSDK (11.1.3):
     - PixelSDK-GPUImage3 (~> 3.0)
   - PixelSDK-GPUImage3 (3.1.1)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :podspec: "../PixelSDK.podspec"
 
 SPEC CHECKSUMS:
-  PixelSDK: a83aba190b7c3aee74ae0cf5769c91ce35d092f6
+  PixelSDK: c5be7b3808790488228cf0ce6a0b478654f9216a
   PixelSDK-GPUImage3: 6a66cfca487b57219e557a6a31b21d5bd6480bea
 
 PODFILE CHECKSUM: 79b82a0f7e6f394eddc31f60b1ddd0470bc90801

@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.1.3 - 3/17/22
+
+&bull; Prevent Xcode from automatically changing framework version when an app is distributed
+
 ### 11.1.2 - 3/15/22
 
 &bull; Updated example
