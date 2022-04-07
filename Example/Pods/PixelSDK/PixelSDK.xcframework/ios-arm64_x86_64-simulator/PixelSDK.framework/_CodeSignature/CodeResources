@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		5b3i4SV1y0+VB4kFzSAer8CuCoE=
+		5kaCRZrzU3FvzVIzOZvVnE2jq5s=
 		</data>
 		<key>CameraBottomController.nib</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>EditController.nib</key>
 		<data>
-		7TsPDSUBj2vOn/zjDL1iLcVfMa4=
+		XmAtLiCB57PPg7XKyMmx/uDGMLE=
 		</data>
 		<key>EditFilterController.nib</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Headers/PixelSDK-Swift.h</key>
 		<data>
-		ceLXsJPGyjOkKClBqt1vhiDk+oA=
+		VfLpLQd6t2duO9SiAWDxUq7qK1E=
 		</data>
 		<key>Headers/PixelSDK.h</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bQnvJfPyalqifxmm94L3ByN5EYY=
+		LcNs67N/mxDkseBkPol83jJV69Q=
 		</data>
 		<key>LibraryAlbumBrowserControllerCell.nib</key>
 		<data>
@@ -174,27 +174,27 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		6I+nrhFOwkLtoqVc+Tu6BFNccSE=
+		hrQMpwG3++jjoyb2onZF7uEa2R0=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bCpDb5in/OIsaaQGv8dCSJxoDl0=
+		klG7vCoCINfYP7nNCKQQBuLAccM=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		o9Bm+owQrTLyq9KMnmvEf0yqK2Y=
+		NGRVHcSgnLgjIi0w4SakxjtKceE=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		XBI6yVKKWHGa/nY9KSYfSkwz8gI=
+		AJnNk9awoxDX7Qlg5gRZaigNf1g=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		OkaI2TPvQqMyGZ1HsueyIiFNsYI=
+		I1OqmSBMTEg6RAIRSX/ahU7mvng=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Scr+q3RMJX6vVIMF0UCgcLJyDt4=
+		+CvzE0b1SPwb1Zq0TfICm5HyuPg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -600,7 +600,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OXZDeRKTw4Xa2DQ32568dTd6/dt6xyBNX52aK/dM0xQ=
+			aHFhDt4Vt9PB9vMrX4OSyrY8bj02B5/h5uL0CrFdmko=
 			</data>
 		</dict>
 		<key>CameraBottomController.nib</key>
@@ -698,7 +698,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OFuXvS0ssh9hwhjjdG18xshVY8CFfiszACNthIRDmS4=
+			6SKV/5C0zr68yO1zJZvdT/Z5FTMtBvP4B3HRxh4JlKo=
 			</data>
 		</dict>
 		<key>EditFilterController.nib</key>
@@ -824,7 +824,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8k4ttwqdwJ8nr4QVqnw6dhum8/bytzeiXXBgKVsVMKo=
+			G+fnwdvhrjAcjJPR9HZNfycqvIF9/hLdpNHCDW1EwAE=
 			</data>
 		</dict>
 		<key>Headers/PixelSDK.h</key>
@@ -887,42 +887,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ql2nHF0igxylArFTvICp7wH+Nn4Mv9VQcuDH2fT9U3Q=
+			g5mU27Wd2R/LNdPWkpAPnXLS3cG34V4Ih5FhCQIXWRc=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W0F7zfyjC3uH2YFlz41oSWIcTsocVBns85EcMGUvJqE=
+			EPowyw4zVtwM9bDnTR4+TK156HrikjCRqk9TFAuU6Es=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DP343YWTyqDqRxySZS2sTWnHVacAqyXPqmnDpGmqSSM=
+			3sj1H+pydXbSF3kF4KExwEAb7z2QnjOzksL65mP0uxQ=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2gcQJufELTfOwEcU+mOy+2jumjrrlZ9Q/Ibn1M/ACJc=
+			ZowSDytGyqHxsC9ETSgJp2leBkXdjvaDq/GBI6NhB4k=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kl5g0Q/rVA76G9noMZGdccMz6YmzIAztHeqEMEeTvnk=
+			0/aTKntxxaawfOiDtK6QsRXv2G4q7ZdRy8DL7Fp6FP8=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9RxCeD1NPa5/tbsOQqHeG33GdxStLBfzsBQfj3rljaI=
+			L4NvcKJvzWAD2xP45FROzjoJs/nun2yX2Tk42WwY+rA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

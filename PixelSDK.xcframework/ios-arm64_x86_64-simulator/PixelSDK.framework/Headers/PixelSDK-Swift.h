@@ -224,6 +224,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @protocol CameraControllerDelegate;
+@class UIView;
 @class AVCapturePhotoSettings;
 @class NSCoder;
 @class UITraitCollection;
@@ -269,6 +270,12 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 /// When true, the user may double tap anywhere inside the camera view to switch between the front and back facing camera.
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL doubleTapForFrontFacingCamera;
+/// Optionally provide a custom view for the photo camera button. Your view must determine its own size with intrinsic content size or constraints.
+/// Default value: <code>nil</code>
+@property (nonatomic, strong) UIView * _Nullable photoCameraButtonView;
+/// Optionally provide a custom view for the video camera button. Your view must determine its own size with intrinsic content size or constraints.
+/// Default value: <code>nil</code>
+@property (nonatomic, strong) UIView * _Nullable videoCameraButtonView;
 /// The <a href="https://developer.apple.com/documentation/avfoundation/avcapturesession/preset">session preset</a> for video capture.
 /// Default value: <code>.high</code>
 @property (nonatomic) AVCaptureSessionPreset _Nonnull videoPreset;
@@ -320,7 +327,6 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 
 
 
-@class UIView;
 
 @interface CameraController (SWIFT_EXTENSION(PixelSDK))
 - (void)setNeedsBottomBarAppearanceUpdate;
@@ -1558,6 +1564,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @protocol CameraControllerDelegate;
+@class UIView;
 @class AVCapturePhotoSettings;
 @class NSCoder;
 @class UITraitCollection;
@@ -1603,6 +1610,12 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 /// When true, the user may double tap anywhere inside the camera view to switch between the front and back facing camera.
 /// Default value: <code>true</code>
 @property (nonatomic) BOOL doubleTapForFrontFacingCamera;
+/// Optionally provide a custom view for the photo camera button. Your view must determine its own size with intrinsic content size or constraints.
+/// Default value: <code>nil</code>
+@property (nonatomic, strong) UIView * _Nullable photoCameraButtonView;
+/// Optionally provide a custom view for the video camera button. Your view must determine its own size with intrinsic content size or constraints.
+/// Default value: <code>nil</code>
+@property (nonatomic, strong) UIView * _Nullable videoCameraButtonView;
 /// The <a href="https://developer.apple.com/documentation/avfoundation/avcapturesession/preset">session preset</a> for video capture.
 /// Default value: <code>.high</code>
 @property (nonatomic) AVCaptureSessionPreset _Nonnull videoPreset;
@@ -1654,7 +1667,6 @@ SWIFT_CLASS("_TtC8PixelSDK16CameraController")
 
 
 
-@class UIView;
 
 @interface CameraController (SWIFT_EXTENSION(PixelSDK))
 - (void)setNeedsBottomBarAppearanceUpdate;

@@ -1321,6 +1321,14 @@ public enum CameraControlButton {
     get
     set
   }
+  @objc @_Concurrency.MainActor(unsafe) public var photoCameraButtonView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var videoCameraButtonView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) public var aspectRatio: CoreGraphics.CGSize? {
     get
     set
