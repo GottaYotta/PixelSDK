@@ -1,5 +1,10 @@
 # Changelog
 
+### 11.2.0 - 4/6/22
+
+&bull; Added support for custom camera button<br>
+&bull; If content is watermarked, use a generic watermark when app is published on App Store
+
 ### 11.1.4 - 3/18/22
 
 &bull; General bug fixes and stability improvements
