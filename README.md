@@ -2,7 +2,7 @@
 Pixel SDK is a photo and video editing framework written in Swift.
 
 <p align="center">
-<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/library_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_7_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gif" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
+<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/library_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_1_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_7_border.jpg" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>&nbsp;<img src="https://www.cdn.pixelsdk.com/assets/img/screenshots/sdk/edit_3_border.gifx" alt="Screenshot" width="23.6%" height="auto" class="docs-screenshot"/>
 </p>
 
 - [Features](#features)
