@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PixelSDK
 import AVFoundation
 import AudioToolbox
@@ -1283,6 +1283,12 @@ extension UIKit.UIDevice {
   @objc optional func cameraControllerDidCancel(_ cameraController: PixelSDK.CameraController)
   @objc optional func cameraController(_ cameraController: PixelSDK.CameraController, didFinishWithSession session: PixelSDK.Session)
   @objc optional func cameraController(_ cameraController: PixelSDK.CameraController, willShowEditController editController: PixelSDK.EditController, withSession session: PixelSDK.Session)
+  @objc optional func cameraControllerPhotoCameraButtonTouchesBegan(_ cameraController: PixelSDK.CameraController)
+  @objc optional func cameraControllerPhotoCameraButtonTouchesEnded(_ cameraController: PixelSDK.CameraController)
+  @objc optional func cameraControllerPhotoCameraButtonTouchesCancelled(_ cameraController: PixelSDK.CameraController)
+  @objc optional func cameraControllerVideoCameraButtonTouchesBegan(_ cameraController: PixelSDK.CameraController)
+  @objc optional func cameraControllerVideoCameraButtonTouchesEnded(_ cameraController: PixelSDK.CameraController)
+  @objc optional func cameraControllerVideoCameraButtonTouchesCancelled(_ cameraController: PixelSDK.CameraController)
 }
 public enum CameraControlButton {
   case cross

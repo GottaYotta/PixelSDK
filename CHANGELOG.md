@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.3.0 - 6/28/22
+
+&bull; Added delegate methods to `CameraControllerDelegate` for camera button presses<br>
+
 ### 11.2.0 - 4/6/22
 
 &bull; Added support for custom camera button<br>
