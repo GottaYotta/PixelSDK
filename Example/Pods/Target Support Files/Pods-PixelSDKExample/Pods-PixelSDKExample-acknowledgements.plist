@@ -14,6 +14,19 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Make sure you [generate an API key](https://www.pixelsdk.com/dashboard/api-keys/) before releasing your app. The following [pricing options](https://www.pixelsdk.com/#pricing) are available for your API key.
+
+Without an API key, image and video exports will include a watermark.
+</string>
+			<key>License</key>
+			<string>https://www.pixelsdk.com/terms-of-use/</string>
+			<key>Title</key>
+			<string>PixelSDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2018, Brad Larson and Janie Clayton.
 All rights reserved.
 

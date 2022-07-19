@@ -16,7 +16,6 @@
 			dependencies = (
 			);
 			name = "PixelSDK-GPUImage3";
-			productName = "PixelSDK-GPUImage3";
 		};
 		E4CCE2DEE87A7CB6ED83791A3E4813FB /* PixelSDK */ = {
 			isa = PBXAggregateTarget;
@@ -28,7 +27,6 @@
 				AA5A6564B46A0DE441D2498B4159FF89 /* PBXTargetDependency */,
 			);
 			name = PixelSDK;
-			productName = PixelSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -68,13 +66,13 @@
 		06F17AAD104459A88D44032C91621CE4 /* PixelSDK-GPUImage3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.release.xcconfig"; sourceTree = "<group>"; };
 		10BADC3393B04F8F8126D9FFB8BD3A17 /* PixelSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PixelSDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		22C12FA40F67E915AE47D5BC1F06FC7F /* Pods-PixelSDKExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PixelSDKExample-umbrella.h"; sourceTree = "<group>"; };
-		33FF3D14AB1E9B204E685C89A6FDA902 /* GPUImage.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GPUImage.xcframework; path = framework/Build/GPUImage.xcframework; sourceTree = "<group>"; };
+		33FF3D14AB1E9B204E685C89A6FDA902 /* GPUImage.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GPUImage.xcframework; path = framework/Build/GPUImage.xcframework; sourceTree = "<group>"; };
 		4A5AC0300B0B8D792C098EF0EEF448C5 /* PixelSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.debug.xcconfig; sourceTree = "<group>"; };
 		526E583A8E6C91A8F68288ADB9A97896 /* Pods-PixelSDKExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PixelSDKExample.modulemap"; sourceTree = "<group>"; };
 		6B9F670E8D5BBF0F38B5DED6D5C4A986 /* PixelSDK-GPUImage3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PixelSDK-GPUImage3.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		83762A96A9A5871F9AB3C03571E5032E /* PixelSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PixelSDK.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5FA19946870E02730B3CEA023A85218 /* Pods-PixelSDKExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PixelSDKExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B1BFAAB9F6E1B7F92A46A61F065B07E8 /* Pods-PixelSDKExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PixelSDKExample"; path = Pods_PixelSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A6FADB9B55BB78895680A2B6BC998A /* PixelSDK-GPUImage3-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PixelSDK-GPUImage3-xcframeworks.sh"; sourceTree = "<group>"; };
@@ -82,7 +80,7 @@
 		C0D191A121B731528ED16ADCAE566EA0 /* Pods-PixelSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PixelSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C95EEF0049292DF53CD505E4E3799AB2 /* Pods-PixelSDKExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PixelSDKExample-Info.plist"; sourceTree = "<group>"; };
 		D45A6E0B9CB544D61657B3F2F4BC3141 /* Pods-PixelSDKExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PixelSDKExample-frameworks.sh"; sourceTree = "<group>"; };
-		EF202458552D4C3D446C08519AA61DB4 /* PixelSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = PixelSDK.xcframework; sourceTree = "<group>"; };
+		EF202458552D4C3D446C08519AA61DB4 /* PixelSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = PixelSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +109,7 @@
 				A83C552DD43E530E571A5C59BE7DB17B /* Frameworks */,
 				A3B717446483283FBB6B96F1B5B854C5 /* Support Files */,
 			);
+			name = "PixelSDK-GPUImage3";
 			path = "PixelSDK-GPUImage3";
 			sourceTree = "<group>";
 		};
@@ -199,6 +198,7 @@
 				32719FF20071F388F34F061C7CFAB3F7 /* Frameworks */,
 				E8F3F162B97464E1E86403410279B58E /* Support Files */,
 			);
+			name = PixelSDK;
 			path = PixelSDK;
 			sourceTree = "<group>";
 		};

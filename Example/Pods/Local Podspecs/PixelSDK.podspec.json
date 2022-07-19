@@ -12,7 +12,8 @@
     "ios": "11.0"
   },
   "source": {
-    "http": "file:/Users/joshbernfeld/Repositories/PixelSDK/PixelSDK.xcframework.zip"
+    "git": "https://github.com/GottaYotta/PixelSDK.git",
+    "tag": "11.3.0"
   },
   "vendored_frameworks": "PixelSDK.xcframework",
   "ios": {

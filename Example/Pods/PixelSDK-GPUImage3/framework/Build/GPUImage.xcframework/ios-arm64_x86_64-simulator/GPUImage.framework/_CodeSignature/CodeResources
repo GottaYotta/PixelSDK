@@ -6,59 +6,35 @@
 	<dict>
 		<key>Headers/GPUImage-Swift.h</key>
 		<data>
-		cO/E3hVo4TRsmWur2Nw1W3RgGB4=
+		pUIA5GiG33fZsLFmLtLWxyupnI0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q6hE6vzE36Q3G9CX6w+/QdhW+sI=
+		7u63TaITPbJ+1a7BU8kcjQn2R0o=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		7k/8GJvFnPdGa7uxx1qv+KqiYlA=
+		xvNx612NWlCkPnRu/dnDD8566wk=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NREXFRkVBL8fcJ8ZKRXvFNcvCvE=
+		Z7ZhAus7Gl4w+S+9fj4Z9cpVVuI=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MIvOGW2/UnlLw6iSd2+/K1G9UNs=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		7k/8GJvFnPdGa7uxx1qv+KqiYlA=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		NREXFRkVBL8fcJ8ZKRXvFNcvCvE=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		MIvOGW2/UnlLw6iSd2+/K1G9UNs=
+		/AZloqbtu1tbaOyS/si2I8XlZzc=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		/N5RWDXDv4LZzbNC0kgW/5SkkRo=
+		BnsOqS7koC5D68XFPymNKFbQFxo=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EHfjisf6z8ODf0dR9OATWxpZAqc=
+		WUvgVM3N6++IIrXiDeWqoOORrGM=
 		</data>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		3nOXAGW/Xo9i1qBONl0klX/VRkc=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		/N5RWDXDv4LZzbNC0kgW/5SkkRo=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		EHfjisf6z8ODf0dR9OATWxpZAqc=
-		</data>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		3nOXAGW/Xo9i1qBONl0klX/VRkc=
+		wLako2HWAyD6KVdFc3N7ya8s2jo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -66,7 +42,7 @@
 		</data>
 		<key>default.metallib</key>
 		<data>
-		yHjZYOd6w4Y7I/H1XzITJKfwy8I=
+		7u9Pv8DR7eNZD9z7cFCAtmafv7o=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -75,91 +51,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F51S4FEZWb3f6pJpwFkkHnwHxhVN5lOVjzBoRuDLQGE=
+			gS8CITrhpheB3Rv9yo1RoIpWipcuViYjCRbMsjQGlQg=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			69YmUk9JI+v1v0IbY5W2+D7CABI8q0tc8bA5yvxNCKs=
+			pxcydp7lYLtmTpPbDLMZidNhp8Gs3umsjyJf88CKlVw=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i7sE59c43pkMv72B8HQck6n0LJwWHOwi/Cx4usUb5qk=
+			fZkuA7yEwjoostxZlA7ZCNzgltQr0rNlcmZClfcKv9Q=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q6sM19T0q0+5GjwzSim7AznS3CxCq23xmYSfpRKIB20=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			69YmUk9JI+v1v0IbY5W2+D7CABI8q0tc8bA5yvxNCKs=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			i7sE59c43pkMv72B8HQck6n0LJwWHOwi/Cx4usUb5qk=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			q6sM19T0q0+5GjwzSim7AznS3CxCq23xmYSfpRKIB20=
+			q/6i8C3aFaPjN0FnNn7Z7Vs+TZEPOu0m9E8yMkK/MuQ=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cbwYrs1P9AZvLyKQAsyTTnyit/lkIpsnJTAuRLvhBo8=
+			t+7EQx0bWBe7I2ORC9G/ddgsFLjaXisEqXZLpTNkAAY=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dBFth4CUwYGrPIEf5LyJL7rqgu6VK3evq/Z7D2bx+dw=
+			6HYEUZ4QDuZrcsbFP9aRdc37tg08vxIViGLip/rcqow=
 			</data>
 		</dict>
 		<key>Modules/GPUImage.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HsP7v3GjGec2ksEToi4eTGswMlWMjzJ37RAy3xjCVq0=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			cbwYrs1P9AZvLyKQAsyTTnyit/lkIpsnJTAuRLvhBo8=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dBFth4CUwYGrPIEf5LyJL7rqgu6VK3evq/Z7D2bx+dw=
-			</data>
-		</dict>
-		<key>Modules/GPUImage.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HsP7v3GjGec2ksEToi4eTGswMlWMjzJ37RAy3xjCVq0=
+			msXQJIFDNwcF5dglTtwoCS4H7IgslAhSe6iCVMZ3/XE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -173,7 +107,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TtbiWo0TdMuBmfiJNlEd5H8FHrjKo2et1+eJu4gH68o=
+			Q0gdJ5LKW0Y540hIzNjfrjtJ63lduvhVbQa+jmwWTrI=
 			</data>
 		</dict>
 	</dict>
