@@ -1,8 +1,12 @@
 # Changelog
 
+### 11.3.1 - 7/24/22
+
+&bull; General bug fixes and stability improvements
+
 ### 11.3.0 - 6/28/22
 
-&bull; Added delegate methods to `CameraControllerDelegate` for camera button presses<br>
+&bull; Added delegate methods to `CameraControllerDelegate` for camera button presses
 
 ### 11.2.0 - 4/6/22
 

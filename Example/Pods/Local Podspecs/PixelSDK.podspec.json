@@ -1,6 +1,6 @@
 {
   "name": "PixelSDK",
-  "version": "11.3.0",
+  "version": "11.3.1",
   "license": "https://www.pixelsdk.com/terms-of-use/",
   "summary": "Pixel SDK is a photo and video editing framework written in Swift.",
   "homepage": "https://www.pixelsdk.com",
@@ -12,8 +12,7 @@
     "ios": "11.0"
   },
   "source": {
-    "git": "https://github.com/GottaYotta/PixelSDK.git",
-    "tag": "11.3.0"
+    "http": "file:/Users/joshbernfeld/Repositories/PixelSDK/PixelSDK.xcframework.zip"
   },
   "vendored_frameworks": "PixelSDK.xcframework",
   "ios": {
