@@ -1,5 +1,9 @@
 # Changelog
 
+### 11.3.2 - 8/2/22
+
+&bull; Fixed issue where some videos could not be selected from the library
+
 ### 11.3.1 - 7/24/22
 
 &bull; General bug fixes and stability improvements

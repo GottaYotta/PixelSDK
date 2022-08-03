@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Kc2ULstFlFMm3szNrmLiStesRVY=
+		NcDzBcU3ZZ36ypPS6d9QOZXuNYs=
 		</data>
 		<key>CameraBottomController.nib</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WKKaIzwxlibkmAFE9SJY0BoBIWg=
+		8pLmez/uKPfHuzg6uSKra79cMYQ=
 		</data>
 		<key>LibraryAlbumBrowserControllerCell.nib</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Srnf78z8ANOG1gdAK0YrOVmPlmU=
+		8z63UWimv4wiM63bmvj8rS1bLCY=
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hbT1QP/xiI0cYbitScKFeVtIBgI=
+		n2/X0A7fk1udODcGcWHJasah4W0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -600,7 +600,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y6aDvPiDEb2zv1BOMsm1oEP77wOlyfY1ytvmiMqDPH8=
+			W3sJCoLz4hBWBhKe9VaQ0/EkK0rqRkpb61AAbwo8398=
 			</data>
 		</dict>
 		<key>CameraBottomController.nib</key>
@@ -901,7 +901,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FQC4q8mby5Pltr8xR20BXGwEWi1vMuHHq6QXmUgwx9I=
+			e1Jg5kRoIpploE2lD38ld1d9lNgHHRf3SsxW32C1ceI=
 			</data>
 		</dict>
 		<key>Modules/PixelSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -922,7 +922,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+26S57wAXgd2oy5TwuJ2i1pvQAgKnJsZZzsmNshh5Do=
+			eWe2iaQJWTbM3nWNUo7NTaYaELOGuC1FLQvn5sBSIyw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
