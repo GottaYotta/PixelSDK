@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0238102799EE1000F81346 /* PixelSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1F02380F2799EE1000F81346 /* PixelSDK */; };
 		1F0902B124CA732D0034473B /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0902B024CA732D0034473B /* RPCircularProgress.swift */; };
 		1F161F222436995D008F0E73 /* PHPhotoLibrary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */; };
 		1FC45F09246126EB00BF87F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC45F07246126EB00BF87F7 /* Main.storyboard */; };
@@ -44,11 +45,9 @@
 		1FD0BB2624358EAD00588233 /* test_1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0BB2324358EAD00588233 /* test_1.mov */; };
 		1FD0BB2724358EAD00588233 /* test_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0BB2424358EAD00588233 /* test_2.mp4 */; };
 		1FD0BB2824358EAD00588233 /* test_3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0BB2524358EAD00588233 /* test_3.mp4 */; };
-		F6D3ED8E932393BE3EF68920 /* Pods_PixelSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D210D24085027C9CE622875 /* Pods_PixelSDKExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D210D24085027C9CE622875 /* Pods_PixelSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0902B024CA732D0034473B /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCircularProgress.swift; sourceTree = "<group>"; };
 		1F161F212436995D008F0E73 /* PHPhotoLibrary+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Additions.swift"; sourceTree = "<group>"; };
 		1FC45F08246126EB00BF87F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Localizations/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,8 +208,6 @@
 		1FD0BB2324358EAD00588233 /* test_1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test_1.mov; sourceTree = "<group>"; };
 		1FD0BB2424358EAD00588233 /* test_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_2.mp4; sourceTree = "<group>"; };
 		1FD0BB2524358EAD00588233 /* test_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_3.mp4; sourceTree = "<group>"; };
-		7D4DB6D47010B9D22F69C6DF /* Pods-PixelSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelSDKExample.release.xcconfig"; path = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.release.xcconfig"; sourceTree = "<group>"; };
-		B782BA7C96D63D0621B7AE53 /* Pods-PixelSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelSDKExample.debug.xcconfig"; path = "Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,20 +215,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D3ED8E932393BE3EF68920 /* Pods_PixelSDKExample.framework in Frameworks */,
+				1F0238102799EE1000F81346 /* PixelSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F7C42E62798DB5B00DB2BD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1FCA58B223B6BDEB0087B542 = {
 			isa = PBXGroup;
 			children = (
 				1FCA58D223B6BE530087B542 /* Example */,
 				1FCA58BC23B6BDEB0087B542 /* Products */,
-				7199344128193F63F7CB1C4B /* Pods */,
-				E0EF7D2797093AF8B3AC3ABA /* Frameworks */,
+				1F7C42E62798DB5B00DB2BD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,23 +315,6 @@
 			path = Extra;
 			sourceTree = "<group>";
 		};
-		7199344128193F63F7CB1C4B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B782BA7C96D63D0621B7AE53 /* Pods-PixelSDKExample.debug.xcconfig */,
-				7D4DB6D47010B9D22F69C6DF /* Pods-PixelSDKExample.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		E0EF7D2797093AF8B3AC3ABA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0D210D24085027C9CE622875 /* Pods_PixelSDKExample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,17 +322,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FCA58CF23B6BDED0087B542 /* Build configuration list for PBXNativeTarget "PixelSDKExample" */;
 			buildPhases = (
-				6094B3168B351EAD897708B8 /* [CP] Check Pods Manifest.lock */,
 				1FCA58B723B6BDEB0087B542 /* Sources */,
 				1FCA58B823B6BDEB0087B542 /* Frameworks */,
 				1FCA58B923B6BDEB0087B542 /* Resources */,
-				255E4CB0B1B79ED6FC4A9AE7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PixelSDKExample;
+			packageProductDependencies = (
+				1F02380F2799EE1000F81346 /* PixelSDK */,
+			);
 			productName = PixelSDKExample;
 			productReference = 1FCA58BB23B6BDEB0087B542 /* Pixel SDK.app */;
 			productType = "com.apple.product-type.application";
@@ -415,6 +402,9 @@
 				hr,
 			);
 			mainGroup = 1FCA58B223B6BDEB0087B542;
+			packageReferences = (
+				1F02380E2799EE1000F81346 /* XCRemoteSwiftPackageReference "PixelSDK" */,
+			);
 			productRefGroup = 1FCA58BC23B6BDEB0087B542 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -447,48 +437,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		255E4CB0B1B79ED6FC4A9AE7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelSDKExample/Pods-PixelSDKExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6094B3168B351EAD897708B8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PixelSDKExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FCA58B723B6BDEB0087B542 /* Sources */ = {
@@ -802,7 +750,6 @@
 		};
 		1FCA58D023B6BDED0087B542 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B782BA7C96D63D0621B7AE53 /* Pods-PixelSDKExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -822,7 +769,6 @@
 		};
 		1FCA58D123B6BDED0087B542 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D4DB6D47010B9D22F69C6DF /* Pods-PixelSDKExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -862,6 +808,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F02380E2799EE1000F81346 /* XCRemoteSwiftPackageReference "PixelSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GottaYotta/PixelSDK.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F02380F2799EE1000F81346 /* PixelSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F02380E2799EE1000F81346 /* XCRemoteSwiftPackageReference "PixelSDK" */;
+			productName = PixelSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FCA58B323B6BDEB0087B542 /* Project object */;
 }

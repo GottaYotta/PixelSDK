@@ -7,8 +7,8 @@ Pixel SDK is a photo and video editing framework written in Swift.
 
 - [Features](#features)
 - [Getting Started](#getting-started)
+    * [Swift Package Manager](#swift-package-manager-recommended)
     * [CocoaPods](#cocoapods)
-    * [Swift Package Manager](#swift-package-manager)
 - [Restrict the SDK](#restrict-the-sdk)
     * [Images Only](#images-only)
     * [Videos Only](#videos-only)
@@ -86,6 +86,20 @@ Pixel SDK is a photo and video editing framework written in Swift.
 **Note:** Extensive sample code can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 <getting-started-supplement>
 
+### Swift Package Manager (Recommended)
+
+[Swift Package Manager](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) is a dependency manager built into Xcode. To integrate PixelSDK into your Xcode project&nbsp;using&nbsp;Swift Package Manager, first verify you have the latest version of Xcode installed.
+
+In the Xcode menu bar select File > Add Packages and enter the following repository URL into the search bar:
+
+```
+https://github.com/GottaYotta/PixelSDK.git
+```
+
+For Dependency Rule select `Branch` and `master`. Then press Add Package.
+
+Note: We do not recommend setting the Dependency Rule to a major version because it will prevent you from receiving critical bug fixes in the future.
+
 ### CocoaPods
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for iOS projects. To integrate PixelSDK into your Xcode project&nbsp;using&nbsp;CocoaPods, first verify you have at least Xcode 11.4 or greater installed.
@@ -107,20 +121,6 @@ Run the following command from within your project directory:
 ```
 $ pod install
 ```
-
-### Swift Package Manager
-
-[Swift Package Manager](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) is a dependency manager built into Xcode. To integrate PixelSDK into your Xcode project&nbsp;using&nbsp;Swift Package Manager, first verify you have the latest version of Xcode installed.
-
-In the Xcode menu bar select File > Add Packages and enter the following repository URL into the search bar:
-
-```
-https://github.com/GottaYotta/PixelSDK.git
-```
-
-For Dependency Rule select `Branch` and `master`. Then press Add Package.
-
-Note: We do not recommend setting the Dependency Rule to a major version because it will prevent you from receiving critical bug fixes in the future.
 
 ### Setup
 
