@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Pixel SDK will sunset on February 3, 2025. We are not accepting new customers at this time. Thank you for being part of our journey.
+
 # Pixel SDK
 Pixel SDK is a photo and video editing framework written in Swift.
 
@@ -82,6 +85,9 @@ Pixel SDK is a photo and video editing framework written in Swift.
 - Xcode 11.4+
 
 ## Getting Started
+
+> [!CAUTION]
+> Pixel SDK will sunset on February 3, 2025. We are not accepting new customers at this time. Thank you for being part of our journey.
 
 **Note:** Extensive sample code can be found in the [Xcode sample project](https://github.com/GottaYotta/PixelSDK/archive/master.zip).
 <getting-started-supplement>
